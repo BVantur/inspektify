@@ -81,7 +81,7 @@ class GeneralKonsistTest {
                 }
             }
     }
-    
+
     @Test
     fun `all data class properties are defined in constructor`() {
         Konsist
