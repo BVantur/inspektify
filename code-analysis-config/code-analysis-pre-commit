@@ -11,6 +11,15 @@ if [ "$ktlintFormatResult" -eq 1 ] ; then
     scriptFailed=1
 fi
 
+echo "[DETEKT] Running detekt command"
+./gradlew detekt
+detektResult=$?
+
+if [ "$detektResult" -eq 1 ] ; then
+    echo "Detekt failed"
+    scriptFailed=1
+fi
+
 if [ "$scriptFailed" -eq 1 ] ; then
     echo "Don't forget to stage and commit newly formatted files before pushing the code!"
     exit 1
