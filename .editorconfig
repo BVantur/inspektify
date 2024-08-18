@@ -1,3 +1,7 @@
 [*.{kt,kts}]
 insert_final_newline = true
 ktlint_function_naming_ignore_when_annotated_with=Composable
+
+; remove wildcard imports from kotlin files
+ij_kotlin_name_count_to_use_star_import = 1024
+ij_kotlin_name_count_to_use_star_import_for_members = 1024
