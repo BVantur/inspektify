@@ -16,7 +16,8 @@ subprojects {
 fun Project.ktlintSetup() {
     apply(plugin = rootProject.libs.plugins.ktlint.get().pluginId)
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
-        version.set("1.4.0-SNAPSHOT")
+        version.set("1.3.0")
+        enableExperimentalRules.set(true)
         verbose.set(true)
         filter {
             exclude { it.file.path.contains("build/") }
