@@ -1,0 +1,20 @@
+echo "Running code analysis tools Ktlint and Detekt"
+
+scriptFailed=0
+
+echo "[KTLINT] Running ktlintFormat command"
+./gradlew ktlintFormat
+ktlintFormatResult=$?
+
+if [ "$ktlintFormatResult" -eq 1 ] ; then
+    echo "Ktlint format failed"
+    scriptFailed=1
+fi
+
+if [ "$scriptFailed" -eq 1 ] ; then
+    echo "Don't forget to stage and commit newly formatted files before pushing the code!"
+    exit 1
+fi
+
+echo "Code analysis successful!!"
+exit 0
