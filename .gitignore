@@ -74,3 +74,6 @@ xcuserdata/
 
 # New kotlin 2.0.0 build folder
 .kotlin/
+
+# Fleet IDE
+.fleet/

@@ -6,4 +6,20 @@ plugins {
     alias(libs.plugins.jetbrainsCompose) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
+    alias(libs.plugins.ktlint) apply false
+}
+
+subprojects {
+    ktlintSetup()
+}
+
+fun Project.ktlintSetup() {
+    apply(plugin = rootProject.libs.plugins.ktlint.get().pluginId)
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        version.set("1.4.0-SNAPSHOT")
+        verbose.set(true)
+        filter {
+            exclude { it.file.path.contains("build/") }
+        }
+    }
 }

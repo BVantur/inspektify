@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ktlint)
 }
 
 kotlin {
@@ -84,3 +85,13 @@ android {
     }
 }
 
+val codeAnalysisGitHook by tasks.registering(Copy::class) {
+    from("../predefined-hooks/code-analysis-pre-commit")
+    into("../.git/hooks")
+    rename { "pre-commit" }
+    fileMode = 0b111101101
+}
+
+tasks.named("preBuild").configure {
+    dependsOn(codeAnalysisGitHook)
+}
