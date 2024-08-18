@@ -22,6 +22,7 @@ androidx-test-junit = "1.2.1"
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
 detekt = "1.23.6"
+konsist = "0.15.1"
 
 # TEST dependencies
 junit = "4.13.2"
@@ -40,6 +41,7 @@ androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle
 
 # CODE ANALYSIS dependencies
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+konsist-test = { module = "com.lemonappdev:konsist", version.ref = "konsist" }
 
 # TEST dependencies
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
