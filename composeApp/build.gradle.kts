@@ -85,7 +85,7 @@ android {
 }
 
 val codeAnalysisGitHook by tasks.registering(Copy::class) {
-    from("../predefined-hooks/code-analysis-pre-commit")
+    from("../code-analysis-config/code-analysis-pre-commit")
     into("../.git/hooks")
     rename { "pre-commit" }
     fileMode = 0b111101101
