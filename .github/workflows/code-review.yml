@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  setupMachine:
-    name: Build apps
+  buildAndroidAndCodeCheck:
+    name: Build Android part and general KMP stuff
     runs-on: macos-12
 
     steps:
@@ -28,55 +28,14 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ./.gradle
-          key: gradle-${{ runner.os }}
-          restore-keys: |
-            gradle-${{ runner.os }}
-            gradle-
-
-      - name: kill java processes
-        run: |
-          wmic process where "name like '%java%'" delete
-          taskkill /f /im jqs.exe
-          taskkill /f /im javaw.exe
-          taskkill /f /im java.exe
-        continue-on-error: true
-
-  ktlint:
-    needs: setupMachine
-    name: Build apps
-    runs-on: macos-12
-
-    steps:
-      - name: Run Ktlint
-        run: ./gradlew ktlintCheck --gradle-user-home .gradle
-
-  detekt:
-    needs: setupMachine
-    name: Build apps
-    runs-on: macos-12
-
-    steps:
       - name: Run Detekt
         run: ./gradlew detekt --gradle-user-home .gradle
 
-  konsist:
-    needs: setupMachine
-    name: Build apps
-    runs-on: macos-12
+      - name: Run Ktlint
+        run: ./gradlew ktlintCheck --gradle-user-home .gradle
 
-    steps:
       - name: Run konsist tests
         run: ./gradlew :konsistTest:jvmTest --gradle-user-home .gradle
 
-  buildAndroid:
-    needs: setupMachine
-    name: Build apps
-    runs-on: macos-12
-
-    steps:
       - name: Build gradle project
         run: ./gradlew assemble
