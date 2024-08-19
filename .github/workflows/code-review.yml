@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  build:
+  setupMachine:
     name: Build apps
     runs-on: macos-12
 
@@ -28,14 +28,38 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
+  ktlint:
+    needs: setupMachine
+    name: Build apps
+    runs-on: macos-12
+
+    steps:
       - name: Run Ktlint
         run: ./gradlew ktlintCheck
 
+  detekt:
+    needs: setupMachine
+    name: Build apps
+    runs-on: macos-12
+
+    steps:
       - name: Run Detekt
         run: ./gradlew detekt
 
+  konsist:
+    needs: setupMachine
+    name: Build apps
+    runs-on: macos-12
+
+    steps:
       - name: Run konsist tests
         run: ./gradlew :konsistTest:jvmTest
 
+  buildAndroid:
+    needs: setupMachine
+    name: Build apps
+    runs-on: macos-12
+
+    steps:
       - name: Build gradle project
         run: ./gradlew assemble
