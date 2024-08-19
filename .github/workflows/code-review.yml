@@ -16,17 +16,34 @@ jobs:
       - name: Checking out branch
         uses: actions/checkout@v3
 
-      - uses: actions/setup-java@v2
+      - name: Setup Java
+        uses: actions/setup-java@v3
         with:
-          distribution: temurin
+          distribution: 'temurin'
           java-version: 17
-          cache: gradle
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2.0.10
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
+
+      uses: actions/cache@v3
+        with:
+        path: |
+          ./.gradle
+        key: gradle-${{ runner.os }}
+        restore-keys: |
+          gradle-${{ runner.os }}
+          gradle-
+
+      - name: kill java processes
+        run: |
+          wmic process where "name like '%java%'" delete
+          taskkill /f /im jqs.exe
+          taskkill /f /im javaw.exe
+          taskkill /f /im java.exe
+        continue-on-error: true
 
   ktlint:
     needs: setupMachine
@@ -35,7 +52,7 @@ jobs:
 
     steps:
       - name: Run Ktlint
-        run: ./gradlew ktlintCheck
+        run: ./gradlew ktlintCheck --gradle-user-home .gradle
 
   detekt:
     needs: setupMachine
@@ -44,7 +61,7 @@ jobs:
 
     steps:
       - name: Run Detekt
-        run: ./gradlew detekt
+        run: ./gradlew detekt --gradle-user-home .gradle
 
   konsist:
     needs: setupMachine
@@ -53,7 +70,7 @@ jobs:
 
     steps:
       - name: Run konsist tests
-        run: ./gradlew :konsistTest:jvmTest
+        run: ./gradlew :konsistTest:jvmTest --gradle-user-home .gradle
 
   buildAndroid:
     needs: setupMachine
