@@ -30,11 +30,11 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Cache Gradle packages
-         uses: actions/cache@v3
-         with:
-           path: |
-             ~/.gradle/caches
-             ~/.gradle/wrapper
+        uses: actions/cache@v3
+        with:
+          path: |
+              ~/.gradle/caches
+              ~/.gradle/wrapper
 
   ktlint:
     needs: setupMachine
