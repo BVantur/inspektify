@@ -9,7 +9,7 @@ on:
 
 jobs:
   buildAndroidAndCodeCheck:
-    name: Build Android part and general KMP stuff
+    name: Build client projects and check general KMP stuff
     runs-on: macos-12
 
     steps:
@@ -39,3 +39,12 @@ jobs:
 
       - name: Build gradle project
         run: ./gradlew assemble
+
+      - name: check Xcode version
+        run: /usr/bin/xcodebuild -version
+
+#      - name: Build gradle project
+#        run: ./gradlew :composeApp:generateDummyFramework
+
+      - name: Run xcode build
+        run: xcodebuild build -workspace iosApp/iosApp.xcodeproj -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 14' -verbose
