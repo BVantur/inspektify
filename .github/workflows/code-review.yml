@@ -28,7 +28,7 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
-      uses: actions/cache@v3
+      - uses: actions/cache@v3
         with:
         path: |
           ./.gradle
