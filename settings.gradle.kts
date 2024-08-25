@@ -1,4 +1,4 @@
-rootProject.name = "shaKer"
+rootProject.name = "inspektify"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
