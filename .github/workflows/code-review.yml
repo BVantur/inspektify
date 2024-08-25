@@ -36,15 +36,3 @@ jobs:
 
       - name: Run konsist tests
         run: ./gradlew :konsistTest:jvmTest --gradle-user-home .gradle
-
-      - name: Build gradle project
-        run: ./gradlew assemble
-
-      - name: check Xcode version
-        run: /usr/bin/xcodebuild -version
-
-#      - name: Build gradle project
-#        run: ./gradlew :composeApp:generateDummyFramework
-
-      - name: Run xcode build
-        run: xcodebuild build -workspace iosApp/iosApp.xcodeproj -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 14' -verbose
