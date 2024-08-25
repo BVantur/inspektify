@@ -1,4 +1,4 @@
-package sp.bvantur.shaker
+package sp.bvantur.inspektify
 
 import platform.UIKit.UIDevice
 

@@ -1,4 +1,4 @@
-package sp.bvantur.shaker
+package sp.bvantur.inspektify
 
 interface Platform {
     val name: String

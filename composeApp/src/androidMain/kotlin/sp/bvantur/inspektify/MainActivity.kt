@@ -1,4 +1,4 @@
-package sp.bvantur.shaker
+package sp.bvantur.inspektify
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
