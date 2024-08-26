@@ -2,6 +2,7 @@ import com.lemonappdev.konsist.api.KoModifier
 import com.lemonappdev.konsist.api.Konsist
 import com.lemonappdev.konsist.api.declaration.KoFunctionDeclaration
 import com.lemonappdev.konsist.api.declaration.KoPropertyDeclaration
+import com.lemonappdev.konsist.api.ext.list.containingDeclarations
 import com.lemonappdev.konsist.api.ext.list.indexOfFirstInstance
 import com.lemonappdev.konsist.api.ext.list.indexOfLastInstance
 import com.lemonappdev.konsist.api.ext.list.modifierprovider.withModifier
@@ -100,12 +101,16 @@ class GeneralKonsistTest {
             .scopeFromProject()
             .classes()
             .assertTrue {
-                val companionObject = it.objects(includeNested = false).lastOrNull { obj ->
+                val companionObject = it.objects(includeNested = false).firstOrNull { obj ->
                     obj.hasModifier(KoModifier.COMPANION)
                 }
 
                 if (companionObject != null) {
-                    it.declarations(includeNested = false, includeLocal = false).first() == companionObject
+                    if(it.constructors.containingDeclarations.isNotEmpty()) {
+                        it.declarations(includeNested = false, includeLocal = false)[it.constructors.containingDeclarations.size] == companionObject
+                    } else {
+                        it.declarations(includeNested = false, includeLocal = false).first() == companionObject
+                    }
                 } else {
                     true
                 }
