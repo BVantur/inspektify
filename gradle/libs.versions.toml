@@ -20,6 +20,9 @@ androidx-material = "1.12.0"
 androidx-startup = "1.1.1"
 androidx-test-junit = "1.2.1"
 
+# KTOR dependencies
+ktor = "2.3.9"
+
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
 detekt = "1.23.6"
@@ -40,6 +43,9 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "androidx-startup" }
+
+# KTOR dependencies
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 
 # CODE ANALYSIS dependencies
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
