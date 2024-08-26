@@ -30,8 +30,8 @@ internal class ShakeGestureListener : DefaultLifecycleObserver {
 
             currentAcceleration = sqrt(
                 xCoordinate * xCoordinate +
-                        yCoordinate * yCoordinate +
-                        zCoordinate * zCoordinate
+                    yCoordinate * yCoordinate +
+                    zCoordinate * zCoordinate
             )
             val delta = currentAcceleration - lastAcceleration
             activeAcceleration = activeAcceleration * 0.9f + delta
