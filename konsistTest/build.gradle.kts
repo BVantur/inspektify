@@ -3,6 +3,7 @@ plugins {
 }
 
 kotlin {
+    task("testClasses")
     targetHierarchy.default()
     jvm {
         compilations.all {
