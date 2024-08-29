@@ -28,5 +28,6 @@ dependencyResolutionManagement {
     }
 }
 
-include(":composeApp")
+include(":inspektifyLib")
 include(":konsistTest")
+include(":inspektifySample:composeApp")
