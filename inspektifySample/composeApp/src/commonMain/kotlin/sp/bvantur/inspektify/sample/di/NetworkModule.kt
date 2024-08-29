@@ -12,9 +12,8 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.InspektifyKtor
-import sp.bvantur.inspektify.sample.data.RemoteClient
 
-private const val BASE_URL = "https://catfact.ninja/"
+private const val BASE_URL = "https://reqres.in/api/"
 
 val networkModule = module {
     single {
@@ -39,9 +38,5 @@ val networkModule = module {
             }
             install(InspektifyKtor)
         }
-    }
-
-    single<RemoteClient> {
-        RemoteClient(get(), get())
     }
 }

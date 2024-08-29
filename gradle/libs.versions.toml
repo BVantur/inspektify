@@ -21,12 +21,19 @@ androidx-test-junit = "1.2.1"
 
 # JETBRAINS dependencies
 jetbrains-lifecycle = "2.8.0"
+jetbrains-atomicfu = "0.24.0"
+
+# KOTLIN-X dependencies
+kotlinx-datetime = "0.5.0"
 
 # KTOR dependencies
 ktor = "2.3.9"
 
 # KOIN dependencies
 koin = "4.0.0-RC1" # TODO change to stable as soon as possible
+
+# ANDROID dependencies
+android-desugar = "2.1.1"
 
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
@@ -50,6 +57,10 @@ androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime
 # JETBRAINS dependencies
 jetbrains-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "jetbrains-lifecycle" }
 jetbrains-viewmodel-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "jetbrains-lifecycle" }
+jetbrains-atomicfu = { group = "org.jetbrains.kotlinx", name = "atomicfu", version.ref = "jetbrains-atomicfu" }
+
+# KOTLIN-X dependencies
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 # KTOR dependencies
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
@@ -62,6 +73,9 @@ ktor-client-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "
 # KOIN dependencies
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
+
+# ANDROID dependencies
+android-desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "android-desugar" }
 
 # CODE ANALYSIS dependencies
 detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }

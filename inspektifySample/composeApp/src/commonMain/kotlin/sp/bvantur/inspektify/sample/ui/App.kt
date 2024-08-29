@@ -16,33 +16,49 @@ import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
-import sp.bvantur.inspektify.sample.presentation.fact.CatFactViewModel
+import sp.bvantur.inspektify.sample.presentation.user.UserViewModel
 import sp.bvantur.inspektify.sample.shared.collectWithLifecycle
 
 @OptIn(KoinExperimentalAPI::class)
 @Composable
 @Preview
 fun App() {
-    val viewModel = koinViewModel<CatFactViewModel>()
+    val viewModel = koinViewModel<UserViewModel>()
 
     val viewState by viewModel.viewStateFlow.collectWithLifecycle()
 
     MaterialTheme {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = viewModel::onGetNewFactAction) {
-                Text("Get new Cat Fact")
+            Button(onClick = viewModel::onGetNextUserAction) {
+                Text("Get User")
             }
+            Button(onClick = viewModel::onCreateUserAction) {
+                Text("Create a User")
+            }
+            Text(
+                modifier = Modifier.padding(start = 8.dp, top = 8.dp, end = 8.dp),
+                text = "Users",
+                style = MaterialTheme.typography.h3
+            )
             LazyColumn(modifier = Modifier.fillMaxWidth()) {
-                items(viewState.facts.size) { index ->
+                items(viewState.users.size) { index ->
                     Card(modifier = Modifier.fillMaxWidth().padding(all = 16.dp)) {
                         Column {
                             Text(
                                 modifier = Modifier.padding(start = 8.dp, top = 8.dp, end = 8.dp),
-                                text = "${index + 1}. Fact"
+                                text = "${index + 1}. User"
+                            )
+                            Text(
+                                modifier = Modifier.padding(start = 8.dp, top = 8.dp, end = 8.dp),
+                                text = "First name: ${viewState.users[index].firstName}"
+                            )
+                            Text(
+                                modifier = Modifier.padding(start = 8.dp, top = 8.dp, end = 8.dp),
+                                text = "Last name: ${viewState.users[index].lastName}"
                             )
                             Text(
                                 modifier = Modifier.padding(all = 8.dp),
-                                text = viewState.facts[index].fact
+                                text = "Email: ${viewState.users[index].email}"
                             )
                         }
                     }
