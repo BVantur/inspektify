@@ -32,7 +32,7 @@
 
         <activity android:name="sp.bvantur.inspektify.InspektifyActivity"
             android:launchMode="singleTask"
-            android:taskAffinity="com.hansgrohe.inspektor.android.task"/>
+            android:taskAffinity="sp.bvantur.inspektify.android.task"/>
     </application>
 
 </manifest>

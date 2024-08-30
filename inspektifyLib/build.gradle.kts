@@ -1,22 +1,15 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
     task("testClasses")
-    androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
-        }
-    }
+    androidTarget()
 
     listOf(
         iosX64(),
@@ -34,6 +27,7 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.startup.runtime)
+            implementation(libs.cash.sqldelight.android.driver)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -44,8 +38,12 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.viewmodel.compose)
             implementation(libs.jetbrains.lifecycle.runtime.compose)
-            implementation(libs.jetbrains.atomicfu)
             implementation(libs.ktor.client.core)
+            implementation(libs.cash.sqldelight.primitive.adapters)
+            implementation(libs.cash.sqldelight.coroutines.extensions)
+        }
+        iosMain.dependencies {
+            implementation(libs.cash.sqldelight.native.driver)
         }
     }
 }
@@ -72,8 +70,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         compose = true
@@ -92,4 +90,12 @@ val codeAnalysisGitHook by tasks.registering(Copy::class) {
 
 tasks.named("preBuild").configure {
     dependsOn(codeAnalysisGitHook)
+}
+
+sqldelight {
+    databases {
+        create("InspektifyDB") {
+            packageName.set("sp.bvantur.inspektify.db")
+        }
+    }
 }

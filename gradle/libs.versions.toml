@@ -21,13 +21,15 @@ androidx-test-junit = "1.2.1"
 
 # JETBRAINS dependencies
 jetbrains-lifecycle = "2.8.0"
-jetbrains-atomicfu = "0.24.0"
 
 # KTOR dependencies
 ktor = "2.3.9"
 
 # KOIN dependencies
 koin = "4.0.0-RC1" # TODO change to stable as soon as possible
+
+# CASH dependencies
+cash-sqlDelight = "2.0.2"
 
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
@@ -51,7 +53,6 @@ androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime
 # JETBRAINS dependencies
 jetbrains-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "jetbrains-lifecycle" }
 jetbrains-viewmodel-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "jetbrains-lifecycle" }
-jetbrains-atomicfu = { group = "org.jetbrains.kotlinx", name = "atomicfu", version.ref = "jetbrains-atomicfu" }
 
 # KTOR dependencies
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
@@ -64,6 +65,12 @@ ktor-client-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "
 # KOIN dependencies
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
+
+# CASH dependencies
+cash-sqldelight-native-driver = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "cash-sqlDelight" }
+cash-sqldelight-primitive-adapters = { group = "app.cash.sqldelight", name = "primitive-adapters", version.ref = "cash-sqlDelight" }
+cash-sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "cash-sqlDelight" }
+cash-sqldelight-coroutines-extensions = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "cash-sqlDelight" }
 
 # CODE ANALYSIS dependencies
 detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
@@ -81,6 +88,7 @@ jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+sqlDelight = { id = "app.cash.sqldelight", version.ref = "cash-sqlDelight" }
 
 # CODE ANALYSIS plugins
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }

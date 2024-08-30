@@ -1,0 +1,37 @@
+import kotlin.collections.List;
+import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader;
+
+CREATE TABLE NetworkTrafficData (
+  id INTEGER NOT NULL PRIMARY KEY,
+  method TEXT,
+  url TEXT,
+  host TEXT,
+  path TEXT,
+  protocol TEXT,
+
+  requestTimestamp INTEGER,
+  requestHeaders TEXT AS List<NetworkTrafficHeader>,
+  requestPayload TEXT,
+  requestPayloadSize INTEGER,
+  requestHeadersSize INTEGER,
+
+  responseTimestamp INTEGER,
+  responseStatus INTEGER,
+  responseStatusDescription TEXT,
+  responseHeaders TEXT AS List<NetworkTrafficHeader>,
+  responsePayload TEXT,
+  responsePayloadSize INTEGER,
+  responseHeadersSize INTEGER,
+  tookDurationInMs INTEGER
+);
+
+
+getAllNetworkTraffic:
+SELECT * FROM NetworkTrafficData;
+
+insertNetworkTraffic:
+INSERT OR REPLACE INTO NetworkTrafficData(id, method, url, host, path, protocol, requestTimestamp, requestHeaders, requestPayload, requestPayloadSize, requestHeadersSize, responseTimestamp, responseStatus, responseStatusDescription, responseHeaders, responsePayload, responsePayloadSize, responseHeadersSize, tookDurationInMs)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+getNetworkTrafficById:
+SELECT * FROM NetworkTrafficData WHERE id = ?;

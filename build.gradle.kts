@@ -73,9 +73,9 @@ fun Project.detektSetup() {
     }
 
     tasks.withType<Detekt>().configureEach {
-        jvmTarget = JvmTarget.JVM_1_8.target
+        jvmTarget = JvmTarget.JVM_17.target
     }
     tasks.withType<DetektCreateBaselineTask>().configureEach {
-        jvmTarget = JvmTarget.JVM_1_8.target
+        jvmTarget = JvmTarget.JVM_17.target
     }
 }
