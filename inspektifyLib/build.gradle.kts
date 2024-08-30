@@ -46,7 +46,6 @@ kotlin {
             implementation(libs.jetbrains.lifecycle.runtime.compose)
             implementation(libs.jetbrains.atomicfu)
             implementation(libs.ktor.client.core)
-            implementation(libs.kotlinx.datetime)
         }
     }
 }
@@ -73,7 +72,6 @@ android {
         }
     }
     compileOptions {
-        isCoreLibraryDesugaringEnabled = true // TODO investigate if we can remove this
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -81,7 +79,6 @@ android {
         compose = true
     }
     dependencies {
-        coreLibraryDesugaring(libs.android.desugar) // TODO investigate if we can remove this
         debugImplementation(compose.uiTooling)
     }
 }
