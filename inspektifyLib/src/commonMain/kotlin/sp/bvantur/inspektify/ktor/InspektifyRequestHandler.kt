@@ -5,18 +5,18 @@ import io.ktor.http.Headers
 import io.ktor.http.charset
 import io.ktor.http.content.OutgoingContent
 import io.ktor.util.AttributeKey
+import io.ktor.util.date.getTimeMillis
 import io.ktor.util.toByteArray
 import io.ktor.util.toMap
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
-import io.ktor.utils.io.core.readText
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.atomicfu.atomic
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
 import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.utils.extensions.tryReadText
 
 internal interface InspektifyRequestHandler {
 
@@ -39,9 +39,9 @@ internal class InspektifyRequestHandlerImpl(
         val httpTransactionId = request.attributes[requestIdKey]
 
         coroutineScope.launch(dispatcherProvider.default) {
-            val date = Clock.System.now().toEpochMilliseconds()
             val content = request.body as OutgoingContent
             val method = request.method.value
+            val date = getTimeMillis()
             val requestContentType = content.contentType?.contentType
             val contentType = content.contentType
             val url = request.url
@@ -69,7 +69,7 @@ internal class InspektifyRequestHandlerImpl(
 
     override fun generateRequestId(): Long = requestId.incrementAndGet()
 
-    private suspend fun getContentWithSize(content: OutgoingContent): Pair<String, Long> {
+    private suspend fun getContentWithSize(content: OutgoingContent): Pair<String?, Long> {
         val charset = content.contentType?.charset() ?: Charsets.UTF_8
         val bytes: ByteArray? = when (content) {
             is OutgoingContent.ByteArrayContent -> {
@@ -86,7 +86,7 @@ internal class InspektifyRequestHandlerImpl(
         }
 
         if (bytes != null) {
-            return ByteReadChannel(bytes).readRemaining().readText(charset = charset) to (content.contentLength ?: 0L)
+            return ByteReadChannel(bytes).tryReadText(charset = charset) to (content.contentLength ?: 0L)
         }
 
         return "" to 0L
