@@ -30,7 +30,6 @@ kotlin {
     }
 
     sourceSets {
-
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -86,6 +85,7 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true // TODO investigate if we can remove this
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -93,6 +93,7 @@ android {
         compose = true
     }
     dependencies {
+        coreLibraryDesugaring(libs.android.desugar) // TODO investigate if we can remove this
         debugImplementation(compose.uiTooling)
     }
 }
