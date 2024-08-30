@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.utils.extensions
+package sp.bvantur.inspektify.ktor.utils.extensions
 
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charset
