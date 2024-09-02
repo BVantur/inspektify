@@ -3,7 +3,6 @@ package sp.bvantur.inspektify.ktor.domain.usecase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
-import sp.bvantur.inspektify.ktor.domain.model.NetworkTrafficListItem
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getDate
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getDuration
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getHost
@@ -12,6 +11,7 @@ import sp.bvantur.inspektify.ktor.data.utils.extensions.getMethodWithPath
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getPresentationStatusCode
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getSize
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getTime
+import sp.bvantur.inspektify.ktor.domain.model.NetworkTrafficListItem
 
 internal typealias GroupedNetworkTrafficData = Map<String, List<NetworkTrafficListItem>>
 
