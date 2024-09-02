@@ -9,7 +9,7 @@ import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
-import sp.bvantur.inspektify.ktor.utils.NetworkTrafficUtils
+import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
 import sp.bvantur.inspektify.ktor.utils.extensions.tryReadText
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
@@ -36,7 +36,7 @@ internal class InspektifyRequestHandlerImpl(
         val url = request.url
         val headers = request.headers.build()
         val (payload, payloadSize) = getContentWithSize(content)
-        val headersSize = NetworkTrafficUtils.calculateHeadersSize(headers)
+        val headersSize = NetworkTrafficDataUtils.calculateHeadersSize(headers)
         val totalSize = payloadSize + headersSize
 
         println("[REQUEST!]")
@@ -59,7 +59,7 @@ internal class InspektifyRequestHandlerImpl(
             path = url.pathSegments.joinToString("/"),
             protocol = url.protocol.name,
             requestTimestamp = id,
-            requestHeaders = NetworkTrafficUtils.mapHeaders(headers),
+            requestHeaders = NetworkTrafficDataUtils.mapHeaders(headers),
             requestPayload = payload,
             requestPayloadSize = payloadSize,
             requestHeadersSize = headersSize.toLong()

@@ -20,7 +20,7 @@ class InspektifyKtor(val config: InspektifyKtorConfig) {
         override fun install(plugin: InspektifyKtor, scope: HttpClient) {
             inspektifyKtorClient = InspektifyKtorClient(
                 dispatcherProvider = AppComponents.getAppModule().dispatcherProvider,
-                networkTrafficRepository = AppComponents.getAppModule().networkTrafficRepository
+                networkTrafficRepository = AppComponents.getKtorModule().networkTrafficRepository
             )
             inspektifyKtorClient.install(plugin, scope)
         }

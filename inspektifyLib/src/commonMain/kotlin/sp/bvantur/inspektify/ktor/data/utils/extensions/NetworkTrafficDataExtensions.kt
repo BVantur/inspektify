@@ -1,9 +1,9 @@
-package sp.bvantur.inspektify.ktor.utils.extensions
+package sp.bvantur.inspektify.ktor.data.utils.extensions
 
-import sp.bvantur.inspektify.NetworkTrafficData
+import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 
-internal fun NetworkTrafficData.toNetworkTraffic(): NetworkTraffic = NetworkTraffic(
+internal fun NetworkTrafficDataLocal.toNetworkTraffic(): NetworkTraffic = NetworkTraffic(
     id = id,
     method = method,
     url = url,
