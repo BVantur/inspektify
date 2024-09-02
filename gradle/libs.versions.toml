@@ -18,6 +18,10 @@ androidx-espresso-core = "3.6.1"
 androidx-material = "1.12.0"
 androidx-startup = "1.1.1"
 androidx-test-junit = "1.2.1"
+androidx-lifecycle-process = "2.8.4"
+
+# KOTLIN-X dependencies
+kotlinx-datetime = "0.6.1"
 
 # JETBRAINS dependencies
 jetbrains-lifecycle = "2.8.0"
@@ -49,6 +53,10 @@ androidx-material = { group = "com.google.android.material", name = "material", 
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
 androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "androidx-startup" }
+androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "androidx-lifecycle-process" }
+
+# KOTLIN-X dependencies
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 # JETBRAINS dependencies
 jetbrains-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "jetbrains-lifecycle" }

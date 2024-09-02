@@ -8,7 +8,7 @@ import io.ktor.utils.io.charsets.Charsets
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
-import sp.bvantur.inspektify.ktor.utils.NetworkTrafficUtils
+import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
 import sp.bvantur.inspektify.ktor.utils.extensions.tryReadText
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
@@ -32,7 +32,7 @@ internal class InspektifyResponseHandlerImpl(
         val status = response.status.value
         val description = response.status.description
         val headers = response.headers
-        val headersSize = NetworkTrafficUtils.calculateHeadersSize(headers)
+        val headersSize = NetworkTrafficDataUtils.calculateHeadersSize(headers)
         val body = response.bodyAsChannel().tryReadText(charset)
 
         println("[RESPONSE!]")
@@ -47,7 +47,7 @@ internal class InspektifyResponseHandlerImpl(
             responseTimestamp = timestamp,
             responseStatus = status,
             responseStatusDescription = description,
-            responseHeaders = NetworkTrafficUtils.mapHeaders(headers),
+            responseHeaders = NetworkTrafficDataUtils.mapHeaders(headers),
             responsePayload = body,
             responsePayloadSize = body?.toByteArray()?.size,
             responseHeadersSize = headersSize,

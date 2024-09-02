@@ -1,11 +1,11 @@
-package sp.bvantur.inspektify.ktor.utils
+package sp.bvantur.inspektify.ktor.data.utils
 
 import io.ktor.http.Headers
 import io.ktor.util.toMap
 import io.ktor.utils.io.core.toByteArray
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 
-internal object NetworkTrafficUtils {
+internal object NetworkTrafficDataUtils {
 
     fun calculateHeadersSize(headers: Headers): Int = headers.toMap().map { (name, header) ->
         name.toByteArray().size + header.sumOf { value ->

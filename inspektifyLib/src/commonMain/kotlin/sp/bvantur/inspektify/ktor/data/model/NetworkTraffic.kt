@@ -1,6 +1,6 @@
 package sp.bvantur.inspektify.ktor.data.model
 
-data class NetworkTraffic(
+internal data class NetworkTraffic(
     val id: Long,
     val method: String? = null,
     val url: String? = null,

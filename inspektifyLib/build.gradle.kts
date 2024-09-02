@@ -28,12 +28,14 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.startup.runtime)
             implementation(libs.cash.sqldelight.android.driver)
+            implementation(libs.androidx.lifecycle.process)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
+            implementation(compose.materialIconsExtended)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.viewmodel.compose)
@@ -41,6 +43,7 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.cash.sqldelight.primitive.adapters)
             implementation(libs.cash.sqldelight.coroutines.extensions)
+            implementation(libs.kotlinx.datetime)
         }
         iosMain.dependencies {
             implementation(libs.cash.sqldelight.native.driver)
