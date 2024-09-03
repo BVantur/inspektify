@@ -9,9 +9,7 @@ interface GetUserUseCase {
     suspend operator fun invoke(userId: UserId): Result<User?>
 }
 
-class GetUserUseCaseImpl(
-    private val userRepository: UserRepository
-) : GetUserUseCase {
+class GetUserUseCaseImpl(private val userRepository: UserRepository) : GetUserUseCase {
     override suspend fun invoke(userId: UserId): Result<User?> {
         val response = userRepository.getUser(userId)
         if (response.isFailure) {

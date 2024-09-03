@@ -2,7 +2,9 @@ package sp.bvantur.inspektify.ktor.domain.utils
 
 internal object ByteSizeUtils {
 
-    fun toTextWithByteUnit(size: Long): String {
+    fun toTextWithByteUnit(size: Long?): String {
+        size ?: return "???"
+
         val bytesInKilobyte = 1024
         val maxBitsLong = 63
         val bitsPerUnit = 10

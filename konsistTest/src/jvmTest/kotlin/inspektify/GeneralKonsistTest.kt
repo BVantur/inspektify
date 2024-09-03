@@ -107,7 +107,11 @@ class GeneralKonsistTest {
 
                 if (companionObject != null) {
                     if (it.constructors.containingDeclarations.isNotEmpty()) {
-                        it.declarations(includeNested = false, includeLocal = false)[it.constructors.containingDeclarations.size] == companionObject
+                        it.declarations(
+                            includeNested = false,
+                            includeLocal = false
+                        )[it.constructors.containingDeclarations.size] ==
+                            companionObject
                     } else {
                         it.declarations(includeNested = false, includeLocal = false).first() == companionObject
                     }

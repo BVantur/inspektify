@@ -25,9 +25,11 @@ kotlinx-datetime = "0.6.1"
 
 # JETBRAINS dependencies
 jetbrains-lifecycle = "2.8.0"
+jetbrains-navigation-compose = "2.7.0-alpha07" # TODO observe and move to stable
+jetbrains-serialization-json = "1.6.1"
 
 # KTOR dependencies
-ktor = "2.3.9"
+ktor = "3.0.0-beta-2" # TODO observe and move to stable
 
 # KOIN dependencies
 koin = "4.0.0-RC1" # TODO change to stable as soon as possible
@@ -61,6 +63,8 @@ kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime",
 # JETBRAINS dependencies
 jetbrains-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "jetbrains-lifecycle" }
 jetbrains-viewmodel-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "jetbrains-lifecycle" }
+jetbrains-navigation-compose = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "jetbrains-navigation-compose" }
+jetbrains-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "jetbrains-serialization-json" }
 
 # KTOR dependencies
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }

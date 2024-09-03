@@ -7,9 +7,7 @@ import io.ktor.client.request.HttpRequestPipeline
 import io.ktor.client.request.HttpSendPipeline
 import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import io.ktor.utils.io.InternalAPI
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
@@ -19,22 +17,10 @@ internal class InspektifyKtorClient(
 ) : InspektifyRequestHandler by InspektifyRequestHandlerImpl(dispatcherProvider),
     InspektifyResponseHandler by InspektifyResponseHandlerImpl(dispatcherProvider) {
 
-    private val coroutineScope = CoroutineScope(
-        Job() + dispatcherProvider.main
-    ) // TODO remove when UI will be implemented
-
     fun install(plugin: InspektifyKtor, client: HttpClient) {
         configure(plugin.config)
         setupRequestInterceptor(client)
         setupResponseInterceptor(client)
-
-        coroutineScope.launch {
-            networkTrafficRepository.networkTrafficData.collect {
-                for (networkTrafficData in it) {
-                    println("networkTrafficData: $networkTrafficData")
-                }
-            }
-        }
     }
 
     private fun configure(config: InspektifyKtorConfig) {
@@ -58,7 +44,12 @@ internal class InspektifyKtorClient(
         }
     }
 
+    @OptIn(InternalAPI::class)
     private fun setupResponseInterceptor(client: HttpClient) {
+        // TODO try to move logic for observing responses to
+        // client.receivePipeline.intercept(HttpReceivePipeline.After)
+        // currently there is a crash if some other plugin is installed
+        // that requires reading of the bytes for response payload
         val observer: ResponseHandler = { response ->
             val networkTraffic = networkTrafficRepository.getNetworkTrafficData(
                 response.request.attributes[getNetworkTrafficIdKey()]
@@ -67,6 +58,6 @@ internal class InspektifyKtorClient(
 
             networkTrafficRepository.saveNetworkTrafficData(networkTrafficWithResponse)
         }
-        ResponseObserver.install(ResponseObserver(observer), client)
+        ResponseObserver.prepare { onResponse(observer) }.install(client)
     }
 }

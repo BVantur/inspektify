@@ -4,11 +4,10 @@ import kotlinx.coroutines.flow.Flow
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.ktor.data.local.NetworkTrafficLocalDataSource
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
+import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficId
 import sp.bvantur.inspektify.ktor.data.utils.extensions.toNetworkTraffic
 
-internal class NetworkTrafficRepository(
-    private val localDataSource: NetworkTrafficLocalDataSource
-) {
+internal class NetworkTrafficRepository(private val localDataSource: NetworkTrafficLocalDataSource) {
     val networkTrafficData: Flow<List<NetworkTrafficDataLocal>> =
         localDataSource.getAllNetworkTrafficData()
 
@@ -16,7 +15,7 @@ internal class NetworkTrafficRepository(
         localDataSource.saveNetworkTrafficData(networkTraffic)
     }
 
-    suspend fun getNetworkTrafficData(id: Long): NetworkTraffic = localDataSource.getNetworkTrafficData(
+    suspend fun getNetworkTrafficData(id: NetworkTrafficId): NetworkTraffic = localDataSource.getNetworkTrafficData(
         id
     ).toNetworkTraffic()
 

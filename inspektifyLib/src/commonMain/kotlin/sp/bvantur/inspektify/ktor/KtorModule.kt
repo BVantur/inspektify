@@ -9,6 +9,8 @@ import sp.bvantur.inspektify.ktor.data.local.NetworkTrafficLocalDataSource
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 import sp.bvantur.inspektify.ktor.domain.usecase.GetAllNetworkTrafficDataUseCase
 import sp.bvantur.inspektify.ktor.domain.usecase.GetAllNetworkTrafficDataUseCaseImpl
+import sp.bvantur.inspektify.ktor.domain.usecase.GetNetworkTrafficDataByIdUseCase
+import sp.bvantur.inspektify.ktor.domain.usecase.GetNetworkTrafficDataByIdUseCaseImpl
 import sp.bvantur.inspektify.ktor.domain.usecase.RemoveAllNetworkTrafficDataUseCase
 import sp.bvantur.inspektify.ktor.domain.usecase.RemoveAllNetworkTrafficDataUseCaseImpl
 import sp.bvantur.inspektify.ktor.shared.DatabaseDriverProvider
@@ -17,6 +19,7 @@ internal interface KtorModule {
     val networkTrafficRepository: NetworkTrafficRepository
     val getNetworkTrafficUseCase: GetAllNetworkTrafficDataUseCase
     val removeAllNetworkTrafficDataUseCase: RemoveAllNetworkTrafficDataUseCase
+    val getNetworkTrafficDataByIdUseCase: GetNetworkTrafficDataByIdUseCase
 }
 
 internal class KtorModuleImpl : KtorModule {
@@ -35,6 +38,9 @@ internal class KtorModuleImpl : KtorModule {
 
     override val removeAllNetworkTrafficDataUseCase: RemoveAllNetworkTrafficDataUseCase by lazy {
         RemoveAllNetworkTrafficDataUseCaseImpl(networkTrafficRepository)
+    }
+    override val getNetworkTrafficDataByIdUseCase: GetNetworkTrafficDataByIdUseCase by lazy {
+        GetNetworkTrafficDataByIdUseCaseImpl(networkTrafficRepository)
     }
 
     private val listOfNetworkTrafficHeaderAdapter = object : ColumnAdapter<List<NetworkTrafficHeader>, String> {

@@ -6,9 +6,8 @@ internal interface RemoveAllNetworkTrafficDataUseCase {
     suspend operator fun invoke()
 }
 
-internal class RemoveAllNetworkTrafficDataUseCaseImpl(
-    private val repository: NetworkTrafficRepository
-) : RemoveAllNetworkTrafficDataUseCase {
+internal class RemoveAllNetworkTrafficDataUseCaseImpl(private val repository: NetworkTrafficRepository) :
+    RemoveAllNetworkTrafficDataUseCase {
 
     override suspend operator fun invoke() {
         repository.removeAllNetworkTrafficData()
