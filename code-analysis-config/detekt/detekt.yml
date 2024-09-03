@@ -117,6 +117,8 @@ complexity:
   LongMethod:
     active: true
     threshold: 60
+    ignoreAnnotated:
+      - Composable
   LongParameterList:
     active: true
     functionThreshold: 6
@@ -135,7 +137,7 @@ complexity:
     thresholdInFiles: 11
     thresholdInClasses: 11
     thresholdInInterfaces: 11
-    thresholdInObjects: 11
+    thresholdInObjects: 14
     thresholdInEnums: 11
     ignoreDeprecated: false
     ignorePrivate: false

@@ -1,7 +1,9 @@
 package sp.bvantur.inspektify.ktor.data.model
 
+typealias NetworkTrafficId = Long
+
 internal data class NetworkTraffic(
-    val id: Long,
+    val id: NetworkTrafficId,
     val method: String? = null,
     val url: String? = null,
     val host: String? = null,
@@ -17,7 +19,7 @@ internal data class NetworkTraffic(
     val responseStatusDescription: String? = null,
     val responseHeaders: List<NetworkTrafficHeader>? = null,
     val responsePayload: String? = null,
-    val responsePayloadSize: Int? = null,
+    val responsePayloadSize: Long? = null,
     val responseHeadersSize: Int? = null,
     val tookDurationInMs: Long? = null,
 )

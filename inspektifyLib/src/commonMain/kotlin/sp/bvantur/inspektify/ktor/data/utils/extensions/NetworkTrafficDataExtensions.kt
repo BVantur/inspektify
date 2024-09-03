@@ -20,7 +20,7 @@ internal fun NetworkTrafficDataLocal.toNetworkTraffic(): NetworkTraffic = Networ
     responseStatusDescription = responseStatusDescription,
     responseHeaders = responseHeaders,
     responsePayload = responsePayload,
-    responsePayloadSize = responsePayloadSize?.toInt(),
+    responsePayloadSize = responsePayloadSize,
     responseHeadersSize = responseHeadersSize?.toInt(),
     tookDurationInMs = tookDurationInMs,
 )

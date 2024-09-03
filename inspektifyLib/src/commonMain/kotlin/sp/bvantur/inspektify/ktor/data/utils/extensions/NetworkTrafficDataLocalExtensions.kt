@@ -75,3 +75,5 @@ internal fun NetworkTrafficDataLocal.getDate(): String {
 
     return DateTimeUtils.formatDate(instant.toLocalDateTime(TimeZone.currentSystemDefault()).date)
 }
+
+internal fun NetworkTrafficDataLocal.isCompleted(): Boolean = responseStatus != null

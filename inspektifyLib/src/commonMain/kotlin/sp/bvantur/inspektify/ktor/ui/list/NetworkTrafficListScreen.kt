@@ -1,8 +1,9 @@
-package sp.bvantur.inspektify.ktor.ui.networktrafficlist
+package sp.bvantur.inspektify.ktor.ui.list
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,6 +31,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -40,12 +42,15 @@ import org.jetbrains.compose.resources.painterResource
 import sp.bvantur.inspektify.AppComponents
 import sp.bvantur.inspektify.ktor.domain.model.NetworkTrafficListItem
 import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
+import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListEvent
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListVewModel
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListViewState
+import sp.bvantur.inspektify.ktor.ui.navigation.list.OnNavigateToDetailsAction
+import sp.bvantur.inspektify.ktor.ui.utils.CollectSingleEventsWithLifecycle
 import sp.bvantur.inspektify.ktor.ui.utils.ColorUtils
 
 @Composable
-internal fun NetworkTrafficListRoute() {
+internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDetailsAction) {
     val viewModel = viewModel<NetworkTrafficListVewModel>(
         factory = viewModelFactory {
             NetworkTrafficListVewModel(
@@ -62,9 +67,18 @@ internal fun NetworkTrafficListRoute() {
         viewModel.startObservingNetworkTrafficData()
     }
 
+    CollectSingleEventsWithLifecycle(singleEventFlow = viewModel.singleEventFlow) { singleEvent ->
+        when (singleEvent) {
+            is NetworkTrafficListEvent.ToNetworkDetails -> {
+                onNavigateToDetailsAction(singleEvent.id)
+            }
+        }
+    }
+
     NetworkTrafficListScreen(
         viewState = viewState,
-        onClearItems = viewModel::onClearItemsAction
+        onClearItems = viewModel::onClearItemsAction,
+        onSelectSingleNetworkTrafficItem = viewModel::onSelectSingleNetworkTrafficItem
     )
 }
 
@@ -73,6 +87,7 @@ internal fun NetworkTrafficListRoute() {
 internal fun NetworkTrafficListScreen(
     viewState: NetworkTrafficListViewState,
     onClearItems: () -> Unit,
+    onSelectSingleNetworkTrafficItem: OnNavigateToDetailsAction
 ) {
     Scaffold(
         topBar = {
@@ -113,7 +128,16 @@ internal fun NetworkTrafficListScreen(
                             }
                         }
                         items(items.size) { index ->
-                            NetworkTrafficItem(items[index])
+                            val networkTrafficItem = items[index]
+
+                            NetworkTrafficItem(
+                                item = networkTrafficItem,
+                                modifier = Modifier.clickable {
+                                    if (!networkTrafficItem.isCompleted) return@clickable
+
+                                    onSelectSingleNetworkTrafficItem(networkTrafficItem.id)
+                                }
+                            )
                         }
                     }
                 }
@@ -123,8 +147,8 @@ internal fun NetworkTrafficListScreen(
 }
 
 @Composable
-internal fun NetworkTrafficItem(item: NetworkTrafficListItem) {
-    Box(modifier = Modifier.fillMaxWidth()) {
+internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier = Modifier) {
+    Box(modifier = modifier.fillMaxWidth()) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Text(
                 modifier = Modifier.padding(all = 16.dp),
@@ -132,7 +156,7 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem) {
                 color = ColorUtils.statusColorToComposableColor(item.statusColor),
                 fontWeight = FontWeight.Bold
             )
-            Column(modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp)) {
+            Column(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
                 Text(
                     text = item.methodWithPath,
                     fontWeight = FontWeight.Bold,
@@ -176,19 +200,23 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem) {
                 }
                 HorizontalDivider(
                     color = MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.fillMaxWidth().height(1.dp)
+                    modifier = Modifier.fillMaxWidth().height(1.dp).padding(bottom = 16.dp)
                 )
             }
+        }
+
+        if (!item.isCompleted) {
+            Box(
+                modifier = Modifier
+                    .matchParentSize()
+                    .background(Color.White.copy(alpha = 0.5f))
+            )
         }
     }
 }
 
 @Composable
-fun TextWithIcon(
-    text: String,
-    icon: ImageVector,
-    modifier: Modifier = Modifier
-) {
+fun TextWithIcon(text: String, icon: ImageVector, modifier: Modifier = Modifier) {
     Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
         Icon(
             imageVector = icon,

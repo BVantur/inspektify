@@ -13,11 +13,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 import sp.bvantur.inspektify.sample.presentation.user.UserViewModel
-import sp.bvantur.inspektify.sample.shared.collectWithLifecycle
 
 @OptIn(KoinExperimentalAPI::class)
 @Composable
@@ -25,7 +25,7 @@ import sp.bvantur.inspektify.sample.shared.collectWithLifecycle
 fun App() {
     val viewModel = koinViewModel<UserViewModel>()
 
-    val viewState by viewModel.viewStateFlow.collectWithLifecycle()
+    val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
 
     MaterialTheme {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {

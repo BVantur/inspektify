@@ -4,9 +4,9 @@ import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.http.charset
 import io.ktor.http.content.OutgoingContent
 import io.ktor.util.AttributeKey
-import io.ktor.util.toByteArray
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
+import io.ktor.utils.io.toByteArray
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
@@ -20,9 +20,8 @@ internal interface InspektifyRequestHandler {
     suspend fun handleRequest(request: HttpRequestBuilder): NetworkTraffic
 }
 
-internal class InspektifyRequestHandlerImpl(
-    private val dispatcherProvider: DispatcherProvider
-) : InspektifyRequestHandler {
+internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: DispatcherProvider) :
+    InspektifyRequestHandler {
     private val networkTrafficIdKey = AttributeKey<Long>("NetworkTrafficIdKey")
 
     override suspend fun handleRequest(request: HttpRequestBuilder): NetworkTraffic = withContext(
@@ -31,26 +30,11 @@ internal class InspektifyRequestHandlerImpl(
         val id = request.attributes[networkTrafficIdKey]
         val content = request.body as OutgoingContent
         val method = request.method.value
-        val requestContentType = content.contentType?.contentType
-        val contentType = content.contentType
         val url = request.url
         val headers = request.headers.build()
         val (payload, payloadSize) = getContentWithSize(content)
         val headersSize = NetworkTrafficDataUtils.calculateHeadersSize(headers)
-        val totalSize = payloadSize + headersSize
 
-        println("[REQUEST!]")
-        println("id&timestamp: $id")
-        println("method: $method")
-        println("requestContentType: $requestContentType")
-        println("contentType: $contentType")
-        println("url: $url")
-        println("headers: $headers")
-        println("content: $content")
-        println("body: $payload")
-        println("payloadSize: $payloadSize")
-        println("headerSize: $headersSize")
-        println("totalSize: $totalSize")
         NetworkTraffic(
             id = id,
             method = method,
