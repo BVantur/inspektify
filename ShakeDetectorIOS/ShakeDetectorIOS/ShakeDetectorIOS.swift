@@ -1,7 +1,6 @@
 import Foundation
 
-@objc(SwiftClass)
-public class ShakeDetectorIOS: NSObject {
+@objc public class ShakeDetectorIOS: NSObject {
 }
 
 //extension UIWindow {
