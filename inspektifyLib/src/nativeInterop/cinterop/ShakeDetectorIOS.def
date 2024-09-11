@@ -1,0 +1,4 @@
+package = sp.bvantur.inspektify.shakedetector
+language = Objective-C
+headers = ShakeDetectorIOS.h
+linkerOpts = -lobjc -framework Foundation

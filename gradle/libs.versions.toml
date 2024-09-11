@@ -2,7 +2,7 @@
 # GENERAL dependencies
 agp = "8.4.0"
 kotlin = "2.0.0"
-compose-plugin = "1.7.0-alpha03" # TODO change to stable as soon as possible
+compose-plugin = "1.7.0-beta01" # TODO change to stable as soon as possible
 
 # ANDROID PORJECT dependencies
 android-compileSdk = "34"

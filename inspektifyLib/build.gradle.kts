@@ -12,15 +12,40 @@ kotlin {
     androidTarget()
 
     listOf(
-        iosX64(),
         iosArm64(),
+        iosX64(),
         iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "ComposeApp"
+    ).forEach {
+        it.binaries.framework {
+            baseName = "InspektifyLib"
             isStatic = true
         }
+        it.compilations.getByName("main") {
+            cinterops.create("ShakeDetectorIOS") {
+                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+                packageName = "sp.bvantur.inspektify.shakedetector"
+                includeDirs.allHeaders("src/nativeInterop/cinterop/")
+                extraOpts("-libraryPath", "$projectDir/src/nativeInterop/cinterop/")
+//                compilerOpts("-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a")
+//                includeDirs.allHeaders("$projectDir/../ShakeDetectorIOS/ShakeDetectorIOS")
+            }
+        }
+
+//        it.compilations["main"].kotlinOptions.freeCompilerArgs = mutableListOf(
+//            "-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a"
+//                    )
     }
+
+//    targets.withType<KotlinNativeTarget> {
+//        compilations["main"].cinterops {
+//            val ShakeDetectorIOS by creating {
+//                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+//                packageName = "sp.bvantur.inspektify.shakedetector"
+//                includeDirs.allHeaders("src/nativeInterop/cinterop/")
+//
+//            }
+//        }
+//    }
 
     sourceSets {
         androidMain.dependencies {
