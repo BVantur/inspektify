@@ -21,31 +21,36 @@ kotlin {
             isStatic = true
         }
         it.compilations.getByName("main") {
-            cinterops.create("ShakeDetectorIOS") {
-                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
-                packageName = "sp.bvantur.inspektify.shakedetector"
-                includeDirs.allHeaders("src/nativeInterop/cinterop/")
-                extraOpts("-libraryPath", "$projectDir/src/nativeInterop/cinterop/")
-//                compilerOpts("-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a")
-//                includeDirs.allHeaders("$projectDir/../ShakeDetectorIOS/ShakeDetectorIOS")
+            cinterops.create("ShakeDetektorIOS") {
+                includeDirs("$projectDir/../KMPObservableViewModelCoreObjC")
             }
         }
+
+//        it.compilations.getByName("main") {
+//                cinterops.create("ShakeDetektorIOS") {
+////                    definitionFile.set(file("src/nativeInterop/cinterop/ShakeDetectorIOS.def"))
+//                    defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+////                    includeDirs("src/nativeInterop/cinterop")
+//                    includeDirs.allHeaders("src/nativeInterop/cinterop/")
+//                }
+//
+////            cinterops.create("ShakeDetektorIOS") {
+////                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+////                packageName = "sp.bvantur.inspektify.shakedetector"
+////                includeDirs.allHeaders("src/nativeInterop/cinterop/")
+//
+//
+//
+////                extraOpts("-libraryPath", "$projectDir/src/nativeInterop/cinterop/")
+////                compilerOpts("-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a")
+////                includeDirs.allHeaders("$projectDir/../ShakeDetectorIOS/ShakeDetectorIOS")
+////            }
+//        }
 
 //        it.compilations["main"].kotlinOptions.freeCompilerArgs = mutableListOf(
 //            "-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a"
 //                    )
     }
-
-//    targets.withType<KotlinNativeTarget> {
-//        compilations["main"].cinterops {
-//            val ShakeDetectorIOS by creating {
-//                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
-//                packageName = "sp.bvantur.inspektify.shakedetector"
-//                includeDirs.allHeaders("src/nativeInterop/cinterop/")
-//
-//            }
-//        }
-//    }
 
     sourceSets {
         androidMain.dependencies {

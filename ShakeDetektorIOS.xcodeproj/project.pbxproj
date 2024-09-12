@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7855697C2C91EC7300C03829 /* ShakeDetektorIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7855697B2C91EC7300C03829 /* ShakeDetektorIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		787C54B42C935C7A0080E675 /* ShakeDetektorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C54B32C935C7A0080E675 /* ShakeDetektorIOS.m */; };
 		78BCA59C2C91ED290035F4A6 /* ShakeDetektorIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCA59B2C91ED290035F4A6 /* ShakeDetektorIOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		785569782C91EC7300C03829 /* ShakeDetektorIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShakeDetektorIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7855697B2C91EC7300C03829 /* ShakeDetektorIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeDetektorIOS.h; sourceTree = "<group>"; };
+		787C54B32C935C7A0080E675 /* ShakeDetektorIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakeDetektorIOS.m; sourceTree = "<group>"; };
 		78BCA59B2C91ED290035F4A6 /* ShakeDetektorIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetektorIOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,7 +33,8 @@
 		7855696E2C91EC7300C03829 = {
 			isa = PBXGroup;
 			children = (
-				7855697A2C91EC7300C03829 /* ShakeDetektorIOS */,
+				787C54B52C935CDA0080E675 /* ShakeDetektorIOS */,
+				7855697A2C91EC7300C03829 /* ShakeDetektorIOSObjC */,
 				785569792C91EC7300C03829 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,10 +47,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7855697A2C91EC7300C03829 /* ShakeDetektorIOS */ = {
+		7855697A2C91EC7300C03829 /* ShakeDetektorIOSObjC */ = {
 			isa = PBXGroup;
 			children = (
 				7855697B2C91EC7300C03829 /* ShakeDetektorIOS.h */,
+				787C54B32C935C7A0080E675 /* ShakeDetektorIOS.m */,
+			);
+			path = ShakeDetektorIOSObjC;
+			sourceTree = "<group>";
+		};
+		787C54B52C935CDA0080E675 /* ShakeDetektorIOS */ = {
+			isa = PBXGroup;
+			children = (
 				78BCA59B2C91ED290035F4A6 /* ShakeDetektorIOS.swift */,
 			);
 			path = ShakeDetektorIOS;
@@ -133,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				787C54B42C935C7A0080E675 /* ShakeDetektorIOS.m in Sources */,
 				78BCA59C2C91ED290035F4A6 /* ShakeDetektorIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
