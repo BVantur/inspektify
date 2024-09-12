@@ -3,19 +3,20 @@ import PackageDescription
 
 let package = Package(
     name: "ShakeDetektorIOS",
-    platforms: [.iOS(.v13), .macOS(.v10_15), .tvOS(.v13), .watchOS(.v6)],
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
         .library(
             name: "ShakeDetektorIOS",
             targets: ["ShakeDetektorIOS"]
-        )
+        ),
     ],
     targets: [
         .target(
             name: "ShakeDetektorIOS",
-            dependencies: [.target(name: "ShakeDetektorIOS")],
+            dependencies: [],
             path: "ShakeDetektorIOS"
         )
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
