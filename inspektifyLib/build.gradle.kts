@@ -21,21 +21,21 @@ kotlin {
             isStatic = true
         }
         it.compilations.getByName("main") {
-            cinterops.create("ShakeDetektorIOS") {
+            cinterops.create("ShakeDetektorIOSObjC") {
                 includeDirs("$projectDir/../ShakeDetektorIOSObjC")
             }
         }
 
 //        it.compilations.getByName("main") {
 //                cinterops.create("ShakeDetektorIOS") {
-// //                    definitionFile.set(file("src/nativeInterop/cinterop/ShakeDetectorIOS.def"))
-//                    defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+// //                    definitionFile.set(file("src/nativeInterop/cinterop/ShakeDetektorIOSObjC.def"))
+//                    defFile = file("src/nativeInterop/cinterop/ShakeDetektorIOSObjC.def")
 // //                    includeDirs("src/nativeInterop/cinterop")
 //                    includeDirs.allHeaders("src/nativeInterop/cinterop/")
 //                }
 //
 // //            cinterops.create("ShakeDetektorIOS") {
-// //                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+// //                defFile = file("src/nativeInterop/cinterop/ShakeDetektorIOSObjC.def")
 // //                packageName = "sp.bvantur.inspektify.shakedetector"
 // //                includeDirs.allHeaders("src/nativeInterop/cinterop/")
 //

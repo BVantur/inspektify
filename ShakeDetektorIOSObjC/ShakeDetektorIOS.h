@@ -2,11 +2,11 @@
 //  ShakeDetektorIOS.h
 //  ShakeDetektorIOS
 //
-//  Created by Blaz Vantur on 11. 09. 24.
+//  Created by Blaz Vantur on 12. 09. 24.
 //
 
-#ifndef KMPOVMViewModelScope_h
-#define KMPOVMViewModelScope_h
+#ifndef ShakeDetektorIOS_h
+#define ShakeDetektorIOS_h
 
 #import <Foundation/Foundation.h>
 
