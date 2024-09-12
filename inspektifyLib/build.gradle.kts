@@ -22,29 +22,29 @@ kotlin {
         }
         it.compilations.getByName("main") {
             cinterops.create("ShakeDetektorIOS") {
-                includeDirs("$projectDir/../KMPObservableViewModelCoreObjC")
+                includeDirs("$projectDir/../ShakeDetektorIOSObjC")
             }
         }
 
 //        it.compilations.getByName("main") {
 //                cinterops.create("ShakeDetektorIOS") {
-////                    definitionFile.set(file("src/nativeInterop/cinterop/ShakeDetectorIOS.def"))
+// //                    definitionFile.set(file("src/nativeInterop/cinterop/ShakeDetectorIOS.def"))
 //                    defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
-////                    includeDirs("src/nativeInterop/cinterop")
+// //                    includeDirs("src/nativeInterop/cinterop")
 //                    includeDirs.allHeaders("src/nativeInterop/cinterop/")
 //                }
 //
-////            cinterops.create("ShakeDetektorIOS") {
-////                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
-////                packageName = "sp.bvantur.inspektify.shakedetector"
-////                includeDirs.allHeaders("src/nativeInterop/cinterop/")
+// //            cinterops.create("ShakeDetektorIOS") {
+// //                defFile = file("src/nativeInterop/cinterop/ShakeDetectorIOS.def")
+// //                packageName = "sp.bvantur.inspektify.shakedetector"
+// //                includeDirs.allHeaders("src/nativeInterop/cinterop/")
 //
 //
 //
-////                extraOpts("-libraryPath", "$projectDir/src/nativeInterop/cinterop/")
-////                compilerOpts("-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a")
-////                includeDirs.allHeaders("$projectDir/../ShakeDetectorIOS/ShakeDetectorIOS")
-////            }
+// //                extraOpts("-libraryPath", "$projectDir/src/nativeInterop/cinterop/")
+// //                compilerOpts("-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a")
+// //                includeDirs.allHeaders("$projectDir/../ShakeDetectorIOS/ShakeDetectorIOS")
+// //            }
 //        }
 
 //        it.compilations["main"].kotlinOptions.freeCompilerArgs = mutableListOf(
