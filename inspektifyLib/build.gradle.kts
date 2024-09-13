@@ -16,10 +16,6 @@ kotlin {
         iosX64(),
         iosSimulatorArm64()
     ).forEach {
-        it.binaries.framework {
-            baseName = "InspektifyLib"
-            isStatic = true
-        }
         it.compilations.getByName("main") {
             cinterops.create("ShakeDetektorIOSObjC") {
                 includeDirs("$projectDir/../ShakeDetektorIOSObjC")

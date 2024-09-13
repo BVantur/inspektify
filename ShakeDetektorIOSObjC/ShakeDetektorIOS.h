@@ -10,7 +10,10 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ShakeDetektorIOS
+@interface ShakeDetektorIOS : NSObject
+
+- (void)someMethod;
+
 @end
 
 #endif

@@ -8,4 +8,7 @@
 import Foundation
 
 @objc public class ShakeDetektorIOS: NSObject {
+    @objc public func someMethod() {
+        print("someMethod()")
+    }
 }
