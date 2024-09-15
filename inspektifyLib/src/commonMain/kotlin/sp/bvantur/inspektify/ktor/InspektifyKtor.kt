@@ -4,9 +4,13 @@ import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpClientPlugin
 import io.ktor.util.AttributeKey
 import sp.bvantur.inspektify.AppComponents
-import sp.bvantur.inspektify.sendSms
+import sp.bvantur.inspektify.shared.enableShakeGesture
 
 class InspektifyKtor(val config: InspektifyKtorConfig) {
+
+    init {
+        enableShakeGesture(true)
+    }
 
     companion object : HttpClientPlugin<InspektifyKtorConfig, InspektifyKtor> {
         private lateinit var inspektifyKtorClient: InspektifyKtorClient
@@ -24,7 +28,6 @@ class InspektifyKtor(val config: InspektifyKtorConfig) {
                 networkTrafficRepository = AppComponents.getKtorModule().networkTrafficRepository
             )
             inspektifyKtorClient.install(plugin, scope)
-            sendSms("", "")
         }
     }
 }

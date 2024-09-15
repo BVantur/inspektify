@@ -37,6 +37,9 @@ koin = "4.0.0-RC1" # TODO change to stable as soon as possible
 # CASH dependencies
 cash-sqlDelight = "2.0.2"
 
+# SWIFT KLIB dependencies
+swiftklib = "0.6.3"
+
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
 detekt = "1.23.6"
@@ -105,3 +108,6 @@ sqlDelight = { id = "app.cash.sqldelight", version.ref = "cash-sqlDelight" }
 # CODE ANALYSIS plugins
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+# SWIFT KLIB plugins
+swiftklib = { id = "io.github.ttypic.swiftklib", version.ref = "swiftklib" }

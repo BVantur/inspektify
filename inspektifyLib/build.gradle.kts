@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.sqlDelight)
+    alias(libs.plugins.swiftklib)
 }
 
 kotlin {
@@ -12,40 +13,17 @@ kotlin {
     androidTarget()
 
     listOf(
-        iosArm64(),
         iosX64(),
+        iosArm64(),
         iosSimulatorArm64()
-    ).forEach {
-        it.compilations.getByName("main") {
-            cinterops.create("ShakeDetektorIOSObjC") {
-                includeDirs("$projectDir/../ShakeDetektorIOSObjC")
+    ).forEach { iosTarget ->
+        iosTarget.compilations {
+            val main by getting {
+                cinterops {
+                    create("ShakeDetektorIOS")
+                }
             }
         }
-
-//        it.compilations.getByName("main") {
-//                cinterops.create("ShakeDetektorIOS") {
-// //                    definitionFile.set(file("src/nativeInterop/cinterop/ShakeDetektorIOSObjC.def"))
-//                    defFile = file("src/nativeInterop/cinterop/ShakeDetektorIOSObjC.def")
-// //                    includeDirs("src/nativeInterop/cinterop")
-//                    includeDirs.allHeaders("src/nativeInterop/cinterop/")
-//                }
-//
-// //            cinterops.create("ShakeDetektorIOS") {
-// //                defFile = file("src/nativeInterop/cinterop/ShakeDetektorIOSObjC.def")
-// //                packageName = "sp.bvantur.inspektify.shakedetector"
-// //                includeDirs.allHeaders("src/nativeInterop/cinterop/")
-//
-//
-//
-// //                extraOpts("-libraryPath", "$projectDir/src/nativeInterop/cinterop/")
-// //                compilerOpts("-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a")
-// //                includeDirs.allHeaders("$projectDir/../ShakeDetectorIOS/ShakeDetectorIOS")
-// //            }
-//        }
-
-//        it.compilations["main"].kotlinOptions.freeCompilerArgs = mutableListOf(
-//            "-include-binary", "src/nativeInterop/cinterop/libShakeDetectorIOS.a"
-//                    )
     }
 
     sourceSets {
@@ -128,5 +106,12 @@ sqldelight {
         create("InspektifyDB") {
             packageName.set("sp.bvantur.inspektify.db")
         }
+    }
+}
+
+swiftklib {
+    create("ShakeDetektorIOS") {
+        path = file("../ShakeDetektorIOS")
+        packageName("sp.bvantur.inspektify.shakedetektor")
     }
 }
