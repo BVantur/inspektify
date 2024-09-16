@@ -49,7 +49,6 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.serialization.json)
             implementation(libs.ktor.client.contentNegotiation)
-            implementation(libs.ktor.client.logging)
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
         }

@@ -12,6 +12,7 @@ internal interface InspektifyNetworkTrafficLogger {
 
 internal class InspektifyNetworkTrafficLoggerImpl : InspektifyNetworkTrafficLogger {
     private var logLevel: LogLevel = LogLevel.None
+    private val tag = "[InspektifyHttpClient]:"
 
     override fun configureLogger(logLevel: LogLevel) {
         this.logLevel = logLevel
@@ -23,22 +24,22 @@ internal class InspektifyNetworkTrafficLoggerImpl : InspektifyNetworkTrafficLogg
         val requestLogger = StringBuilder()
         if (logLevel.canLogInfo()) {
             networkTraffic.url?.let { url ->
-                requestLogger.appendLine("REQUEST: ${Url(url)}")
+                requestLogger.appendLineWithTag("REQUEST: ${Url(url)}")
             }
-            requestLogger.appendLine("METHOD: ${networkTraffic.method}")
+            requestLogger.appendLineWithTag("METHOD: ${networkTraffic.method}")
         }
         if (logLevel.canLogHeaders()) {
-            requestLogger.appendLine("HEADERS")
+            requestLogger.appendLineWithTag("HEADERS")
             requestLogger.appendLine(headersToLog(networkTraffic.requestHeaders))
         }
 
         if (networkTraffic.requestPayload?.isNotEmpty() == true && logLevel.canLogBody()) {
-            requestLogger.appendLine("BODY Content-Type: ${networkTraffic.contentType}")
-            requestLogger.appendLine("BODY START")
-            requestLogger.appendLine(networkTraffic.requestPayload)
-            requestLogger.appendLine("BODY END")
+            requestLogger.appendLineWithTag("BODY Content-Type: ${networkTraffic.requestContentType}")
+            requestLogger.appendLineWithTag("BODY START")
+            requestLogger.appendLineWithTag(networkTraffic.requestPayload)
+            requestLogger.appendLineWithTag("BODY END")
         }
-        println("InspektifyHttpClient: ${requestLogger.toString().trim()}")
+        println("$tag ${requestLogger.toString().trim()}")
     }
 
     override fun logResponse(networkTraffic: NetworkTraffic) {
@@ -46,32 +47,36 @@ internal class InspektifyNetworkTrafficLoggerImpl : InspektifyNetworkTrafficLogg
 
         val responseLogger = StringBuilder()
         if (logLevel.canLogInfo()) {
-            responseLogger.appendLine("RESPONSE: ${networkTraffic.responseStatus}")
-            responseLogger.appendLine("METHOD: ${networkTraffic.method}")
+            responseLogger.appendLineWithTag("RESPONSE: ${networkTraffic.responseStatus}")
+            responseLogger.appendLineWithTag("METHOD: ${networkTraffic.method}")
             networkTraffic.url?.let { url ->
-                responseLogger.appendLine("FROM: ${Url(url)}")
+                responseLogger.appendLineWithTag("FROM: ${Url(url)}")
             }
         }
         if (logLevel.canLogHeaders()) {
-            responseLogger.appendLine("HEADERS")
+            responseLogger.appendLineWithTag("HEADERS")
             responseLogger.appendLine(headersToLog(networkTraffic.responseHeaders))
         }
 
         if (networkTraffic.responsePayload?.isNotEmpty() == true && logLevel.canLogBody()) {
-            responseLogger.appendLine("BODY Content-Type: ${networkTraffic.contentType}")
-            responseLogger.appendLine("BODY START")
-            responseLogger.appendLine(networkTraffic.responsePayload)
-            responseLogger.appendLine("BODY END")
+            responseLogger.appendLineWithTag("BODY Content-Type: ${networkTraffic.responseContentType}")
+            responseLogger.appendLineWithTag("BODY START")
+            responseLogger.appendLineWithTag(networkTraffic.responsePayload)
+            responseLogger.appendLineWithTag("BODY END")
         }
 
-        println("InspektifyHttpClient: ${responseLogger.toString().trim()}")
+        println(responseLogger.toString().trim())
     }
 
     private fun headersToLog(headers: List<NetworkTrafficHeader>?): String {
         headers ?: return ""
 
         return headers.joinToString("\n") { header ->
-            "${header.name}:${header.value}"
+            "$tag ${header.name}:${header.value}"
         }
+    }
+
+    private fun StringBuilder.appendLineWithTag(line: String) {
+        appendLine("$tag $line")
     }
 }

@@ -31,6 +31,7 @@ internal class NetworkTrafficLocalDataSource(
                 requestTimestamp = networkTraffic.requestTimestamp,
                 requestHeaders = networkTraffic.requestHeaders,
                 requestPayload = networkTraffic.requestPayload,
+                requestContentType = networkTraffic.requestContentType,
                 requestPayloadSize = networkTraffic.requestPayloadSize,
                 requestHeadersSize = networkTraffic.requestHeadersSize,
                 responseTimestamp = networkTraffic.responseTimestamp,
@@ -38,9 +39,10 @@ internal class NetworkTrafficLocalDataSource(
                 responseStatusDescription = networkTraffic.responseStatusDescription,
                 responseHeaders = networkTraffic.responseHeaders,
                 responsePayload = networkTraffic.responsePayload,
-                responsePayloadSize = networkTraffic.responsePayloadSize?.toLong(),
+                responseContentType = networkTraffic.responseContentType,
+                responsePayloadSize = networkTraffic.responsePayloadSize,
                 responseHeadersSize = networkTraffic.responseHeadersSize?.toLong(),
-                tookDurationInMs = networkTraffic.tookDurationInMs,
+                tookDurationInMs = networkTraffic.tookDurationInMs
             )
         }
     }

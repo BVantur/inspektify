@@ -2,6 +2,7 @@ package sp.bvantur.inspektify.ktor
 
 import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsText
+import io.ktor.http.contentType
 import io.ktor.utils.io.charsets.Charsets
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.withContext
@@ -30,6 +31,7 @@ internal class InspektifyResponseHandlerImpl(private val dispatcherProvider: Dis
             networkTraffic.copy(
                 responseTimestamp = timestamp,
                 responseStatus = status,
+                responseContentType = response.contentType()?.contentType,
                 responseStatusDescription = description,
                 responseHeaders = NetworkTrafficDataUtils.mapHeaders(headers),
                 responsePayload = payload,

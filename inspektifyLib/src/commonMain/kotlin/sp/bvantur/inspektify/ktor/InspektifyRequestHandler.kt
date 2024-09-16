@@ -29,8 +29,8 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
         dispatcherProvider.default
     ) {
         val id = request.attributes[networkTrafficIdKey]
-        val contentType = request.contentType()?.contentType
         val content = request.body as OutgoingContent
+        val contentType = content.contentType?.contentType
         val method = request.method.value
         val url = request.url
         val headers = request.headers.build()
@@ -41,7 +41,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
             id = id,
             method = method,
             url = url.toString(),
-            contentType = contentType,
+            requestContentType = contentType,
             host = url.host,
             path = url.pathSegments.joinToString("/"),
             protocol = url.protocol.name,

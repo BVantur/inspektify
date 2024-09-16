@@ -9,7 +9,7 @@ import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
 import io.ktor.utils.io.InternalAPI
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
-import sp.bvantur.inspektify.shared.configureUsageType
+import sp.bvantur.inspektify.shared.configurePresentationType
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
 internal class InspektifyKtorClient(
@@ -26,7 +26,7 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        configureUsageType(config.presentationType)
+        configurePresentationType(config.presentationType)
         configureLogger(config.logLevel)
     }
 
