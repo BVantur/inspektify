@@ -20,7 +20,8 @@ internal class NetworkTrafficListVewModel(
     ViewModelViewStateHandler<NetworkTrafficListViewState> by ViewModelViewStateHandlerImpl(
         NetworkTrafficListViewState(),
         dispatcherProvider
-    ), SingleEventHandler<NetworkTrafficListEvent> by SingleEventHandlerImpl(dispatcherProvider) {
+    ),
+    SingleEventHandler<NetworkTrafficListEvent> by SingleEventHandlerImpl(dispatcherProvider) {
 
     fun startObservingNetworkTrafficData() {
         viewModelScope.launch(dispatcherProvider.main) {
