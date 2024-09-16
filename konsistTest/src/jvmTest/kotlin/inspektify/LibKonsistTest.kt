@@ -62,7 +62,7 @@ class LibKonsistTest {
             "InspektifyKtor:key",
             "NetworkTrafficHeader:name",
             "NetworkTrafficHeader:value",
-            "InspektifyKtorConfig:usageType"
+            "InspektifyKtorConfig:presentationType"
         )
 
         val publicComponents = mutableListOf<String>()
