@@ -3,6 +3,7 @@ package sp.bvantur.inspektify.ktor
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.http.charset
 import io.ktor.http.content.OutgoingContent
+import io.ktor.http.contentType
 import io.ktor.util.AttributeKey
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
@@ -29,6 +30,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
     ) {
         val id = request.attributes[networkTrafficIdKey]
         val content = request.body as OutgoingContent
+        val contentType = content.contentType?.contentType
         val method = request.method.value
         val url = request.url
         val headers = request.headers.build()
@@ -39,6 +41,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
             id = id,
             method = method,
             url = url.toString(),
+            requestContentType = contentType,
             host = url.host,
             path = url.pathSegments.joinToString("/"),
             protocol = url.protocol.name,

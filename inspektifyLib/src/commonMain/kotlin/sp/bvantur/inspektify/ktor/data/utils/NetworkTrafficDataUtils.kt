@@ -14,6 +14,6 @@ internal object NetworkTrafficDataUtils {
     }.sum()
 
     fun mapHeaders(headers: Headers?): List<NetworkTrafficHeader> = headers?.toMap()?.map { header ->
-        NetworkTrafficHeader(header.key, header.value.toString())
+        NetworkTrafficHeader(header.key, header.value.joinToString(";"))
     } ?: emptyList()
 }

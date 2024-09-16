@@ -6,7 +6,7 @@ import sp.bvantur.inspektify.ktor.PresentationType
 import sp.bvantur.inspektify.shakedetektor.ShakeDetektorIOS
 
 @OptIn(ExperimentalForeignApi::class)
-actual fun setUsageType(presentationType: PresentationType) {
+actual fun configurePresentationType(presentationType: PresentationType) {
     if (presentationType.isCustom()) return
 
     ShakeDetektorIOS().enableShakeDetektorWithCallback {
