@@ -9,14 +9,15 @@ import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
 import io.ktor.utils.io.InternalAPI
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
-import sp.bvantur.inspektify.shared.setUsageType
+import sp.bvantur.inspektify.shared.configureUsageType
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
 internal class InspektifyKtorClient(
     private val dispatcherProvider: DispatcherProvider,
     private val networkTrafficRepository: NetworkTrafficRepository
 ) : InspektifyRequestHandler by InspektifyRequestHandlerImpl(dispatcherProvider),
-    InspektifyResponseHandler by InspektifyResponseHandlerImpl(dispatcherProvider) {
+    InspektifyResponseHandler by InspektifyResponseHandlerImpl(dispatcherProvider),
+    InspektifyNetworkTrafficLogger by InspektifyNetworkTrafficLoggerImpl() {
 
     fun install(plugin: InspektifyKtor, client: HttpClient) {
         configure(plugin.config)
@@ -25,7 +26,8 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        setUsageType(config.presentationType)
+        configureUsageType(config.presentationType)
+        configureLogger(config.logLevel)
     }
 
     private fun setupRequestInterceptor(client: HttpClient) {
@@ -37,6 +39,7 @@ internal class InspektifyKtorClient(
             try {
                 val networkTraffic = handleRequest(context)
                 networkTrafficRepository.saveNetworkTrafficData(networkTraffic)
+                logRequest(networkTraffic)
             } catch (ignore: Throwable) {
                 // TODO handle this
             }
@@ -56,6 +59,7 @@ internal class InspektifyKtorClient(
             val networkTrafficWithResponse = handleResponse(response, networkTraffic)
 
             networkTrafficRepository.saveNetworkTrafficData(networkTrafficWithResponse)
+            logResponse(networkTrafficWithResponse)
         }
         ResponseObserver.prepare { onResponse(observer) }.install(client)
     }

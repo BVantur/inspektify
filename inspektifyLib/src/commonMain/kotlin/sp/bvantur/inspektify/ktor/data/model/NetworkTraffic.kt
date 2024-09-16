@@ -6,6 +6,7 @@ internal data class NetworkTraffic(
     val id: NetworkTrafficId,
     val method: String? = null,
     val url: String? = null,
+    val contentType: String? = null,
     val host: String? = null,
     val path: String? = null,
     val protocol: String? = null,
