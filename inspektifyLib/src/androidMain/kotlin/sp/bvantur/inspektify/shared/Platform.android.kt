@@ -1,9 +1,9 @@
 package sp.bvantur.inspektify.shared
 
-internal actual object Platform {
-    internal actual fun isAndroid(): Boolean = true
+import sp.bvantur.inspektify.InspektifyActivity
 
+internal actual object Platform {
     internal actual fun closeInspektifyWindow() {
-        // empty method for now
+        InspektifyActivity.inspektifyActivityInstance?.finish()
     }
 }

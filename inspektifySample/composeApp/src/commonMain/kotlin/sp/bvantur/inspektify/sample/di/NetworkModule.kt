@@ -38,7 +38,7 @@ val networkModule = module {
                 level = LogLevel.ALL
             }
             install(InspektifyKtor) {
-                presentationType = PresentationType.Custom
+                presentationType = PresentationType.AutoShake
             }
         }
     }
