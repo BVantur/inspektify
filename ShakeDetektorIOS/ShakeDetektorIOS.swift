@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-var onShakeDetekted: (() -> Void)? = nil
+private var onShakeDetekted: (() -> Void)? = nil
 
 @objc public class ShakeDetektorIOS: NSObject {
 

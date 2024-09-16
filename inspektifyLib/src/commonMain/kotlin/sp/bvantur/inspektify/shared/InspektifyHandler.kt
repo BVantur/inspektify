@@ -1,7 +1,7 @@
 package sp.bvantur.inspektify.shared
 
-import sp.bvantur.inspektify.ktor.UsageType
+import sp.bvantur.inspektify.ktor.PresentationType
 
-internal expect fun setUsageType(usageType: UsageType)
+internal expect fun setUsageType(presentationType: PresentationType)
 
 internal expect fun startInspektifyWindow()

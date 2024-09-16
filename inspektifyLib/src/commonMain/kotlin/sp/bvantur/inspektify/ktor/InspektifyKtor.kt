@@ -31,8 +31,4 @@ class InspektifyKtor(val config: InspektifyKtorConfig) {
             startInspektifyWindow()
         }
     }
-
-    init {
-        setUsageType(config.usageType)
-    }
 }

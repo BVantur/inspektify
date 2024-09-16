@@ -1,12 +1,12 @@
 package sp.bvantur.inspektify.ktor
 
 class InspektifyKtorConfig {
-    var usageType: UsageType = UsageType.AutoShake
+    var presentationType: PresentationType = PresentationType.AutoShake
 }
 
-sealed interface UsageType {
-    data object AutoShake : UsageType
-    data object Custom : UsageType
+sealed interface PresentationType {
+    data object AutoShake : PresentationType
+    data object Custom : PresentationType
 
     fun isCustom() = this == Custom
 }
