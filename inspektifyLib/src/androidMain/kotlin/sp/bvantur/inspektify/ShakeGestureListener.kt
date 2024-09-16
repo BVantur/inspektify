@@ -1,14 +1,13 @@
 package sp.bvantur.inspektify
 
 import android.content.Context
-import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.widget.Toast
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import sp.bvantur.inspektify.shared.startInspektifyWindow
 import kotlin.math.sqrt
 
 internal class ShakeGestureListener : DefaultLifecycleObserver {
@@ -23,6 +22,8 @@ internal class ShakeGestureListener : DefaultLifecycleObserver {
 
     private val sensorListener: SensorEventListener = object : SensorEventListener {
         override fun onSensorChanged(event: SensorEvent) {
+            if (InspektifyActivity.inspektifyActivityInstance != null) return
+
             val xCoordinate = event.values[0]
             val yCoordinate = event.values[1]
             val zCoordinate = event.values[2]
@@ -37,12 +38,7 @@ internal class ShakeGestureListener : DefaultLifecycleObserver {
             activeAcceleration = activeAcceleration * 0.9f + delta
 
             if (activeAcceleration > thresholdForAcceleration) {
-                applicationContext.startActivity(
-                    Intent(applicationContext, InspektifyActivity::class.java).also { intent ->
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    }
-                )
-                Toast.makeText(applicationContext, "Inspektify tool launched", Toast.LENGTH_SHORT).show()
+                startInspektifyWindow()
             }
         }
 

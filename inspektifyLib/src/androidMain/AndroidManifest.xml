@@ -19,16 +19,6 @@
                 android:name="sp.bvantur.inspektify.ApplicationContextInitializer"
                 android:value="androidx.startup" />
         </provider>
-        <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|mnc|colorMode|density|fontScale|fontWeightAdjustment|keyboard|layoutDirection|locale|mcc|navigation|smallestScreenSize|touchscreen|uiMode"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <activity android:name="sp.bvantur.inspektify.InspektifyActivity"
             android:launchMode="singleTask"

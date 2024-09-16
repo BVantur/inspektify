@@ -4,13 +4,10 @@ import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpClientPlugin
 import io.ktor.util.AttributeKey
 import sp.bvantur.inspektify.AppComponents
-import sp.bvantur.inspektify.shared.enableShakeGesture
+import sp.bvantur.inspektify.shared.setUsageType
+import sp.bvantur.inspektify.shared.startInspektifyWindow
 
 class InspektifyKtor(val config: InspektifyKtorConfig) {
-
-    init {
-        enableShakeGesture(true)
-    }
 
     companion object : HttpClientPlugin<InspektifyKtorConfig, InspektifyKtor> {
         private lateinit var inspektifyKtorClient: InspektifyKtorClient
@@ -29,5 +26,13 @@ class InspektifyKtor(val config: InspektifyKtorConfig) {
             )
             inspektifyKtorClient.install(plugin, scope)
         }
+
+        fun startInspektify() {
+            startInspektifyWindow()
+        }
+    }
+
+    init {
+        setUsageType(config.usageType)
     }
 }
