@@ -4,7 +4,7 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import sp.bvantur.inspektify.ShakeGestureListener
 import sp.bvantur.inspektify.ktor.PresentationType
 
-internal actual fun configureUsageType(presentationType: PresentationType) {
+internal actual fun configurePresentationType(presentationType: PresentationType) {
     if (presentationType.isCustom()) return
 
     ProcessLifecycleOwner.get().lifecycle.addObserver(
