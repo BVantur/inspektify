@@ -4,7 +4,6 @@ import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpClientPlugin
 import io.ktor.util.AttributeKey
 import sp.bvantur.inspektify.AppComponents
-import sp.bvantur.inspektify.shared.setUsageType
 import sp.bvantur.inspektify.shared.startInspektifyWindow
 
 class InspektifyKtor(val config: InspektifyKtorConfig) {
