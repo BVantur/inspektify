@@ -12,6 +12,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.InspektifyKtor
+import sp.bvantur.inspektify.ktor.PresentationType
 
 private const val BASE_URL = "https://reqres.in/api/"
 
@@ -36,7 +37,9 @@ val networkModule = module {
                 logger = Logger.DEFAULT
                 level = LogLevel.ALL
             }
-            install(InspektifyKtor)
+            install(InspektifyKtor) {
+                presentationType = PresentationType.AutoShake
+            }
         }
     }
 }

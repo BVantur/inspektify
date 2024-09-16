@@ -11,6 +11,7 @@ plugins {
 
 kotlin {
     task("testClasses")
+
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
@@ -19,8 +20,8 @@ kotlin {
     }
 
     listOf(
-        iosX64(),
         iosArm64(),
+        iosX64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {

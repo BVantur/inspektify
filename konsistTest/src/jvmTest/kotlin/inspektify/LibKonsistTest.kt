@@ -29,7 +29,8 @@ class LibKonsistTest {
     fun `only specific functions should be publicly available`() {
         val allowedPublicComponents = listOf(
             "InspektifyKtor:prepare",
-            "InspektifyKtor:install"
+            "InspektifyKtor:install",
+            "InspektifyKtor:startInspektify"
         )
 
         val publicComponents = mutableListOf<String>()
@@ -60,7 +61,8 @@ class LibKonsistTest {
             "InspektifyKtor:config",
             "InspektifyKtor:key",
             "NetworkTrafficHeader:name",
-            "NetworkTrafficHeader:value"
+            "NetworkTrafficHeader:value",
+            "InspektifyKtorConfig:presentationType"
         )
 
         val publicComponents = mutableListOf<String>()

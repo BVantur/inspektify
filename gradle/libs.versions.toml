@@ -1,8 +1,8 @@
 [versions]
 # GENERAL dependencies
 agp = "8.4.0"
-kotlin = "2.0.0"
-compose-plugin = "1.7.0-alpha03" # TODO change to stable as soon as possible
+kotlin = "2.0.20"
+compose-plugin = "1.7.0-beta01" # TODO change to stable as soon as possible
 
 # ANDROID PORJECT dependencies
 android-compileSdk = "34"
@@ -10,7 +10,7 @@ android-minSdk = "24"
 android-targetSdk = "34"
 
 # ANDROID-X dependencies
-androidx-activity-compose = "1.9.1"
+androidx-activity-compose = "1.9.2"
 androidx-appcompat = "1.7.0"
 androidx-constraintlayout = "2.1.4"
 androidx-core-ktx = "1.13.1"
@@ -18,13 +18,13 @@ androidx-espresso-core = "3.6.1"
 androidx-material = "1.12.0"
 androidx-startup = "1.1.1"
 androidx-test-junit = "1.2.1"
-androidx-lifecycle-process = "2.8.4"
+androidx-lifecycle-process = "2.8.5"
 
 # KOTLIN-X dependencies
 kotlinx-datetime = "0.6.1"
 
 # JETBRAINS dependencies
-jetbrains-lifecycle = "2.8.0"
+jetbrains-lifecycle = "2.8.1"
 jetbrains-navigation-compose = "2.7.0-alpha07" # TODO observe and move to stable
 jetbrains-serialization-json = "1.6.1"
 
@@ -36,6 +36,9 @@ koin = "4.0.0-RC1" # TODO change to stable as soon as possible
 
 # CASH dependencies
 cash-sqlDelight = "2.0.2"
+
+# SWIFT KLIB dependencies
+swiftklib = "0.6.3"
 
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
@@ -105,3 +108,6 @@ sqlDelight = { id = "app.cash.sqldelight", version.ref = "cash-sqlDelight" }
 # CODE ANALYSIS plugins
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+# SWIFT KLIB plugins
+swiftklib = { id = "io.github.ttypic.swiftklib", version.ref = "swiftklib" }

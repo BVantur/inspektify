@@ -9,6 +9,7 @@ import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
 import io.ktor.utils.io.InternalAPI
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
+import sp.bvantur.inspektify.shared.setUsageType
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
 internal class InspektifyKtorClient(
@@ -24,9 +25,7 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        config.also {
-            // TODO configure plugin
-        }
+        setUsageType(config.presentationType)
     }
 
     private fun setupRequestInterceptor(client: HttpClient) {

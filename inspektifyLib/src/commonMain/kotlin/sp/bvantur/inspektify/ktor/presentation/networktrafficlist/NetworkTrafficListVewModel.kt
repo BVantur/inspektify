@@ -9,6 +9,7 @@ import sp.bvantur.inspektify.ktor.presentation.base.SingleEventHandler
 import sp.bvantur.inspektify.ktor.presentation.base.SingleEventHandlerImpl
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
+import sp.bvantur.inspektify.shared.Platform
 import sp.bvantur.inspektify.utils.DispatcherProvider
 
 internal class NetworkTrafficListVewModel(
@@ -43,6 +44,12 @@ internal class NetworkTrafficListVewModel(
     fun onSelectSingleNetworkTrafficItem(id: Long) {
         viewModelScope.launch(dispatcherProvider.main) {
             emitSingleEvent(NetworkTrafficListEvent.ToNetworkDetails(id))
+        }
+    }
+
+    fun onBackAction() {
+        viewModelScope.launch(dispatcherProvider.main) {
+            Platform.closeInspektifyWindow()
         }
     }
 }
