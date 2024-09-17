@@ -47,4 +47,20 @@ class UserViewModel(
             )
         }
     }
+
+    fun onProduceErrorAction() {
+        viewModelScope.launch(dispatcher.main) {
+            val result = getUserUseCase(viewStateFlow.value.users.size + 1, true)
+            if (result.isFailure) {
+                // TODO handle error
+                return@launch
+            }
+            val newUser = result.getOrNull() ?: return@launch
+            emitViewState(
+                viewStateFlow.value.copy(
+                    users = viewStateFlow.value.users.plus(newUser)
+                )
+            )
+        }
+    }
 }

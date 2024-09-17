@@ -8,9 +8,9 @@ typealias UserId = Int
 @Serializable
 data class UserRemote(
     @SerialName("data")
-    val data: UserDataRemote,
+    val data: UserDataRemote?,
     @SerialName("support")
-    val support: UserSupportRemote
+    val support: UserSupportRemote?
 )
 
 @Serializable
