@@ -89,11 +89,11 @@ That is why we introduced `presentationType` configuration to our Inspektify con
 
 You can choose between
 
-`PresentationType.AutoShake` // selected by default
+**PresentationType.AutoShake** // selected by default
 
 or
 
-`PresentationType.Custom`
+**PresentationType.Custom**
 
 
 You can change that behavior when installing our plugin to Ktor client like this:
@@ -120,23 +120,23 @@ The settings property that we can change for the logging is `logLevel`
 
 You can choose between
 
-`LogLevel.None` // selected by default
+**LogLevel.None** // selected by default
 
 or
 
-`LogLevel.Info`
+**LogLevel.Info**
 
 or
 
-`LogLevel.Headers`
+**LogLevel.Headers**
 
 or
 
-`LogLevel.Body`
+**LogLevel.Body**
 
 or
 
-`LogLevel.All`
+**LogLevel.All**
 
 
 You can change it when installing our plugin to Ktor client like this:
