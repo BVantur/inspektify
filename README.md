@@ -149,24 +149,47 @@ install(InspektifyKtor) {
 
 Here you can see what each LogLevel does when configured for your client:
 
-- `LogLevel.None` -> doesn't log anything
-- `LogLevel.Info` -> logs only base information of network transaction like url, method and response
+- **LogLevel.None** -> doesn't log anything
+- **LogLevel.Info** -> logs only base information of network transaction like url, method and response
   code.
-- `LogLevel.Headers` -> prints everything that `LogLevel.Info` prints plus all the headers of
+- **LogLevel.Headers** -> prints everything that **LogLevel.Info** prints plus all the headers of
   request and response.
-- `LogLevel.Body` -> prints everything that `LogLevel.Info` prints plus all the payload sent with
+- **LogLevel.Body** -> prints everything that **LogLevel.Info** prints plus all the payload sent with
   request and response.
-- `LogLevel.All` -> prints everything for a network transaction.
+- **LogLevel.All** -> prints everything for a network transaction.
 
 ## Contact me
 
+<table border="0">
+  <tr>
+    <td>
+      <a href="https://github.com/BVantur" target="_blank">
+        <img src="https://skillicons.dev/icons?i=github" alt="Github Profile" width="40" height="40">
+      </a>
+    </td>
+    <td>
+      <a href="https://www.linkedin.com/in/bla%C5%BE-vantur-9aa466a0/" target="_blank">
+        <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" width="40" height="40">
+      </a>
+    </td>
+    <td>
+      <a href="https://medium.com/@bvantur" target="_blank">
+        <img src="https://cdn4.iconfinder.com/data/icons/social-media-circle-7/512/Medium_circle-512.png" alt="Medium" width="40" height="40">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
 [![Github Profile](https://skillicons.dev/icons?i=github)][0]
 [![LinkedIn](https://skillicons.dev/icons?i=linkedin)][1]
+[![Medium](https://cdn4.iconfinder.com/data/icons/social-media-circle-7/512/Medium_circle-512.png)][2]
+
 
 
 [0]: https://github.com/BVantur
-
 [1]: https://www.linkedin.com/in/bla%C5%BE-vantur-9aa466a0/
+[2]: https://medium.com/@bvantur
 
 # Licence
 
