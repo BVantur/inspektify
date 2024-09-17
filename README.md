@@ -18,8 +18,8 @@ It allows you observing network of your application in realtime directly on your
     <td>Details</td>
   </tr>
   <tr>
-    <td><img src="inspektifyLib/screenshots/android_list_items.png" width=270 height=480></td>
-    <td><img src="inspektifyLib/screenshots/android_details.png" width=270 height=480></td>
+    <td><img src="inspektifyLib/screenshots/android_list_items.png" width=320></td>
+    <td><img src="inspektifyLib/screenshots/android_details.png" width=320></td>
   </tr>
 </table>
 
@@ -31,8 +31,8 @@ It allows you observing network of your application in realtime directly on your
     <td>Details</td>
   </tr>
   <tr>
-    <td><img src="inspektifyLib/screenshots/ios_list_items.png" width=270 height=480></td>
-    <td><img src="inspektifyLib/screenshots/ios_details.png" width=270 height=480></td>
+    <td><img src="inspektifyLib/screenshots/ios_list_items.png" width=320></td>
+    <td><img src="inspektifyLib/screenshots/ios_details.png" width=320></td>
   </tr>
 </table>
 
