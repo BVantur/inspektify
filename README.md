@@ -11,9 +11,20 @@ It allows you observing network of your application in realtime directly on your
 # Screenshots
 ### Android
 
+<table>
+  <tr>
+    <td>List</td>
+     <td>Details</td>
+  </tr>
+  <tr>
+    <td><img src="inspektifyLib/screenshots/android_list_items.png" width=270 height=480></td>
+    <td><img src="inspektifyLib/screenshots/android_details.png" width=270 height=480></td>
+  </tr>
+ </table>
+
 <p align="center">
-<img src="inspektifyLib/screenshots/android_list_items.png"/>
-<img src="inspektifyLib/screenshots/android_details.png"/>
+<img src="inspektifyLib/screenshots/android_list_items.png" width="425"/>
+<img src="inspektifyLib/screenshots/android_details.png" width="425"/>
 </p>
 
 ### iOS
