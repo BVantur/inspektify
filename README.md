@@ -86,10 +86,15 @@ that happened within the app. But we want to enable developers to override this 
 suits them better.
 That is why we introduced `presentationType` configuration to our Inspektify configuration.
 
+
 You can choose between
+
 `PresentationType.AutoShake` // selected by default
+
 or
+
 `PresentationType.Custom`
+
 
 You can change that behavior when installing our plugin to Ktor client like this:
 
@@ -114,15 +119,25 @@ enable it in the same way as we do it for the presentation type.
 The settings property that we can change for the logging is `logLevel`
 
 You can choose between
+
 `LogLevel.None` // selected by default
+
 or
+
 `LogLevel.Info`
+
 or
+
 `LogLevel.Headers`
+
 or
+
 `LogLevel.Body`
+
 or
+
 `LogLevel.All`
+
 
 You can change it when installing our plugin to Ktor client like this:
 
