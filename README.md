@@ -159,14 +159,14 @@ Here you can see what each LogLevel does when configured for your client:
 
 ## Contact me
 
-<a href="https://github.com/BVantur" target="_blank">
+<a href="https://github.com/BVantur">
     <img src="https://skillicons.dev/icons?i=github" alt="Github Profile" width="40" height="40">
 </a>
-<a href="https://www.linkedin.com/in/bla%C5%BE-vantur-9aa466a0/" target="_blank">
+<a href="https://www.linkedin.com/in/bla%C5%BE-vantur-9aa466a0/">
     <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" width="40" height="40">
 </a>
-<a href="https://medium.com/@bvantur" target="_blank">
-    <img src="https://cdn4.iconfinder.com/data/icons/social-media-circle-7/512/Medium_circle-512.png" alt="Medium" width="40" height="40">
+<a href="https://medium.com/@bvantur">
+    <img src="https://miro.medium.com/v2/resize:fit:1400/1*psYl0y9DUzZWtHzFJLIvTw.png" alt="Medium" width="40" height="40">
 </a>
 
 # Licence
