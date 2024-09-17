@@ -13,14 +13,14 @@ import sp.bvantur.inspektify.sample.data.utils.DispatcherProvider
 import sp.bvantur.inspektify.sample.data.utils.NetworkUtils
 
 class UserRemoteDataSource(private val httpClient: HttpClient, private val dispatcherProvider: DispatcherProvider) {
-    suspend fun getUser(userId: UserId): Result<UserRemote> = withContext(dispatcherProvider.io) {
+    suspend fun getUser(userId: UserId): Result<UserRemote?> = withContext(dispatcherProvider.io) {
         NetworkUtils.safeApiCall {
             httpClient.request {
                 url {
                     method = HttpMethod.Get
                     path("users/$userId")
                 }
-            }.body<UserRemote>()
+            }.body<UserRemote?>()
         }
     }
 

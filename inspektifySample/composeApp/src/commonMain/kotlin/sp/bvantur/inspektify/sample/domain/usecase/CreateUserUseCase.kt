@@ -11,6 +11,7 @@ interface CreateUserUseCase {
 class CreateUserUseCaseImpl(private val userRepository: UserRepository) : CreateUserUseCase {
     override suspend fun invoke(): Result<User?> {
         val response = userRepository.createUser()
+
         if (response.isFailure) {
             return Result.failure(response.exceptionOrNull() ?: Exception("Unknown error"))
         }
