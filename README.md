@@ -38,6 +38,9 @@ It allows you observing network of your application in realtime directly on your
 
 # Getting started
 
+This library can be used only on projects that are using Ktor for network communication. If there is
+a need to support a different library besides Ktor open an issue for it.
+
 ### 1. Gradle
 
 This library is available on mavenCentral. To use it in your project add following repository if you
@@ -160,7 +163,8 @@ Here you can see what each LogLevel does when configured for your client:
 # Exclude library
 
 Since this is a debug tool and we wouldn't want for our users to have possibility to access this
-tool we need to exclude the library from the release build. This can be easy done with if statement before
+tool we need to exclude the library from the release build. This can be easy done with if statement
+before
 installing plugin for a Ktor client like this:
 
 ```
