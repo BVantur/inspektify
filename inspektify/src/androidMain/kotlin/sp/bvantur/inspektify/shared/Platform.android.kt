@@ -7,7 +7,5 @@ internal actual object Platform {
         InspektifyActivity.inspektifyActivityInstance?.finish()
     }
 
-    actual fun isAndroid(): Boolean {
-        return true
-    }
+    actual fun isAndroid(): Boolean = true
 }

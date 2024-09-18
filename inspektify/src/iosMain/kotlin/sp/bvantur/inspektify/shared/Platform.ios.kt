@@ -7,7 +7,5 @@ internal actual object Platform {
         inspektifyViewControllerInstance?.dismissModalViewControllerAnimated(true)
     }
 
-    actual fun isAndroid(): Boolean {
-        return false
-    }
+    actual fun isAndroid(): Boolean = false
 }

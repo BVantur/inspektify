@@ -36,7 +36,9 @@ publishing {
         withType<MavenPublication> {
             pom {
                 name.set("Inspektify")
-                description.set("KMP library for Android and iOS clients for observing real-time network traffic of the app.")
+                description.set(
+                    "KMP library for Android and iOS clients for observing real-time network traffic of the app."
+                )
                 url.set("https://github.com/BVantur/inspektify") // Replace with your actual project URL
 
                 licenses {

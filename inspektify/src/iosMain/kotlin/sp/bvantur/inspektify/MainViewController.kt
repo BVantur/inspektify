@@ -6,10 +6,10 @@ import platform.UIKit.UIViewController
 internal var inspektifyViewControllerInstance: UIViewController? = null
 
 @Suppress("FunctionName")
-internal fun InspektifyViewController(): UIViewController {
-    return ComposeUIViewController(configure = { enforceStrictPlistSanityCheck = false }) {
-        App()
-    }.also {viewController ->
-        inspektifyViewControllerInstance = viewController
-    }
+internal fun InspektifyViewController(): UIViewController = ComposeUIViewController(configure = {
+    enforceStrictPlistSanityCheck = false
+}) {
+    App()
+}.also { viewController ->
+    inspektifyViewControllerInstance = viewController
 }
