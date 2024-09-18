@@ -18,8 +18,8 @@ It allows you observing network of your application in realtime directly on your
     <td>Details</td>
   </tr>
   <tr>
-    <td><img src="inspektifyLib/screenshots/android_list_items.png" width=320></td>
-    <td><img src="inspektifyLib/screenshots/android_details.png" width=320></td>
+    <td><img src="inspektify/screenshots/android_list_items.png" width=320></td>
+    <td><img src="inspektify/screenshots/android_details.png" width=320></td>
   </tr>
 </table>
 
@@ -31,12 +31,15 @@ It allows you observing network of your application in realtime directly on your
     <td>Details</td>
   </tr>
   <tr>
-    <td><img src="inspektifyLib/screenshots/ios_list_items.png" width=320></td>
-    <td><img src="inspektifyLib/screenshots/ios_details.png" width=320></td>
+    <td><img src="inspektify/screenshots/ios_list_items.png" width=320></td>
+    <td><img src="inspektify/screenshots/ios_details.png" width=320></td>
   </tr>
 </table>
 
 # Getting started
+
+This library can be used only on projects that are using Ktor for network communication. If there is
+a need to support a different library besides Ktor open an issue for it.
 
 ### 1. Gradle
 
@@ -156,6 +159,22 @@ Here you can see what each LogLevel does when configured for your client:
   with
   request and response.
 - **LogLevel.All** -> prints everything for a network transaction.
+
+# Exclude library
+
+Since this is a debug tool and we wouldn't want for our users to have possibility to access this
+tool we need to exclude the library from the release build. This can be easy done with if statement
+before
+installing plugin for a Ktor client like this:
+
+```
+HttpClient() {
+    ...
+    if (isDebug()) {
+      install(InspektifyKtor)
+    }
+}
+```
 
 ## Contact me
 

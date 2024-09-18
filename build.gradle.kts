@@ -15,6 +15,7 @@ plugins {
     alias(libs.plugins.detekt) apply true
     alias(libs.plugins.kotlin.serialization) apply true
     alias(libs.plugins.swiftklib) apply false
+    alias(libs.plugins.mavenPublish) apply false
 }
 
 subprojects {

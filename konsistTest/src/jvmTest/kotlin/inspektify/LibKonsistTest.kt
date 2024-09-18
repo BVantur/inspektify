@@ -16,7 +16,7 @@ class LibKonsistTest {
             "NetworkTrafficHeader"
         )
 
-        Konsist.scopeFromModule("inspektifyLib")
+        Konsist.scopeFromModule("inspektify")
             .classes()
             .filter { clazz ->
                 isPublicComponent(clazz) && !clazz.hasParentInterfaces() && !clazz.hasParentClass()
@@ -35,7 +35,7 @@ class LibKonsistTest {
 
         val publicComponents = mutableListOf<String>()
 
-        Konsist.scopeFromModule("inspektifyLib")
+        Konsist.scopeFromModule("inspektify")
             .classes()
             .filter { clazz ->
                 isPublicComponent(clazz) && !clazz.hasParentInterfaces() && !clazz.hasParentClass()
@@ -68,7 +68,7 @@ class LibKonsistTest {
 
         val publicComponents = mutableListOf<String>()
 
-        Konsist.scopeFromModule("inspektifyLib")
+        Konsist.scopeFromModule("inspektify")
             .classes()
             .filter { clazz ->
                 isPublicComponent(clazz) && !clazz.hasParentInterfaces() && !clazz.hasParentClass()

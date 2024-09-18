@@ -38,7 +38,8 @@ kotlin {
         }
 
         commonMain.dependencies {
-            implementation(project(":inspektifyLib"))
+            implementation(project(":inspektify"))
+//            implementation("io.github.bvantur:inspektify:1.0.0-alpha04")
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
