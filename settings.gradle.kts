@@ -1,4 +1,4 @@
-rootProject.name = "inspektify"
+rootProject.name = "inspektifyRoot"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -28,6 +28,6 @@ dependencyResolutionManagement {
     }
 }
 
-include(":inspektifyLib")
+include(":inspektify")
 include(":konsistTest")
 include(":inspektifySample:composeApp")

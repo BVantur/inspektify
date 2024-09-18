@@ -6,7 +6,7 @@ compose-plugin = "1.7.0-beta01" # TODO change to stable as soon as possible
 
 # ANDROID PORJECT dependencies
 android-compileSdk = "34"
-android-minSdk = "24"
+android-minSdk = "21"
 android-targetSdk = "34"
 
 # ANDROID-X dependencies
@@ -47,6 +47,9 @@ konsist = "0.15.1"
 
 # TEST dependencies
 junit = "4.13.2"
+
+# MAVEN-PUBLISH dependencies
+maven-publish = "0.29.0"
 
 [libraries]
 # ANDROID-X dependencies
@@ -111,3 +114,6 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
 # SWIFT KLIB plugins
 swiftklib = { id = "io.github.ttypic.swiftklib", version.ref = "swiftklib" }
+
+# MAVEN-PUBLISH plugins
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
