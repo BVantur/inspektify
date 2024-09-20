@@ -1,5 +1,10 @@
 package sp.bvantur.inspektify.ui.theme
 
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.ui.graphics.Color
 
-internal val InspektifyColorPalette = lightColorScheme()
+internal val Mercury = Color(0xFFE9E9E9)
+
+internal val InspektifyColorPalette = lightColorScheme(
+    tertiary = Mercury
+)

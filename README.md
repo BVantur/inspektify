@@ -1,5 +1,9 @@
 <h1 align="center">Inspektify</h1>
 
+<p align="center">
+  <td><img src="inspektify/screenshots/inspektify_logo.png" width=320></td>
+</p>
+
 Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android.
 It allows you observing network of your application in realtime directly on your mobile device.
 
@@ -76,11 +80,13 @@ HttpClient() {
 }
 ```
 
-# Features
+# Configuration
 
 This library was built with flexibility in mind. We don't want to force the behavior of the library
 upon the developer who uses this library, so we implemented a couple of configurations for the
-library to make it more flexible.
+library to make it more flexible. The library also tracks which network transactions are from
+current active app session and highlights them in the list with a different background color. Network transactions
+from previous sessions have a background in light gray color.
 
 ### 1. Presentation type
 

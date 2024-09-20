@@ -47,9 +47,13 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.viewmodel.compose)
-            implementation(libs.ktor.client.core)
-            implementation(libs.ktor.serialization.json)
-            implementation(libs.ktor.client.contentNegotiation)
+
+            api("io.ktor:ktor-client-core:2.0.0")
+            api("io.ktor:ktor-serialization-kotlinx-json:2.0.0")
+            api("io.ktor:ktor-client-content-negotiation:2.0.0")
+//            implementation(libs.ktor.client.core)
+//            implementation(libs.ktor.serialization.json)
+//            implementation(libs.ktor.client.contentNegotiation)
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
         }

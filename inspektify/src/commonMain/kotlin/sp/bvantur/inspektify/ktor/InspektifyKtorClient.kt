@@ -23,6 +23,7 @@ internal class InspektifyKtorClient(
         configure(plugin.config)
         setupRequestInterceptor(client)
         setupResponseInterceptor(client)
+        networkTrafficRepository.createCurrentSessionTimestamp()
     }
 
     private fun configure(config: InspektifyKtorConfig) {
@@ -52,7 +53,7 @@ internal class InspektifyKtorClient(
         // client.receivePipeline.intercept(HttpReceivePipeline.After)
         // currently there is a crash if some other plugin is installed
         // that requires reading of the bytes for response payload
-        val observer: ResponseHandler = { response ->
+        val responseHandler: ResponseHandler = { response ->
             val networkTraffic = networkTrafficRepository.getNetworkTrafficData(
                 response.request.attributes[getNetworkTrafficIdKey()]
             )
@@ -61,6 +62,7 @@ internal class InspektifyKtorClient(
             networkTrafficRepository.saveNetworkTrafficData(networkTrafficWithResponse)
             logResponse(networkTrafficWithResponse)
         }
-        ResponseObserver.prepare { onResponse(observer) }.install(client)
+        val responseObserver = ResponseObserver.prepare { onResponse(responseHandler) }
+        ResponseObserver.install(responseObserver, client)
     }
 }

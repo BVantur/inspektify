@@ -12,6 +12,7 @@ import sp.bvantur.inspektify.ktor.data.utils.extensions.getPresentationStatusCod
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getSize
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getTime
 import sp.bvantur.inspektify.ktor.data.utils.extensions.isCompleted
+import sp.bvantur.inspektify.ktor.data.utils.extensions.isFromActiveSession
 import sp.bvantur.inspektify.ktor.domain.model.NetworkTrafficListItem
 
 internal typealias GroupedNetworkTrafficData = Map<String, List<NetworkTrafficListItem>>
@@ -38,7 +39,10 @@ internal class GetAllNetworkTrafficDataUseCaseImpl(private val repository: Netwo
                         time = networkTrafficData.getTime(),
                         duration = networkTrafficData.getDuration(),
                         size = networkTrafficData.getSize(),
-                        isCompleted = networkTrafficData.isCompleted()
+                        isCompleted = networkTrafficData.isCompleted(),
+                        isCurrentSession = networkTrafficData.isFromActiveSession(
+                            repository.getCurrentSessionTimestamp()
+                        )
                     ) to networkTrafficData.getDate()
                 }.groupBy(
                     keySelector = { (_, localDate) ->

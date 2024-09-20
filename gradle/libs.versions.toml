@@ -29,7 +29,8 @@ jetbrains-navigation-compose = "2.7.0-alpha07" # TODO observe and move to stable
 jetbrains-serialization-json = "1.6.1"
 
 # KTOR dependencies
-ktor = "3.0.0-beta-2" # TODO observe and move to stable
+ktor = "3.0.0-rc-1" # TODO observe and move to stable
+#ktor = "2.0.0" # TODO observe and move to stable
 
 # KOIN dependencies
 koin = "4.0.0-RC1" # TODO change to stable as soon as possible

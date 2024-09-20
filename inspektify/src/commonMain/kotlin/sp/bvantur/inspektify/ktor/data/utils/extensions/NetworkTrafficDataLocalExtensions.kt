@@ -77,3 +77,6 @@ internal fun NetworkTrafficDataLocal.getDate(): String {
 }
 
 internal fun NetworkTrafficDataLocal.isCompleted(): Boolean = responseStatus != null
+
+internal fun NetworkTrafficDataLocal.isFromActiveSession(sessionTimestamp: Long): Boolean =
+    requestTimestamp ?: 0L >= sessionTimestamp
