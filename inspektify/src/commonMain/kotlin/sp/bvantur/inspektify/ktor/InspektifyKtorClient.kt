@@ -7,7 +7,6 @@ import io.ktor.client.request.HttpRequestPipeline
 import io.ktor.client.request.HttpSendPipeline
 import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
-import io.ktor.utils.io.InternalAPI
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.shared.configurePresentationType
 import sp.bvantur.inspektify.utils.DispatcherProvider
@@ -47,7 +46,6 @@ internal class InspektifyKtorClient(
         }
     }
 
-    @OptIn(InternalAPI::class)
     private fun setupResponseInterceptor(client: HttpClient) {
         // TODO try to move logic for observing responses to
         // client.receivePipeline.intercept(HttpReceivePipeline.After)

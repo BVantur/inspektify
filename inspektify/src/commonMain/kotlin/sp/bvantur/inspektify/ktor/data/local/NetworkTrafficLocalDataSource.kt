@@ -20,30 +20,32 @@ internal class NetworkTrafficLocalDataSource(
         .mapToList(dispatcherProvider.default).flowOn(dispatcherProvider.io)
 
     suspend fun saveNetworkTrafficData(networkTraffic: NetworkTraffic) {
-        withContext(dispatcherProvider.io) {
-            database.inspektifyDBQueries.insertNetworkTraffic(
-                id = networkTraffic.id,
-                method = networkTraffic.method,
-                url = networkTraffic.url,
-                host = networkTraffic.host,
-                path = networkTraffic.path,
-                protocol = networkTraffic.protocol,
-                requestTimestamp = networkTraffic.requestTimestamp,
-                requestHeaders = networkTraffic.requestHeaders,
-                requestPayload = networkTraffic.requestPayload,
-                requestContentType = networkTraffic.requestContentType,
-                requestPayloadSize = networkTraffic.requestPayloadSize,
-                requestHeadersSize = networkTraffic.requestHeadersSize,
-                responseTimestamp = networkTraffic.responseTimestamp,
-                responseStatus = networkTraffic.responseStatus?.toLong(),
-                responseStatusDescription = networkTraffic.responseStatusDescription,
-                responseHeaders = networkTraffic.responseHeaders,
-                responsePayload = networkTraffic.responsePayload,
-                responseContentType = networkTraffic.responseContentType,
-                responsePayloadSize = networkTraffic.responsePayloadSize,
-                responseHeadersSize = networkTraffic.responseHeadersSize?.toLong(),
-                tookDurationInMs = networkTraffic.tookDurationInMs
-            )
+        withContext(dispatcherProvider.default) {
+            database.transaction {
+                database.inspektifyDBQueries.insertNetworkTraffic(
+                    id = networkTraffic.id,
+                    method = networkTraffic.method,
+                    url = networkTraffic.url,
+                    host = networkTraffic.host,
+                    path = networkTraffic.path,
+                    protocol = networkTraffic.protocol,
+                    requestTimestamp = networkTraffic.requestTimestamp,
+                    requestHeaders = networkTraffic.requestHeaders,
+                    requestPayload = networkTraffic.requestPayload,
+                    requestContentType = networkTraffic.requestContentType,
+                    requestPayloadSize = networkTraffic.requestPayloadSize,
+                    requestHeadersSize = networkTraffic.requestHeadersSize,
+                    responseTimestamp = networkTraffic.responseTimestamp,
+                    responseStatus = networkTraffic.responseStatus?.toLong(),
+                    responseStatusDescription = networkTraffic.responseStatusDescription,
+                    responseHeaders = networkTraffic.responseHeaders,
+                    responsePayload = networkTraffic.responsePayload,
+                    responseContentType = networkTraffic.responseContentType,
+                    responsePayloadSize = networkTraffic.responsePayloadSize,
+                    responseHeadersSize = networkTraffic.responseHeadersSize?.toLong(),
+                    tookDurationInMs = networkTraffic.tookDurationInMs
+                )
+            }
         }
     }
 

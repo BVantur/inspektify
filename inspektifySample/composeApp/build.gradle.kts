@@ -34,12 +34,12 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.ktor.client.okHttp)
+            implementation(libs.ktor3.client.okHttp)
         }
 
         commonMain.dependencies {
-            implementation(project(":inspektify"))
-//            implementation("io.github.bvantur:inspektify:1.0.0-alpha04")
+            implementation("io.github.bvantur:inspektify-ktor3:1.0.0-alpha04")
+//            implementation("io.github.bvantur:inspektify-ktor2:1.0.0-alpha04")
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -48,18 +48,13 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.viewmodel.compose)
 
-            api("io.ktor:ktor-client-core:2.0.0")
-            api("io.ktor:ktor-serialization-kotlinx-json:2.0.0")
-            api("io.ktor:ktor-client-content-negotiation:2.0.0")
-//            implementation(libs.ktor.client.core)
-//            implementation(libs.ktor.serialization.json)
-//            implementation(libs.ktor.client.contentNegotiation)
+            implementation(libs.bundles.ktor3)
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
         }
 
         iosMain.dependencies {
-            implementation(libs.ktor.client.ios)
+            implementation(libs.ktor3.client.ios)
         }
     }
 }
