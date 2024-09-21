@@ -30,7 +30,7 @@ jetbrains-serialization-json = "1.6.1"
 
 # KTOR dependencies
 ktor3 = "3.0.0-rc-1" # TODO observe and move to stable
-ktor2 = "2.0.0"
+ktor2 = "2.3.1"
 
 # KOIN dependencies
 koin = "4.0.0-RC1" # TODO change to stable as soon as possible
