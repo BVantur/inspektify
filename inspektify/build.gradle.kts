@@ -85,9 +85,9 @@ kotlin {
         }
         commonMain {
             if (useKtorV3) {
-                kotlin.srcDir(project(":inspektify-ktor3").file("src/commonMain/kotlin"))
+                kotlin.srcDir(file("src/ktorv3/kotlin"))
             } else {
-                kotlin.srcDir(project(":inspektify-ktor2").file("src/commonMain/kotlin"))
+                kotlin.srcDir(file("src/ktorv2/kotlin"))
             }
             dependencies {
                 if (useKtorV3) {
