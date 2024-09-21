@@ -11,59 +11,48 @@ plugins {
     alias(libs.plugins.mavenPublish)
 }
 
-group = "io.github.bvantur"
-version = "1.0.0-alpha04"
-
-mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
-
-    signAllPublications()
+val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
+val inspektifyName = if (useKtorV3) {
+    "inspektify-ktor3"
+} else {
+    "inspektify-ktor2"
 }
 
-publishing {
-    repositories {
-        maven {
-            name = "sonatype"
-            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = System.getProperty("ossrhUsername")
-                password = System.getProperty("ossrhPassword")
+mavenPublishing {
+    coordinates(
+        groupId = "io.github.bvantur",
+        artifactId = inspektifyName,
+        version = "1.0.0-alpha04"
+    )
+
+    pom {
+        name.set("Inspektify")
+        description.set("KMP library for Android and iOS clients for observing real-time network traffic of the app.")
+        inceptionYear.set("2024")
+        url.set("https://github.com/BVantur/inspektify")
+
+        licenses {
+            license {
+                name.set("MIT")
+                url.set("https://opensource.org/licenses/MIT")
             }
+        }
+
+        developers {
+            developer {
+                id.set("BVantur")
+                name.set("Blaž Vantur")
+                email.set("blaz.vantur@gmail.com")
+            }
+        }
+
+        scm {
+            url.set("https://github.com/BVantur/inspektify")
         }
     }
 
-    publications {
-        withType<MavenPublication> {
-            pom {
-                name.set("Inspektify")
-                description.set(
-                    "KMP library for Android and iOS clients for observing real-time network traffic of the app."
-                )
-                url.set("https://github.com/BVantur/inspektify") // Replace with your actual project URL
-
-                licenses {
-                    license {
-                        name.set("MIT License")
-                        url.set("https://opensource.org/license/mit")
-                    }
-                }
-
-                developers {
-                    developer {
-                        id.set("BVantur")
-                        name.set("Blaž Vantur")
-                        email.set("blaz.vantur@gmail.com")
-                    }
-                }
-
-                scm {
-                    connection.set("scm:git:git://github.com/BVantur/inspektify.git")
-                    developerConnection.set("scm:git:ssh://github.com:BVantur/inspektify.git")
-                    url.set("https://github.com/BVantur/inspektify")
-                }
-            }
-        }
-    }
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
 }
 
 kotlin {
@@ -94,22 +83,33 @@ kotlin {
             implementation(libs.cash.sqldelight.android.driver)
             implementation(libs.androidx.lifecycle.process)
         }
-        commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.materialIconsExtended)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
-            implementation(libs.jetbrains.viewmodel.compose)
-            implementation(libs.jetbrains.serialization.json)
-            implementation(libs.jetbrains.lifecycle.runtime.compose)
-            implementation(libs.jetbrains.navigation.compose)
-            implementation(libs.ktor.client.core)
-            implementation(libs.cash.sqldelight.primitive.adapters)
-            implementation(libs.cash.sqldelight.coroutines.extensions)
-            implementation(libs.kotlinx.datetime)
+        commonMain {
+            if (useKtorV3) {
+                kotlin.srcDir(project(":inspektify-ktor3").file("src/commonMain/kotlin"))
+            } else {
+                kotlin.srcDir(project(":inspektify-ktor2").file("src/commonMain/kotlin"))
+            }
+            dependencies {
+                if (useKtorV3) {
+                    implementation(libs.ktor3.client.core)
+                } else {
+                    implementation(libs.ktor2.client.core)
+                }
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material3)
+                implementation(compose.ui)
+                implementation(compose.materialIconsExtended)
+                implementation(compose.components.resources)
+                implementation(compose.components.uiToolingPreview)
+                implementation(libs.jetbrains.viewmodel.compose)
+                implementation(libs.jetbrains.serialization.json)
+                implementation(libs.jetbrains.lifecycle.runtime.compose)
+                implementation(libs.jetbrains.navigation.compose)
+                implementation(libs.cash.sqldelight.primitive.adapters)
+                implementation(libs.cash.sqldelight.coroutines.extensions)
+                implementation(libs.kotlinx.datetime)
+            }
         }
         iosMain.dependencies {
             implementation(libs.cash.sqldelight.native.driver)
@@ -144,9 +144,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    dependencies {
-        debugImplementation(compose.uiTooling)
     }
 }
 

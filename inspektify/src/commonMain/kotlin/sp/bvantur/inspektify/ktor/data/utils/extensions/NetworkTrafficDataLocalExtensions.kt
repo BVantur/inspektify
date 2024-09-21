@@ -1,8 +1,8 @@
 package sp.bvantur.inspektify.ktor.data.utils.extensions
 
-import io.github.bvantur.inspektify.generated.resources.Res
-import io.github.bvantur.inspektify.generated.resources.img_http_icon
-import io.github.bvantur.inspektify.generated.resources.img_https_icon
+import inspektifyroot.inspektify.generated.resources.Res
+import inspektifyroot.inspektify.generated.resources.img_http_icon
+import inspektifyroot.inspektify.generated.resources.img_https_icon
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
@@ -77,3 +77,6 @@ internal fun NetworkTrafficDataLocal.getDate(): String {
 }
 
 internal fun NetworkTrafficDataLocal.isCompleted(): Boolean = responseStatus != null
+
+internal fun NetworkTrafficDataLocal.isFromActiveSession(sessionTimestamp: Long): Boolean =
+    requestTimestamp ?: 0L >= sessionTimestamp

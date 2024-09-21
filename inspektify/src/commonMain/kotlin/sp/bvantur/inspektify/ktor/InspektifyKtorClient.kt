@@ -7,7 +7,6 @@ import io.ktor.client.request.HttpRequestPipeline
 import io.ktor.client.request.HttpSendPipeline
 import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
-import io.ktor.utils.io.InternalAPI
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.shared.configurePresentationType
 import sp.bvantur.inspektify.utils.DispatcherProvider
@@ -23,6 +22,7 @@ internal class InspektifyKtorClient(
         configure(plugin.config)
         setupRequestInterceptor(client)
         setupResponseInterceptor(client)
+        networkTrafficRepository.createCurrentSessionTimestamp()
     }
 
     private fun configure(config: InspektifyKtorConfig) {
@@ -46,13 +46,12 @@ internal class InspektifyKtorClient(
         }
     }
 
-    @OptIn(InternalAPI::class)
     private fun setupResponseInterceptor(client: HttpClient) {
         // TODO try to move logic for observing responses to
         // client.receivePipeline.intercept(HttpReceivePipeline.After)
         // currently there is a crash if some other plugin is installed
         // that requires reading of the bytes for response payload
-        val observer: ResponseHandler = { response ->
+        val responseHandler: ResponseHandler = { response ->
             val networkTraffic = networkTrafficRepository.getNetworkTrafficData(
                 response.request.attributes[getNetworkTrafficIdKey()]
             )
@@ -61,6 +60,7 @@ internal class InspektifyKtorClient(
             networkTrafficRepository.saveNetworkTrafficData(networkTrafficWithResponse)
             logResponse(networkTrafficWithResponse)
         }
-        ResponseObserver.prepare { onResponse(observer) }.install(client)
+        val responseObserver = ResponseObserver.prepare { onResponse(responseHandler) }
+        ResponseObserver.install(responseObserver, client)
     }
 }

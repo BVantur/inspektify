@@ -1,7 +1,11 @@
 <h1 align="center">Inspektify</h1>
 
-Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android.
-It allows you observing network of your application in realtime directly on your mobile device.
+<p align="center">
+  <td><img src="inspektify/screenshots/inspektify_logo.png" width=320></td>
+</p>
+
+Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android. It allows you to
+observe the network of your application in real-time directly on your mobile device.
 
 <p align="center">
 <img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
@@ -39,12 +43,13 @@ It allows you observing network of your application in realtime directly on your
 # Getting started
 
 This library can be used only on projects that are using Ktor for network communication. If there is
-a need to support a different library besides Ktor open an issue for it.
+a need to support a different library besides Ktor open an issue for it. Inspektify is supported
+only for projects that are using the Ktor library equal to or greater than 2.3.1.
 
 ### 1. Gradle
 
-This library is available on mavenCentral. To use it in your project add following repository if you
-don't have it yet.
+This library is available on mavenCentral. To use it in your project add the following repository if
+you don't have it yet.
 
 ```
 repositories { 
@@ -53,12 +58,25 @@ repositories {
 }
 ```
 
-Add the library dependency to your project like this:
+#### Ktor 3.x.x
+
+If your project is using Ktor version in the 3.x.x family add Inspektify with this line:
 
 ```
 commonMain.dependencies {
     ...
-    debugImplementation("io.github.bvantur:inspektify:1.0.0-alpha01") // TODO
+    implementation("io.github.bvantur:inspektify-ktor3:1.0.0-alpha04")
+}
+```
+
+#### Ktor 2.3.1 - 3.0.0
+
+If your project is using Ktor version between 2.3.1 and 3.0.0 add Inspektify with this line:
+
+```
+commonMain.dependencies {
+    ...
+    implementation("io.github.bvantur:inspektify-ktor2:1.0.0-alpha04")
 }
 ```
 
@@ -67,7 +85,7 @@ commonMain.dependencies {
 You need to configure the library wherever you are creating a Ktor client in your project.
 Configuration follows the defined design of the Ktor library by installing a plugin directly to the
 Ktor client.
-Minimum code for including Inspektify library to the project is:
+The minimum code for including the Inspektify library in the project is:
 
 ```
 HttpClient() {
@@ -76,18 +94,20 @@ HttpClient() {
 }
 ```
 
-# Features
+# Configuration
 
 This library was built with flexibility in mind. We don't want to force the behavior of the library
 upon the developer who uses this library, so we implemented a couple of configurations for the
-library to make it more flexible.
+library to make it more flexible. The library also tracks which network transactions are from
+current active app sessions and highlights them in the list with a different background color.
+Network transactions from previous sessions have a background in light gray color.
 
 ### 1. Presentation type
 
-By default the library detects shake gesture of the device and show the list of network transactions
-that happened within the app. But we want to enable developers to override this behavior if that
-suits them better.
-That is why we introduced `presentationType` configuration to our Inspektify configuration.
+By default, the library detects the shake gesture of the device and shows the list of network
+transactions that happened within the app. But we want to enable developers to override this
+behavior if that suits them better. That is why we introduced `presentationType` configuration to
+our Inspektify configuration.
 
 You can choose between
 
@@ -97,7 +117,7 @@ or
 
 **PresentationType.Custom**
 
-You can change that behavior when installing our plugin to Ktor client like this:
+You can change that behavior when installing our plugin to the Ktor client like this:
 
 ```
 install(InspektifyKtor) {
@@ -106,8 +126,8 @@ install(InspektifyKtor) {
 ```
 
 If you choose `PresentationType.Custom` you also need to provide a way to show Inspektify debug tool
-in some other way. For that purpose there is a way to start Inspektify tool debug window with the
-next code:
+in some other way. For that purpose, there is a way to start the Inspektify tool debug window with
+the next code:
 
 ```
 InspektifyKtor.startInspektify()
@@ -116,8 +136,8 @@ InspektifyKtor.startInspektify()
 ### 2. Log level
 
 By default, logging of network communication in-app output is not enabled. But if you want you can
-enable it in the same way as we do it for the presentation type.
-The settings property that we can change for the logging is `logLevel`
+enable it in the same way as we do it for the presentation type. The settings property that we can
+change for the logging is `logLevel`
 
 You can choose between
 
@@ -139,7 +159,7 @@ or
 
 **LogLevel.All**
 
-You can change it when installing our plugin to Ktor client like this:
+You can change it when installing our plugin to the Ktor client like this:
 
 ```
 install(InspektifyKtor) {
@@ -162,10 +182,9 @@ Here you can see what each LogLevel does when configured for your client:
 
 # Exclude library
 
-Since this is a debug tool and we wouldn't want for our users to have possibility to access this
-tool we need to exclude the library from the release build. This can be easy done with if statement
-before
-installing plugin for a Ktor client like this:
+Since this is a debug tool and we wouldn't want our production users to have the possibility to
+access this tool we need to exclude the library from the release build. This can be easily done with
+if statement before installing the plugin for a Ktor client like this:
 
 ```
 HttpClient() {

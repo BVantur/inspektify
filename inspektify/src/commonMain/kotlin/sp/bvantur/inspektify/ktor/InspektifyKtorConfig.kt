@@ -2,7 +2,7 @@ package sp.bvantur.inspektify.ktor
 
 class InspektifyKtorConfig {
     var presentationType: PresentationType = PresentationType.AutoShake
-    var logLevel: LogLevel = LogLevel.All
+    var logLevel: LogLevel = LogLevel.None
 }
 
 sealed interface PresentationType {

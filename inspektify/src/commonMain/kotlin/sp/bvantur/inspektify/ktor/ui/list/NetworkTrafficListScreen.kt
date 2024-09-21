@@ -127,7 +127,7 @@ internal fun NetworkTrafficListScreen(
             if (viewState.items.isEmpty()) {
                 Text(
                     text = "No items",
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                    modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 8.dp)
                 )
             } else {
                 LazyColumn(modifier = Modifier.fillMaxWidth()) {
@@ -163,7 +163,12 @@ internal fun NetworkTrafficListScreen(
 
 @Composable
 internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier = Modifier) {
-    Box(modifier = modifier.fillMaxWidth()) {
+    Box(
+        modifier = modifier.fillMaxWidth()
+            .background(
+                if (item.isCurrentSession) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.tertiary
+            )
+    ) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Text(
                 modifier = Modifier.padding(all = 16.dp),

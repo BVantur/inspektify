@@ -20,13 +20,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.sample.presentation.user.UserViewModel
 
 @Composable
-@Preview
 fun App() {
     val viewModel = koinViewModel<UserViewModel>()
 

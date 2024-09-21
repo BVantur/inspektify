@@ -12,7 +12,8 @@ internal data class NetworkTrafficListItem(
     val time: String,
     val duration: String,
     val size: String,
-    val isCompleted: Boolean
+    val isCompleted: Boolean,
+    val isCurrentSession: Boolean
 )
 
 internal data class StatusCode(val statusCode: String, val statusColor: StatusColor)

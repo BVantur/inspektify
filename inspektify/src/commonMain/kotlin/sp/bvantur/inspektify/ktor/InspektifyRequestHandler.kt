@@ -3,11 +3,9 @@ package sp.bvantur.inspektify.ktor
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.http.charset
 import io.ktor.http.content.OutgoingContent
-import io.ktor.http.contentType
 import io.ktor.util.AttributeKey
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
-import io.ktor.utils.io.toByteArray
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
@@ -63,7 +61,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
             }
 
             is OutgoingContent.ReadChannelContent -> {
-                content.readFrom().toByteArray()
+                KtorUtils.channelToByteArray(content.readFrom())
             }
 
             else -> {
