@@ -7,7 +7,7 @@ import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
 import sp.bvantur.inspektify.ktor.presentation.utils.NetworkTrafficUtils
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class NetworkTrafficPayloadDetailsViewModel(private val dispatcherProvider: DispatcherProvider) :
     ViewModel(),

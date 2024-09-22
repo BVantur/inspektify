@@ -1,16 +1,19 @@
-<h1 align="center">Inspektify</h1>
+<p align="center">
+  <td><img src="inspektify/screenshots/inspektify_logo.png" width=560></td>
+</p>
 
 <p align="center">
-  <td><img src="inspektify/screenshots/inspektify_logo.png" width=320></td>
+  <a href="https://central.sonatype.com/artifact/io.github.bvantur/inspektify-ktor3">
+    <img alt="Maven" src="https://img.shields.io/maven-metadata/v.svg?label=mavenVersion&logo=apachemaven&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fio%2Fgithub%2Fbvantur%2Finspektify-ktor3%2Fmaven-metadata.xml" height=30 />
+  </a>
+</p>
+<p align="center">
+  <img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
+  <img alt="Ios" src="https://img.shields.io/badge/Platform-Ios-Blue?style=for-the-badge"/>
 </p>
 
 Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android. It allows you to
 observe the network of your application in real-time directly on your mobile device.
-
-<p align="center">
-<img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
-<img alt="Ios" src="https://img.shields.io/badge/Platform-Ios-Blue?style=for-the-badge"/>
-</p>
 
 # Screenshots
 
@@ -65,7 +68,7 @@ If your project is using Ktor version in the 3.x.x family add Inspektify with th
 ```
 commonMain.dependencies {
     ...
-    implementation("io.github.bvantur:inspektify-ktor3:1.0.0-alpha04")
+    implementation("io.github.bvantur:inspektify-ktor3:{mavenVersion}")
 }
 ```
 
@@ -76,7 +79,7 @@ If your project is using Ktor version between 2.3.1 and 3.0.0 add Inspektify wit
 ```
 commonMain.dependencies {
     ...
-    implementation("io.github.bvantur:inspektify-ktor2:1.0.0-alpha04")
+    implementation("io.github.bvantur:inspektify-ktor2:{mavenVersion}")
 }
 ```
 
@@ -135,7 +138,7 @@ InspektifyKtor.startInspektify()
 
 ### 2. Log level
 
-By default, logging of network communication in-app output is not enabled. But if you want you can
+By default, logging of network communication in-app output is disabled. But if you want you can
 enable it in the same way as we do it for the presentation type. The settings property that we can
 change for the logging is `logLevel`
 
@@ -195,6 +198,14 @@ HttpClient() {
 }
 ```
 
+## Sample project
+
+A sample project is included where you can test the behavior of the Inspektify library. By default,
+the sample is configured to use Ktor from the 3.x.x family, but if you want to test with Ktor from
+2.3.1 to 3.0.0 versions you need to change the next line in gradle.properties:
+
+`inspektify.ktorVersion=v2`
+
 ## Contact me
 
 <a href="https://github.com/BVantur">
@@ -232,3 +243,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+https://img.shields.io/maven-metadata/v.svg?label=Version&logo=apachemaven&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fio%2Fgithub%2Fbvantur%2Finspektify-ktor3%2Fmaven-metadata.xml

@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor.shared
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import sp.bvantur.inspektify.applicationContext
+import sp.bvantur.inspektify.ktor.applicationContext
 
 internal actual object CopyNetworkTrafficHandler {
     internal actual fun copyToClipboard(content: String) {

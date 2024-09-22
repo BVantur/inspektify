@@ -10,11 +10,11 @@
             tools:node="merge">
 
             <meta-data
-                android:name="sp.bvantur.inspektify.ApplicationContextInitializer"
+                android:name="sp.bvantur.inspektify.ktor.ApplicationContextInitializer"
                 android:value="androidx.startup" />
         </provider>
 
-        <activity android:name="sp.bvantur.inspektify.InspektifyActivity"
+        <activity android:name="sp.bvantur.inspektify.ktor.InspektifyActivity"
             android:launchMode="singleTask"
             android:taskAffinity="sp.bvantur.inspektify.android.task"/>
     </application>

@@ -1,7 +1,0 @@
-package sp.bvantur.inspektify.shared
-
-internal expect object Platform {
-    fun closeInspektifyWindow()
-
-    fun isAndroid(): Boolean
-}

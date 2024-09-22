@@ -1,4 +1,7 @@
 [versions]
+# INSPEKTIFY LIB VERSION
+inspektify-version = "1.0.0-beta01"
+
 # GENERAL dependencies
 agp = "8.4.0"
 kotlin = "2.0.20"
@@ -30,7 +33,7 @@ jetbrains-serialization-json = "1.6.1"
 
 # KTOR dependencies
 ktor3 = "3.0.0-rc-1" # TODO observe and move to stable
-ktor2 = "2.0.0"
+ktor2 = "2.3.1"
 
 # KOIN dependencies
 koin = "4.0.0-RC1" # TODO change to stable as soon as possible
@@ -52,11 +55,11 @@ junit = "4.13.2"
 # MAVEN-PUBLISH dependencies
 maven-publish = "0.29.0"
 
-# INSPEKTIFY dependencies
-inspektify-ktor3 = "1.0.0-alpha03"
-inspektify-ktor2 = "1.0.0-alpha02"
-
 [libraries]
+# INSPEKTIFY LIB dependencies
+inspektify-ktor3 = { group = "io.github.bvantur", name = "inspektify-ktor3", version.ref = "inspektify-version" }
+inspektify-ktor2 = { group = "io.github.bvantur", name = "inspektify-ktor2", version.ref = "inspektify-version" }
+
 # ANDROID-X dependencies
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
@@ -108,10 +111,6 @@ konsist-test = { group = "com.lemonappdev", name = "konsist", version.ref = "kon
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-
-# INSPEKTIFY dependencies
-inspektify-ktor3 = { group = "io.github.bvantur", name = "inspektify-ktor3", version.ref = "inspektify-ktor3" }
-inspektify-ktor2 = { group = "io.github.bvantur", name = "inspektify-ktor2", version.ref = "inspektify-ktor2" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

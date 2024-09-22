@@ -31,15 +31,25 @@ kotlin {
     }
 
     sourceSets {
+        val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.ktor3.client.okHttp)
+            if (useKtorV3) {
+                implementation(libs.ktor3.client.okHttp)
+            } else {
+                implementation(libs.ktor2.client.okHttp)
+            }
         }
 
         commonMain.dependencies {
-            implementation("io.github.bvantur:inspektify-ktor3:1.0.0-alpha04")
-//            implementation("io.github.bvantur:inspektify-ktor2:1.0.0-alpha04")
+            if (useKtorV3) {
+                implementation(libs.bundles.ktor3)
+                implementation(libs.inspektify.ktor3)
+            } else {
+                implementation(libs.bundles.ktor2)
+                implementation(libs.inspektify.ktor2)
+            }
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -47,14 +57,16 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.viewmodel.compose)
-
-            implementation(libs.bundles.ktor3)
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
         }
 
         iosMain.dependencies {
-            implementation(libs.ktor3.client.ios)
+            if (useKtorV3) {
+                implementation(libs.ktor3.client.ios)
+            } else {
+                implementation(libs.ktor2.client.ios)
+            }
         }
     }
 }
