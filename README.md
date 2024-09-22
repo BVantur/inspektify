@@ -1,5 +1,5 @@
 <p align="center">
-  <td><img src="inspektify/screenshots/inspektify_logo.png" width=320></td>
+  <td><img src="inspektify/screenshots/inspektify_logo.png" width=560></td>
 </p>
 
 Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android. It allows you to
