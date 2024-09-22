@@ -29,7 +29,5 @@ dependencyResolutionManagement {
 }
 
 include(":inspektify")
-include(":inspektify-ktor2")
-include(":inspektify-ktor3")
 include(":konsistTest")
 include(":inspektifySample:composeApp")
