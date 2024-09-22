@@ -138,7 +138,7 @@ InspektifyKtor.startInspektify()
 
 ### 2. Log level
 
-By default, logging of network communication in-app output is not enabled. But if you want you can
+By default, logging of network communication in-app output is disabled. But if you want you can
 enable it in the same way as we do it for the presentation type. The settings property that we can
 change for the logging is `logLevel`
 
