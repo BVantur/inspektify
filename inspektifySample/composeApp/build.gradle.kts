@@ -44,9 +44,11 @@ kotlin {
 
         commonMain.dependencies {
             if (useKtorV3) {
-                implementation("io.github.bvantur:inspektify-ktor3:1.0.0-alpha04")
+                implementation(libs.bundles.ktor3)
+                implementation(libs.inspektify.ktor3)
             } else {
-                implementation("io.github.bvantur:inspektify-ktor2:1.0.0-alpha04")
+                implementation(libs.bundles.ktor2)
+                implementation(libs.inspektify.ktor2)
             }
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -55,12 +57,6 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.viewmodel.compose)
-
-            if (useKtorV3) {
-                implementation(libs.bundles.ktor3)
-            } else {
-                implementation(libs.bundles.ktor2)
-            }
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
         }

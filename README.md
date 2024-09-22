@@ -8,8 +8,11 @@ Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android.
 observe the network of your application in real-time directly on your mobile device.
 
 <p align="center">
-<img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
-<img alt="Ios" src="https://img.shields.io/badge/Platform-Ios-Blue?style=for-the-badge"/>
+  <img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
+  <img alt="Ios" src="https://img.shields.io/badge/Platform-Ios-Blue?style=for-the-badge"/>
+  <a href="https://central.sonatype.com/artifact/io.github.bvantur/inspektify-ktor3">
+    <img alt="Maven" src="https://img.shields.io/maven-metadata/v.svg?label=mavenVersion&logo=apachemaven&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fio%2Fgithub%2Fbvantur%2Finspektify-ktor3%2Fmaven-metadata.xml"/>
+  </a>
 </p>
 
 # Screenshots
@@ -65,7 +68,7 @@ If your project is using Ktor version in the 3.x.x family add Inspektify with th
 ```
 commonMain.dependencies {
     ...
-    implementation("io.github.bvantur:inspektify-ktor3:1.0.0-alpha04")
+    implementation("io.github.bvantur:inspektify-ktor3:{mavenVersion}")
 }
 ```
 
@@ -76,7 +79,7 @@ If your project is using Ktor version between 2.3.1 and 3.0.0 add Inspektify wit
 ```
 commonMain.dependencies {
     ...
-    implementation("io.github.bvantur:inspektify-ktor2:1.0.0-alpha04")
+    implementation("io.github.bvantur:inspektify-ktor2:{mavenVersion}")
 }
 ```
 
@@ -240,3 +243,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+https://img.shields.io/maven-metadata/v.svg?label=Version&logo=apachemaven&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fio%2Fgithub%2Fbvantur%2Finspektify-ktor3%2Fmaven-metadata.xml
