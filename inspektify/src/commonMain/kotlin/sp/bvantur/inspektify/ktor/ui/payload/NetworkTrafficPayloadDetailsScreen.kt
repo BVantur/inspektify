@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
+import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
 import sp.bvantur.inspektify.ktor.presentation.payload.NetworkTrafficPayloadDetailsViewModel
 import sp.bvantur.inspektify.ktor.presentation.payload.NetworkTrafficPayloadDetailsViewState

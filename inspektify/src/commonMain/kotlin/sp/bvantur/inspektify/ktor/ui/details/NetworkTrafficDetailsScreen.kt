@@ -28,8 +28,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficId
+import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
 import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsViewModel
 import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsViewState

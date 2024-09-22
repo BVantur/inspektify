@@ -46,10 +46,10 @@ import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListEvent
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListVewModel
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListViewState
+import sp.bvantur.inspektify.ktor.shared.Platform
 import sp.bvantur.inspektify.ktor.ui.navigation.list.OnNavigateToDetailsAction
 import sp.bvantur.inspektify.ktor.ui.utils.CollectSingleEventsWithLifecycle
 import sp.bvantur.inspektify.ktor.ui.utils.ColorUtils
-import sp.bvantur.inspektify.ktor.shared.Platform
 
 @Composable
 internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDetailsAction) {
