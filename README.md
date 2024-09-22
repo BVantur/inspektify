@@ -2,9 +2,6 @@
   <td><img src="inspektify/screenshots/inspektify_logo.png" width=560></td>
 </p>
 
-Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android. It allows you to
-observe the network of your application in real-time directly on your mobile device.
-
 <p align="center">
   <a href="https://central.sonatype.com/artifact/io.github.bvantur/inspektify-ktor3">
     <img alt="Maven" src="https://img.shields.io/maven-metadata/v.svg?label=mavenVersion&logo=apachemaven&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fio%2Fgithub%2Fbvantur%2Finspektify-ktor3%2Fmaven-metadata.xml" height=30 />
@@ -14,6 +11,9 @@ observe the network of your application in real-time directly on your mobile dev
   <img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
   <img alt="Ios" src="https://img.shields.io/badge/Platform-Ios-Blue?style=for-the-badge"/>
 </p>
+
+Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android. It allows you to
+observe the network of your application in real-time directly on your mobile device.
 
 # Screenshots
 
