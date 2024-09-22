@@ -8,7 +8,7 @@ import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal interface InspektifyResponseHandler {
     suspend fun handleResponse(response: HttpResponse, networkTraffic: NetworkTraffic): NetworkTraffic

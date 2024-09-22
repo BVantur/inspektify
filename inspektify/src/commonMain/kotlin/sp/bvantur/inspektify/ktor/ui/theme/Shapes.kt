@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.ui.theme
+package sp.bvantur.inspektify.ktor.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

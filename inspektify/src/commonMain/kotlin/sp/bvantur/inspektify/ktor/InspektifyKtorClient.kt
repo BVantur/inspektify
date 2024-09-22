@@ -8,8 +8,8 @@ import io.ktor.client.request.HttpSendPipeline
 import io.ktor.client.statement.request
 import io.ktor.util.date.getTimeMillis
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
-import sp.bvantur.inspektify.shared.configurePresentationType
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.shared.configurePresentationType
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class InspektifyKtorClient(
     private val dispatcherProvider: DispatcherProvider,

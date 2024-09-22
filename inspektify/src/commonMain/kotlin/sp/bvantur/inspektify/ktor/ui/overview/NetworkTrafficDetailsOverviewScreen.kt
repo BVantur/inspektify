@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import sp.bvantur.inspektify.AppComponents
+import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
 import sp.bvantur.inspektify.ktor.presentation.overview.NetworkTrafficDetailsOverviewViewModel

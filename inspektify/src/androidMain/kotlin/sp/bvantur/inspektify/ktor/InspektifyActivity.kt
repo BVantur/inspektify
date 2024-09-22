@@ -1,8 +1,9 @@
-package sp.bvantur.inspektify
+package sp.bvantur.inspektify.ktor
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import sp.bvantur.inspektify.ktor.ui.App
 
 internal class InspektifyActivity : ComponentActivity() {
     companion object {

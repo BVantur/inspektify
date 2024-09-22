@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.shared
+package sp.bvantur.inspektify.ktor.shared
 
 import platform.Foundation.NSProcessInfo
 import platform.UIKit.UIApplication
@@ -8,8 +8,8 @@ import platform.UIKit.UITabBarController
 import platform.UIKit.UIViewController
 import platform.UIKit.UIWindow
 import platform.UIKit.UIWindowScene
-import sp.bvantur.inspektify.InspektifyViewController
-import sp.bvantur.inspektify.inspektifyViewControllerInstance
+import sp.bvantur.inspektify.ktor.InspektifyViewController
+import sp.bvantur.inspektify.ktor.inspektifyViewControllerInstance
 
 internal actual fun startInspektifyWindow() {
     val inspektifyViewController = InspektifyViewController()

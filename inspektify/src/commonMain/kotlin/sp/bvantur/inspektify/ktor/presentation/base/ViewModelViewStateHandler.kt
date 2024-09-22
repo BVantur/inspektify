@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal interface ViewModelViewStateHandler<ViewState : BaseViewState> {
     val viewStateFlow: StateFlow<ViewState>

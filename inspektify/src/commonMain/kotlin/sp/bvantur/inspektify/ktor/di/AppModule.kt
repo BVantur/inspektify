@@ -1,10 +1,8 @@
-package sp.bvantur.inspektify
+package sp.bvantur.inspektify.ktor.di
 
 import kotlinx.serialization.json.Json
-import sp.bvantur.inspektify.ktor.KtorModule
-import sp.bvantur.inspektify.ktor.KtorModuleImpl
-import sp.bvantur.inspektify.utils.DispatcherProvider
-import sp.bvantur.inspektify.utils.SampleDispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.SampleDispatcherProvider
 
 internal object AppComponents {
     private var appModule: AppModule? = null

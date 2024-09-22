@@ -1,6 +1,6 @@
-package sp.bvantur.inspektify.shared
+package sp.bvantur.inspektify.ktor.shared
 
-import sp.bvantur.inspektify.InspektifyActivity
+import sp.bvantur.inspektify.ktor.InspektifyActivity
 
 internal actual object Platform {
     actual fun closeInspektifyWindow() {

@@ -1,7 +1,8 @@
-package sp.bvantur.inspektify
+package sp.bvantur.inspektify.ktor
 
 import androidx.compose.ui.window.ComposeUIViewController
 import platform.UIKit.UIViewController
+import sp.bvantur.inspektify.ktor.ui.App
 
 internal var inspektifyViewControllerInstance: UIViewController? = null
 

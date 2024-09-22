@@ -12,17 +12,17 @@ plugins {
 }
 
 val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
-val inspektifyName = if (useKtorV3) {
-    "inspektify-ktor3"
-} else {
-    "inspektify-ktor2"
-}
 
 mavenPublishing {
+    val inspektifyName = if (useKtorV3) {
+        "inspektify-ktor3"
+    } else {
+        "inspektify-ktor2"
+    }
     coordinates(
         groupId = "io.github.bvantur",
         artifactId = inspektifyName,
-        version = "1.0.0-alpha04"
+        version = libs.versions.inspektify.version.get()
     )
 
     pom {

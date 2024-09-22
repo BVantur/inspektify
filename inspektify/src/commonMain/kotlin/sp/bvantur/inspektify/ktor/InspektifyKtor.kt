@@ -3,8 +3,8 @@ package sp.bvantur.inspektify.ktor
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpClientPlugin
 import io.ktor.util.AttributeKey
-import sp.bvantur.inspektify.AppComponents
-import sp.bvantur.inspektify.shared.startInspektifyWindow
+import sp.bvantur.inspektify.ktor.di.AppComponents
+import sp.bvantur.inspektify.ktor.shared.startInspektifyWindow
 
 class InspektifyKtor(val config: InspektifyKtorConfig) {
 

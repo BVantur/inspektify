@@ -195,6 +195,14 @@ HttpClient() {
 }
 ```
 
+## Sample project
+
+A sample project is included where you can test the behavior of the Inspektify library. By default,
+the sample is configured to use Ktor from the 3.x.x family, but if you want to test with Ktor from
+2.3.1 to 3.0.0 versions you need to change the next line in gradle.properties:
+
+`inspektify.ktorVersion=v2`
+
 ## Contact me
 
 <a href="https://github.com/BVantur">

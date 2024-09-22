@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.shared
+package sp.bvantur.inspektify.ktor.shared
 
 internal expect object Platform {
     fun closeInspektifyWindow()

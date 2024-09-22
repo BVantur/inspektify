@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify
+package sp.bvantur.inspektify.ktor
 
 import android.content.Context
 import androidx.startup.Initializer

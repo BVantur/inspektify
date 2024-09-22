@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.utils
+package sp.bvantur.inspektify.ktor.utils
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

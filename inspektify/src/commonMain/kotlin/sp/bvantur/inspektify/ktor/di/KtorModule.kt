@@ -1,7 +1,6 @@
-package sp.bvantur.inspektify.ktor
+package sp.bvantur.inspektify.ktor.di
 
 import app.cash.sqldelight.ColumnAdapter
-import sp.bvantur.inspektify.AppComponents
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository

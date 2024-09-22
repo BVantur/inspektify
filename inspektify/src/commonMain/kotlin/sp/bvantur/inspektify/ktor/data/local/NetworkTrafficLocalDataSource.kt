@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class NetworkTrafficLocalDataSource(
     private val database: InspektifyDB,

@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.resources.painterResource
-import sp.bvantur.inspektify.AppComponents
+import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.domain.model.NetworkTrafficListItem
 import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListEvent
@@ -49,7 +49,7 @@ import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTraffic
 import sp.bvantur.inspektify.ktor.ui.navigation.list.OnNavigateToDetailsAction
 import sp.bvantur.inspektify.ktor.ui.utils.CollectSingleEventsWithLifecycle
 import sp.bvantur.inspektify.ktor.ui.utils.ColorUtils
-import sp.bvantur.inspektify.shared.Platform
+import sp.bvantur.inspektify.ktor.shared.Platform
 
 @Composable
 internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDetailsAction) {

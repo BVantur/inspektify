@@ -9,7 +9,7 @@ import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.serialization.json.JsonElement
-import sp.bvantur.inspektify.AppComponents
+import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 import sp.bvantur.inspektify.ktor.domain.utils.DateTimeUtils

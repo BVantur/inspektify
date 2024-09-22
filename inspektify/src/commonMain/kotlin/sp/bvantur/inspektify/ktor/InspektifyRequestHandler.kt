@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
 import sp.bvantur.inspektify.ktor.utils.extensions.tryReadText
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal interface InspektifyRequestHandler {
 

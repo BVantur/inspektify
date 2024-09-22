@@ -9,7 +9,7 @@ import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
 import sp.bvantur.inspektify.ktor.presentation.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.shared.CopyNetworkTrafficHandler
-import sp.bvantur.inspektify.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class NetworkTrafficDetailsViewModel(
     private val getNetworkTrafficDataByIdUseCase: GetNetworkTrafficDataByIdUseCase,

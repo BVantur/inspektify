@@ -1,7 +1,7 @@
-package sp.bvantur.inspektify.shared
+package sp.bvantur.inspektify.ktor.shared
 
 import androidx.lifecycle.ProcessLifecycleOwner
-import sp.bvantur.inspektify.ShakeGestureListener
+import sp.bvantur.inspektify.ktor.ShakeGestureListener
 import sp.bvantur.inspektify.ktor.PresentationType
 
 internal actual fun configurePresentationType(presentationType: PresentationType) {

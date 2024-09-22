@@ -1,9 +1,9 @@
-package sp.bvantur.inspektify.shared
+package sp.bvantur.inspektify.ktor.shared
 
 import android.content.Intent
 import android.widget.Toast
-import sp.bvantur.inspektify.InspektifyActivity
-import sp.bvantur.inspektify.applicationContext
+import sp.bvantur.inspektify.ktor.InspektifyActivity
+import sp.bvantur.inspektify.ktor.applicationContext
 
 internal actual fun startInspektifyWindow() {
     applicationContext.startActivity(
