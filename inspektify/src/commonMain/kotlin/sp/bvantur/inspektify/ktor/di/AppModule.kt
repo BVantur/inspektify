@@ -2,7 +2,7 @@ package sp.bvantur.inspektify.ktor.di
 
 import kotlinx.serialization.json.Json
 import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
-import sp.bvantur.inspektify.ktor.utils.SampleDispatcherProvider
+import sp.bvantur.inspektify.ktor.utils.InspektifyDispatcherProvider
 
 internal object AppComponents {
     private var appModule: AppModule? = null
@@ -31,7 +31,7 @@ internal interface AppModule {
 internal class AppModuleImpl : AppModule {
 
     override val dispatcherProvider: DispatcherProvider by lazy {
-        SampleDispatcherProvider()
+        InspektifyDispatcherProvider()
     }
 
     override val json: Json by lazy {
