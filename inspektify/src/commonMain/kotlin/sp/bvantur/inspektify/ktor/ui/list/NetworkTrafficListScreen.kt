@@ -48,6 +48,7 @@ import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTraffic
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListViewState
 import sp.bvantur.inspektify.ktor.shared.Platform
 import sp.bvantur.inspektify.ktor.ui.navigation.list.OnNavigateToDetailsAction
+import sp.bvantur.inspektify.ktor.ui.theme.disabled
 import sp.bvantur.inspektify.ktor.ui.utils.CollectSingleEventsWithLifecycle
 import sp.bvantur.inspektify.ktor.ui.utils.ColorUtils
 
@@ -166,7 +167,7 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier
     Box(
         modifier = modifier.fillMaxWidth()
             .background(
-                if (item.isCurrentSession) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.tertiary
+                if (item.isCurrentSession) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.disabled
             )
     ) {
         Row(modifier = Modifier.fillMaxWidth()) {

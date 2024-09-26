@@ -9,6 +9,7 @@ import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
 import sp.bvantur.inspektify.ktor.presentation.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.shared.CopyNetworkTrafficHandler
+import sp.bvantur.inspektify.ktor.shared.ShareNetworkTrafficHandler
 import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class NetworkTrafficDetailsViewModel(
@@ -33,7 +34,19 @@ internal class NetworkTrafficDetailsViewModel(
         }
     }
 
-    fun copyToClipboard() {
+    fun onCurlAction() {
+        ShareNetworkTrafficHandler.shareNetworkTrafficContent(
+            NetworkTrafficUtils.createCurlCommand(viewStateFlow.value.networkTraffic)
+        )
+    }
+
+    fun onShareAction() {
+        ShareNetworkTrafficHandler.shareNetworkTrafficContent(
+            NetworkTrafficUtils.copyToClipboardStructure(viewStateFlow.value.networkTraffic)
+        )
+    }
+
+    fun onCopyAction() {
         CopyNetworkTrafficHandler.copyToClipboard(
             NetworkTrafficUtils.copyToClipboardStructure(viewStateFlow.value.networkTraffic)
         )

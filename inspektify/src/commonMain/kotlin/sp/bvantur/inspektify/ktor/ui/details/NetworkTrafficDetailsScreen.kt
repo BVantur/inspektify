@@ -1,12 +1,16 @@
 package sp.bvantur.inspektify.ktor.ui.details
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.filled.ContentCopy
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Terminal
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -15,6 +19,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -23,7 +28,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -36,8 +43,6 @@ import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsView
 import sp.bvantur.inspektify.ktor.ui.navigation.OnNavigateBackAction
 import sp.bvantur.inspektify.ktor.ui.overview.NetworkTrafficDetailsOverviewRoute
 import sp.bvantur.inspektify.ktor.ui.payload.NetworkTrafficPayloadDetailsRoute
-
-typealias OnCopyRestTransaction = () -> Unit
 
 @Composable
 internal fun NetworkTrafficDetailsRoute(
@@ -62,7 +67,9 @@ internal fun NetworkTrafficDetailsRoute(
     NetworkTrafficDetailsScreen(
         viewState = viewState,
         onNavigateBackAction = onNavigateBackAction,
-        onCopyRestTransaction = viewModel::copyToClipboard
+        onCurlAction = viewModel::onCurlAction,
+        onShareAction = viewModel::onShareAction,
+        onCopyAction = viewModel::onCopyAction
 
     )
 }
@@ -72,7 +79,9 @@ internal fun NetworkTrafficDetailsRoute(
 private fun NetworkTrafficDetailsScreen(
     viewState: NetworkTrafficDetailsViewState,
     onNavigateBackAction: OnNavigateBackAction,
-    onCopyRestTransaction: OnCopyRestTransaction
+    onCurlAction: () -> Unit,
+    onShareAction: () -> Unit,
+    onCopyAction: () -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -96,15 +105,6 @@ private fun NetworkTrafficDetailsScreen(
                             tint = MaterialTheme.colorScheme.onPrimary
                         )
                     }
-                },
-                actions = {
-                    IconButton(onClick = { onCopyRestTransaction() }) {
-                        Icon(
-                            imageVector = Icons.Default.ContentCopy,
-                            contentDescription = "Back",
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
-                    }
                 }
             )
         }
@@ -112,7 +112,7 @@ private fun NetworkTrafficDetailsScreen(
         var tabIndex by remember { mutableStateOf(0) }
 
         val tabs = listOf("Overview", "Request", "Response")
-        Column(modifier = Modifier.fillMaxWidth().padding(innerPadding)) {
+        Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
             TabRow(
                 selectedTabIndex = tabIndex,
                 containerColor = MaterialTheme.colorScheme.surface,
@@ -127,10 +127,68 @@ private fun NetworkTrafficDetailsScreen(
                 }
             }
             when (tabIndex) {
-                0 -> NetworkTrafficDetailsOverviewRoute(viewState.networkTraffic)
-                1 -> NetworkTrafficPayloadDetailsRoute(viewState.networkTraffic, false)
-                2 -> NetworkTrafficPayloadDetailsRoute(viewState.networkTraffic, true)
+                0 -> NetworkTrafficDetailsOverviewRoute(
+                    networkTraffic = viewState.networkTraffic,
+                    modifier = Modifier.weight(1f)
+                )
+
+                1 -> NetworkTrafficPayloadDetailsRoute(
+                    networkTraffic = viewState.networkTraffic,
+                    isResponse = false,
+                    modifier = Modifier.weight(1f)
+                )
+
+                2 -> NetworkTrafficPayloadDetailsRoute(
+                    networkTraffic = viewState.networkTraffic,
+                    isResponse = true,
+                    modifier = Modifier.weight(1f)
+                )
             }
+            Row(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
+                ActionTextIcon(
+                    modifier = Modifier.weight(1f),
+                    text = "cURL",
+                    imageVector = Icons.Default.Terminal,
+                    onClick = onCurlAction
+                )
+                ActionTextIcon(
+                    modifier = Modifier.weight(1f),
+                    text = "Share",
+                    imageVector = Icons.Default.Share,
+                    onClick = onShareAction
+                )
+                ActionTextIcon(
+                    modifier = Modifier.weight(1f),
+                    text = "Copy",
+                    imageVector = Icons.Default.ContentCopy,
+                    onClick = onCopyAction
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun ActionTextIcon(text: String, imageVector: ImageVector, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
+    TextButton(
+        modifier = modifier,
+        onClick = {
+            onClick()
+        }
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Icon(
+                imageVector = imageVector,
+                contentDescription = "Action icon",
+                tint = MaterialTheme.colorScheme.onSecondary
+            )
+            Text(
+                text = text,
+                color = MaterialTheme.colorScheme.onSecondary,
+                style = MaterialTheme.typography.bodyMedium
+            )
         }
     }
 }

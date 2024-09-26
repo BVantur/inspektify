@@ -1,7 +1,7 @@
 package sp.bvantur.inspektify.ktor.ui.payload
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -20,7 +20,11 @@ import sp.bvantur.inspektify.ktor.presentation.payload.NetworkTrafficPayloadDeta
 import sp.bvantur.inspektify.ktor.presentation.payload.NetworkTrafficPayloadDetailsViewState
 
 @Composable
-internal fun NetworkTrafficPayloadDetailsRoute(networkTraffic: NetworkTraffic?, isResponse: Boolean) {
+internal fun NetworkTrafficPayloadDetailsRoute(
+    networkTraffic: NetworkTraffic?,
+    isResponse: Boolean,
+    modifier: Modifier = Modifier
+) {
     val viewModel = viewModel<NetworkTrafficPayloadDetailsViewModel>(
         factory = viewModelFactory {
             NetworkTrafficPayloadDetailsViewModel(
@@ -33,13 +37,19 @@ internal fun NetworkTrafficPayloadDetailsRoute(networkTraffic: NetworkTraffic?, 
         viewModel.preparePresentationData(networkTraffic, isResponse)
     }
 
-    NetworkTrafficPayloadDetailsScreen(viewState)
+    NetworkTrafficPayloadDetailsScreen(
+        viewState = viewState,
+        modifier = modifier
+    )
 }
 
 @Composable
-private fun NetworkTrafficPayloadDetailsScreen(viewState: NetworkTrafficPayloadDetailsViewState) {
+private fun NetworkTrafficPayloadDetailsScreen(
+    viewState: NetworkTrafficPayloadDetailsViewState,
+    modifier: Modifier = Modifier
+) {
     Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(8.dp)
+        modifier = modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(8.dp)
     ) {
         viewState.headers?.let { headers ->
             Text(headers)

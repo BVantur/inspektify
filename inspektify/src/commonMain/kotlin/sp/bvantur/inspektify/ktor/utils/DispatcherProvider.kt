@@ -11,7 +11,7 @@ internal interface DispatcherProvider {
     val unconfined: CoroutineDispatcher
 }
 
-internal class SampleDispatcherProvider(
+internal class InspektifyDispatcherProvider(
     override val main: CoroutineDispatcher = Dispatchers.Main,
     override val io: CoroutineDispatcher = Dispatchers.IO,
     override val default: CoroutineDispatcher = Dispatchers.Default,

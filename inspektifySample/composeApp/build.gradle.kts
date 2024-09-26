@@ -43,12 +43,13 @@ kotlin {
         }
 
         commonMain.dependencies {
+            implementation(project(":inspektify"))
             if (useKtorV3) {
                 implementation(libs.bundles.ktor3)
-                implementation(libs.inspektify.ktor3)
+//                implementation(libs.inspektify.ktor3)
             } else {
                 implementation(libs.bundles.ktor2)
-                implementation(libs.inspektify.ktor2)
+//                implementation(libs.inspektify.ktor2)
             }
             implementation(compose.runtime)
             implementation(compose.foundation)
