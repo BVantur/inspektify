@@ -2,7 +2,6 @@ package sp.bvantur.inspektify.ktor.ui.overview
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -22,7 +21,7 @@ import sp.bvantur.inspektify.ktor.presentation.overview.NetworkTrafficDetailsOve
 import sp.bvantur.inspektify.ktor.presentation.overview.NetworkTrafficDetailsOverviewViewState
 
 @Composable
-internal fun NetworkTrafficDetailsOverviewRoute(networkTraffic: NetworkTraffic?) {
+internal fun NetworkTrafficDetailsOverviewRoute(networkTraffic: NetworkTraffic?, modifier: Modifier = Modifier) {
     val viewModel = viewModel<NetworkTrafficDetailsOverviewViewModel>(
         factory = viewModelFactory {
             NetworkTrafficDetailsOverviewViewModel(
@@ -36,12 +35,18 @@ internal fun NetworkTrafficDetailsOverviewRoute(networkTraffic: NetworkTraffic?)
         viewModel.preparePresentationData(networkTraffic)
     }
 
-    NetworkTrafficDetailsOverviewScreen(viewState)
+    NetworkTrafficDetailsOverviewScreen(
+        viewState = viewState,
+        modifier = modifier
+    )
 }
 
 @Composable
-private fun NetworkTrafficDetailsOverviewScreen(viewState: NetworkTrafficDetailsOverviewViewState) {
-    Column(modifier = Modifier.fillMaxSize().padding(8.dp)) {
+private fun NetworkTrafficDetailsOverviewScreen(
+    viewState: NetworkTrafficDetailsOverviewViewState,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier.fillMaxWidth().padding(8.dp)) {
         with(viewState) {
             url?.let {
                 OverviewContentRow("URL", it)

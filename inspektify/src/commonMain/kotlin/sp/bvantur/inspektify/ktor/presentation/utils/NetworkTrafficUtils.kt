@@ -12,6 +12,7 @@ import kotlinx.serialization.json.JsonElement
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 import sp.bvantur.inspektify.ktor.di.AppComponents
+import sp.bvantur.inspektify.ktor.domain.utils.ByteSizeUtils
 import sp.bvantur.inspektify.ktor.domain.utils.DateTimeUtils
 
 internal object NetworkTrafficUtils {
@@ -51,16 +52,13 @@ internal object NetworkTrafficUtils {
 
     internal fun copyToClipboardStructure(networkTraffic: NetworkTraffic?): String {
         networkTraffic ?: return "NULL"
-        val nullableValue = "???"
-        return """
-            ${getOverviewDataAsString(networkTraffic, nullableValue)}
-            
-            ${getRequestDataAsString(networkTraffic, nullableValue)}
-            
-            ${getResponseDataAsString(networkTraffic, nullableValue)}
-            
-            
-        """.trimIndent()
+        var clipboardText = ""
+        clipboardText += getOverviewDataAsString(networkTraffic)
+        clipboardText += "\n-------------------------------------------------------\n"
+        clipboardText += getRequestDataAsString(networkTraffic)
+        clipboardText += "\n-------------------------------------------------------\n"
+        clipboardText += getResponseDataAsString(networkTraffic)
+        return clipboardText
     }
 
     fun geAllNetworkTrafficSize(networkTraffic: NetworkTraffic?): Long {
@@ -74,43 +72,90 @@ internal object NetworkTrafficUtils {
         return size
     }
 
-    private fun getRequestDataAsString(networkTraffic: NetworkTraffic, nullableValue: String): String = """
-            REQUEST
-            --------------------------------------------------------
-            Request Date: ${getTime(networkTraffic.requestTimestamp)} ?: $nullableValue}
-            Request Headers: ${headersToString(networkTraffic.requestHeaders)}
-            Request Body: ${networkTraffic.requestPayload ?: nullableValue}
-            Request Payload Size: ${networkTraffic.requestPayloadSize ?: nullableValue}
-            Request Headers Size: ${networkTraffic.requestHeadersSize ?: nullableValue}
-            --------------------------------------------------------
-    """.trimIndent()
+    private fun getRequestDataAsString(networkTraffic: NetworkTraffic): String {
+        var requestData = ""
+        requestData += "REQUEST:\n"
+        getTime(networkTraffic.requestTimestamp)?.let {
+            requestData += "Request Date: $it\n"
+        }
+        networkTraffic.requestPayloadSize?.let {
+            requestData += "Request Payload Size: ${ByteSizeUtils.toTextWithByteUnit(it)}\n"
+        }
+        networkTraffic.requestHeadersSize?.let {
+            requestData += "Request Headers Size: ${ByteSizeUtils.toTextWithByteUnit(it)}\n"
+        }
+        requestData += """Request Headers: ${headersToString(networkTraffic.requestHeaders)}"""
+        requestData += "\n"
+        networkTraffic.requestPayload?.let {
+            requestData += if (it.isEmpty()) {
+                "Request Body: <EMPTY>"
+            } else {
+                """Request Body: $it"""
+            }
+            requestData += "\n"
+        }
+        return requestData
+    }
 
-    private fun getResponseDataAsString(networkTraffic: NetworkTraffic, nullableValue: String): String = """
-            RESPONSE
-            --------------------------------------------------------
-            Response Date: ${getTime(networkTraffic.responseTimestamp)} ?: $nullableValue}
-            Response Code: ${networkTraffic.responseStatus ?: nullableValue}
-            Response Headers: ${headersToString(networkTraffic.responseHeaders)}
-            Response Message: ${networkTraffic.responseStatusDescription ?: nullableValue}
-            Response Body: ${networkTraffic.responsePayload ?: nullableValue}
-            Response Payload Size: ${networkTraffic.responsePayloadSize ?: nullableValue}
-            Response Headers Size: ${networkTraffic.responseHeadersSize ?: nullableValue}
-            --------------------------------------------------------
-    """.trimIndent()
+    private fun getResponseDataAsString(networkTraffic: NetworkTraffic): String {
+        var responseData = ""
+        responseData += "RESPONSE:\n"
+        getTime(networkTraffic.responseTimestamp)?.let {
+            responseData += "Response Date: $it\n"
+        }
+        networkTraffic.responseStatus?.let {
+            responseData += "Response Code: $it\n"
+        }
+        networkTraffic.responseStatusDescription?.let {
+            responseData += "Response Message: $it\n"
+        }
+        networkTraffic.responsePayloadSize?.let {
+            responseData += "Response Payload Size: ${ByteSizeUtils.toTextWithByteUnit(it)}\n"
+        }
+        networkTraffic.responseHeadersSize?.let {
+            responseData += "Response Headers Size: ${ByteSizeUtils.toTextWithByteUnit(it.toLong())}\n"
+        }
+        responseData += """Response Headers: ${headersToString(networkTraffic.responseHeaders)}"""
+        responseData += "\n"
+        networkTraffic.responsePayload?.let {
+            responseData += if (it.isEmpty()) {
+                "Response Body: <EMPTY>"
+            } else {
+                """Response Body: $it"""
+            }
+            responseData += "\n"
+        }
+        return responseData.trimIndent()
+    }
 
-    private fun getOverviewDataAsString(networkTraffic: NetworkTraffic, nullableValue: String): String = """
-            Method: ${networkTraffic.method ?: nullableValue}
-                        URL: ${networkTraffic.url ?: nullableValue}
-                        Host: ${networkTraffic.host ?: nullableValue}
-                        Path: ${networkTraffic.path ?: nullableValue}
-                        Protocol: ${networkTraffic.protocol ?: nullableValue}
-                        Duration (ms): ${networkTraffic.tookDurationInMs ?: nullableValue}
-                        SSL: ${getSslText(networkTraffic)}
-                        All size: ${getAllResponseSize(networkTraffic)}
-    """.trimIndent()
+    private fun getOverviewDataAsString(networkTraffic: NetworkTraffic): String {
+        var overviewData = ""
+        overviewData += "OVERVIEW:\n"
+        networkTraffic.method?.let {
+            overviewData += "Method: $it\n"
+        }
+        networkTraffic.url?.let {
+            overviewData += "URL: $it\n"
+        }
+        networkTraffic.host?.let {
+            overviewData += "Host: $it\n"
+        }
+        networkTraffic.path?.let {
+            overviewData += "Path: $it\n"
+        }
+        networkTraffic.protocol?.let {
+            overviewData += "Protocol: $it\n"
+        }
+        networkTraffic.tookDurationInMs?.let {
+            overviewData += "Duration (ms): $it\n"
+        }
+        overviewData += "SSL: ${getSslText(networkTraffic)}\n"
+        overviewData += "All size: ${ByteSizeUtils.toTextWithByteUnit(getAllResponseSize(networkTraffic))}\n"
+        return overviewData.trimIndent()
+    }
 
-    private fun getTime(timestamp: Long?): String {
-        timestamp ?: return "???"
+    private fun getTime(timestamp: Long?): String? {
+        timestamp ?: return null
 
         val instant = Instant.fromEpochMilliseconds(timestamp)
         val systemTimeZone = TimeZone.currentSystemDefault()
@@ -144,5 +189,31 @@ internal object NetworkTrafficUtils {
         size += networkTraffic.responseHeadersSize ?: 0
 
         return size
+    }
+
+    internal fun createCurlCommand(networkTraffic: NetworkTraffic?): String {
+        val errorMessage = "Failed to create cURL command"
+        networkTraffic ?: return errorMessage
+        val method = networkTraffic.method ?: return errorMessage
+        val url = networkTraffic.url ?: return errorMessage
+
+        val components = mutableListOf("curl -v")
+
+        components.add("-X $method")
+
+        networkTraffic.requestHeaders?.forEach { (key, value) ->
+            val escapedValue = value.replace("\"", "\\\"")
+            components.add("-H \"$key: $escapedValue\"")
+        }
+
+        networkTraffic.requestPayload?.let { payload ->
+            var escapedBody = payload.replace("\\\"", "\\\\\"")
+            escapedBody = escapedBody.replace("\"", "\\\"")
+            components.add("-d \"$escapedBody\"")
+        }
+
+        components.add("\"$url\"")
+
+        return components.joinToString(separator = " \\\n\t")
     }
 }
