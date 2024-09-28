@@ -40,3 +40,6 @@ SELECT * FROM NetworkTrafficDataLocal WHERE id = ?;
 
 removeAllNetworkTrafficData:
 DELETE FROM NetworkTrafficDataLocal;
+
+removeNetworkTrafficOlderThan:
+DELETE FROM NetworkTrafficDataLocal WHERE requestTimestamp < ?;

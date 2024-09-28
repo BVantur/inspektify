@@ -31,4 +31,8 @@ internal class NetworkTrafficRepository(private val localDataSource: NetworkTraf
     }
 
     fun getCurrentSessionTimestamp(): Long = sessionTimestamp
+
+    suspend fun applyRetentionPolicyByDays(cutoffTimestamp: Long) {
+        localDataSource.removeNetworkTrafficOlderThan(cutoffTimestamp)
+    }
 }

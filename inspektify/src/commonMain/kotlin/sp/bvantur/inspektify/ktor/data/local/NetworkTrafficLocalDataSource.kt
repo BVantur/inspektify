@@ -60,4 +60,10 @@ internal class NetworkTrafficLocalDataSource(
             database.inspektifyDBQueries.removeAllNetworkTrafficData()
         }
     }
+
+    suspend fun removeNetworkTrafficOlderThan(cutoffTimestamp: Long) {
+        withContext(dispatcherProvider.io) {
+            database.inspektifyDBQueries.removeNetworkTrafficOlderThan(cutoffTimestamp)
+        }
+    }
 }
