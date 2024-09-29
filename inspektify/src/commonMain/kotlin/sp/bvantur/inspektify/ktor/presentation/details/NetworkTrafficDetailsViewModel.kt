@@ -24,7 +24,7 @@ internal class NetworkTrafficDetailsViewModel(
     fun loadRestTransactionById(id: NetworkTrafficId?) {
         id ?: return
 
-        viewModelScope.launch(dispatcherProvider.main) {
+        viewModelScope.launch(dispatcherProvider.main.immediate) {
             val networkTraffic = getNetworkTrafficDataByIdUseCase(id)
             emitViewState(
                 viewStateFlow.value.copy(

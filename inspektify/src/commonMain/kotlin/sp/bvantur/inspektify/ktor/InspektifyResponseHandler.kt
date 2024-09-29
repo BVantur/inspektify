@@ -33,7 +33,7 @@ internal class InspektifyResponseHandlerImpl(private val dispatcherProvider: Dis
                 responseStatus = status,
                 responseContentType = response.contentType()?.contentType,
                 responseStatusDescription = description,
-                responseHeaders = NetworkTrafficDataUtils.mapHeaders(headers),
+                responseHeaders = headers.entries(),
                 responsePayload = payload,
                 responsePayloadSize = payload.toByteArray().size.toLong(),
                 responseHeadersSize = headersSize,

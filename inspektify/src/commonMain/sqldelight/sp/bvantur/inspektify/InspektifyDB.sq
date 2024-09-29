@@ -1,8 +1,11 @@
+import kotlin.String;
 import kotlin.collections.List;
-import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader;
+import kotlin.collections.Map;
+import kotlin.collections.Set;
 
 CREATE TABLE NetworkTrafficDataLocal (
   id INTEGER NOT NULL PRIMARY KEY,
+  sessionId INTEGER NOT NULL,
   method TEXT,
   url TEXT,
   host TEXT,
@@ -10,7 +13,7 @@ CREATE TABLE NetworkTrafficDataLocal (
   protocol TEXT,
 
   requestTimestamp INTEGER,
-  requestHeaders TEXT AS List<NetworkTrafficHeader>,
+  requestHeaders TEXT AS Set<Map.Entry<String, List<String>>>,
   requestPayload TEXT,
   requestContentType TEXT,
   requestPayloadSize INTEGER,
@@ -19,7 +22,7 @@ CREATE TABLE NetworkTrafficDataLocal (
   responseTimestamp INTEGER,
   responseStatus INTEGER,
   responseStatusDescription TEXT,
-  responseHeaders TEXT AS List<NetworkTrafficHeader>,
+  responseHeaders TEXT AS Set<Map.Entry<String, List<String>>>,
   responsePayload TEXT,
   responseContentType TEXT,
   responsePayloadSize INTEGER,
@@ -27,16 +30,24 @@ CREATE TABLE NetworkTrafficDataLocal (
   tookDurationInMs INTEGER
 );
 
-
 getAllNetworkTraffic:
 SELECT * FROM NetworkTrafficDataLocal;
 
 insertNetworkTraffic:
-INSERT OR REPLACE INTO NetworkTrafficDataLocal(id, method, url, host, path, protocol, requestTimestamp, requestHeaders, requestPayload, requestContentType, requestPayloadSize, requestHeadersSize, responseTimestamp, responseStatus, responseStatusDescription, responseHeaders, responsePayload, responseContentType, responsePayloadSize, responseHeadersSize, tookDurationInMs)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+INSERT OR REPLACE INTO NetworkTrafficDataLocal(id, sessionId, method, url, host, path, protocol, requestTimestamp, requestHeaders, requestPayload, requestContentType, requestPayloadSize, requestHeadersSize, responseTimestamp, responseStatus, responseStatusDescription, responseHeaders, responsePayload, responseContentType, responsePayloadSize, responseHeadersSize, tookDurationInMs)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 getNetworkTrafficById:
 SELECT * FROM NetworkTrafficDataLocal WHERE id = ?;
 
 removeAllNetworkTrafficData:
 DELETE FROM NetworkTrafficDataLocal;
+
+removeNetworkTrafficOlderThan:
+DELETE FROM NetworkTrafficDataLocal WHERE requestTimestamp < ?;
+
+getDistinctSessionIds:
+SELECT DISTINCT sessionId FROM NetworkTrafficDataLocal ORDER BY sessionId DESC;
+
+removeRowsBySessionId:
+DELETE FROM NetworkTrafficDataLocal WHERE sessionId = ?;

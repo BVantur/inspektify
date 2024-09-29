@@ -18,7 +18,7 @@ internal class NetworkTrafficPayloadDetailsViewModel(private val dispatcherProvi
     fun preparePresentationData(networkTraffic: NetworkTraffic?, isResponse: Boolean) {
         networkTraffic ?: return
 
-        viewModelScope.launch(dispatcherProvider.main) {
+        viewModelScope.launch(dispatcherProvider.main.immediate) {
             val headers = NetworkTrafficUtils.formatHeadersAsAnnotatedString(
                 if (isResponse) {
                     networkTraffic.responseHeaders

@@ -5,6 +5,7 @@ import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 
 internal fun NetworkTrafficDataLocal.toNetworkTraffic(): NetworkTraffic = NetworkTraffic(
     id = id,
+    sessionId = sessionId,
     method = method,
     url = url,
     host = host,

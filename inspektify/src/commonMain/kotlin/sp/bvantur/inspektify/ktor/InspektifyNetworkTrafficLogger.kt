@@ -2,7 +2,6 @@ package sp.bvantur.inspektify.ktor
 
 import io.ktor.http.Url
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
-import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 
 internal interface InspektifyNetworkTrafficLogger {
     fun configureLogger(logLevel: LogLevel)
@@ -68,11 +67,11 @@ internal class InspektifyNetworkTrafficLoggerImpl : InspektifyNetworkTrafficLogg
         println(responseLogger.toString().trim())
     }
 
-    private fun headersToLog(headers: List<NetworkTrafficHeader>?): String {
+    private fun headersToLog(headers: Set<Map.Entry<String, List<String>>>?): String {
         headers ?: return ""
 
-        return headers.joinToString("\n") { header ->
-            "$tag ${header.name}:${header.value}"
+        return headers.joinToString { (headerName, headerValues) ->
+            "$tag $headerName:$headerValues"
         }
     }
 
