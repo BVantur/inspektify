@@ -17,7 +17,7 @@ observe the network of your application in real-time directly on your mobile dev
 
 # Screenshots
 
-### Android
+## Android
 
 <table align="center">
   <tr>
@@ -30,7 +30,7 @@ observe the network of your application in real-time directly on your mobile dev
   </tr>
 </table>
 
-### iOS
+## iOS
 
 <table align="center">
   <tr>
@@ -49,7 +49,7 @@ This library can be used only on projects that are using Ktor for network commun
 a need to support a different library besides Ktor open an issue for it. Inspektify is supported
 only for projects that are using the Ktor library equal to or greater than 2.3.1.
 
-### 1. Gradle
+## 1. Gradle
 
 This library is available on mavenCentral. To use it in your project add the following repository if
 you don't have it yet.
@@ -61,7 +61,7 @@ repositories {
 }
 ```
 
-#### Ktor 3.x.x
+### Ktor 3.x.x
 
 If your project is using Ktor version in the 3.x.x family add Inspektify with this line:
 
@@ -72,7 +72,7 @@ commonMain.dependencies {
 }
 ```
 
-#### Ktor 2.3.1 - 3.0.0
+### Ktor 2.3.1 - 3.0.0
 
 If your project is using Ktor version between 2.3.1 and 3.0.0 add Inspektify with this line:
 
@@ -83,12 +83,12 @@ commonMain.dependencies {
 }
 ```
 
-#### iOS target
+### iOS target
 
 Depending on your project setting there are 2 different ways that need to be done to make it work on
 iOS target.
 
-##### Static Framework (`isStatic = true`)
+#### Static Framework (`isStatic = true`)
 
 If your iOS targets are set as static you need to follow the next steps:
 
@@ -99,7 +99,7 @@ If your iOS targets are set as static you need to follow the next steps:
 5. Search for **Other Linker Flags**
 6. Add `-lsqlite3` to it
 
-##### Dynamic Framework (`isStatic = false`)
+#### Dynamic Framework (`isStatic = false`)
 
 If your iOS targets are set to be dynamic, then it is necessary to add this additional gradle
 configuration to your project:
@@ -113,7 +113,7 @@ iosTarget.binaries.all {
 The sample project is currently configured as dynamic, so you can see how this approach can be
 implemented there.
 
-### 2. Kotlin
+## 2. Kotlin
 
 You need to configure the library wherever you are creating a Ktor client in your project.
 Configuration follows the defined design of the Ktor library by installing a plugin directly to the
@@ -135,7 +135,7 @@ library to make it more flexible. The library also tracks which network transact
 current active app sessions and highlights them in the list with a different background color.
 Network transactions from previous sessions have a background in light gray color.
 
-### 1. Presentation type
+## 1. Presentation type
 
 By default, the library detects the shake gesture of the device and shows the list of network
 transactions that happened within the app. But we want to enable developers to override this
@@ -166,7 +166,7 @@ the next code:
 InspektifyKtor.startInspektify()
 ```
 
-### 2. Log level
+## 2. Log level
 
 By default, logging of network communication in-app output is disabled. But if you want you can
 enable it in the same way as we do it for the presentation type. The settings property that we can
@@ -213,7 +213,7 @@ Here you can see what each LogLevel does when configured for your client:
   request and response.
 - **LogLevel.All** -> prints everything for a network transaction.
 
-### 2. Data retention policy
+## 2. Data retention policy
 
 By default retention policy is set to preserve data for the maximum possible period of 14 days.
 You can customize this as you wish with `dataRetentionPolicy` which is available
