@@ -23,7 +23,7 @@ internal class NetworkTrafficDetailsOverviewViewModel(private val dispatcherProv
     fun preparePresentationData(networkTraffic: NetworkTraffic?) {
         networkTraffic ?: return
 
-        viewModelScope.launch(dispatcherProvider.main) {
+        viewModelScope.launch(dispatcherProvider.main.immediate) {
             emitViewState(
                 viewStateFlow.value.copy(
                     url = networkTraffic.url,

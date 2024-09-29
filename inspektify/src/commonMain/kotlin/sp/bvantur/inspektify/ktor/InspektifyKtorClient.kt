@@ -24,7 +24,10 @@ internal class InspektifyKtorClient(
 
     private val coroutineScope = CoroutineScope(dispatcherProvider.main + SupervisorJob())
 
+    private var sessionId: Long? = null
+
     fun install(plugin: InspektifyKtor, client: HttpClient) {
+        sessionId = getTimeMillis()
         configure(plugin.config)
         setupRequestInterceptor(client)
         setupResponseInterceptor(client)
@@ -46,7 +49,7 @@ internal class InspektifyKtorClient(
 
         client.sendPipeline.intercept(HttpSendPipeline.Monitoring) {
             try {
-                val networkTraffic = handleRequest(context)
+                val networkTraffic = handleRequest(request = context, sessionId = sessionId)
                 networkTrafficRepository.saveNetworkTrafficData(networkTraffic)
                 logRequest(networkTraffic)
             } catch (ignore: Throwable) {

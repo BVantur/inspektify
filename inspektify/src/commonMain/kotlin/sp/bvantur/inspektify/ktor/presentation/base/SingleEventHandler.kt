@@ -19,7 +19,7 @@ internal class SingleEventHandlerImpl<SingleEvent : sp.bvantur.inspektify.ktor.p
     override val singleEventFlow = mutableSingleEventChannel.receiveAsFlow()
 
     override suspend fun emitSingleEvent(singleEvent: SingleEvent) {
-        withContext(dispatcherProvider.main) {
+        withContext(dispatcherProvider.main.immediate) {
             mutableSingleEventChannel.send(singleEvent)
         }
     }

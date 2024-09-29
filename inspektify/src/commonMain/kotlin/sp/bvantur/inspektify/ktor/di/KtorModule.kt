@@ -1,13 +1,15 @@
 package sp.bvantur.inspektify.ktor.di
 
 import app.cash.sqldelight.ColumnAdapter
+import kotlinx.serialization.encodeToString
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.ktor.data.local.NetworkTrafficLocalDataSource
-import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 import sp.bvantur.inspektify.ktor.domain.usecase.GetAllNetworkTrafficDataUseCase
 import sp.bvantur.inspektify.ktor.domain.usecase.GetAllNetworkTrafficDataUseCaseImpl
+import sp.bvantur.inspektify.ktor.domain.usecase.GetCurrentSessionRetentionPolicy
+import sp.bvantur.inspektify.ktor.domain.usecase.GetCurrentSessionRetentionPolicyImpl
 import sp.bvantur.inspektify.ktor.domain.usecase.GetNetworkTrafficDataByIdUseCase
 import sp.bvantur.inspektify.ktor.domain.usecase.GetNetworkTrafficDataByIdUseCaseImpl
 import sp.bvantur.inspektify.ktor.domain.usecase.RemoveAllNetworkTrafficDataUseCase
@@ -19,6 +21,7 @@ internal interface KtorModule {
     val getNetworkTrafficUseCase: GetAllNetworkTrafficDataUseCase
     val removeAllNetworkTrafficDataUseCase: RemoveAllNetworkTrafficDataUseCase
     val getNetworkTrafficDataByIdUseCase: GetNetworkTrafficDataByIdUseCase
+    val getCurrentSessionRetentionPolicy: GetCurrentSessionRetentionPolicy
 }
 
 internal class KtorModuleImpl : KtorModule {
@@ -41,22 +44,20 @@ internal class KtorModuleImpl : KtorModule {
     override val getNetworkTrafficDataByIdUseCase: GetNetworkTrafficDataByIdUseCase by lazy {
         GetNetworkTrafficDataByIdUseCaseImpl(networkTrafficRepository)
     }
-
-    private val listOfNetworkTrafficHeaderAdapter = object : ColumnAdapter<List<NetworkTrafficHeader>, String> {
-        override fun decode(databaseValue: String): List<NetworkTrafficHeader> = databaseValue.split(
-            ";"
-        ).map { headerString ->
-            val items = headerString.split(":")
-            NetworkTrafficHeader(
-                name = items.first(),
-                value = items.last()
-            )
-        }
-
-        override fun encode(value: List<NetworkTrafficHeader>) = value.joinToString(separator = ";") { restHeader ->
-            "${restHeader.name}:${restHeader.value}"
-        }
+    override val getCurrentSessionRetentionPolicy: GetCurrentSessionRetentionPolicy by lazy {
+        GetCurrentSessionRetentionPolicyImpl(networkTrafficRepository)
     }
+
+    private val listOfNetworkTrafficHeaderAdapter =
+        object : ColumnAdapter<Set<Map.Entry<String, List<String>>>, String> {
+            override fun decode(databaseValue: String): Set<Map.Entry<String, List<String>>> =
+                AppComponents.getAppModule().json.decodeFromString<Set<Map.Entry<String, List<String>>>>(
+                    databaseValue
+                )
+
+            override fun encode(value: Set<Map.Entry<String, List<String>>>): String =
+                AppComponents.getAppModule().json.encodeToString(value)
+        }
 
     private val database: InspektifyDB by lazy {
         InspektifyDB(

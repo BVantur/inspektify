@@ -16,14 +16,14 @@ internal interface InspektifyRequestHandler {
 
     fun getNetworkTrafficIdKey(): AttributeKey<Long>
 
-    suspend fun handleRequest(request: HttpRequestBuilder): NetworkTraffic
+    suspend fun handleRequest(request: HttpRequestBuilder, sessionId: Long?): NetworkTraffic
 }
 
 internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: DispatcherProvider) :
     InspektifyRequestHandler {
     private val networkTrafficIdKey = AttributeKey<Long>("NetworkTrafficIdKey")
 
-    override suspend fun handleRequest(request: HttpRequestBuilder): NetworkTraffic = withContext(
+    override suspend fun handleRequest(request: HttpRequestBuilder, sessionId: Long?): NetworkTraffic = withContext(
         dispatcherProvider.default
     ) {
         val id = request.attributes[networkTrafficIdKey]
@@ -37,6 +37,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
 
         NetworkTraffic(
             id = id,
+            sessionId = sessionId ?: 0L,
             method = method,
             url = url.toString(),
             requestContentType = contentType,
@@ -44,7 +45,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
             path = url.pathSegments.joinToString("/"),
             protocol = url.protocol.name,
             requestTimestamp = id,
-            requestHeaders = NetworkTrafficDataUtils.mapHeaders(headers),
+            requestHeaders = headers.entries(),
             requestPayload = payload,
             requestPayloadSize = payloadSize,
             requestHeadersSize = headersSize.toLong()

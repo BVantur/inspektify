@@ -21,7 +21,7 @@ class ViewModelViewStateHandlerImpl<ViewState : BaseViewState>(
     override val viewStateFlow: StateFlow<ViewState> = mutableViewStateFlow.asStateFlow()
 
     override suspend fun emitViewState(viewState: ViewState) {
-        withContext(dispatcherProvider.main) {
+        withContext(dispatcherProvider.main.immediate) {
             mutableViewStateFlow.update {
                 viewState
             }

@@ -10,23 +10,21 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.serialization.json.JsonElement
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
-import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficHeader
 import sp.bvantur.inspektify.ktor.di.AppComponents
 import sp.bvantur.inspektify.ktor.domain.utils.ByteSizeUtils
 import sp.bvantur.inspektify.ktor.domain.utils.DateTimeUtils
 
 internal object NetworkTrafficUtils {
-    fun formatHeadersAsAnnotatedString(headers: List<NetworkTrafficHeader>?): AnnotatedString? {
+    fun formatHeadersAsAnnotatedString(headers: Set<Map.Entry<String, List<String>>>?): AnnotatedString? {
         if (headers.isNullOrEmpty()) return null
-
         return buildAnnotatedString {
-            headers.forEach { header ->
+            headers.forEach { (headerName, headerValue) ->
                 withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                    append(header.name)
+                    append(headerName)
                     append(": ")
                 }
 
-                append(header.value)
+                append(headerValue.joinToString())
                 append("\n")
             }
         }
@@ -164,10 +162,13 @@ internal object NetworkTrafficUtils {
         return DateTimeUtils.toTimeString(localDateTime)
     }
 
-    private fun headersToString(headers: List<NetworkTrafficHeader>?): String =
-        headers?.joinToString(separator = "\n    ", prefix = "[\n    ", postfix = "\n  ]") {
-            "${it.name}: ${it.value}"
-        } ?: ""
+    private fun headersToString(headers: Set<Map.Entry<String, List<String>>>?): String = headers?.joinToString(
+        separator = "\n    ",
+        prefix = "[\n    ",
+        postfix = "\n  ]"
+    ) { (headerName, headerValue) ->
+        "$headerName: $headerValue"
+    } ?: ""
 
     fun getAllRequestSize(networkTraffic: NetworkTraffic?): Long {
         networkTraffic ?: return 0
@@ -202,7 +203,7 @@ internal object NetworkTrafficUtils {
         components.add("-X $method")
 
         networkTraffic.requestHeaders?.forEach { (key, value) ->
-            val escapedValue = value.replace("\"", "\\\"")
+            val escapedValue = value.joinToString().replace("\"", "\\\"")
             components.add("-H \"$key: $escapedValue\"")
         }
 

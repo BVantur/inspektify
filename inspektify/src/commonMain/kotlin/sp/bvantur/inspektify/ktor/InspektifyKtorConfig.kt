@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor
 class InspektifyKtorConfig {
     var presentationType: PresentationType = PresentationType.AutoShake
     var logLevel: LogLevel = LogLevel.None
-    var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(0)
+    var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
 }
 
 sealed interface PresentationType {
@@ -32,4 +32,5 @@ sealed interface LogLevel {
 
 sealed interface DataRetentionPolicy {
     data class DayDuration(val numOfDays: Int) : DataRetentionPolicy
+    data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
 }

@@ -59,7 +59,8 @@ internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDeta
             NetworkTrafficListVewModel(
                 dispatcherProvider = AppComponents.getAppModule().dispatcherProvider,
                 getAllNetworkTrafficDataUseCase = AppComponents.getKtorModule().getNetworkTrafficUseCase,
-                removeAllNetworkTrafficDataUseCase = AppComponents.getKtorModule().removeAllNetworkTrafficDataUseCase
+                removeAllNetworkTrafficDataUseCase = AppComponents.getKtorModule().removeAllNetworkTrafficDataUseCase,
+                getCurrentSessionRetentionPolicy = AppComponents.getKtorModule().getCurrentSessionRetentionPolicy
             )
         }
     )
@@ -131,10 +132,13 @@ internal fun NetworkTrafficListScreen(
                     modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 8.dp)
                 )
             } else {
-                LazyColumn(modifier = Modifier.fillMaxWidth()) {
+                LazyColumn(modifier = Modifier.weight(1f)) {
                     viewState.items.forEach { (date, items) ->
                         stickyHeader {
-                            Box(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
+                            Box(
+                                modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)
+                                    .clickable { }
+                            ) {
                                 Text(
                                     text = date,
                                     color = MaterialTheme.colorScheme.onSecondary,
@@ -156,6 +160,14 @@ internal fun NetworkTrafficListScreen(
                             )
                         }
                     }
+                }
+
+                Box(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
+                    Text(
+                        text = viewState.retentionPolicyText,
+                        modifier = Modifier.align(Alignment.Center).padding(16.dp),
+                        color = MaterialTheme.colorScheme.onSecondary
+                    )
                 }
             }
         }
