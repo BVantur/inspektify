@@ -2,6 +2,7 @@ package sp.bvantur.inspektify.ktor.presentation.networktrafficlist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.ktor.domain.usecase.GetAllNetworkTrafficDataUseCase
 import sp.bvantur.inspektify.ktor.domain.usecase.GetCurrentSessionRetentionPolicy
@@ -24,6 +25,10 @@ internal class NetworkTrafficListVewModel(
         dispatcherProvider
     ),
     SingleEventHandler<NetworkTrafficListEvent> by SingleEventHandlerImpl(dispatcherProvider) {
+
+        companion object {
+            private const val KEYBOARD_DELAY = 200L
+        }
 
     fun startObservingNetworkTrafficData() {
         viewModelScope.launch(dispatcherProvider.main.immediate) {
@@ -51,7 +56,50 @@ internal class NetworkTrafficListVewModel(
 
     fun onBackAction() {
         viewModelScope.launch(dispatcherProvider.main.immediate) {
-            Platform.closeInspektifyWindow()
+            if (viewStateFlow.value.isSearching) {
+                emitSingleEvent(NetworkTrafficListEvent.RemoveFocusFromSearch)
+                emitViewState(viewStateFlow.value.copy(isSearching = false, searchQuery = ""))
+            } else {
+                Platform.closeInspektifyWindow()
+            }
+        }
+    }
+
+    fun onSearchAction() {
+        viewModelScope.launch(dispatcherProvider.main.immediate) {
+            emitViewState(
+                viewStateFlow.value.copy(
+                    isSearching = true,
+                    queriedItems = viewStateFlow.value.items
+                )
+            )
+            delay(KEYBOARD_DELAY)
+            emitSingleEvent(NetworkTrafficListEvent.MoveFocusOnSearch)
+        }
+    }
+
+    fun onSearchQueryAction(query: String) {
+        viewModelScope.launch(dispatcherProvider.main.immediate) {
+            val lowercaseQuery = query.lowercase()
+            println("query.isBlank(): ${query.isBlank()}")
+            val queriedItems = if (query.isBlank()) {
+                viewStateFlow.value.items
+            } else {
+                viewStateFlow.value.items.mapValues { entry ->
+                    entry.value.filter { item ->
+                        item.statusCode.contains(lowercaseQuery, ignoreCase = true) ||
+                            item.methodWithPath.contains(lowercaseQuery, ignoreCase = true) ||
+                            item.host.contains(lowercaseQuery, ignoreCase = true)
+                    }
+                }.filterValues { it.isNotEmpty() }
+            }
+            println("queriedItems: $queriedItems")
+            emitViewState(
+                viewStateFlow.value.copy(
+                    searchQuery = query,
+                    queriedItems = queriedItems
+                )
+            )
         }
     }
 }
