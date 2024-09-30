@@ -5,7 +5,6 @@ import io.ktor.utils.io.toByteArray
 
 object KtorUtils {
     suspend fun channelToByteArray(channel: ByteReadChannel): ByteArray {
-        println("channelToByteArray -> KTORv3")
         return channel.toByteArray()
     }
 }

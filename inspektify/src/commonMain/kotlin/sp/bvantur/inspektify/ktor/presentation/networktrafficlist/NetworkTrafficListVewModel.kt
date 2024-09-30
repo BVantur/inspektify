@@ -81,7 +81,6 @@ internal class NetworkTrafficListVewModel(
     fun onSearchQueryAction(query: String) {
         viewModelScope.launch(dispatcherProvider.main.immediate) {
             val lowercaseQuery = query.lowercase()
-            println("query.isBlank(): ${query.isBlank()}")
             val queriedItems = if (query.isBlank()) {
                 viewStateFlow.value.items
             } else {
@@ -93,7 +92,6 @@ internal class NetworkTrafficListVewModel(
                     }
                 }.filterValues { it.isNotEmpty() }
             }
-            println("queriedItems: $queriedItems")
             emitViewState(
                 viewStateFlow.value.copy(
                     searchQuery = query,
