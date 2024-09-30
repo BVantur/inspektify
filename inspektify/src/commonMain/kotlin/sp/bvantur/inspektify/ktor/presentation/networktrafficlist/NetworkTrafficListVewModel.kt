@@ -26,9 +26,9 @@ internal class NetworkTrafficListVewModel(
     ),
     SingleEventHandler<NetworkTrafficListEvent> by SingleEventHandlerImpl(dispatcherProvider) {
 
-        companion object {
-            private const val KEYBOARD_DELAY = 200L
-        }
+    companion object {
+        private const val KEYBOARD_DELAY = 200L
+    }
 
     fun startObservingNetworkTrafficData() {
         viewModelScope.launch(dispatcherProvider.main.immediate) {
