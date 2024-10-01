@@ -6,9 +6,6 @@ import androidx.activity.compose.setContent
 import sp.bvantur.inspektify.ktor.ui.App
 
 internal class InspektifyActivity : ComponentActivity() {
-    companion object {
-        var inspektifyActivityInstance: ComponentActivity? = null
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,5 +19,9 @@ internal class InspektifyActivity : ComponentActivity() {
     override fun onDestroy() {
         super.onDestroy()
         inspektifyActivityInstance = null
+    }
+
+    companion object {
+        var inspektifyActivityInstance: ComponentActivity? = null
     }
 }

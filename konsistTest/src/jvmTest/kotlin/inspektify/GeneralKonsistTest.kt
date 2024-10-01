@@ -101,20 +101,12 @@ class GeneralKonsistTest {
             .scopeFromProject()
             .classes()
             .assertTrue {
-                val companionObject = it.objects(includeNested = false).firstOrNull { obj ->
+                val companionObject = it.objects(includeNested = false).lastOrNull { obj ->
                     obj.hasModifier(KoModifier.COMPANION)
                 }
 
                 if (companionObject != null) {
-                    if (it.constructors.containingDeclarations.isNotEmpty()) {
-                        it.declarations(
-                            includeNested = false,
-                            includeLocal = false
-                        )[it.constructors.containingDeclarations.size] ==
-                            companionObject
-                    } else {
-                        it.declarations(includeNested = false, includeLocal = false).first() == companionObject
-                    }
+                    it.declarations(includeNested = false, includeLocal = false).last() == companionObject
                 } else {
                     true
                 }
