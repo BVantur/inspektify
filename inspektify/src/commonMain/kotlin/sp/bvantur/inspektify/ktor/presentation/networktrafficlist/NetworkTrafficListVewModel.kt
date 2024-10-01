@@ -97,7 +97,6 @@ internal class NetworkTrafficListVewModel(
         }
     }
 
-
     companion object {
         private const val KEYBOARD_DELAY = 200L
     }
