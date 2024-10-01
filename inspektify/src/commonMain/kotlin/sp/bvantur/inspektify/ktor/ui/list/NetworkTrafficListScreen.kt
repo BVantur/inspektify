@@ -14,7 +14,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.HourglassBottom
 import androidx.compose.material.icons.outlined.Storage
 import androidx.compose.material.icons.outlined.Timer
@@ -25,13 +27,18 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -66,6 +73,7 @@ internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDeta
     )
 
     val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
+    val searchFocusRequester = remember { FocusRequester() }
 
     LaunchedEffect(Unit) {
         viewModel.startObservingNetworkTrafficData()
@@ -76,14 +84,26 @@ internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDeta
             is NetworkTrafficListEvent.ToNetworkDetails -> {
                 onNavigateToDetailsAction(singleEvent.id)
             }
+
+            NetworkTrafficListEvent.MoveFocusOnSearch -> {
+                searchFocusRequester.requestFocus()
+            }
+
+            NetworkTrafficListEvent.RemoveFocusFromSearch -> {
+                searchFocusRequester.requestFocus()
+            }
         }
     }
 
     NetworkTrafficListScreen(
         viewState = viewState,
+        searchFocusRequester = searchFocusRequester,
         onClearItems = viewModel::onClearItemsAction,
         onBackAction = viewModel::onBackAction,
-        onSelectSingleNetworkTrafficItem = viewModel::onSelectSingleNetworkTrafficItem
+        onSelectSingleNetworkTrafficItem = viewModel::onSelectSingleNetworkTrafficItem,
+        onSearchAction = viewModel::onSearchAction,
+        onClearSearchQuery = { viewModel.onSearchQueryAction("") },
+        onSearchQueryAction = viewModel::onSearchQueryAction
     )
 }
 
@@ -91,18 +111,56 @@ internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDeta
 @Composable
 internal fun NetworkTrafficListScreen(
     viewState: NetworkTrafficListViewState,
+    searchFocusRequester: FocusRequester,
     onClearItems: () -> Unit,
     onBackAction: () -> Unit,
+    onSearchAction: () -> Unit,
+    onSearchQueryAction: (String) -> Unit,
+    onClearSearchQuery: () -> Unit,
     onSelectSingleNetworkTrafficItem: OnNavigateToDetailsAction
 ) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Inspektify", color = MaterialTheme.colorScheme.onPrimary) },
+                title = {
+                    if (viewState.isSearching) {
+                        TextField(
+                            value = viewState.searchQuery,
+                            onValueChange = onSearchQueryAction,
+                            placeholder = { Text("Search...") },
+                            singleLine = true,
+                            modifier = Modifier.fillMaxWidth().focusRequester(searchFocusRequester),
+                            colors = TextFieldDefaults.colors(
+                                focusedTextColor = MaterialTheme.colorScheme.onPrimary,
+                                unfocusedTextColor = MaterialTheme.colorScheme.onPrimary,
+                                focusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
+                                unfocusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
+                                focusedContainerColor = MaterialTheme.colorScheme.primary,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
+                                cursorColor = MaterialTheme.colorScheme.onPrimary,
+                                focusedIndicatorColor = MaterialTheme.colorScheme.surface,
+                                unfocusedIndicatorColor = MaterialTheme.colorScheme.surface,
+                                focusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                                unfocusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                            ),
+                            trailingIcon = {
+                                if (viewState.searchQuery.isNotEmpty()) {
+                                    IconButton(onClick = onClearSearchQuery) {
+                                        Icon(
+                                            imageVector = Icons.Default.Close,
+                                            contentDescription = "Clear Search",
+                                            tint = MaterialTheme.colorScheme.onPrimary
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    } else {
+                        Text("Inspektify", color = MaterialTheme.colorScheme.onPrimary)
+                    }
+                },
                 navigationIcon = {
-                    IconButton(onClick = {
-                        onBackAction()
-                    }) {
+                    IconButton(onClick = onBackAction) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                             contentDescription = "Back",
@@ -111,14 +169,21 @@ internal fun NetworkTrafficListScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = {
-                        onClearItems()
-                    }) {
-                        Icon(
-                            imageVector = Icons.Filled.Delete,
-                            contentDescription = "Back",
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
+                    if (!viewState.isSearching) {
+                        IconButton(onClick = onSearchAction) {
+                            Icon(
+                                imageVector = Icons.Filled.Search,
+                                contentDescription = "Search",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+                        IconButton(onClick = onClearItems) {
+                            Icon(
+                                imageVector = Icons.Filled.Delete,
+                                contentDescription = "Back",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
@@ -132,8 +197,13 @@ internal fun NetworkTrafficListScreen(
                     modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 8.dp)
                 )
             } else {
+                val networkTrafficItems = if (viewState.isSearching) {
+                    viewState.queriedItems
+                } else {
+                    viewState.items
+                }
                 LazyColumn(modifier = Modifier.weight(1f)) {
-                    viewState.items.forEach { (date, items) ->
+                    networkTrafficItems.forEach { (date, items) ->
                         stickyHeader {
                             Box(
                                 modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)

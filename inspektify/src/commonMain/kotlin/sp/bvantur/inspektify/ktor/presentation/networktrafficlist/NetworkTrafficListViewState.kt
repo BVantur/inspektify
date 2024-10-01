@@ -5,5 +5,8 @@ import sp.bvantur.inspektify.ktor.presentation.base.BaseViewState
 
 internal data class NetworkTrafficListViewState(
     val items: GroupedNetworkTrafficData = emptyMap(),
-    val retentionPolicyText: String = ""
+    val queriedItems: GroupedNetworkTrafficData = emptyMap(),
+    val retentionPolicyText: String = "",
+    val isSearching: Boolean = false,
+    val searchQuery: String = "",
 ) : BaseViewState
