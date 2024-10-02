@@ -13,24 +13,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.HourglassBottom
 import androidx.compose.material.icons.outlined.Storage
 import androidx.compose.material.icons.outlined.Timer
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -38,7 +28,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -54,6 +43,7 @@ import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTraffic
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListVewModel
 import sp.bvantur.inspektify.ktor.presentation.networktrafficlist.NetworkTrafficListViewState
 import sp.bvantur.inspektify.ktor.shared.Platform
+import sp.bvantur.inspektify.ktor.ui.components.InspektifyKtorTopAppBar
 import sp.bvantur.inspektify.ktor.ui.navigation.list.OnNavigateToDetailsAction
 import sp.bvantur.inspektify.ktor.ui.theme.disabled
 import sp.bvantur.inspektify.ktor.ui.utils.CollectSingleEventsWithLifecycle
@@ -103,11 +93,12 @@ internal fun NetworkTrafficListRoute(onNavigateToDetailsAction: OnNavigateToDeta
         onSelectSingleNetworkTrafficItem = viewModel::onSelectSingleNetworkTrafficItem,
         onSearchAction = viewModel::onSearchAction,
         onClearSearchQuery = { viewModel.onSearchQueryAction("") },
+        onSuggestionSelected = viewModel::onSearchQueryAction,
         onSearchQueryAction = viewModel::onSearchQueryAction
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 internal fun NetworkTrafficListScreen(
     viewState: NetworkTrafficListViewState,
@@ -117,76 +108,22 @@ internal fun NetworkTrafficListScreen(
     onSearchAction: () -> Unit,
     onSearchQueryAction: (String) -> Unit,
     onClearSearchQuery: () -> Unit,
+    onSuggestionSelected: (String) -> Unit,
     onSelectSingleNetworkTrafficItem: OnNavigateToDetailsAction
 ) {
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    if (viewState.isSearching) {
-                        TextField(
-                            value = viewState.searchQuery,
-                            onValueChange = onSearchQueryAction,
-                            placeholder = { Text("Search...") },
-                            singleLine = true,
-                            modifier = Modifier.fillMaxWidth().focusRequester(searchFocusRequester),
-                            colors = TextFieldDefaults.colors(
-                                focusedTextColor = MaterialTheme.colorScheme.onPrimary,
-                                unfocusedTextColor = MaterialTheme.colorScheme.onPrimary,
-                                focusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
-                                unfocusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
-                                focusedContainerColor = MaterialTheme.colorScheme.primary,
-                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
-                                cursorColor = MaterialTheme.colorScheme.onPrimary,
-                                focusedIndicatorColor = MaterialTheme.colorScheme.surface,
-                                unfocusedIndicatorColor = MaterialTheme.colorScheme.surface,
-                                focusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
-                                unfocusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
-                            ),
-                            trailingIcon = {
-                                if (viewState.searchQuery.isNotEmpty()) {
-                                    IconButton(onClick = onClearSearchQuery) {
-                                        Icon(
-                                            imageVector = Icons.Default.Close,
-                                            contentDescription = "Clear Search",
-                                            tint = MaterialTheme.colorScheme.onPrimary
-                                        )
-                                    }
-                                }
-                            }
-                        )
-                    } else {
-                        Text("Inspektify", color = MaterialTheme.colorScheme.onPrimary)
-                    }
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackAction) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                            contentDescription = "Back",
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
-                    }
-                },
-                actions = {
-                    if (!viewState.isSearching) {
-                        IconButton(onClick = onSearchAction) {
-                            Icon(
-                                imageVector = Icons.Filled.Search,
-                                contentDescription = "Search",
-                                tint = MaterialTheme.colorScheme.onPrimary
-                            )
-                        }
-                        IconButton(onClick = onClearItems) {
-                            Icon(
-                                imageVector = Icons.Filled.Delete,
-                                contentDescription = "Back",
-                                tint = MaterialTheme.colorScheme.onPrimary
-                            )
-                        }
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
+            InspektifyKtorTopAppBar(
+                isSearching = viewState.isSearching,
+                searchQuery = viewState.searchQuery,
+                focusRequester = searchFocusRequester,
+                onSearchQueryAction = onSearchQueryAction,
+                onClearSearchQuery = onClearSearchQuery,
+                onBackAction = onBackAction,
+                onSearchAction = onSearchAction,
+                onClearItems = onClearItems,
+                onSuggestionSelected = onSuggestionSelected,
+                suggestions = viewState.suggestions
             )
         }
     ) { innerPadding ->

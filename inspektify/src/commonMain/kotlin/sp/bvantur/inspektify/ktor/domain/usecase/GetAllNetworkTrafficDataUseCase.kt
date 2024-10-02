@@ -7,6 +7,7 @@ import sp.bvantur.inspektify.ktor.data.utils.extensions.getDate
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getDuration
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getHost
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getHostImage
+import sp.bvantur.inspektify.ktor.data.utils.extensions.getMethod
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getMethodWithPath
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getPresentationStatusCode
 import sp.bvantur.inspektify.ktor.data.utils.extensions.getSize
@@ -33,6 +34,7 @@ internal class GetAllNetworkTrafficDataUseCaseImpl(private val repository: Netwo
                         id = networkTrafficData.id,
                         statusCode = statusCode.statusCode,
                         statusColor = statusCode.statusColor,
+                        method = networkTrafficData.getMethod(),
                         methodWithPath = networkTrafficData.getMethodWithPath(),
                         host = networkTrafficData.getHost(),
                         hostImage = networkTrafficData.getHostImage(),

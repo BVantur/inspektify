@@ -1,3 +1,5 @@
+@file:Suppress("TooManyFunctions")
+
 package sp.bvantur.inspektify.ktor.data.utils.extensions
 
 import inspektifyroot.inspektify.generated.resources.Res
@@ -29,6 +31,8 @@ internal fun NetworkTrafficDataLocal.getPresentationStatusCode(): StatusCode {
 internal fun NetworkTrafficDataLocal.getMethodWithPath(): String = "$method $path"
 
 internal fun NetworkTrafficDataLocal.getHost(): String = host ?: ""
+
+internal fun NetworkTrafficDataLocal.getMethod(): String = method ?: ""
 
 internal fun NetworkTrafficDataLocal.getTime(): String {
     requestTimestamp ?: return "???"

@@ -6,6 +6,7 @@ internal data class NetworkTrafficListItem(
     val id: Long,
     val statusCode: String,
     val statusColor: StatusColor,
+    val method: String,
     val methodWithPath: String,
     val host: String,
     val hostImage: DrawableResource,

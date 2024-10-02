@@ -29,9 +29,28 @@ internal class NetworkTrafficListVewModel(
     fun startObservingNetworkTrafficData() {
         viewModelScope.launch(dispatcherProvider.main.immediate) {
             getAllNetworkTrafficDataUseCase().collect { networkTrafficDataList ->
+                val suggestions = networkTrafficDataList.values
+                    .asSequence()
+                    .flatten()
+                    .let { sequence ->
+                        val statusCodes = sequence
+                            .distinctBy { it.statusCode }
+                            .filter { it.statusCode.isNotBlank() }
+                            .map { it.statusCode }
+                            .sortedBy { it.toInt() }
+
+                        val methods = sequence
+                            .distinctBy { it.method }
+                            .filter { it.method.isNotBlank() }
+                            .map { it.method }
+
+                        statusCodes + methods
+                    }
+                    .toSet()
                 emitViewState(
                     viewStateFlow.value.copy(
-                        items = networkTrafficDataList
+                        items = networkTrafficDataList,
+                        suggestions = suggestions.toMutableSet()
                     )
                 )
             }
