@@ -10,13 +10,15 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.resources.DrawableResource
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
-import sp.bvantur.inspektify.ktor.domain.model.StatusCode
-import sp.bvantur.inspektify.ktor.domain.model.StatusColor
-import sp.bvantur.inspektify.ktor.domain.utils.ByteSizeUtils
-import sp.bvantur.inspektify.ktor.domain.utils.DateTimeUtils
+import sp.bvantur.inspektify.ktor.core.domain.utils.ByteSizeUtils
+import sp.bvantur.inspektify.ktor.core.domain.utils.DateTimeUtils
+import sp.bvantur.inspektify.ktor.core.domain.utils.KtorPresentationConstants
+import sp.bvantur.inspektify.ktor.list.domain.model.StatusCode
+import sp.bvantur.inspektify.ktor.list.domain.model.StatusColor
 
 internal fun NetworkTrafficDataLocal.getPresentationStatusCode(): StatusCode {
-    responseStatus ?: return StatusCode(statusCode = "???", statusColor = StatusColor.ORANGE)
+    responseStatus
+        ?: return StatusCode(statusCode = KtorPresentationConstants.MISSING_DATA, statusColor = StatusColor.ORANGE)
 
     return StatusCode(
         statusCode = responseStatus.toString(),
@@ -35,7 +37,7 @@ internal fun NetworkTrafficDataLocal.getHost(): String = host ?: ""
 internal fun NetworkTrafficDataLocal.getMethod(): String = method ?: ""
 
 internal fun NetworkTrafficDataLocal.getTime(): String {
-    requestTimestamp ?: return "???"
+    requestTimestamp ?: return "??"
 
     val instant = Instant.fromEpochMilliseconds(requestTimestamp)
     val systemTimeZone = TimeZone.currentSystemDefault()
@@ -45,7 +47,7 @@ internal fun NetworkTrafficDataLocal.getTime(): String {
 }
 
 internal fun NetworkTrafficDataLocal.getDuration(): String {
-    if (responseTimestamp == null || requestTimestamp == null) return "???"
+    if (responseTimestamp == null || requestTimestamp == null) return KtorPresentationConstants.MISSING_DATA
 
     return DateTimeUtils.toTextWithTimeUnit(responseTimestamp - requestTimestamp)
 }
@@ -82,5 +84,6 @@ internal fun NetworkTrafficDataLocal.getDate(): String {
 
 internal fun NetworkTrafficDataLocal.isCompleted(): Boolean = responseStatus != null
 
+@Suppress("UnnecessaryParentheses")
 internal fun NetworkTrafficDataLocal.isFromActiveSession(sessionTimestamp: Long): Boolean =
-    requestTimestamp ?: 0L >= sessionTimestamp
+    (requestTimestamp ?: 0L) >= sessionTimestamp

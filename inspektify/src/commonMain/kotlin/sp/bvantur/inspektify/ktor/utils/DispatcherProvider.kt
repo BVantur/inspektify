@@ -5,6 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.MainCoroutineDispatcher
 
+// TODO make it internal
 internal interface DispatcherProvider {
     val main: MainCoroutineDispatcher
     val io: CoroutineDispatcher

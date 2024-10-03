@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor.ui.utils
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import sp.bvantur.inspektify.ktor.domain.model.StatusColor
+import sp.bvantur.inspektify.ktor.list.domain.model.StatusColor
 import sp.bvantur.inspektify.ktor.ui.theme.success
 
 internal object ColorUtils {

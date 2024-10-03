@@ -10,17 +10,21 @@ import io.ktor.util.date.getTimeMillis
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
+import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.ktor.shared.configurePresentationType
 import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class InspektifyKtorClient(
-    private val dispatcherProvider: DispatcherProvider,
-    private val networkTrafficRepository: NetworkTrafficRepository
-) : InspektifyRequestHandler by InspektifyRequestHandlerImpl(dispatcherProvider),
-    InspektifyResponseHandler by InspektifyResponseHandlerImpl(dispatcherProvider),
-    InspektifyNetworkTrafficLogger by InspektifyNetworkTrafficLoggerImpl(),
-    InspektifyDataRetentionHandler by InspektifyDataRetentionHandlerImpl(networkTrafficRepository) {
+    dispatcherProvider: DispatcherProvider = AppComponents.getDispatcherProvider(),
+    private val repository: NetworkTrafficRepository = AppComponents.getKtorModule().networkTrafficRepository,
+    private val cachedConfig: KtorPluginCachedConfig = AppComponents.getKtorPluginCachedConfig(),
+    private val requestHandler: InspektifyRequestHandler = AppComponents.getInspektifyRequestHandler(),
+    private val responseHandler: InspektifyResponseHandler = AppComponents.getInspektifyResponseHandler(),
+    private val trafficLogger: InspektifyNetworkTrafficLogger = AppComponents.getInspektifyNetworkTrafficLogger(),
+    private val dataRetentionHandler: InspektifyDataRetentionHandler = AppComponents.getInspektifyDataRetentionHandler()
+) {
 
     private val coroutineScope = CoroutineScope(dispatcherProvider.main + SupervisorJob())
 
@@ -31,27 +35,27 @@ internal class InspektifyKtorClient(
         configure(plugin.config)
         setupRequestInterceptor(client)
         setupResponseInterceptor(client)
-        networkTrafficRepository.createCurrentSessionTimestamp()
+        cachedConfig.currentSessionTimeStamp = getTimeMillis()
     }
 
     private fun configure(config: InspektifyKtorConfig) {
         configurePresentationType(config.presentationType)
-        configureLogger(config.logLevel)
+        trafficLogger.configureLogger(config.logLevel)
         coroutineScope.launch {
-            configureDataRetentionPolicy(config.dataRetentionPolicy)
+            dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
         }
     }
 
     private fun setupRequestInterceptor(client: HttpClient) {
         client.requestPipeline.intercept(HttpRequestPipeline.Before) {
-            context.attributes.put(getNetworkTrafficIdKey(), getTimeMillis())
+            context.attributes.put(requestHandler.getNetworkTrafficIdKey(), getTimeMillis())
         }
 
         client.sendPipeline.intercept(HttpSendPipeline.Monitoring) {
             try {
-                val networkTraffic = handleRequest(request = context, sessionId = sessionId)
-                networkTrafficRepository.saveNetworkTrafficData(networkTraffic)
-                logRequest(networkTraffic)
+                val networkTraffic = requestHandler.handleRequest(request = context, sessionId = sessionId)
+                repository.saveNetworkTrafficData(networkTraffic)
+                trafficLogger.logRequest(networkTraffic)
             } catch (ignore: Throwable) {
                 // TODO handle this
             }
@@ -64,13 +68,13 @@ internal class InspektifyKtorClient(
         // currently there is a crash if some other plugin is installed
         // that requires reading of the bytes for response payload
         val responseHandler: ResponseHandler = { response ->
-            val networkTraffic = networkTrafficRepository.getNetworkTrafficData(
-                response.request.attributes[getNetworkTrafficIdKey()]
+            val networkTraffic = repository.getNetworkTrafficData(
+                response.request.attributes[requestHandler.getNetworkTrafficIdKey()]
             )
-            val networkTrafficWithResponse = handleResponse(response, networkTraffic)
+            val networkTrafficWithResponse = responseHandler.handleResponse(response, networkTraffic)
 
-            networkTrafficRepository.saveNetworkTrafficData(networkTrafficWithResponse)
-            logResponse(networkTrafficWithResponse)
+            repository.saveNetworkTrafficData(networkTrafficWithResponse)
+            trafficLogger.logResponse(networkTrafficWithResponse)
         }
         val responseObserver = ResponseObserver.prepare { onResponse(responseHandler) }
         ResponseObserver.install(responseObserver, client)

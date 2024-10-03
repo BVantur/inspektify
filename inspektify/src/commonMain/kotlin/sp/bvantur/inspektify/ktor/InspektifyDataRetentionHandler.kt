@@ -1,22 +1,20 @@
 package sp.bvantur.inspektify.ktor
 
 import io.ktor.util.date.getTimeMillis
+import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
 import sp.bvantur.inspektify.ktor.data.NetworkTrafficRepository
 
-internal interface InspektifyDataRetentionHandler {
-    suspend fun configureDataRetentionPolicy(policy: DataRetentionPolicy)
-}
+internal class InspektifyDataRetentionHandler(
+    private val networkTrafficRepository: NetworkTrafficRepository,
+    private val ktorPluginCachedConfig: KtorPluginCachedConfig
+) {
 
-internal class InspektifyDataRetentionHandlerImpl(private val networkTrafficRepository: NetworkTrafficRepository) :
-    InspektifyDataRetentionHandler {
-
-    override suspend fun configureDataRetentionPolicy(policy: DataRetentionPolicy) {
+    suspend fun configureDataRetentionPolicy(policy: DataRetentionPolicy) {
         val dataRetentionPolicy = when (policy) {
             is DataRetentionPolicy.DayDuration -> handleRetentionPolicyByDays(policy.numOfDays)
             is DataRetentionPolicy.SessionCount -> handleRetentionPolicyBySessions(policy.numOfSessions)
         }
-
-        networkTrafficRepository.storeDataRetentionPolicy(dataRetentionPolicy)
+        ktorPluginCachedConfig.retentionPolicy = dataRetentionPolicy
     }
 
     private suspend fun handleRetentionPolicyByDays(numOfDays: Int): DataRetentionPolicy {

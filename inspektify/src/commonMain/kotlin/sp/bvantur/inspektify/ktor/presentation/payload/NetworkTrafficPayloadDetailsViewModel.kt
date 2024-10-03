@@ -3,10 +3,10 @@ package sp.bvantur.inspektify.ktor.presentation.payload
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import sp.bvantur.inspektify.ktor.core.domain.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
-import sp.bvantur.inspektify.ktor.presentation.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class NetworkTrafficPayloadDetailsViewModel(private val dispatcherProvider: DispatcherProvider) :

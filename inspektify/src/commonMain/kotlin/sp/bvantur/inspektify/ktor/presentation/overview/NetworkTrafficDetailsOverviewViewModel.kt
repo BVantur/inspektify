@@ -3,14 +3,14 @@ package sp.bvantur.inspektify.ktor.presentation.overview
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import sp.bvantur.inspektify.ktor.core.domain.utils.ByteSizeUtils
+import sp.bvantur.inspektify.ktor.core.domain.utils.DateTimeUtils
+import sp.bvantur.inspektify.ktor.core.domain.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.utils.extensions.convertNullToEmpty
 import sp.bvantur.inspektify.ktor.data.utils.extensions.nullOrEmpty
-import sp.bvantur.inspektify.ktor.domain.utils.ByteSizeUtils
-import sp.bvantur.inspektify.ktor.domain.utils.DateTimeUtils
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
-import sp.bvantur.inspektify.ktor.presentation.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 
 internal class NetworkTrafficDetailsOverviewViewModel(private val dispatcherProvider: DispatcherProvider) :

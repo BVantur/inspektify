@@ -6,26 +6,14 @@ import io.ktor.http.content.OutgoingContent
 import io.ktor.util.AttributeKey
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
-import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.data.utils.NetworkTrafficDataUtils
-import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
 import sp.bvantur.inspektify.ktor.utils.extensions.tryReadText
 
-internal interface InspektifyRequestHandler {
-
-    fun getNetworkTrafficIdKey(): AttributeKey<Long>
-
-    suspend fun handleRequest(request: HttpRequestBuilder, sessionId: Long?): NetworkTraffic
-}
-
-internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: DispatcherProvider) :
-    InspektifyRequestHandler {
+internal class InspektifyRequestHandler {
     private val networkTrafficIdKey = AttributeKey<Long>("NetworkTrafficIdKey")
 
-    override suspend fun handleRequest(request: HttpRequestBuilder, sessionId: Long?): NetworkTraffic = withContext(
-        dispatcherProvider.default
-    ) {
+    suspend fun handleRequest(request: HttpRequestBuilder, sessionId: Long?): NetworkTraffic {
         val id = request.attributes[networkTrafficIdKey]
         val content = request.body as OutgoingContent
         val contentType = content.contentType?.contentType
@@ -35,7 +23,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
         val (payload, payloadSize) = getContentWithSize(content)
         val headersSize = NetworkTrafficDataUtils.calculateHeadersSize(headers)
 
-        NetworkTraffic(
+        return NetworkTraffic(
             id = id,
             sessionId = sessionId ?: 0L,
             method = method,
@@ -52,7 +40,7 @@ internal class InspektifyRequestHandlerImpl(private val dispatcherProvider: Disp
         )
     }
 
-    override fun getNetworkTrafficIdKey(): AttributeKey<Long> = networkTrafficIdKey
+    fun getNetworkTrafficIdKey(): AttributeKey<Long> = networkTrafficIdKey
 
     private suspend fun getContentWithSize(content: OutgoingContent): Pair<String?, Long> {
         val charset = content.contentType?.charset() ?: Charsets.UTF_8

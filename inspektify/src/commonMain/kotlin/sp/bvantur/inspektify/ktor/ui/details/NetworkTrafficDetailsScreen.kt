@@ -35,9 +35,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import sp.bvantur.inspektify.ktor.core.di.AppComponents
+import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficId
-import sp.bvantur.inspektify.ktor.di.AppComponents
-import sp.bvantur.inspektify.ktor.presentation.base.viewModelFactory
 import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsViewModel
 import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsViewState
 import sp.bvantur.inspektify.ktor.ui.navigation.OnNavigateBackAction
@@ -52,7 +52,7 @@ internal fun NetworkTrafficDetailsRoute(
     val viewModel = viewModel<NetworkTrafficDetailsViewModel>(
         factory = viewModelFactory {
             NetworkTrafficDetailsViewModel(
-                dispatcherProvider = AppComponents.getAppModule().dispatcherProvider,
+                dispatcherProvider = AppComponents.getDispatcherProvider(),
                 getNetworkTrafficDataByIdUseCase = AppComponents.getKtorModule().getNetworkTrafficDataByIdUseCase
             )
         }

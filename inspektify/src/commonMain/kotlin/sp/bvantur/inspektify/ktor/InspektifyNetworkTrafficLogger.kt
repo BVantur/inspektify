@@ -3,21 +3,15 @@ package sp.bvantur.inspektify.ktor
 import io.ktor.http.Url
 import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
 
-internal interface InspektifyNetworkTrafficLogger {
-    fun configureLogger(logLevel: LogLevel)
-    fun logRequest(networkTraffic: NetworkTraffic)
-    fun logResponse(networkTraffic: NetworkTraffic)
-}
-
-internal class InspektifyNetworkTrafficLoggerImpl : InspektifyNetworkTrafficLogger {
+internal class InspektifyNetworkTrafficLogger {
     private var logLevel: LogLevel = LogLevel.None
     private val tag = "[InspektifyHttpClient]:"
 
-    override fun configureLogger(logLevel: LogLevel) {
+    fun configureLogger(logLevel: LogLevel) {
         this.logLevel = logLevel
     }
 
-    override fun logRequest(networkTraffic: NetworkTraffic) {
+    fun logRequest(networkTraffic: NetworkTraffic) {
         if (logLevel.isLoggerEnabled()) return
 
         val requestLogger = StringBuilder()
@@ -41,7 +35,7 @@ internal class InspektifyNetworkTrafficLoggerImpl : InspektifyNetworkTrafficLogg
         println("$tag ${requestLogger.toString().trim()}")
     }
 
-    override fun logResponse(networkTraffic: NetworkTraffic) {
+    fun logResponse(networkTraffic: NetworkTraffic) {
         if (logLevel.isLoggerEnabled()) return
 
         val responseLogger = StringBuilder()

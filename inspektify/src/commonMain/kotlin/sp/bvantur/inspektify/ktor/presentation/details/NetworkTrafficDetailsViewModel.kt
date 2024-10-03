@@ -3,11 +3,11 @@ package sp.bvantur.inspektify.ktor.presentation.details
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import sp.bvantur.inspektify.ktor.core.domain.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficId
-import sp.bvantur.inspektify.ktor.domain.usecase.GetNetworkTrafficDataByIdUseCase
+import sp.bvantur.inspektify.ktor.details.domain.usecase.GetNetworkTrafficDataByIdUseCase
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.ktor.presentation.base.ViewModelViewStateHandlerImpl
-import sp.bvantur.inspektify.ktor.presentation.utils.NetworkTrafficUtils
 import sp.bvantur.inspektify.ktor.shared.CopyNetworkTrafficHandler
 import sp.bvantur.inspektify.ktor.shared.ShareNetworkTrafficHandler
 import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
