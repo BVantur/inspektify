@@ -38,10 +38,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
 import sp.bvantur.inspektify.ktor.data.model.NetworkTrafficId
+import sp.bvantur.inspektify.ktor.overview.ui.NetworkTrafficDetailsOverviewRoute
 import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsViewModel
 import sp.bvantur.inspektify.ktor.presentation.details.NetworkTrafficDetailsViewState
 import sp.bvantur.inspektify.ktor.ui.navigation.OnNavigateBackAction
-import sp.bvantur.inspektify.ktor.ui.overview.NetworkTrafficDetailsOverviewRoute
 import sp.bvantur.inspektify.ktor.ui.payload.NetworkTrafficPayloadDetailsRoute
 
 @Composable
@@ -126,23 +126,25 @@ private fun NetworkTrafficDetailsScreen(
                     )
                 }
             }
-            when (tabIndex) {
-                0 -> NetworkTrafficDetailsOverviewRoute(
-                    networkTraffic = viewState.networkTraffic,
-                    modifier = Modifier.weight(1f)
-                )
+            if (viewState.networkTraffic != null) {
+                when (tabIndex) {
+                    0 -> NetworkTrafficDetailsOverviewRoute(
+                        id = viewState.networkTraffic.id,
+                        modifier = Modifier.weight(1f)
+                    )
 
-                1 -> NetworkTrafficPayloadDetailsRoute(
-                    networkTraffic = viewState.networkTraffic,
-                    isResponse = false,
-                    modifier = Modifier.weight(1f)
-                )
+                    1 -> NetworkTrafficPayloadDetailsRoute(
+                        networkTraffic = viewState.networkTraffic,
+                        isResponse = false,
+                        modifier = Modifier.weight(1f)
+                    )
 
-                2 -> NetworkTrafficPayloadDetailsRoute(
-                    networkTraffic = viewState.networkTraffic,
-                    isResponse = true,
-                    modifier = Modifier.weight(1f)
-                )
+                    2 -> NetworkTrafficPayloadDetailsRoute(
+                        networkTraffic = viewState.networkTraffic,
+                        isResponse = true,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
             }
             Row(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
                 ActionTextIcon(

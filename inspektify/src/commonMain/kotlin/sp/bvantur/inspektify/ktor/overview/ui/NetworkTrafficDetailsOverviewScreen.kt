@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.ktor.ui.overview
+package sp.bvantur.inspektify.ktor.overview.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -7,33 +7,24 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
-import sp.bvantur.inspektify.ktor.data.model.NetworkTraffic
-import sp.bvantur.inspektify.ktor.presentation.overview.NetworkTrafficDetailsOverviewViewModel
-import sp.bvantur.inspektify.ktor.presentation.overview.NetworkTrafficDetailsOverviewViewState
+import sp.bvantur.inspektify.ktor.overview.presentation.NetworkTrafficDetailsOverviewViewModel
+import sp.bvantur.inspektify.ktor.overview.presentation.NetworkTrafficDetailsOverviewViewState
 
 @Composable
-internal fun NetworkTrafficDetailsOverviewRoute(networkTraffic: NetworkTraffic?, modifier: Modifier = Modifier) {
+internal fun NetworkTrafficDetailsOverviewRoute(id: Long?, modifier: Modifier = Modifier) {
     val viewModel = viewModel<NetworkTrafficDetailsOverviewViewModel>(
         factory = viewModelFactory {
-            NetworkTrafficDetailsOverviewViewModel(
-                dispatcherProvider = AppComponents.getDispatcherProvider()
-            )
+            NetworkTrafficDetailsOverviewViewModel(id)
         }
     )
     val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
-
-    LaunchedEffect(networkTraffic) {
-        viewModel.preparePresentationData(networkTraffic)
-    }
 
     NetworkTrafficDetailsOverviewScreen(
         viewState = viewState,

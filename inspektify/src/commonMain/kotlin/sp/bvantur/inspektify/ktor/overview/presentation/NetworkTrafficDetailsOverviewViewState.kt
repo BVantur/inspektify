@@ -1,6 +1,6 @@
-package sp.bvantur.inspektify.ktor.presentation.overview
+package sp.bvantur.inspektify.ktor.overview.presentation
 
-import sp.bvantur.inspektify.ktor.presentation.base.BaseViewState
+import sp.bvantur.inspektify.ktor.core.presentation.ViewState
 
 internal data class NetworkTrafficDetailsOverviewViewState(
     val url: String? = null,
@@ -15,4 +15,4 @@ internal data class NetworkTrafficDetailsOverviewViewState(
     val requestSize: String? = null,
     val responseSize: String? = null,
     val totalSize: String? = null,
-) : BaseViewState
+) : ViewState
