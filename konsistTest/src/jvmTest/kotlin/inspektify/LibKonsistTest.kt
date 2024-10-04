@@ -13,7 +13,7 @@ class LibKonsistTest {
     @Test
     fun `clean architecture layers have correct dependencies`() {
         Konsist
-            .scopeFromProduction()
+            .scopeFromProduction("inspektify")
             .assertArchitecture {
                 // Define layers
                 val domain = Layer("Domain", "..domain..")

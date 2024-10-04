@@ -18,7 +18,9 @@ internal class GetAllNetworkTrafficDataUseCaseImpl(private val repository: KtorL
     override fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>> =
         repository.getNetworkTrafficItems().map { items ->
 
-            val statusCodes = items
+            val data = items.reversed()
+
+            val statusCodes = data
                 .asSequence()
                 .distinctBy { it.statusCode }
                 .map { it.statusCode }
@@ -27,14 +29,14 @@ internal class GetAllNetworkTrafficDataUseCaseImpl(private val repository: KtorL
                 .map { it }
                 .toSet()
 
-            val methods = items
+            val methods = data
                 .distinctBy { it.method }
                 .filter { it.method.isNotBlank() }
                 .map { it.method }.toSet()
 
             val suggestions = statusCodes + methods
 
-            val groupedNetworkTrafficData: Map<String, List<NetworkTrafficListItem>> = items.map { item ->
+            val groupedNetworkTrafficData: Map<String, List<NetworkTrafficListItem>> = data.map { item ->
                 item to item.date
             }.groupBy(
                 keySelector = { (_, localDate) ->

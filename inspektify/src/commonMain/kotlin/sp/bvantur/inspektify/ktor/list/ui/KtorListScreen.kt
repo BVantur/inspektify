@@ -35,18 +35,18 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.resources.painterResource
+import sp.bvantur.inspektify.ktor.client.shared.Platform
 import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
+import sp.bvantur.inspektify.ktor.core.ui.theme.disabled
+import sp.bvantur.inspektify.ktor.core.ui.utils.CollectSingleEventsWithLifecycle
+import sp.bvantur.inspektify.ktor.core.ui.utils.ColorUtils
 import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListEvent
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListUserAction
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListVewModel
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListViewState
 import sp.bvantur.inspektify.ktor.list.ui.components.KtorListTopAppBar
-import sp.bvantur.inspektify.ktor.shared.Platform
-import sp.bvantur.inspektify.ktor.ui.navigation.list.OnNavigateToDetailsAction
-import sp.bvantur.inspektify.ktor.ui.theme.disabled
-import sp.bvantur.inspektify.ktor.ui.utils.CollectSingleEventsWithLifecycle
-import sp.bvantur.inspektify.ktor.ui.utils.ColorUtils
+import sp.bvantur.inspektify.ktor.list.ui.navigation.OnNavigateToDetailsAction
 
 @Composable
 internal fun KtorListRoute(onNavigateToDetailsAction: OnNavigateToDetailsAction) {

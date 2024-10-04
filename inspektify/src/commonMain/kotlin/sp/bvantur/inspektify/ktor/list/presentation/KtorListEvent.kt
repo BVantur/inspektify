@@ -1,6 +1,6 @@
 package sp.bvantur.inspektify.ktor.list.presentation
 
-import sp.bvantur.inspektify.ktor.presentation.base.SingleEvent
+import sp.bvantur.inspektify.ktor.core.presentation.SingleEvent
 
 internal sealed interface KtorListEvent : SingleEvent {
     data class ToNetworkDetails(val id: Long) : KtorListEvent

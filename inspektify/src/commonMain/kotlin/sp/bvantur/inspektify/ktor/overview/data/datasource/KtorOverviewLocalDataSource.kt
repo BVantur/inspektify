@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor.overview.data.datasource
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
-import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
 internal class KtorOverviewLocalDataSource(
     private val database: InspektifyDB,

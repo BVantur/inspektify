@@ -5,16 +5,16 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
-import sp.bvantur.inspektify.ktor.InspektifyDataRetentionHandler
-import sp.bvantur.inspektify.ktor.InspektifyNetworkTrafficLogger
-import sp.bvantur.inspektify.ktor.InspektifyRequestHandler
-import sp.bvantur.inspektify.ktor.InspektifyResponseHandler
+import sp.bvantur.inspektify.ktor.client.data.InspektifyDataRetentionHandler
+import sp.bvantur.inspektify.ktor.client.data.InspektifyNetworkTrafficLogger
+import sp.bvantur.inspektify.ktor.client.data.InspektifyRequestHandler
+import sp.bvantur.inspektify.ktor.client.data.InspektifyResponseHandler
+import sp.bvantur.inspektify.ktor.client.di.KtorModule
+import sp.bvantur.inspektify.ktor.client.di.KtorModuleImpl
+import sp.bvantur.inspektify.ktor.client.shared.DatabaseDriverProvider
+import sp.bvantur.inspektify.ktor.core.data.InspektifyDispatcherProvider
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
-import sp.bvantur.inspektify.ktor.di.KtorModule
-import sp.bvantur.inspektify.ktor.di.KtorModuleImpl
-import sp.bvantur.inspektify.ktor.shared.DatabaseDriverProvider
-import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
-import sp.bvantur.inspektify.ktor.utils.InspektifyDispatcherProvider
+import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
 internal object AppComponents {
     private var appModule: AppModule? = null

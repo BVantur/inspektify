@@ -1,17 +1,17 @@
 package sp.bvantur.inspektify.ktor.list.data.mapper
 
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getDate
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getDuration
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getHost
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getHostImage
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getMethod
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getMethodWithPath
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getPresentationStatusCode
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getSize
-import sp.bvantur.inspektify.ktor.data.utils.extensions.getTime
-import sp.bvantur.inspektify.ktor.data.utils.extensions.isCompleted
-import sp.bvantur.inspektify.ktor.data.utils.extensions.isFromActiveSession
+import sp.bvantur.inspektify.ktor.core.data.utils.getDate
+import sp.bvantur.inspektify.ktor.core.data.utils.getDuration
+import sp.bvantur.inspektify.ktor.core.data.utils.getHost
+import sp.bvantur.inspektify.ktor.core.data.utils.getHostImage
+import sp.bvantur.inspektify.ktor.core.data.utils.getMethod
+import sp.bvantur.inspektify.ktor.core.data.utils.getMethodWithPath
+import sp.bvantur.inspektify.ktor.core.data.utils.getPresentationStatusCode
+import sp.bvantur.inspektify.ktor.core.data.utils.getSize
+import sp.bvantur.inspektify.ktor.core.data.utils.getTime
+import sp.bvantur.inspektify.ktor.core.data.utils.isCompleted
+import sp.bvantur.inspektify.ktor.core.data.utils.isFromActiveSession
 import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
 
 internal object NetworkTrafficDataLocalMapper {

@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.ktor.core.di.AppComponents
-import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
 internal abstract class ViewStateViewModel<State : ViewState>(
     initialViewState: State,

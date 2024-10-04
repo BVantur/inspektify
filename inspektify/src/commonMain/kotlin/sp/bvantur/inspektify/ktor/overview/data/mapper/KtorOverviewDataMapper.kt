@@ -1,10 +1,10 @@
 package sp.bvantur.inspektify.ktor.overview.data.mapper
 
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
+import sp.bvantur.inspektify.ktor.core.data.utils.extensions.convertNullToEmpty
+import sp.bvantur.inspektify.ktor.core.data.utils.extensions.nullOrEmpty
 import sp.bvantur.inspektify.ktor.core.domain.utils.ByteSizeUtils
 import sp.bvantur.inspektify.ktor.core.domain.utils.DateTimeUtils
-import sp.bvantur.inspektify.ktor.data.utils.extensions.convertNullToEmpty
-import sp.bvantur.inspektify.ktor.data.utils.extensions.nullOrEmpty
 import sp.bvantur.inspektify.ktor.overview.domain.model.KtorOverviewData
 
 internal object KtorOverviewDataMapper {

@@ -7,8 +7,9 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
+import sp.bvantur.inspektify.ktor.DataRetentionPolicy
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
-import sp.bvantur.inspektify.ktor.utils.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
 internal class KtorListLocalDataSource(
     private val database: InspektifyDB,
@@ -28,4 +29,6 @@ internal class KtorListLocalDataSource(
     }
 
     fun getCurrentSessionTimestamp(): Long = ktorPluginCachedConfig.currentSessionTimeStamp
+
+    fun getRetentionPolicy(): DataRetentionPolicy? = ktorPluginCachedConfig.retentionPolicy
 }

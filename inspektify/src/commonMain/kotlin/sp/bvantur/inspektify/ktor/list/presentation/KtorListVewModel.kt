@@ -3,6 +3,7 @@ package sp.bvantur.inspektify.ktor.list.presentation
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import sp.bvantur.inspektify.ktor.client.shared.Platform
 import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandler
 import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandlerImpl
 import sp.bvantur.inspektify.ktor.core.presentation.ViewModelUserActionHandler
@@ -11,7 +12,6 @@ import sp.bvantur.inspektify.ktor.list.di.KtorListModule
 import sp.bvantur.inspektify.ktor.list.domain.KtorListRepository
 import sp.bvantur.inspektify.ktor.list.domain.usecase.GetAllNetworkTrafficDataUseCase
 import sp.bvantur.inspektify.ktor.list.domain.usecase.GetCurrentSessionRetentionPolicy
-import sp.bvantur.inspektify.ktor.shared.Platform
 
 internal class KtorListVewModel(
     private val networkTrafficUseCase: GetAllNetworkTrafficDataUseCase =
