@@ -57,6 +57,7 @@ internal fun KtorListRoute(onNavigateToDetailsAction: OnNavigateToDetailsAction)
     )
 
     val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
+
     val searchFocusRequester = remember { FocusRequester() }
 
     CollectSingleEventsWithLifecycle(singleEventFlow = viewModel.singleEventFlow) { singleEvent ->

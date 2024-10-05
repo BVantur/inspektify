@@ -25,7 +25,7 @@ internal abstract class ViewStateViewModel<State : ViewState>(
             initialViewState
         )
 
-    suspend fun emitViewState(onUpdateViewState: (State) -> State) {
+    suspend fun emitViewState(onUpdateViewState: suspend (State) -> State) {
         withContext(dispatcherProvider.main.immediate) {
             mutableViewStateFlow.update {
                 onUpdateViewState(viewStateFlow.value)

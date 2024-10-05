@@ -1,5 +1,7 @@
 package sp.bvantur.inspektify.ktor.list.presentation
 
+import androidx.compose.ui.text.TextRange
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -43,10 +45,15 @@ internal class KtorListVewModel(
             KtorListUserAction.OnNavigateBack -> onNavigateBack()
             is KtorListUserAction.OnNetworkTrafficItemSelected -> onNetworkTrafficItemSelected(userAction.id)
             KtorListUserAction.OnStartSearch -> onStartSearch()
-            KtorListUserAction.OnClearSearchQuery -> onSearchQuery("")
+            KtorListUserAction.OnClearSearchQuery -> onSearchQuery(viewStateFlow.value.searchQuery.copy(text = ""))
             is KtorListUserAction.OnSearchSuggestionQuery -> {
-                onSearchQuery(userAction.suggestion)
-                // TODO move cursor to the end
+                onSearchQuery(viewStateFlow.value.searchQuery.copy(text = "${userAction.suggestion} "))
+                viewModelScope.launch {
+                    emitViewState { viewState ->
+                        val searchQuery = viewState.searchQuery
+                        viewState.copy(searchQuery = searchQuery.copy(selection = TextRange(searchQuery.text.length)))
+                    }
+                }
             }
 
             is KtorListUserAction.OnSearchQuery -> onSearchQuery(userAction.query)
@@ -70,7 +77,7 @@ internal class KtorListVewModel(
             if (viewStateFlow.value.isSearching) {
                 emitSingleEvent(KtorListEvent.RemoveFocusFromSearch)
                 emitViewState { viewState ->
-                    viewState.copy(isSearching = false, searchQuery = "")
+                    viewState.copy(isSearching = false, searchQuery = TextFieldValue(""))
                 }
             } else {
                 Platform.closeInspektifyWindow()
@@ -91,20 +98,28 @@ internal class KtorListVewModel(
         }
     }
 
-    private fun onSearchQuery(query: String) {
+    private fun onSearchQuery(query: TextFieldValue) {
         viewModelScope.launch {
-            val lowercaseQuery = query.lowercase()
-            val queriedItems = if (query.isBlank()) {
+            val searchTerms = query.text
+                .trim()
+                .lowercase()
+                .split("\\s+".toRegex())
+                .filter { it.isNotBlank() }
+
+            val queriedItems = if (searchTerms.isEmpty()) {
                 viewStateFlow.value.items
             } else {
                 viewStateFlow.value.items.mapValues { entry ->
                     entry.value.filter { item ->
-                        item.statusCode.contains(lowercaseQuery, ignoreCase = true) ||
-                            item.methodWithPath.contains(lowercaseQuery, ignoreCase = true) ||
-                            item.host.contains(lowercaseQuery, ignoreCase = true)
+                        searchTerms.all { term ->
+                            item.statusCode.contains(term, ignoreCase = true) ||
+                                item.methodWithPath.contains(term, ignoreCase = true) ||
+                                item.host.contains(term, ignoreCase = true)
+                        }
                     }
                 }.filterValues { it.isNotEmpty() }
             }
+
             emitViewState { viewState ->
                 viewState.copy(
                     searchQuery = query,

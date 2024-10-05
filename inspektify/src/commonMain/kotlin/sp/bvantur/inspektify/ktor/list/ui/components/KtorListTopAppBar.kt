@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListUserAction
 
@@ -36,7 +37,7 @@ import sp.bvantur.inspektify.ktor.list.presentation.KtorListUserAction
 @Composable
 internal fun KtorListTopAppBar(
     isSearching: Boolean,
-    searchQuery: String,
+    searchQuery: TextFieldValue,
     focusRequester: FocusRequester,
     onUserAction: (KtorListUserAction) -> Unit,
     suggestions: Set<String>
@@ -69,7 +70,7 @@ internal fun KtorListTopAppBar(
                             unfocusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
                         ),
                         trailingIcon = {
-                            if (searchQuery.isNotEmpty()) {
+                            if (searchQuery.text.isNotEmpty()) {
                                 IconButton(onClick = {
                                     onUserAction(KtorListUserAction.OnClearSearchQuery)
                                 }) {

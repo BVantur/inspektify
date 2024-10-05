@@ -22,7 +22,10 @@ internal class NetworkTrafficDetailsViewModel(
         val trafficId = savedStateHandle.get<Long>(NETWORK_TRAFFIC_ID) ?: return
         viewModelScope.launch {
             emitViewState { viewState ->
-                viewState.copy(networkTrafficId = trafficId)
+                viewState.copy(
+                    networkTrafficId = trafficId,
+                    title = repository.getTitle(id = trafficId)
+                )
             }
         }
     }
