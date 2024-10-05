@@ -3,8 +3,8 @@ package sp.bvantur.inspektify.ktor
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpClientPlugin
 import io.ktor.util.AttributeKey
-import sp.bvantur.inspektify.ktor.di.AppComponents
-import sp.bvantur.inspektify.ktor.shared.startInspektifyWindow
+import sp.bvantur.inspektify.ktor.client.data.InspektifyKtorClient
+import sp.bvantur.inspektify.ktor.client.shared.startInspektifyWindow
 
 class InspektifyKtor(val config: InspektifyKtorConfig) {
 
@@ -19,10 +19,7 @@ class InspektifyKtor(val config: InspektifyKtorConfig) {
         }
 
         override fun install(plugin: InspektifyKtor, scope: HttpClient) {
-            inspektifyKtorClient = InspektifyKtorClient(
-                dispatcherProvider = AppComponents.getAppModule().dispatcherProvider,
-                networkTrafficRepository = AppComponents.getKtorModule().networkTrafficRepository
-            )
+            inspektifyKtorClient = InspektifyKtorClient()
             inspektifyKtorClient.install(plugin, scope)
         }
 

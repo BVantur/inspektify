@@ -2,11 +2,30 @@ package inspektify
 
 import com.lemonappdev.konsist.api.KoModifier
 import com.lemonappdev.konsist.api.Konsist
+import com.lemonappdev.konsist.api.architecture.KoArchitectureCreator.assertArchitecture
+import com.lemonappdev.konsist.api.architecture.Layer
 import com.lemonappdev.konsist.api.provider.modifier.KoModifierProvider
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class LibKonsistTest {
+
+    @Test
+    fun `clean architecture layers have correct dependencies`() {
+        Konsist
+            .scopeFromProduction("inspektify")
+            .assertArchitecture {
+                // Define layers
+                val domain = Layer("Domain", "..domain..")
+                val presentation = Layer("Presentation", "..presentation..")
+                val data = Layer("Data", "..data..")
+
+                // Define architecture assertions
+                domain.dependsOnNothing()
+                presentation.dependsOn(domain)
+                data.dependsOn(domain)
+            }
+    }
 
     @Test
     fun `only specific classes should be publicly available`() {

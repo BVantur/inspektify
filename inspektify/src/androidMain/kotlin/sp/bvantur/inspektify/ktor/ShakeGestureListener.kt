@@ -7,7 +7,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import sp.bvantur.inspektify.ktor.shared.startInspektifyWindow
+import sp.bvantur.inspektify.ktor.client.shared.startInspektifyWindow
 import kotlin.math.sqrt
 
 internal class ShakeGestureListener : DefaultLifecycleObserver {

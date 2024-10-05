@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import sp.bvantur.inspektify.ktor.ui.App
+import sp.bvantur.inspektify.ktor.core.ui.App
 
 internal class InspektifyActivity : ComponentActivity() {
 
