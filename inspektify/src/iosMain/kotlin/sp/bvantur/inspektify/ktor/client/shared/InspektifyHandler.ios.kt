@@ -10,7 +10,7 @@ import platform.UIKit.UIViewController
 import platform.UIKit.UIWindow
 import platform.UIKit.UIWindowScene
 import sp.bvantur.inspektify.ktor.InspektifyViewController
-import sp.bvantur.inspektify.ktor.api.PresentationType
+import sp.bvantur.inspektify.ktor.PresentationType
 import sp.bvantur.inspektify.ktor.inspektifyViewControllerInstance
 import sp.bvantur.inspektify.shakedetektor.ShakeDetektorIOS
 
