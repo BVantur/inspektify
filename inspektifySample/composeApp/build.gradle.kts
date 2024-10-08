@@ -1,3 +1,4 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -11,6 +12,8 @@ plugins {
 
 kotlin {
     task("testClasses")
+
+    jvm("desktop")
 
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -31,6 +34,8 @@ kotlin {
     }
 
     sourceSets {
+        val desktopMain by getting
+
         val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
         androidMain.dependencies {
             implementation(compose.preview)
@@ -62,11 +67,21 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
         }
 
-        iosMain.dependencies {
+        appleMain.dependencies {
             if (useKtorV3) {
                 implementation(libs.ktor3.client.ios)
             } else {
                 implementation(libs.ktor2.client.ios)
+            }
+        }
+
+        desktopMain.dependencies {
+            implementation(libs.jetbrains.coroutines.swing)
+            implementation(compose.desktop.currentOs)
+            if (useKtorV3) {
+                implementation(libs.ktor3.client.java)
+            } else {
+                implementation(libs.ktor2.client.java)
             }
         }
     }
@@ -106,5 +121,19 @@ android {
     }
     dependencies {
         debugImplementation(compose.uiTooling)
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "MainKt"
+
+        nativeDistributions {
+            modules("java.sql")
+            includeAllModules = true
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
+            packageName = "sp.bvantur.inspektify.sample"
+            packageVersion = "1.0.0"
+        }
     }
 }

@@ -33,6 +33,7 @@ internal class InspektifyKtorClient(
     private var sessionId: Long? = null
 
     fun install(plugin: InspektifyKtor, client: HttpClient) {
+        println("Install of Inspektify plugin")
         sessionId = getTimeMillis()
         configure(plugin.config)
         setupRequestInterceptor(client)
@@ -56,9 +57,13 @@ internal class InspektifyKtorClient(
         client.sendPipeline.intercept(HttpSendPipeline.Monitoring) {
             try {
                 val networkTraffic = requestHandler.handleRequest(request = context, sessionId = sessionId)
+                println("after handle request")
                 repository.saveNetworkTrafficData(networkTraffic)
+                println("after saveNetworkTrafficData")
                 trafficLogger.logRequest(networkTraffic)
+                println("sendPipeline final line")
             } catch (ignore: Throwable) {
+                println("throwable: $ignore")
                 // TODO handle this
             }
         }
@@ -77,6 +82,7 @@ internal class InspektifyKtorClient(
 
             repository.saveNetworkTrafficData(networkTrafficWithResponse)
             trafficLogger.logResponse(networkTrafficWithResponse)
+            println("ResponseHandler final line")
         }
         val responseObserver = ResponseObserver.prepare { onResponse(responseHandler) }
         ResponseObserver.install(responseObserver, client)

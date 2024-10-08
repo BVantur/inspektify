@@ -35,7 +35,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.resources.painterResource
-import sp.bvantur.inspektify.ktor.client.shared.Platform
 import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
 import sp.bvantur.inspektify.ktor.core.ui.theme.disabled
 import sp.bvantur.inspektify.ktor.core.ui.utils.CollectSingleEventsWithLifecycle
@@ -97,6 +96,7 @@ private fun KtorListScreen(
                 searchQuery = viewState.searchQuery,
                 focusRequester = searchFocusRequester,
                 onUserAction = onUserAction,
+                showNavigationBackAction = viewState.showNavigationBackAction,
                 suggestions = viewState.suggestions
             )
         }
@@ -182,7 +182,7 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier
                     modifier = Modifier.fillMaxWidth().padding(top = 4.dp, end = 16.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    if (Platform.isAndroid()) {
+                    if (item.showSslIcon) {
                         Image(
                             modifier = Modifier.size(12.dp),
                             painter = painterResource(item.hostImage),

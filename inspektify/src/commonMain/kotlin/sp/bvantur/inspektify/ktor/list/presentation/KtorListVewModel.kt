@@ -53,6 +53,8 @@ internal class KtorListVewModel(
                         val searchQuery = viewState.searchQuery
                         viewState.copy(searchQuery = searchQuery.copy(selection = TextRange(searchQuery.text.length)))
                     }
+
+                    emitSingleEvent(KtorListEvent.MoveFocusOnSearch)
                 }
             }
 
@@ -77,7 +79,11 @@ internal class KtorListVewModel(
             if (viewStateFlow.value.isSearching) {
                 emitSingleEvent(KtorListEvent.RemoveFocusFromSearch)
                 emitViewState { viewState ->
-                    viewState.copy(isSearching = false, searchQuery = TextFieldValue(""))
+                    viewState.copy(
+                        isSearching = false,
+                        searchQuery = TextFieldValue(""),
+                        showNavigationBackAction = !Platform.getTargetType().isDesktop()
+                    )
                 }
             } else {
                 Platform.closeInspektifyWindow()
@@ -90,7 +96,8 @@ internal class KtorListVewModel(
             emitViewState { viewState ->
                 viewState.copy(
                     isSearching = true,
-                    queriedItems = viewStateFlow.value.items
+                    queriedItems = viewStateFlow.value.items,
+                    showNavigationBackAction = true
                 )
             }
             delay(KEYBOARD_DELAY)

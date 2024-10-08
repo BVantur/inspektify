@@ -2,6 +2,7 @@
 ktlint_code_style=intellij_idea
 insert_final_newline=true
 max_line_length=120
+ktlint_standard_filename = disabled
 ij_kotlin_allow_trailing_comma=false
 ktlint_function_naming_ignore_when_annotated_with=Composable
 ktlint_standard_trailing-comma-on-call-site = disabled

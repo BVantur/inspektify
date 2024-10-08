@@ -61,6 +61,8 @@ kotlin {
         publishLibraryVariants("release")
     }
 
+    jvm("desktop")
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -76,6 +78,8 @@ kotlin {
     }
 
     sourceSets {
+        val desktopMain by getting
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -111,8 +115,13 @@ kotlin {
                 implementation(libs.kotlinx.datetime)
             }
         }
-        iosMain.dependencies {
+        appleMain.dependencies {
             implementation(libs.cash.sqldelight.native.driver)
+        }
+
+        desktopMain.dependencies {
+            implementation(compose.desktop.currentOs)
+            implementation(libs.cash.sqldelight.sql.driver)
         }
     }
 }

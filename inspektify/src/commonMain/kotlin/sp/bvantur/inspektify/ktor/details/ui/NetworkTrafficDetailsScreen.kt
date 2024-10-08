@@ -1,11 +1,14 @@
 package sp.bvantur.inspektify.ktor.details.ui
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.filled.ContentCopy
@@ -29,13 +32,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
 import sp.bvantur.inspektify.ktor.core.ui.navigation.OnNavigateBackAction
+import sp.bvantur.inspektify.ktor.core.ui.theme.success
 import sp.bvantur.inspektify.ktor.details.presentation.KtorDetailsUserAction
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsViewModel
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsViewState
@@ -129,6 +135,26 @@ private fun NetworkTrafficDetailsScreen(
                     )
                 }
             }
+            AnimatedVisibility(
+                visible = viewState.showFeedbackMessage,
+                modifier = Modifier
+                    .padding(16.dp)
+            ) {
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(16.dp))
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colorScheme.success)
+                        .padding(16.dp)
+                ) {
+                    Text(
+                        text = "Successfully copied to clipboard",
+                        color = MaterialTheme.colorScheme.onPrimary,
+                        modifier = Modifier.align(Alignment.CenterVertically)
+                    )
+                }
+            }
             Row(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
                 ActionTextIcon(
                     modifier = Modifier.weight(1f),
@@ -138,14 +164,16 @@ private fun NetworkTrafficDetailsScreen(
                         onUserAction(KtorDetailsUserAction.OnGetCurl)
                     }
                 )
-                ActionTextIcon(
-                    modifier = Modifier.weight(1f),
-                    text = "Share",
-                    imageVector = Icons.Default.Share,
-                    onClick = {
-                        onUserAction(KtorDetailsUserAction.OnShare)
-                    }
-                )
+                if (viewState.showShareAction) {
+                    ActionTextIcon(
+                        modifier = Modifier.weight(1f),
+                        text = "Share",
+                        imageVector = Icons.Default.Share,
+                        onClick = {
+                            onUserAction(KtorDetailsUserAction.OnShare)
+                        }
+                    )
+                }
                 ActionTextIcon(
                     modifier = Modifier.weight(1f),
                     text = "Copy",

@@ -2,8 +2,10 @@ package sp.bvantur.inspektify.ktor.details.presentation
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.ktor.client.shared.CopyNetworkTrafficHandler
+import sp.bvantur.inspektify.ktor.client.shared.Platform
 import sp.bvantur.inspektify.ktor.client.shared.ShareNetworkTrafficHandler
 import sp.bvantur.inspektify.ktor.core.presentation.ViewModelUserActionHandler
 import sp.bvantur.inspektify.ktor.core.presentation.ViewStateViewModel
@@ -35,6 +37,9 @@ internal class NetworkTrafficDetailsViewModel(
             ShareNetworkTrafficHandler.shareNetworkTrafficContent(
                 repository.getCurlContent(viewStateFlow.value.networkTrafficId)
             )
+            if (!Platform.getTargetType().isAndroid()) {
+                showFeedbackMessage()
+            }
         }
     }
 
@@ -51,6 +56,7 @@ internal class NetworkTrafficDetailsViewModel(
             CopyNetworkTrafficHandler.copyToClipboard(
                 repository.getWholeNetworkTrafficContent(viewStateFlow.value.networkTrafficId)
             )
+            showFeedbackMessage()
         }
     }
 
@@ -60,5 +66,21 @@ internal class NetworkTrafficDetailsViewModel(
             KtorDetailsUserAction.OnGetCurl -> onCurlAction()
             KtorDetailsUserAction.OnShare -> onShareAction()
         }
+    }
+
+    private suspend fun showFeedbackMessage() {
+        emitViewState { viewState ->
+            viewState.copy(showFeedbackMessage = true)
+        }
+
+        delay(SHOW_MESSAGE_DELAY)
+
+        emitViewState { viewState ->
+            viewState.copy(showFeedbackMessage = false)
+        }
+    }
+
+    companion object {
+        private const val SHOW_MESSAGE_DELAY = 3000L
     }
 }
