@@ -10,38 +10,15 @@
 <p align="center">
   <img alt="Android" src="https://img.shields.io/badge/Platform-Android-Blue?style=for-the-badge"/>
   <img alt="Ios" src="https://img.shields.io/badge/Platform-Ios-Blue?style=for-the-badge"/>
+  <img alt="Ios" src="https://img.shields.io/badge/Platform-Desktop-Blue?style=for-the-badge"/>
 </p>
 
-Inspektify is Kotlin Multiplatform Library for mobile platforms iOS and Android. It allows you to
-observe the network of your application in real-time directly on your mobile device.
+Inspektify is Kotlin Multiplatform Library for iOS, Android and Desktop platforms. It allows you to
+observe the network of your application in real-time directly on your device.
 
-# Screenshots
-
-## Android
-
-<table align="center">
-  <tr>
-    <td>List</td>
-    <td>Details</td>
-  </tr>
-  <tr>
-    <td><img src="inspektify/screenshots/android_list_items.png" width=320></td>
-    <td><img src="inspektify/screenshots/android_details.png" width=320></td>
-  </tr>
-</table>
-
-## iOS
-
-<table align="center">
-  <tr>
-    <td>List</td>
-    <td>Details</td>
-  </tr>
-  <tr>
-    <td><img src="inspektify/screenshots/ios_list_items.png" width=320></td>
-    <td><img src="inspektify/screenshots/ios_details.png" width=320></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="inspektify/screenshots/inspektify.gif" width=320>
+</p>
 
 # Getting started
 
@@ -137,14 +114,14 @@ Network transactions from previous sessions have a background in light gray colo
 
 ## 1. Presentation type
 
-By default, the library detects the shake gesture of the device and shows the list of network
-transactions that happened within the app. But we want to enable developers to override this
-behavior if that suits them better. That is why we introduced `presentationType` configuration to
-our Inspektify configuration.
+By default, the library detects the shake gesture on mobile devices or listens for a
+shortcut `SHIFT + CONTROL + D` on desktop to show the list of network transactions that happened
+within the app. But we want to enable developers to override this behavior if that suits them
+better. That is why we introduced `presentationType` configuration to our Inspektify configuration.
 
 You can choose between
 
-**PresentationType.AutoShake** // selected by default
+**PresentationType.AutoDetect** // selected by default
 
 or
 

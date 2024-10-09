@@ -1,13 +1,13 @@
 package sp.bvantur.inspektify.ktor
 
 class InspektifyKtorConfig {
-    var presentationType: PresentationType = PresentationType.AutoShake
+    var presentationType: PresentationType = PresentationType.AutoDetect
     var logLevel: LogLevel = LogLevel.None
     var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
 }
 
 sealed interface PresentationType {
-    data object AutoShake : PresentationType
+    data object AutoDetect : PresentationType
     data object Custom : PresentationType
 
     fun isCustom() = this == Custom

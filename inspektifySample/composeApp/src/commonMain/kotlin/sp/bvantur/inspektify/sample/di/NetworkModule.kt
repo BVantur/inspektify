@@ -32,7 +32,7 @@ val networkModule = module {
                 url(BASE_URL)
             }
             install(InspektifyKtor) {
-                presentationType = PresentationType.AutoShake
+                presentationType = PresentationType.AutoDetect
                 logLevel = LogLevel.All
                 dataRetentionPolicy = DataRetentionPolicy.SessionCount(4)
             }
