@@ -40,6 +40,7 @@ internal fun KtorListTopAppBar(
     searchQuery: TextFieldValue,
     focusRequester: FocusRequester,
     onUserAction: (KtorListUserAction) -> Unit,
+    showNavigationBackAction: Boolean,
     suggestions: Set<String>
 ) {
     Column {
@@ -88,14 +89,16 @@ internal fun KtorListTopAppBar(
                 }
             },
             navigationIcon = {
-                IconButton(onClick = {
-                    onUserAction(KtorListUserAction.OnNavigateBack)
-                }) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                        contentDescription = "Back",
-                        tint = MaterialTheme.colorScheme.onPrimary
-                    )
+                if (showNavigationBackAction) {
+                    IconButton(onClick = {
+                        onUserAction(KtorListUserAction.OnNavigateBack)
+                    }) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
+                    }
                 }
             },
             actions = {

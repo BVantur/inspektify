@@ -75,6 +75,8 @@ kotlin {
         }
     }
 
+    jvm()
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
@@ -113,6 +115,11 @@ kotlin {
         }
         iosMain.dependencies {
             implementation(libs.cash.sqldelight.native.driver)
+        }
+
+        jvmMain.dependencies {
+            implementation(compose.desktop.currentOs)
+            implementation(libs.cash.sqldelight.sql.driver)
         }
     }
 }

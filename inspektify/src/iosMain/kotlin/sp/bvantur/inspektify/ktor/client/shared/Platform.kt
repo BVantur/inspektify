@@ -1,5 +1,6 @@
 package sp.bvantur.inspektify.ktor.client.shared
 
+import sp.bvantur.inspektify.ktor.client.data.model.TargetType
 import sp.bvantur.inspektify.ktor.inspektifyViewControllerInstance
 
 internal actual object Platform {
@@ -7,5 +8,5 @@ internal actual object Platform {
         inspektifyViewControllerInstance?.dismissModalViewControllerAnimated(true)
     }
 
-    actual fun isAndroid(): Boolean = false
+    actual fun getTargetType(): TargetType = TargetType.APPLE
 }
