@@ -31,10 +31,9 @@ kotlin {
         }
     }
 
-    jvm("desktop")
+    jvm()
 
     sourceSets {
-        val desktopMain by getting
         val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
         androidMain.dependencies {
             implementation(compose.preview)
@@ -75,7 +74,7 @@ kotlin {
             }
         }
 
-        desktopMain.dependencies {
+        jvmMain.dependencies {
             implementation(libs.jetbrains.coroutines.swing)
             implementation(compose.desktop.currentOs)
             if (useKtorV3) {
