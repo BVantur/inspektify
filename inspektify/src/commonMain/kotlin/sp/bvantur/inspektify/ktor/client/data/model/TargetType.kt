@@ -1,6 +1,6 @@
 package sp.bvantur.inspektify.ktor.client.data.model
 
-enum class TargetType {
+internal enum class TargetType {
     APPLE,
     ANDROID,
     DESKTOP;
