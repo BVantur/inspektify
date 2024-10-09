@@ -1,6 +1,6 @@
 [versions]
 # INSPEKTIFY LIB VERSION
-inspektify-version = "1.0.0-beta02"
+inspektify-version = "1.0.0-beta03"
 
 # GENERAL dependencies
 agp = "8.4.0"
