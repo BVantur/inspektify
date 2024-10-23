@@ -32,7 +32,8 @@ class LibKonsistTest {
         val allowedPublicComponents = listOf(
             "InspektifyKtor",
             "InspektifyKtorConfig",
-            "NetworkTrafficHeader"
+            "NetworkTrafficHeader",
+            "PresentationConfig"
         )
 
         Konsist.scopeFromModule("inspektify")
@@ -83,7 +84,10 @@ class LibKonsistTest {
             "NetworkTrafficHeader:value",
             "InspektifyKtorConfig:presentationType",
             "InspektifyKtorConfig:logLevel",
-            "InspektifyKtorConfig:dataRetentionPolicy"
+            "InspektifyKtorConfig:dataRetentionPolicy",
+            "InspektifyKtorConfig:presentationConfig",
+            "PresentationConfig:autoDetect",
+            "PresentationConfig:shortcut"
         )
 
         val publicComponents = mutableListOf<String>()

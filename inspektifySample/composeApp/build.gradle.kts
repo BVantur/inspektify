@@ -25,9 +25,15 @@ kotlin {
         iosX64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
+//        iosTarget.binaries.all {
+//            linkerOpts("-lsqlite3")
+//        }
+
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
+//            isStatic = false
             isStatic = true
+            export(project(":inspektify"))
         }
     }
 
@@ -46,7 +52,7 @@ kotlin {
         }
 
         commonMain.dependencies {
-            implementation(project(":inspektify"))
+            api(project(":inspektify"))
             if (useKtorV3) {
                 implementation(libs.bundles.ktor3)
 //                implementation(libs.inspektify.ktor3)

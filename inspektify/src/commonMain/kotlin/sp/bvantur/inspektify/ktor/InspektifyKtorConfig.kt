@@ -1,11 +1,20 @@
 package sp.bvantur.inspektify.ktor
 
 class InspektifyKtorConfig {
+    var presentationConfig: PresentationConfig = PresentationConfig()
+
+    @Deprecated("presentationType no longer has any effect. Please use presentationConfig instead.")
     var presentationType: PresentationType = PresentationType.AutoDetect
     var logLevel: LogLevel = LogLevel.None
     var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
 }
 
+data class PresentationConfig(val autoDetect: Boolean = true, val shortcut: Boolean = false) {
+    internal fun isCustom() = !autoDetect
+    internal fun isShortcutEnabled() = shortcut
+}
+
+@Deprecated("PresentationType is deprecated. Please use PresentationConfig instead.")
 sealed interface PresentationType {
     data object AutoDetect : PresentationType
     data object Custom : PresentationType

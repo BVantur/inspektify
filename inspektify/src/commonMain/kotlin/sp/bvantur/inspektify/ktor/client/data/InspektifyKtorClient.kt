@@ -41,7 +41,7 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        configurePresentationType(config.presentationType)
+        configurePresentationType(config.presentationConfig)
         trafficLogger.configureLogger(config.logLevel)
         coroutineScope.launch {
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
