@@ -9,8 +9,6 @@ import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.LogLevel
-import sp.bvantur.inspektify.ktor.PresentationConfig
-import sp.bvantur.inspektify.ktor.PresentationType
 
 private const val BASE_URL = "https://reqres.in/api/"
 
@@ -31,10 +29,8 @@ val networkModule = module {
                 url(BASE_URL)
             }
             install(InspektifyKtor) {
-                presentationType = PresentationType.AutoDetect
-                presentationConfig = PresentationConfig(
-                    shortcut = false
-                )
+                autoDetectEnabled = true
+                shortcutEnabled = true
                 logLevel = LogLevel.All
                 dataRetentionPolicy = DataRetentionPolicy.SessionCount(4)
             }

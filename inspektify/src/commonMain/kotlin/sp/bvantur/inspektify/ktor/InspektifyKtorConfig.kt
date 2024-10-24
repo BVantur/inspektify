@@ -1,20 +1,16 @@
 package sp.bvantur.inspektify.ktor
 
 class InspektifyKtorConfig {
-    var presentationConfig: PresentationConfig = PresentationConfig()
+    var autoDetectEnabled: Boolean = true
+    var shortcutEnabled: Boolean = false
 
-    @Deprecated("presentationType no longer has any effect. Please use presentationConfig instead.")
+    @Deprecated("presentationType no longer has any effect. Please use autoDetectEnabled instead.")
     var presentationType: PresentationType = PresentationType.AutoDetect
     var logLevel: LogLevel = LogLevel.None
     var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
 }
 
-data class PresentationConfig(val autoDetect: Boolean = true, val shortcut: Boolean = false) {
-    internal fun isCustom() = !autoDetect
-    internal fun isShortcutEnabled() = shortcut
-}
-
-@Deprecated("PresentationType is deprecated. Please use PresentationConfig instead.")
+@Deprecated("Will be removed.")
 sealed interface PresentationType {
     data object AutoDetect : PresentationType
     data object Custom : PresentationType
@@ -43,3 +39,6 @@ sealed interface DataRetentionPolicy {
     data class DayDuration(val numOfDays: Int) : DataRetentionPolicy
     data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
 }
+
+internal const val INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME = "Inspektify"
+internal const val INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME = "Open $INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME window"

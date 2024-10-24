@@ -13,8 +13,9 @@ import platform.UIKit.UIViewController
 import platform.UIKit.UIWindow
 import platform.UIKit.UIWindowScene
 import platform.UIKit.shortcutItems
+import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME
+import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME
 import sp.bvantur.inspektify.ktor.InspektifyViewController
-import sp.bvantur.inspektify.ktor.PresentationConfig
 import sp.bvantur.inspektify.ktor.client.INSPEKTIFY_SHORTCUT_ITEM_TYPE
 import sp.bvantur.inspektify.ktor.inspektifyViewControllerInstance
 import sp.bvantur.inspektify.shakedetektor.ShakeDetektorIOS
@@ -28,17 +29,25 @@ internal actual fun startInspektifyWindow() {
 }
 
 @OptIn(ExperimentalForeignApi::class)
-internal actual fun configurePresentationType(presentationConfig: PresentationConfig) {
-    if (presentationConfig.isCustom()) return
-
-    if (presentationConfig.isShortcutEnabled()) {
+internal actual fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean) {
+    if (shortcutEnabled) {
         setupQuickAction()
+    } else {
+        UIApplication.sharedApplication.shortcutItems = UIApplication.sharedApplication.shortcutItems?.filter {
+            if (it is UIApplicationShortcutItem) {
+                it.type != INSPEKTIFY_SHORTCUT_ITEM_TYPE
+            } else {
+                true
+            }
+        }
     }
 
-    ShakeDetektorIOS().enableShakeDetektorWithCallback {
-        if (inspektifyViewControllerInstance != null) return@enableShakeDetektorWithCallback
+    if (autoDetectEnabled) {
+        ShakeDetektorIOS().enableShakeDetektorWithCallback {
+            if (inspektifyViewControllerInstance != null) return@enableShakeDetektorWithCallback
 
-        startInspektifyWindow()
+            startInspektifyWindow()
+        }
     }
 }
 
@@ -56,6 +65,7 @@ private fun getTopMostViewController(
         is UITabBarController -> {
             base.selectedViewController?.let { getTopMostViewController(it) }
         }
+
         else -> {
             if (base.presentedViewController != null) {
                 getTopMostViewController(base.presentedViewController)
@@ -84,15 +94,15 @@ private val UIApplication.topWindow: UIWindow?
     }
 
 private fun setupQuickAction() {
-    UIApplication.sharedApplication.shortcutItems = listOf(
+    UIApplication.sharedApplication.shortcutItems =
+        (UIApplication.sharedApplication.shortcutItems?.toMutableList() ?: mutableListOf()) +
         UIApplicationShortcutItem(
             INSPEKTIFY_SHORTCUT_ITEM_TYPE,
-            "Inspektify",
-            "Open Inspektify window",
+            INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME,
+            INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME,
             UIApplicationShortcutIcon.iconWithType(
                 UIApplicationShortcutIconType.UIApplicationShortcutIconTypeSearch
             ),
             mapOf<Any?, Any>()
         )
-    )
 }

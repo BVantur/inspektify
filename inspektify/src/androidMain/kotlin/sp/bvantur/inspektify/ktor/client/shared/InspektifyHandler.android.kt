@@ -6,8 +6,9 @@ import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.lifecycle.ProcessLifecycleOwner
+import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME
+import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME
 import sp.bvantur.inspektify.ktor.InspektifyActivity
-import sp.bvantur.inspektify.ktor.PresentationConfig
 import sp.bvantur.inspektify.ktor.ShakeGestureListener
 import sp.bvantur.inspektify.ktor.applicationContext
 
@@ -24,25 +25,25 @@ internal actual fun disposeInspektifyWindow() {
     InspektifyActivity.inspektifyActivityInstance = null
 }
 
-internal actual fun configurePresentationType(presentationConfig: PresentationConfig) {
-    if (presentationConfig.isCustom()) return
-
-    if (presentationConfig.isShortcutEnabled()) {
+internal actual fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean) {
+    if (shortcutEnabled) {
         setupShortcut()
     } else {
         ShortcutManagerCompat.removeDynamicShortcuts(applicationContext, listOf("id1"))
     }
 
-    ProcessLifecycleOwner.get().lifecycle.addObserver(
-        ShakeGestureListener()
-    )
+    if (autoDetectEnabled) {
+        ProcessLifecycleOwner.get().lifecycle.addObserver(
+            ShakeGestureListener()
+        )
+    }
 }
 
 private fun setupShortcut() {
     val icon = IconCompat.createWithResource(applicationContext, android.R.drawable.ic_menu_search)
     val shortcut = ShortcutInfoCompat.Builder(applicationContext, "id1")
-        .setShortLabel("Inspektify")
-        .setLongLabel("Open Inspektify window")
+        .setShortLabel(INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME)
+        .setLongLabel(INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME)
         .setIcon(icon)
         .setIntent(
             Intent(applicationContext, InspektifyActivity::class.java).also { intent ->

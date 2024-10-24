@@ -12,7 +12,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.InspektifyKtorConfig
-import sp.bvantur.inspektify.ktor.client.shared.configurePresentationType
+import sp.bvantur.inspektify.ktor.client.shared.configurePresentation
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
 import sp.bvantur.inspektify.ktor.core.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.ktor.core.di.AppComponents
@@ -41,7 +41,7 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        configurePresentationType(config.presentationConfig)
+        configurePresentation(config.autoDetectEnabled, config.shortcutEnabled)
         trafficLogger.configureLogger(config.logLevel)
         coroutineScope.launch {
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
