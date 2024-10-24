@@ -11,6 +11,8 @@ plugins {
 }
 
 kotlin {
+    val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
+
     task("testClasses")
 
     androidTarget {
@@ -33,14 +35,17 @@ kotlin {
             baseName = "ComposeApp"
 //            isStatic = false
             isStatic = true
-            export(project(":inspektify"))
+            if (useKtorV3) {
+                export(libs.inspektify.ktor3)
+            } else {
+                export(libs.inspektify.ktor2)
+            }
         }
     }
 
     jvm()
 
     sourceSets {
-        val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -52,13 +57,13 @@ kotlin {
         }
 
         commonMain.dependencies {
-            api(project(":inspektify"))
+//            api(project(":inspektify"))
             if (useKtorV3) {
                 implementation(libs.bundles.ktor3)
-//                implementation(libs.inspektify.ktor3)
+                api(libs.inspektify.ktor3)
             } else {
                 implementation(libs.bundles.ktor2)
-//                implementation(libs.inspektify.ktor2)
+                api(libs.inspektify.ktor2)
             }
             implementation(compose.runtime)
             implementation(compose.foundation)
