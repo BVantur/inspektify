@@ -16,6 +16,7 @@
 
         <activity android:name="sp.bvantur.inspektify.ktor.InspektifyActivity"
             android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Material.NoActionBar"
             android:taskAffinity="sp.bvantur.inspektify.android.task"/>
     </application>
 

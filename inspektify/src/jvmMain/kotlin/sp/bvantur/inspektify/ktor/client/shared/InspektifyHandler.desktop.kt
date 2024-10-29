@@ -1,7 +1,6 @@
 package sp.bvantur.inspektify.ktor.client.shared
 
 import androidx.compose.ui.awt.ComposePanel
-import sp.bvantur.inspektify.ktor.PresentationType
 import sp.bvantur.inspektify.ktor.core.ui.App
 import java.awt.Dimension
 import java.awt.KeyboardFocusManager
@@ -11,8 +10,8 @@ import javax.swing.JFrame
 
 private var frameWindow: JFrame? = null
 
-internal actual fun configurePresentationType(presentationType: PresentationType) {
-    if (presentationType.isCustom()) return
+internal actual fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean) {
+    if (!autoDetectEnabled) return
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher { event ->
         if (event.id == KeyEvent.KEY_PRESSED) {

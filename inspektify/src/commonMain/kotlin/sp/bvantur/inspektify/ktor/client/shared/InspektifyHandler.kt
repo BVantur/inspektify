@@ -1,8 +1,6 @@
 package sp.bvantur.inspektify.ktor.client.shared
 
-import sp.bvantur.inspektify.ktor.PresentationType
-
-internal expect fun configurePresentationType(presentationType: PresentationType)
+internal expect fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean)
 
 internal expect fun startInspektifyWindow()
 
