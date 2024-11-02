@@ -1,5 +1,6 @@
 package sp.bvantur.inspektify.ktor.details.di
 
+import kotlinx.serialization.json.Json
 import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.details.data.KtorDetailsRepositoryImpl
 import sp.bvantur.inspektify.ktor.details.data.datasource.KtorDetailsLocalDataSource
@@ -9,9 +10,12 @@ internal object KtorDetailsModule {
     private var repository: KtorDetailsRepository? = null
     private var localDataSource: KtorDetailsLocalDataSource? = null
 
-    fun getRepository(localDataSource: KtorDetailsLocalDataSource = getLocalDataSource()): KtorDetailsRepository {
+    fun getRepository(
+        localDataSource: KtorDetailsLocalDataSource = getLocalDataSource(),
+        json: Json = AppComponents.getAppModule().json
+    ): KtorDetailsRepository {
         if (repository == null) {
-            repository = KtorDetailsRepositoryImpl(localDataSource)
+            repository = KtorDetailsRepositoryImpl(json, localDataSource)
         }
         return repository!!
     }

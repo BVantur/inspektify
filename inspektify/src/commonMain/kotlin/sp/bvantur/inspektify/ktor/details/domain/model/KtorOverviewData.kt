@@ -1,4 +1,4 @@
-package sp.bvantur.inspektify.ktor.overview.domain.model
+package sp.bvantur.inspektify.ktor.details.domain.model
 
 internal data class KtorOverviewData(
     val url: String?,
