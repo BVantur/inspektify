@@ -1,9 +1,11 @@
 package sp.bvantur.inspektify.ktor.overview.ui
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,43 +39,47 @@ private fun NetworkTrafficDetailsOverviewScreen(
     viewState: NetworkTrafficDetailsOverviewViewState,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier.fillMaxWidth().padding(8.dp)) {
-        with(viewState) {
-            url?.let {
-                OverviewContentRow("URL", it)
-            }
-            method?.let {
-                OverviewContentRow("Method", it)
-            }
-            protocol?.let {
-                OverviewContentRow("Protocol", it)
-            }
-            status?.let {
-                OverviewContentRow("Status", it)
-            }
-            response?.let {
-                OverviewContentRow("Response", it)
-            }
-            ssl?.let {
-                OverviewContentRow("SSL", it)
-            }
-            requestTime?.let {
-                OverviewContentRow("Request time", it)
-            }
-            responseTime?.let {
-                OverviewContentRow("Response time", it)
-            }
-            duration?.let {
-                OverviewContentRow("Duration", it)
-            }
-            requestSize?.let {
-                OverviewContentRow("Request size", it)
-            }
-            responseSize?.let {
-                OverviewContentRow("Response size", it)
-            }
-            totalSize?.let {
-                OverviewContentRow("Total size", it)
+    Box(modifier = modifier.fillMaxWidth()) {
+        SelectionContainer(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
+            Column {
+                with(viewState) {
+                    url?.let {
+                        OverviewContentRow("URL", it)
+                    }
+                    method?.let {
+                        OverviewContentRow("Method", it)
+                    }
+                    protocol?.let {
+                        OverviewContentRow("Protocol", it)
+                    }
+                    status?.let {
+                        OverviewContentRow("Status", it)
+                    }
+                    response?.let {
+                        OverviewContentRow("Response", it)
+                    }
+                    ssl?.let {
+                        OverviewContentRow("SSL", it)
+                    }
+                    requestTime?.let {
+                        OverviewContentRow("Request time", it)
+                    }
+                    responseTime?.let {
+                        OverviewContentRow("Response time", it)
+                    }
+                    duration?.let {
+                        OverviewContentRow("Duration", it)
+                    }
+                    requestSize?.let {
+                        OverviewContentRow("Request size", it)
+                    }
+                    responseSize?.let {
+                        OverviewContentRow("Response size", it)
+                    }
+                    totalSize?.let {
+                        OverviewContentRow("Total size", it)
+                    }
+                }
             }
         }
     }
