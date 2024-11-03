@@ -5,10 +5,18 @@ is presented. But this doesn't work for all projects, especially if you are usin
 party libraries that are using the same shake detection. That is why we introduced shortcut
 capability for our mobile targets(Android, iOS).
 
-<p align="center">
-  <img src="../inspektify/screenshots/shortcut_android.gif" width=320>
-  <img src="../inspektify/screenshots/shortcut_ios.gif" width=340>
-</p>
+## Video
+
+<table align="center">
+   <tr>
+        <th>Android</th>
+        <th>iOS</th>
+   </tr>
+   <tr>
+      <td><img src="../inspektify/screenshots/shortcut_android.gif" width=320></td>
+      <td><img src="../inspektify/screenshots/shortcut_ios.gif" width=340></td>
+   </tr>
+</table>
 
 By default shortcut configuration is disabled, because it require some additional setup on iOS side,
 but you can easily enable it by changing `shortcutEnabled` configuration flag
