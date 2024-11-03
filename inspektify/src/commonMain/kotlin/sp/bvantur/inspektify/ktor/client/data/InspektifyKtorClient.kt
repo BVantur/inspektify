@@ -19,7 +19,7 @@ import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
 internal class InspektifyKtorClient(
-    dispatcherProvider: DispatcherProvider = AppComponents.getDispatcherProvider(),
+    private val dispatcherProvider: DispatcherProvider = AppComponents.getDispatcherProvider(),
     private val repository: NetworkTrafficRepository = AppComponents.getKtorModule().networkTrafficRepository,
     private val cachedConfig: KtorPluginCachedConfig = AppComponents.getKtorPluginCachedConfig(),
     private val requestHandler: InspektifyRequestHandler = AppComponents.getInspektifyRequestHandler(),
@@ -41,9 +41,10 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        configurePresentation(config.autoDetectEnabled, config.shortcutEnabled)
+        configurePresentation(config.autoDetectEnabled, config.shortcutEnabled, config.presentationType)
         trafficLogger.configureLogger(config.logLevel)
-        coroutineScope.launch {
+        coroutineScope.launch(dispatcherProvider.main.immediate) {
+            configurePresentation(config.autoDetectEnabled, config.shortcutEnabled, config.presentationType)
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
         }
     }

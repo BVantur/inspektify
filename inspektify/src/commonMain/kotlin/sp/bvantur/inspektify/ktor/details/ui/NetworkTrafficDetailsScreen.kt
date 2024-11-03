@@ -3,15 +3,20 @@ package sp.bvantur.inspektify.ktor.details.ui
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ContentCopy
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Terminal
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,6 +28,8 @@ import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -33,7 +40,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,12 +52,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
 import sp.bvantur.inspektify.ktor.core.ui.navigation.OnNavigateBackAction
+import sp.bvantur.inspektify.ktor.core.ui.theme.Ferra
 import sp.bvantur.inspektify.ktor.core.ui.theme.success
-import sp.bvantur.inspektify.ktor.details.presentation.KtorDetailsUserAction
+import sp.bvantur.inspektify.ktor.core.ui.utils.CollectSingleEventsWithLifecycle
+import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsEvent
+import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsUserAction
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsViewModel
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsViewState
-import sp.bvantur.inspektify.ktor.overview.ui.NetworkTrafficDetailsOverviewRoute
-import sp.bvantur.inspektify.ktor.payload.ui.NetworkTrafficPayloadDetailsRoute
+import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficPayloadDetailsViewState
 
 @Composable
 internal fun NetworkTrafficDetailsRoute(onNavigateBackAction: OnNavigateBackAction) {
@@ -57,10 +70,33 @@ internal fun NetworkTrafficDetailsRoute(onNavigateBackAction: OnNavigateBackActi
     )
 
     val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
+    val requestViewState by viewModel.requestStateFlow.collectAsStateWithLifecycle()
+    val responseViewState by viewModel.responseStateFlow.collectAsStateWithLifecycle()
+
+    val searchFocusRequester = remember { FocusRequester() }
+
+    CollectSingleEventsWithLifecycle(singleEventFlow = viewModel.singleEventFlow) { singleEvent ->
+        when (singleEvent) {
+            NetworkTrafficDetailsEvent.MoveFocusOnSearch -> {
+                searchFocusRequester.requestFocus()
+            }
+
+            NetworkTrafficDetailsEvent.RemoveFocusFromSearch -> {
+                searchFocusRequester.requestFocus()
+            }
+
+            NetworkTrafficDetailsEvent.OnNavigateBack -> {
+                onNavigateBackAction()
+            }
+        }
+    }
 
     NetworkTrafficDetailsScreen(
         viewState = viewState,
-        onNavigateBackAction = onNavigateBackAction,
+        overviewData = viewState.overviewData,
+        requestViewState = requestViewState,
+        responseViewState = responseViewState,
+        searchFocusRequester = searchFocusRequester,
         onUserAction = viewModel::onUserAction
     )
 }
@@ -69,30 +105,86 @@ internal fun NetworkTrafficDetailsRoute(onNavigateBackAction: OnNavigateBackActi
 @Composable
 private fun NetworkTrafficDetailsScreen(
     viewState: NetworkTrafficDetailsViewState,
-    onNavigateBackAction: OnNavigateBackAction,
-    onUserAction: (KtorDetailsUserAction) -> Unit,
+    overviewData: AnnotatedString,
+    requestViewState: NetworkTrafficPayloadDetailsViewState,
+    responseViewState: NetworkTrafficPayloadDetailsViewState,
+    searchFocusRequester: FocusRequester,
+    onUserAction: (NetworkTrafficDetailsUserAction) -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = viewState.title,
-                        color = MaterialTheme.colorScheme.onPrimary,
-                        fontSize = 18.sp,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    if (viewState.isSearching) {
+                        TextField(
+                            value = viewState.searchQuery,
+                            onValueChange = {
+                                onUserAction(NetworkTrafficDetailsUserAction.OnSearchQuery(it))
+                            },
+                            placeholder = { Text("Search...") },
+                            singleLine = true,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .focusRequester(searchFocusRequester),
+                            colors = TextFieldDefaults.colors(
+                                focusedTextColor = MaterialTheme.colorScheme.onPrimary,
+                                unfocusedTextColor = MaterialTheme.colorScheme.onPrimary,
+                                focusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
+                                unfocusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
+                                focusedContainerColor = MaterialTheme.colorScheme.primary,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
+                                cursorColor = MaterialTheme.colorScheme.onPrimary,
+                                focusedIndicatorColor = Color.Transparent,
+                                unfocusedIndicatorColor = Color.Transparent,
+                                focusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                                unfocusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                            ),
+                            trailingIcon = {
+                                if (viewState.searchQuery.text.isNotEmpty()) {
+                                    IconButton(onClick = {
+                                        onUserAction(NetworkTrafficDetailsUserAction.OnClearSearchQuery)
+                                    }) {
+                                        Icon(
+                                            imageVector = Icons.Default.Close,
+                                            contentDescription = "Clear Search",
+                                            tint = MaterialTheme.colorScheme.onPrimary
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    } else {
+                        Text(
+                            text = viewState.title,
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            fontSize = 18.sp,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary),
                 navigationIcon = {
-                    IconButton(onClick = { onNavigateBackAction() }) {
+                    IconButton(onClick = { onUserAction(NetworkTrafficDetailsUserAction.OnNavigateBack) }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                             contentDescription = "Back",
                             tint = MaterialTheme.colorScheme.onPrimary
                         )
+                    }
+                },
+                actions = {
+                    if (!viewState.isSearching) {
+                        IconButton(onClick = {
+                            onUserAction(NetworkTrafficDetailsUserAction.OnStartSearch)
+                        }) {
+                            Icon(
+                                imageVector = Icons.Filled.Search,
+                                contentDescription = "Search",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
                     }
                 }
             )
@@ -101,6 +193,11 @@ private fun NetworkTrafficDetailsScreen(
         var tabIndex by remember { mutableStateOf(0) }
 
         val tabs = listOf("Overview", "Request", "Response")
+        val searchCount = listOf(
+            viewState.overviewSearchQueryCount,
+            viewState.requestData.searchQueryCount,
+            viewState.responseData.searchQueryCount
+        )
         Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
             TabRow(
                 selectedTabIndex = tabIndex,
@@ -109,7 +206,17 @@ private fun NetworkTrafficDetailsScreen(
             ) {
                 tabs.forEachIndexed { index, title ->
                     Tab(
-                        text = { Text(title) },
+                        text = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(title)
+                                SearchCountIndicator(
+                                    modifier = Modifier.padding(start = 4.dp),
+                                    count = searchCount[index]
+                                )
+                            }
+                        },
                         selected = tabIndex == index,
                         onClick = { tabIndex = index }
                     )
@@ -117,20 +224,18 @@ private fun NetworkTrafficDetailsScreen(
             }
             if (viewState.networkTrafficId > 0) {
                 when (tabIndex) {
-                    0 -> NetworkTrafficDetailsOverviewRoute(
-                        id = viewState.networkTrafficId,
+                    0 -> NetworkTrafficDetailsOverviewScreen(
+                        overviewData = overviewData,
                         modifier = Modifier.weight(1f)
                     )
 
-                    1 -> NetworkTrafficPayloadDetailsRoute(
-                        id = viewState.networkTrafficId,
-                        isRequest = true,
+                    1 -> NetworkTrafficPayloadDetailsScreen(
+                        requestViewState,
                         modifier = Modifier.weight(1f)
                     )
 
-                    2 -> NetworkTrafficPayloadDetailsRoute(
-                        id = viewState.networkTrafficId,
-                        isRequest = false,
+                    2 -> NetworkTrafficPayloadDetailsScreen(
+                        responseViewState,
                         modifier = Modifier.weight(1f)
                     )
                 }
@@ -163,7 +268,7 @@ private fun NetworkTrafficDetailsScreen(
                     text = "cURL",
                     imageVector = Icons.Default.Terminal,
                     onClick = {
-                        onUserAction(KtorDetailsUserAction.OnGetCurl)
+                        onUserAction(NetworkTrafficDetailsUserAction.OnGetCurl)
                     }
                 )
                 if (viewState.showShareAction) {
@@ -172,7 +277,7 @@ private fun NetworkTrafficDetailsScreen(
                         text = "Share",
                         imageVector = Icons.Default.Share,
                         onClick = {
-                            onUserAction(KtorDetailsUserAction.OnShare)
+                            onUserAction(NetworkTrafficDetailsUserAction.OnShare)
                         }
                     )
                 }
@@ -181,7 +286,7 @@ private fun NetworkTrafficDetailsScreen(
                     text = "Copy",
                     imageVector = Icons.Default.ContentCopy,
                     onClick = {
-                        onUserAction(KtorDetailsUserAction.OnCopyToClipboard)
+                        onUserAction(NetworkTrafficDetailsUserAction.OnCopyToClipboard)
                     }
                 )
             }
@@ -190,7 +295,12 @@ private fun NetworkTrafficDetailsScreen(
 }
 
 @Composable
-fun ActionTextIcon(text: String, imageVector: ImageVector, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
+private fun ActionTextIcon(
+    text: String,
+    imageVector: ImageVector,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {}
+) {
     TextButton(
         modifier = modifier,
         onClick = {
@@ -211,5 +321,29 @@ fun ActionTextIcon(text: String, imageVector: ImageVector, modifier: Modifier = 
                 style = MaterialTheme.typography.bodyMedium
             )
         }
+    }
+}
+
+@Composable
+private fun SearchCountIndicator(modifier: Modifier = Modifier, count: Int) {
+    println(count)
+    if (count <= 0) {
+        return
+    }
+
+    val displayText = if (count > 10) "10+" else count.toString()
+    Box(
+        modifier = modifier
+            .size(24.dp)
+            .clip(CircleShape)
+            .background(color = Ferra),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = displayText,
+            color = Color.White,
+            fontSize = 12.sp,
+            style = MaterialTheme.typography.bodySmall
+        )
     }
 }

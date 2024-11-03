@@ -4,8 +4,8 @@ class InspektifyKtorConfig {
     var autoDetectEnabled: Boolean = true
     var shortcutEnabled: Boolean = false
 
-    @Deprecated("presentationType no longer has any effect. Please use autoDetectEnabled instead.")
-    var presentationType: PresentationType = PresentationType.AutoDetect
+    @Deprecated("presentationType will be removed in the future. Please use autoDetectEnabled instead.")
+    var presentationType: PresentationType? = null
     var logLevel: LogLevel = LogLevel.None
     var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
 }
@@ -16,6 +16,7 @@ sealed interface PresentationType {
     data object Custom : PresentationType
 
     fun isCustom() = this == Custom
+    fun isAutoDetect() = this == AutoDetect
 }
 
 sealed interface LogLevel {
