@@ -94,6 +94,12 @@ private val UIApplication.topWindow: UIWindow?
     }
 
 private fun setupQuickAction() {
+    if (UIApplication.sharedApplication.shortcutItems?.any {
+            (it as? UIApplicationShortcutItem)?.type == INSPEKTIFY_SHORTCUT_ITEM_TYPE
+        } == true
+    ) {
+        return
+    }
     UIApplication.sharedApplication.shortcutItems =
         (UIApplication.sharedApplication.shortcutItems?.toMutableList() ?: mutableListOf()) +
         UIApplicationShortcutItem(

@@ -45,14 +45,19 @@ internal class KtorListVewModel(
             KtorListUserAction.OnNavigateBack -> onNavigateBack()
             is KtorListUserAction.OnNetworkTrafficItemSelected -> onNetworkTrafficItemSelected(userAction.id)
             KtorListUserAction.OnStartSearch -> onStartSearch()
-            KtorListUserAction.OnClearSearchQuery -> onSearchQuery(viewStateFlow.value.searchQuery.copy(text = ""))
+            KtorListUserAction.OnClearSearchQuery -> {
+                onSearchQuery(viewStateFlow.value.searchQuery.copy(text = ""))
+                viewModelScope.launch {
+                    emitSingleEvent(KtorListEvent.MoveFocusOnSearch)
+                }
+            }
             is KtorListUserAction.OnSearchSuggestionQuery -> {
                 onSearchQuery(viewStateFlow.value.searchQuery.copy(text = "${userAction.suggestion} "))
+                emitViewState { viewState ->
+                    val searchQuery = viewState.searchQuery
+                    viewState.copy(searchQuery = searchQuery.copy(selection = TextRange(searchQuery.text.length)))
+                }
                 viewModelScope.launch {
-                    emitViewState { viewState ->
-                        val searchQuery = viewState.searchQuery
-                        viewState.copy(searchQuery = searchQuery.copy(selection = TextRange(searchQuery.text.length)))
-                    }
                     emitSingleEvent(KtorListEvent.MoveFocusOnSearch)
                 }
             }
@@ -74,8 +79,8 @@ internal class KtorListVewModel(
     }
 
     private fun onNavigateBack() {
-        viewModelScope.launch {
-            if (viewStateFlow.value.isSearching) {
+        if (viewStateFlow.value.isSearching) {
+            viewModelScope.launch {
                 emitSingleEvent(KtorListEvent.RemoveFocusFromSearch)
                 emitViewState { viewState ->
                     viewState.copy(
@@ -84,9 +89,9 @@ internal class KtorListVewModel(
                         showNavigationBackAction = !Platform.getTargetType().isDesktop()
                     )
                 }
-            } else {
-                Platform.closeInspektifyWindow()
             }
+        } else {
+            Platform.closeInspektifyWindow()
         }
     }
 
@@ -105,33 +110,31 @@ internal class KtorListVewModel(
     }
 
     private fun onSearchQuery(query: TextFieldValue) {
-        viewModelScope.launch {
-            val searchTerms = query.text
-                .trim()
-                .lowercase()
-                .split("\\s+".toRegex())
-                .filter { it.isNotBlank() }
+        val searchTerms = query.text
+            .trim()
+            .lowercase()
+            .split("\\s+".toRegex())
+            .filter { it.isNotBlank() }
 
-            val queriedItems = if (searchTerms.isEmpty()) {
-                viewStateFlow.value.items
-            } else {
-                viewStateFlow.value.items.mapValues { entry ->
-                    entry.value.filter { item ->
-                        searchTerms.all { term ->
-                            item.statusCode.contains(term, ignoreCase = true) ||
-                                item.methodWithPath.contains(term, ignoreCase = true) ||
-                                item.host.contains(term, ignoreCase = true)
-                        }
+        val queriedItems = if (searchTerms.isEmpty()) {
+            viewStateFlow.value.items
+        } else {
+            viewStateFlow.value.items.mapValues { entry ->
+                entry.value.filter { item ->
+                    searchTerms.all { term ->
+                        item.statusCode.contains(term, ignoreCase = true) ||
+                            item.methodWithPath.contains(term, ignoreCase = true) ||
+                            item.host.contains(term, ignoreCase = true)
                     }
-                }.filterValues { it.isNotEmpty() }
-            }
+                }
+            }.filterValues { it.isNotEmpty() }
+        }
 
-            emitViewState { viewState ->
-                viewState.copy(
-                    searchQuery = query,
-                    queriedItems = queriedItems
-                )
-            }
+        emitViewState { viewState ->
+            viewState.copy(
+                searchQuery = query,
+                queriedItems = queriedItems
+            )
         }
     }
 

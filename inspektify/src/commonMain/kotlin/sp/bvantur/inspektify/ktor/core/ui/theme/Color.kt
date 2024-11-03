@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.Color
 
 internal val Mercury = Color(0xFFE9E9E9)
 internal val SeaGreen = Color(0xFF2E8B57)
+internal val Ferra = Color(0XFFb3251e)
 
 internal val ColorScheme.success: Color
     get() = SeaGreen
