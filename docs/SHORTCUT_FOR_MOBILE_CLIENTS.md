@@ -7,7 +7,7 @@ capability for our mobile targets(Android, iOS).
 
 <p align="center">
   <img src="../inspektify/screenshots/shortcut_android.gif" width=320>
-  <img src="../inspektify/screenshots/shortcut_ios.gif" width=320>
+  <img src="../inspektify/screenshots/shortcut_ios.gif" width=360>
 </p>
 
 By default shortcut configuration is disabled, because it require some additional setup on iOS side,
