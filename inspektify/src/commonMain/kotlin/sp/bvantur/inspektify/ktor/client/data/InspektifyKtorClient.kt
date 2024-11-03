@@ -41,9 +41,10 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
+        configurePresentation(config.autoDetectEnabled, config.shortcutEnabled, config.presentationType)
         trafficLogger.configureLogger(config.logLevel)
         coroutineScope.launch(dispatcherProvider.main.immediate) {
-            configurePresentation(config.autoDetectEnabled, config.shortcutEnabled)
+            configurePresentation(config.autoDetectEnabled, config.shortcutEnabled, config.presentationType)
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
         }
     }

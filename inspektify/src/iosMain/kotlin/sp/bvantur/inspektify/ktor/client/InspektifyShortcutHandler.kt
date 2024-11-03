@@ -31,7 +31,7 @@ internal class InspektifySceneDelegate @OverrideInit constructor() :
 
     private fun onInspektifyShortcutAction(shortcutItem: UIApplicationShortcutItem?) {
         shortcutItem ?: return
-        if (shortcutItem.type != INSPEKTIFY_SHORTCUT_ITEM_TYPE) return
+        if (shortcutItem.type != getInspektifyShortcutType()) return
 
         startInspektifyWindow()
     }
@@ -47,4 +47,5 @@ fun getInspektifyUISceneConfiguration(configurationForConnectingSceneSession: UI
     return configuration
 }
 
-const val INSPEKTIFY_SHORTCUT_ITEM_TYPE = "Inspektify"
+@Suppress("FunctionOnlyReturningConstant")
+fun getInspektifyShortcutType(): String = "Inspektify"
