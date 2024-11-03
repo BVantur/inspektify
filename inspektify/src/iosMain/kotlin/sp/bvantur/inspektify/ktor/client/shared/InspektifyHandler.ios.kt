@@ -94,15 +94,20 @@ private val UIApplication.topWindow: UIWindow?
     }
 
 private fun setupQuickAction() {
+    if (UIApplication.sharedApplication.shortcutItems?.any {
+            (it as? UIApplicationShortcutItem)?.type == INSPEKTIFY_SHORTCUT_ITEM_TYPE
+        } == true) {
+        return
+    }
     UIApplication.sharedApplication.shortcutItems =
         (UIApplication.sharedApplication.shortcutItems?.toMutableList() ?: mutableListOf()) +
-        UIApplicationShortcutItem(
-            INSPEKTIFY_SHORTCUT_ITEM_TYPE,
-            INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME,
-            INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME,
-            UIApplicationShortcutIcon.iconWithType(
-                UIApplicationShortcutIconType.UIApplicationShortcutIconTypeSearch
-            ),
-            mapOf<Any?, Any>()
-        )
+                UIApplicationShortcutItem(
+                    INSPEKTIFY_SHORTCUT_ITEM_TYPE,
+                    INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME,
+                    INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME,
+                    UIApplicationShortcutIcon.iconWithType(
+                        UIApplicationShortcutIconType.UIApplicationShortcutIconTypeSearch
+                    ),
+                    mapOf<Any?, Any>()
+                )
 }
