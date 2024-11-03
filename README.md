@@ -115,8 +115,8 @@ Network transactions from previous sessions have a background in light gray colo
 1. [Presentation type](docs/PRESENTATION_TYPE.md)
 2. [Log level](docs/LOG_LEVEL.md)
 3. [Data retention policy](docs/DATA_RETENTION_POLICY.md)
-4. [Shortcut for mobile clients](docs/SHORTCUT_FOR_MOBILE_CLIENTS)
-5. [Excluding Inspektify from Release Builds](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS)
+4. [Shortcut for mobile clients](docs/SHORTCUT_FOR_MOBILE_CLIENTS.md)
+5. [Excluding Inspektify from Release Builds](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md)
 
 ## Sample project
 
