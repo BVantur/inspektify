@@ -3,8 +3,12 @@
 By default Inspektify listens for shake gesture and after shaking is detected the debug tool window
 is presented. But this doesn't work for all projects, especially if you are using some other third
 party libraries that are using the same shake detection. That is why we introduced shortcut
-capability
-for our mobile targets(Android, iOS).
+capability for our mobile targets(Android, iOS).
+
+<p align="center">
+  <img src="../inspektify/screenshots/shortcut_android.gif" width=320>
+  <img src="../inspektify/screenshots/shortcut_ios.gif" width=320>
+</p>
 
 By default shortcut configuration is disabled, because it require some additional setup on iOS side,
 but you can easily enable it by changing `shortcutEnabled` configuration flag
