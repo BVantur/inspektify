@@ -31,7 +31,7 @@ install(InspektifyKtor) {
 When you do that, Android client is working as expected, but on iOS there is some additional steps
 need it to make it work.
 
-## iOS shortcut
+## iOS Quick Action
 
 ### 1. Gradle
 
@@ -45,7 +45,7 @@ commonMain.dependencies {
 }
 ```
 
-Add the `export("io.github.bvantur:inspektify-ktor3:{mavenVersion}")` lins where you define your
+Add the `export("io.github.bvantur:inspektify-ktor3:{mavenVersion}")` line where you define your
 iosTargets like this:
 
 ```
@@ -63,7 +63,8 @@ listOf(
 
 ### 2. iOS native project
 
-Now depends on if you are already using AppDelegate class in you project or not. If you already have
+Next steps depends on if you are already using AppDelegate class in you project or not. If you
+already have
 AppDelegate class in your project go directly to `You already have AppDelegate in your project `
 section below.
 
@@ -85,12 +86,12 @@ Continue with instructions from `You already have AppDelegate in your project` s
 
 If you already have AppDelegate.swift class in your project, you just need to add next two things.
 
-1. Import shared module to your file like this:
+1. Import shared module to your file for example like this:
 
 `import ComposeApp`
 
 2. Override next application method with creating `UISceneConfiguration` instance from Inspektify
-   library:
+   library(`getInspektifyUISceneConfiguration`):
 
 ```
 func application(
@@ -102,10 +103,10 @@ func application(
     }
 ```
 
-Now shortcuts should work on iOS as well. In a case when you want to have your own
-`UISceneConfiguration` implementation in your iOS project, the library makes shortcut type available
-for usage under `InspektifyShortcutHandlerKt.getInspektifyShortcutType()` method, but pay attention
-that you do everything in above `1. Gradle` section and to import shared module wherever you want to
-use it.
+Now Inspektify Quick action should work on iOS as well. In a case when you want to have your own
+`UISceneConfiguration` implementation in your iOS project, the library makes Quick action type
+available for usage under `InspektifyShortcutHandlerKt.getInspektifyShortcutType()` method, but pay
+attention that you do everything in above `1. Gradle` section and to import shared module wherever
+you want to use it.
 
 

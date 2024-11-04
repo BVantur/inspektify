@@ -23,8 +23,8 @@ observe the network of your application in real-time directly on your device.
 # Getting started
 
 This library can be used only on projects that are using Ktor for network communication. If there is
-a need to support a different library besides Ktor open an issue for it. Inspektify is supported
-only for projects that are using the Ktor library equal to or greater than 2.3.1.
+a need to support a different networking library besides Ktor open an issue for it. Inspektify is
+supported only for projects that are using the Ktor library equal to or greater than 2.3.1.
 
 ## 1. Gradle
 
