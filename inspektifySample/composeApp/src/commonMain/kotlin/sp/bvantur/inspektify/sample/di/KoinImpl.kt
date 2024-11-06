@@ -35,7 +35,11 @@ object KoinImpl {
         )
     }
 
-    private val httpClient by lazy { object: KoinComponent {val im: HttpClient by inject()}.im}
+    private val httpClient by lazy {
+        object : KoinComponent {
+            val im: HttpClient by inject()
+        }.im
+    }
     fun makeApiCall() {
         GlobalScope.launch {
             val response = httpClient.request {
