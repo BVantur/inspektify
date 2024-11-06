@@ -1,0 +1,4977 @@
+﻿#include "pch-cpp.hpp"
+
+
+
+
+
+
+struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
+struct AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753;
+struct AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477;
+struct AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A;
+struct AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180;
+struct AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378;
+struct BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947;
+struct CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367;
+struct LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9;
+struct LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC;
+struct MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D;
+struct NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7;
+struct PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7;
+struct PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616;
+struct PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D;
+struct PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7;
+struct PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE;
+struct PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE;
+struct PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591;
+struct PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605;
+struct PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B;
+struct ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7;
+struct SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330;
+struct StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839;
+struct StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827;
+struct String_t;
+struct SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567;
+struct SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8;
+struct SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9;
+struct SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017;
+struct TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7;
+struct VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC;
+struct VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697;
+struct VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE;
+struct VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE;
+struct VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52;
+
+IL2CPP_EXTERN_C RuntimeClass* AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var;
+IL2CPP_EXTERN_C String_t* _stringLiteral0105950C634BC8A51D3259AE962F71FC72835343;
+IL2CPP_EXTERN_C String_t* _stringLiteral1C963463249E8B8F67737B7C14802404698C939E;
+IL2CPP_EXTERN_C String_t* _stringLiteral250BB85D3C4C284D4DFA1B45F0FEA68820010D12;
+IL2CPP_EXTERN_C String_t* _stringLiteral444CE3C178312D66C7A173D4D85E4CB7123F4FFB;
+IL2CPP_EXTERN_C String_t* _stringLiteral45079021CEFEB624889E25AD5CE548689DF8179D;
+IL2CPP_EXTERN_C String_t* _stringLiteral470BEB8526F1BDBEF299F3B96C05B5C68046A166;
+IL2CPP_EXTERN_C String_t* _stringLiteral4C14312537906454E6EFD47C621B95D71B3BA564;
+IL2CPP_EXTERN_C String_t* _stringLiteral5978B75A8CFCFB0B4C27F319C6C4EA3690F57ABA;
+IL2CPP_EXTERN_C String_t* _stringLiteral5FDA6EF983FA41AE741DE9544AC0AE8F5DCE7242;
+IL2CPP_EXTERN_C String_t* _stringLiteral607EC84DFC9BFACDA9D0EA7360DD081128933852;
+IL2CPP_EXTERN_C String_t* _stringLiteral60A0DF648B03BF2821F30FEF153F0AAFC915DBFE;
+IL2CPP_EXTERN_C String_t* _stringLiteral6542015173AFA084173BD150F3C2BAF1358600D7;
+IL2CPP_EXTERN_C String_t* _stringLiteral71F91E13FA140537EB5B2198AFAF2B04D896807E;
+IL2CPP_EXTERN_C String_t* _stringLiteral7A0B209C7DBBCE358CA73B56CE4574722C26B97F;
+IL2CPP_EXTERN_C String_t* _stringLiteral893208824F8EC074FF2267902EBE090739D3D8E1;
+IL2CPP_EXTERN_C String_t* _stringLiteral8C0F8AA38DA0A5B2010E02F3D923447AC437622E;
+IL2CPP_EXTERN_C String_t* _stringLiteralAA752ADDB95AC553E8D02E779919179290277307;
+IL2CPP_EXTERN_C String_t* _stringLiteralAB1D52D56E28C4723D78028D447AB99C1BBDB657;
+IL2CPP_EXTERN_C String_t* _stringLiteralB42866C7CD59650529AAA37A25CD25722CB96A38;
+IL2CPP_EXTERN_C String_t* _stringLiteralB42F2AB1650E5101ADAD4B144B31DACC405C71FE;
+IL2CPP_EXTERN_C String_t* _stringLiteralB4A938C1DD0716C5A5A1802294164332231A52C3;
+IL2CPP_EXTERN_C String_t* _stringLiteralB7387696E848B2C4CEB5D9B6ED6AFABDA37C3227;
+IL2CPP_EXTERN_C String_t* _stringLiteralB8262DD79EB3086F30BCF8E3239681942576B83A;
+IL2CPP_EXTERN_C String_t* _stringLiteralBD09A3DAA622349FF74F11ECD6DDD1B297C3FDF2;
+IL2CPP_EXTERN_C String_t* _stringLiteralC4494072A0A8853E302769ED9F7F91560F582F2B;
+IL2CPP_EXTERN_C String_t* _stringLiteralC54E9E453CAA8F5DCE5559DA89197E4A9C9B3C54;
+IL2CPP_EXTERN_C String_t* _stringLiteralD9F7EA90919B9532B478C1D0C4A113235F0239A3;
+IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+IL2CPP_EXTERN_C String_t* _stringLiteralE4C72D26E22C75481070FAE5E8E422AF0C779F58;
+IL2CPP_EXTERN_C const RuntimeType* AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var;
+
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
+
+IL2CPP_EXTERN_C_BEGIN
+IL2CPP_EXTERN_C_END
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+struct U3CModuleU3E_tD1F0B9705D5594A42609E77459719A6C0DB9DD53 
+{
+};
+struct String_t  : public RuntimeObject
+{
+	int32_t ____stringLength;
+	Il2CppChar ____firstChar;
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
+};
+struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
+{
+	int32_t ___m_value;
+};
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
+	};
+};
+struct SendEventOptions_t2CAF57A3D9AD197CBC8855BAFA743F0205B36D9B 
+{
+	int32_t ___value__;
+};
+struct AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753  : public RuntimeObject
+{
+	String_t* ___eventName;
+	int32_t ___eventVersion;
+	String_t* ___eventPrefix;
+	int32_t ___sendEventOptions;
+};
+struct AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___eventName;
+	int32_t ___eventVersion;
+	char* ___eventPrefix;
+	int32_t ___sendEventOptions;
+};
+struct AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___eventName;
+	int32_t ___eventVersion;
+	Il2CppChar* ___eventPrefix;
+	int32_t ___sendEventOptions;
+};
+struct AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	bool ___isV2;
+	int64_t ___Imports_Imported;
+	int64_t ___Imports_ImportedInProcess;
+	int64_t ___Imports_ImportedOutOfProcess;
+	int64_t ___Imports_Refresh;
+	int64_t ___Imports_DomainReload;
+	int64_t ___CacheServer_MetadataRequested;
+	int64_t ___CacheServer_MetadataDownloaded;
+	int64_t ___CacheServer_MetadataFailedToDownload;
+	int64_t ___CacheServer_MetadataUploaded;
+	int64_t ___CacheServer_ArtifactsFailedToUpload;
+	int64_t ___CacheServer_MetadataVersionsDownloaded;
+	int64_t ___CacheServer_MetadataMatched;
+	int64_t ___CacheServer_ArtifactsDownloaded;
+	int64_t ___CacheServer_ArtifactFilesDownloaded;
+	int64_t ___CacheServer_ArtifactFilesFailedToDownload;
+	int64_t ___CacheServer_ArtifactsUploaded;
+	int64_t ___CacheServer_ArtifactFilesUploaded;
+	int64_t ___CacheServer_ArtifactFilesFailedToUpload;
+	int64_t ___CacheServer_Connects;
+	int64_t ___CacheServer_Disconnects;
+};
+struct AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int32_t ___isV2;
+	int64_t ___Imports_Imported;
+	int64_t ___Imports_ImportedInProcess;
+	int64_t ___Imports_ImportedOutOfProcess;
+	int64_t ___Imports_Refresh;
+	int64_t ___Imports_DomainReload;
+	int64_t ___CacheServer_MetadataRequested;
+	int64_t ___CacheServer_MetadataDownloaded;
+	int64_t ___CacheServer_MetadataFailedToDownload;
+	int64_t ___CacheServer_MetadataUploaded;
+	int64_t ___CacheServer_ArtifactsFailedToUpload;
+	int64_t ___CacheServer_MetadataVersionsDownloaded;
+	int64_t ___CacheServer_MetadataMatched;
+	int64_t ___CacheServer_ArtifactsDownloaded;
+	int64_t ___CacheServer_ArtifactFilesDownloaded;
+	int64_t ___CacheServer_ArtifactFilesFailedToDownload;
+	int64_t ___CacheServer_ArtifactsUploaded;
+	int64_t ___CacheServer_ArtifactFilesUploaded;
+	int64_t ___CacheServer_ArtifactFilesFailedToUpload;
+	int64_t ___CacheServer_Connects;
+	int64_t ___CacheServer_Disconnects;
+};
+struct AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int32_t ___isV2;
+	int64_t ___Imports_Imported;
+	int64_t ___Imports_ImportedInProcess;
+	int64_t ___Imports_ImportedOutOfProcess;
+	int64_t ___Imports_Refresh;
+	int64_t ___Imports_DomainReload;
+	int64_t ___CacheServer_MetadataRequested;
+	int64_t ___CacheServer_MetadataDownloaded;
+	int64_t ___CacheServer_MetadataFailedToDownload;
+	int64_t ___CacheServer_MetadataUploaded;
+	int64_t ___CacheServer_ArtifactsFailedToUpload;
+	int64_t ___CacheServer_MetadataVersionsDownloaded;
+	int64_t ___CacheServer_MetadataMatched;
+	int64_t ___CacheServer_ArtifactsDownloaded;
+	int64_t ___CacheServer_ArtifactFilesDownloaded;
+	int64_t ___CacheServer_ArtifactFilesFailedToDownload;
+	int64_t ___CacheServer_ArtifactsUploaded;
+	int64_t ___CacheServer_ArtifactFilesUploaded;
+	int64_t ___CacheServer_ArtifactFilesFailedToUpload;
+	int64_t ___CacheServer_Connects;
+	int64_t ___CacheServer_Disconnects;
+};
+struct AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___package_name;
+	String_t* ___error_message;
+	int32_t ___items_count;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___asset_extensions;
+	bool ___include_upm_dependencies;
+};
+struct AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___package_name;
+	char* ___error_message;
+	int32_t ___items_count;
+	char** ___asset_extensions;
+	int32_t ___include_upm_dependencies;
+};
+struct AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___package_name;
+	Il2CppChar* ___error_message;
+	int32_t ___items_count;
+	Il2CppChar** ___asset_extensions;
+	int32_t ___include_upm_dependencies;
+};
+struct AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___package_name;
+	int32_t ___package_import_choice;
+};
+struct AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___package_name;
+	int32_t ___package_import_choice;
+};
+struct AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___package_name;
+	int32_t ___package_import_choice;
+};
+struct AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___package_name;
+	int32_t ___package_items_count;
+	int32_t ___package_import_status;
+	String_t* ___error_message;
+	int32_t ___project_assets_count;
+	int32_t ___unselected_assets_count;
+	int32_t ___selected_new_assets_count;
+	int32_t ___selected_changed_assets_count;
+	int32_t ___unchanged_assets_count;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___selected_asset_extensions;
+};
+struct AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___package_name;
+	int32_t ___package_items_count;
+	int32_t ___package_import_status;
+	char* ___error_message;
+	int32_t ___project_assets_count;
+	int32_t ___unselected_assets_count;
+	int32_t ___selected_new_assets_count;
+	int32_t ___selected_changed_assets_count;
+	int32_t ___unchanged_assets_count;
+	char** ___selected_asset_extensions;
+};
+struct AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___package_name;
+	int32_t ___package_items_count;
+	int32_t ___package_import_status;
+	Il2CppChar* ___error_message;
+	int32_t ___project_assets_count;
+	int32_t ___unselected_assets_count;
+	int32_t ___selected_new_assets_count;
+	int32_t ___selected_changed_assets_count;
+	int32_t ___unchanged_assets_count;
+	Il2CppChar** ___selected_asset_extensions;
+};
+struct BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	bool ___success;
+	String_t* ___error;
+};
+struct BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int32_t ___success;
+	char* ___error;
+};
+struct BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int32_t ___success;
+	Il2CppChar* ___error;
+};
+struct CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___category;
+	String_t* ___operation;
+	String_t* ___result;
+	int64_t ___start_ts;
+	int64_t ___duration;
+};
+struct CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___category;
+	char* ___operation;
+	char* ___result;
+	int64_t ___start_ts;
+	int64_t ___duration;
+};
+struct CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___category;
+	Il2CppChar* ___operation;
+	Il2CppChar* ___result;
+	int64_t ___start_ts;
+	int64_t ___duration;
+};
+struct LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___licensingErrorType;
+	String_t* ___additionalData;
+	String_t* ___errorMessage;
+	String_t* ___correlationId;
+	String_t* ___sessionId;
+};
+struct LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___licensingErrorType;
+	char* ___additionalData;
+	char* ___errorMessage;
+	char* ___correlationId;
+	char* ___sessionId;
+};
+struct LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___licensingErrorType;
+	Il2CppChar* ___additionalData;
+	Il2CppChar* ___errorMessage;
+	Il2CppChar* ___correlationId;
+	Il2CppChar* ___sessionId;
+};
+struct LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___licensingProtocolVersion;
+	String_t* ___licensingClientVersion;
+	String_t* ___channelType;
+	double ___initTime;
+	bool ___isLegacy;
+	String_t* ___sessionId;
+	String_t* ___correlationId;
+};
+struct LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___licensingProtocolVersion;
+	char* ___licensingClientVersion;
+	char* ___channelType;
+	double ___initTime;
+	int32_t ___isLegacy;
+	char* ___sessionId;
+	char* ___correlationId;
+};
+struct LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___licensingProtocolVersion;
+	Il2CppChar* ___licensingClientVersion;
+	Il2CppChar* ___channelType;
+	double ___initTime;
+	int32_t ___isLegacy;
+	Il2CppChar* ___sessionId;
+	Il2CppChar* ___correlationId;
+};
+struct MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+};
+struct MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+};
+struct MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+};
+struct NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	bool ___new_nav_api;
+	bool ___bake_at_runtime;
+	int32_t ___height_meshes_count;
+	int32_t ___offmesh_links_count;
+};
+struct NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int32_t ___new_nav_api;
+	int32_t ___bake_at_runtime;
+	int32_t ___height_meshes_count;
+	int32_t ___offmesh_links_count;
+};
+struct NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int32_t ___new_nav_api;
+	int32_t ___bake_at_runtime;
+	int32_t ___height_meshes_count;
+	int32_t ___offmesh_links_count;
+};
+struct PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	int64_t ___start_ts;
+	int64_t ___duration;
+	bool ___blocking;
+	String_t* ___package_id;
+	int32_t ___status_code;
+	String_t* ___error_message;
+};
+struct PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int64_t ___start_ts;
+	int64_t ___duration;
+	int32_t ___blocking;
+	char* ___package_id;
+	int32_t ___status_code;
+	char* ___error_message;
+};
+struct PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int64_t ___start_ts;
+	int64_t ___duration;
+	int32_t ___blocking;
+	Il2CppChar* ___package_id;
+	int32_t ___status_code;
+	Il2CppChar* ___error_message;
+};
+struct ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	int32_t ___agent_types_count;
+	int32_t ___areas_count;
+};
+struct ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int32_t ___agent_types_count;
+	int32_t ___areas_count;
+};
+struct ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int32_t ___agent_types_count;
+	int32_t ___areas_count;
+};
+struct SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	int32_t ___navmesh_count;
+};
+struct SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int32_t ___navmesh_count;
+};
+struct SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int32_t ___navmesh_count;
+};
+struct StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___Name;
+	bool ___HasProgressMarkup;
+	double ___Duration;
+};
+struct StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___Name;
+	int32_t ___HasProgressMarkup;
+	double ___Duration;
+};
+struct StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___Name;
+	int32_t ___HasProgressMarkup;
+	double ___Duration;
+};
+struct StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	double ___Duration;
+};
+struct StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	double ___Duration;
+};
+struct StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	double ___Duration;
+};
+struct SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	String_t* ___subsystem;
+};
+struct SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	char* ___subsystem;
+};
+struct SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	Il2CppChar* ___subsystem;
+};
+struct TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+	int32_t ___param;
+};
+struct TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+	int32_t ___param;
+};
+struct TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+	int32_t ___param;
+};
+struct VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE  : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753
+{
+};
+struct VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_pinvoke
+{
+};
+struct VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com : public AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753_marshaled_com
+{
+};
+struct PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+};
+struct PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+};
+struct PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+};
+struct PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+};
+struct PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+};
+struct PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+};
+struct PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+};
+struct PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+};
+struct PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+};
+struct PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+};
+struct PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+};
+struct PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+};
+struct PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+	String_t* ___reason;
+	String_t* ___action;
+};
+struct PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+	char* ___reason;
+	char* ___action;
+};
+struct PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+	Il2CppChar* ___reason;
+	Il2CppChar* ___action;
+};
+struct PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___packages;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___package_registries;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___package_signatures;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___package_sources;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___package_types;
+};
+struct PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+	char** ___packages;
+	char** ___package_registries;
+	char** ___package_signatures;
+	char** ___package_sources;
+	char** ___package_types;
+};
+struct PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+	Il2CppChar** ___packages;
+	Il2CppChar** ___package_registries;
+	Il2CppChar** ___package_signatures;
+	Il2CppChar** ___package_sources;
+	Il2CppChar** ___package_types;
+};
+struct PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+};
+struct PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+};
+struct PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+};
+struct PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B  : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616
+{
+};
+struct PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_pinvoke : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke
+{
+};
+struct PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_com : public PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com
+{
+};
+struct SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8  : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567
+{
+	String_t* ___id;
+	String_t* ___plugin_name;
+	String_t* ___version;
+	String_t* ___library_name;
+};
+struct SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_pinvoke : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke
+{
+	char* ___id;
+	char* ___plugin_name;
+	char* ___version;
+	char* ___library_name;
+};
+struct SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_com : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com
+{
+	Il2CppChar* ___id;
+	Il2CppChar* ___plugin_name;
+	Il2CppChar* ___version;
+	Il2CppChar* ___library_name;
+};
+struct SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9  : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567
+{
+};
+struct SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_pinvoke : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke
+{
+};
+struct SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_com : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com
+{
+};
+struct SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017  : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567
+{
+};
+struct SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_pinvoke : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke
+{
+};
+struct SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_com : public SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com
+{
+};
+struct VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC  : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE
+{
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___vr_active_controllers;
+};
+struct VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_pinvoke : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke
+{
+	char** ___vr_active_controllers;
+};
+struct VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_com : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com
+{
+	Il2CppChar** ___vr_active_controllers;
+};
+struct VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697  : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE
+{
+	float ___vr_aspect_ratio;
+};
+struct VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_pinvoke : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke
+{
+	float ___vr_aspect_ratio;
+};
+struct VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_com : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com
+{
+	float ___vr_aspect_ratio;
+};
+struct VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE  : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE
+{
+	bool ___vr_device_mirror_mode;
+};
+struct VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_pinvoke : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke
+{
+	int32_t ___vr_device_mirror_mode;
+};
+struct VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_com : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com
+{
+	int32_t ___vr_device_mirror_mode;
+};
+struct VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52  : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE
+{
+	int32_t ___vr_user_presence;
+};
+struct VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_pinvoke : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke
+{
+	int32_t ___vr_user_presence;
+};
+struct VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_com : public VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com
+{
+	int32_t ___vr_user_presence;
+};
+struct String_t_StaticFields
+{
+	String_t* ___Empty;
+};
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248  : public RuntimeArray
+{
+	ALIGN_FIELD (8) String_t* m_Items[1];
+
+	inline String_t* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline String_t** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, String_t* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline String_t* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline String_t** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, String_t* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
+
+
+
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471 (AnalyticsEventBase_t4CB926589E315DB970B0140489C698A8D4A40753* __this, String_t* ___0_eventName, int32_t ___1_eventVersion, int32_t ___2_sendEventOptions, String_t* ___3_eventPrefix, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticBase__ctor_mFA87BE5A4B341D60F40E9B6456CC117CAA88A3DD (SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567* __this, String_t* ___0_eventName, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticStart__ctor_mC3C1CC998F390C94755BFF43527612BBFE1C87A5 (SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticStop__ctor_m85029015CA138C93218DF1D5D480B1388C6C2B4F (SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticInfo__ctor_m4D07AF96CDDDA9A343135313D6FEFC3FF91642D3 (SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceAnalyticAspect__ctor_m671165C1F80107A6598880540DC41D23DC7A7C6B (VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceAnalyticBase__ctor_m6477E0459113D3D49F9A0296628C354A895EBB46 (VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceMirrorAnalytic__ctor_mC5C237A49C47BBCF9E16B70A0E8FF82FFFBF2B16 (VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceUserAnalytic__ctor_m99FBEFC61AE64B7CEC51C3AC01672C05A9BBF7CA (VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceActiveControllersAnalytic__ctor_m341D57A0E94CAAC620CC027D7367A5ED5017DC71 (VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetDatabaseRefreshAnalytic__ctor_m559257B329AB842DDB2A66CB266045CA181636C4 (AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BuildAssetBundleAnalytic__ctor_m0D9A558EF518A3B188840D8D64E6AAB30525191D (BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollabOperationAnalytic__ctor_m01AF147512BE1565F7E7475DB5D15A4ABAE4C239 (CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LicensingErrorAnalytic__ctor_m50E0E3CA0DEC01E1E1B74FE3A13A0DE8C2C1663E (LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LicensingInitAnalytic__ctor_mB3C254A9AFD36AF4AE91D579C61D307034604473 (LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetalPatchShaderComputeBufferAnalytic__ctor_mF2C9B825FCFAA669CF856634F1E402EEDB66323D (MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NavmeshBakingAnalytic__ctor_m872F2389C82EF622FCF27149331047433154AA32 (NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProjectSettingsInformationAnalytic__ctor_mEA9A84C9D71CF4B1F76DB9531502141C5B7B0CEB (ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendGameBuildAnalytic__ctor_mDDB217836CD885FB873B778F13F29F7BC22F8ED2 (SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4 (PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616* __this, String_t* ___0_eventName, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerAddPackageAnalytic__ctor_mC7B55AD6D65BE8A787B19CF07420D808FCACCA56 (PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerTestAnalytic__ctor_m065BD6F0F104CFD8F8D60FA2A1108FACC34809A8 (PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerRemovePackageAnalytic__ctor_mE39C68F34D0C1661EC5862020BFF8DD208E811B0 (PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerResolvePackageAnalytic__ctor_mADD6E37DF222E0313F7C44B2DFBBA98377C5865A (PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerEmbedPackageAnalytic__ctor_mD731FFB58F114E225C407460802778276FFF0100 (PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerResetPackageAnalytic__ctor_m79287E2503C6705DA9453FB6D74B32C65A0BB39A (PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerResolveErrorPackageAnalytic__ctor_mE8212E958A8DF7E28D734ECD89ECAA68C0100643 (PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerStartServerPackageAnalytic__ctor_mE67ABB0A919D9524E4C174FA7BD84873373D2FB7 (PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetImportStatusAnalytic__ctor_m08D8DB74F18BFAF3461FF93FA9ACE057C516F928 (AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetImportAnalytic__ctor_m5335AA39762B1606364B586E09B66490EB8A3042 (AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetExportAnalytic__ctor_m7987504F06FAC24A6C0EF8EF978DD31F453B48F9 (AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StallSummaryAnalytic__ctor_m6F569DB918D3775A5024D9A36999BF1E81B47605 (StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StallMarkerAnalytic__ctor_m1248F3FC87B6DB3D32A70EBEE14859942A476CDA (StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestAnalytic__ctor_mB6C1AABD2CA785D03984294A1813326B40CCB373 (TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7* __this, const RuntimeMethod* method) ;
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshal_pinvoke(const SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567& unmarshaled, SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke& marshaled)
+{
+	marshaled.___subsystem = il2cpp_codegen_marshal_string(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshal_pinvoke_back(const SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke& marshaled, SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567& unmarshaled)
+{
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_string_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_string_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshal_pinvoke_cleanup(SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshal_com(const SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567& unmarshaled, SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com& marshaled)
+{
+	marshaled.___subsystem = il2cpp_codegen_marshal_bstring(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshal_com_back(const SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com& marshaled, SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567& unmarshaled)
+{
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshal_com_cleanup(SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticBase__ctor_mFA87BE5A4B341D60F40E9B6456CC117CAA88A3DD (SubsystemsAnalyticBase_tEBC9C39906A3938DF6371A96D84E14668C750567* __this, String_t* ___0_eventName, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		String_t* L_0 = ___0_eventName;
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, L_0, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshal_pinvoke(const SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9& unmarshaled, SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_pinvoke& marshaled)
+{
+	marshaled.___subsystem = il2cpp_codegen_marshal_string(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshal_pinvoke_back(const SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_pinvoke& marshaled, SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9& unmarshaled)
+{
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_string_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_string_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshal_pinvoke_cleanup(SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshal_com(const SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9& unmarshaled, SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_com& marshaled)
+{
+	marshaled.___subsystem = il2cpp_codegen_marshal_bstring(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshal_com_back(const SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_com& marshaled, SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9& unmarshaled)
+{
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshal_com_cleanup(SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticStart__ctor_mC3C1CC998F390C94755BFF43527612BBFE1C87A5 (SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB8262DD79EB3086F30BCF8E3239681942576B83A);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		SubsystemsAnalyticBase__ctor_mFA87BE5A4B341D60F40E9B6456CC117CAA88A3DD(__this, _stringLiteralB8262DD79EB3086F30BCF8E3239681942576B83A, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9* SubsystemsAnalyticStart_CreateSubsystemsAnalyticStart_m1492EA04566B9E1570F881E854EE71C834D71850 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9* V_0 = NULL;
+	{
+		SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9* L_0 = (SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9*)il2cpp_codegen_object_new(SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9_il2cpp_TypeInfo_var);
+		SubsystemsAnalyticStart__ctor_mC3C1CC998F390C94755BFF43527612BBFE1C87A5(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		SubsystemsAnalyticStart_t0BFCD1790245475DB6B12E05EC184DA4802B52C9* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshal_pinvoke(const SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017& unmarshaled, SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_pinvoke& marshaled)
+{
+	marshaled.___subsystem = il2cpp_codegen_marshal_string(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshal_pinvoke_back(const SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_pinvoke& marshaled, SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017& unmarshaled)
+{
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_string_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_string_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshal_pinvoke_cleanup(SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshal_com(const SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017& unmarshaled, SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_com& marshaled)
+{
+	marshaled.___subsystem = il2cpp_codegen_marshal_bstring(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshal_com_back(const SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_com& marshaled, SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017& unmarshaled)
+{
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshal_com_cleanup(SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticStop__ctor_m85029015CA138C93218DF1D5D480B1388C6C2B4F (SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral444CE3C178312D66C7A173D4D85E4CB7123F4FFB);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		SubsystemsAnalyticBase__ctor_mFA87BE5A4B341D60F40E9B6456CC117CAA88A3DD(__this, _stringLiteral444CE3C178312D66C7A173D4D85E4CB7123F4FFB, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017* SubsystemsAnalyticStop_CreateSubsystemsAnalyticStop_m8E598E75B2E4999AE3D1416E847061E6283FA04A (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017* V_0 = NULL;
+	{
+		SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017* L_0 = (SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017*)il2cpp_codegen_object_new(SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017_il2cpp_TypeInfo_var);
+		SubsystemsAnalyticStop__ctor_m85029015CA138C93218DF1D5D480B1388C6C2B4F(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		SubsystemsAnalyticStop_t753AFA5933E6A14E5AFCF862CBF7A9CF824FA017* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshal_pinvoke(const SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8& unmarshaled, SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_pinvoke& marshaled)
+{
+	marshaled.___id = il2cpp_codegen_marshal_string(unmarshaled.___id);
+	marshaled.___plugin_name = il2cpp_codegen_marshal_string(unmarshaled.___plugin_name);
+	marshaled.___version = il2cpp_codegen_marshal_string(unmarshaled.___version);
+	marshaled.___library_name = il2cpp_codegen_marshal_string(unmarshaled.___library_name);
+	marshaled.___subsystem = il2cpp_codegen_marshal_string(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshal_pinvoke_back(const SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_pinvoke& marshaled, SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8& unmarshaled)
+{
+	unmarshaled.___id = il2cpp_codegen_marshal_string_result(marshaled.___id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___id));
+	unmarshaled.___plugin_name = il2cpp_codegen_marshal_string_result(marshaled.___plugin_name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___plugin_name), (void*)il2cpp_codegen_marshal_string_result(marshaled.___plugin_name));
+	unmarshaled.___version = il2cpp_codegen_marshal_string_result(marshaled.___version);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___version), (void*)il2cpp_codegen_marshal_string_result(marshaled.___version));
+	unmarshaled.___library_name = il2cpp_codegen_marshal_string_result(marshaled.___library_name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___library_name), (void*)il2cpp_codegen_marshal_string_result(marshaled.___library_name));
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_string_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_string_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_6 = 0;
+	unmarshaledeventVersion_temp_6 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_6;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_8 = 0;
+	unmarshaledsendEventOptions_temp_8 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_8;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshal_pinvoke_cleanup(SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___id);
+	marshaled.___id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___plugin_name);
+	marshaled.___plugin_name = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___version);
+	marshaled.___version = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___library_name);
+	marshaled.___library_name = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshal_com(const SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8& unmarshaled, SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_com& marshaled)
+{
+	marshaled.___id = il2cpp_codegen_marshal_bstring(unmarshaled.___id);
+	marshaled.___plugin_name = il2cpp_codegen_marshal_bstring(unmarshaled.___plugin_name);
+	marshaled.___version = il2cpp_codegen_marshal_bstring(unmarshaled.___version);
+	marshaled.___library_name = il2cpp_codegen_marshal_bstring(unmarshaled.___library_name);
+	marshaled.___subsystem = il2cpp_codegen_marshal_bstring(unmarshaled.___subsystem);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshal_com_back(const SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_com& marshaled, SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8& unmarshaled)
+{
+	unmarshaled.___id = il2cpp_codegen_marshal_bstring_result(marshaled.___id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___id));
+	unmarshaled.___plugin_name = il2cpp_codegen_marshal_bstring_result(marshaled.___plugin_name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___plugin_name), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___plugin_name));
+	unmarshaled.___version = il2cpp_codegen_marshal_bstring_result(marshaled.___version);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___version), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___version));
+	unmarshaled.___library_name = il2cpp_codegen_marshal_bstring_result(marshaled.___library_name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___library_name), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___library_name));
+	unmarshaled.___subsystem = il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___subsystem), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___subsystem));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_6 = 0;
+	unmarshaledeventVersion_temp_6 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_6;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_8 = 0;
+	unmarshaledsendEventOptions_temp_8 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_8;
+}
+IL2CPP_EXTERN_C void SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshal_com_cleanup(SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___id);
+	marshaled.___id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___plugin_name);
+	marshaled.___plugin_name = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___version);
+	marshaled.___version = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___library_name);
+	marshaled.___library_name = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___subsystem);
+	marshaled.___subsystem = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemsAnalyticInfo__ctor_m4D07AF96CDDDA9A343135313D6FEFC3FF91642D3 (SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB4A938C1DD0716C5A5A1802294164332231A52C3);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		SubsystemsAnalyticBase__ctor_mFA87BE5A4B341D60F40E9B6456CC117CAA88A3DD(__this, _stringLiteralB4A938C1DD0716C5A5A1802294164332231A52C3, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8* SubsystemsAnalyticInfo_CreateSubsystemsAnalyticInfo_mF09B54E448C2C2ED4E5CC40B4CBB11B3E6403A73 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8* V_0 = NULL;
+	{
+		SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8* L_0 = (SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8*)il2cpp_codegen_object_new(SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8_il2cpp_TypeInfo_var);
+		SubsystemsAnalyticInfo__ctor_m4D07AF96CDDDA9A343135313D6FEFC3FF91642D3(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		SubsystemsAnalyticInfo_t945C0E6FA4B16B36DC2BFAC4B99C5DD07299A9A8* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshal_pinvoke(const VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE& unmarshaled, VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke& marshaled)
+{
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshal_pinvoke_back(const VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke& marshaled, VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE& unmarshaled)
+{
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_1 = 0;
+	unmarshaledeventVersion_temp_1 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_1;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_3 = 0;
+	unmarshaledsendEventOptions_temp_3 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_3;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshal_pinvoke_cleanup(VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshal_com(const VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE& unmarshaled, VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com& marshaled)
+{
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshal_com_back(const VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com& marshaled, VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE& unmarshaled)
+{
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_1 = 0;
+	unmarshaledeventVersion_temp_1 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_1;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_3 = 0;
+	unmarshaledsendEventOptions_temp_3 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_3;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshal_com_cleanup(VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceAnalyticBase__ctor_m6477E0459113D3D49F9A0296628C354A895EBB46 (VRDeviceAnalyticBase_t549A0FA7CE7BE6329A5663FF211BF07C6EB12DBE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5FDA6EF983FA41AE741DE9544AC0AE8F5DCE7242);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral5FDA6EF983FA41AE741DE9544AC0AE8F5DCE7242, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshal_pinvoke(const VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697& unmarshaled, VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_pinvoke& marshaled)
+{
+	marshaled.___vr_aspect_ratio = unmarshaled.___vr_aspect_ratio;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshal_pinvoke_back(const VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_pinvoke& marshaled, VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697& unmarshaled)
+{
+	float unmarshaledvr_aspect_ratio_temp_0 = 0.0f;
+	unmarshaledvr_aspect_ratio_temp_0 = marshaled.___vr_aspect_ratio;
+	unmarshaled.___vr_aspect_ratio = unmarshaledvr_aspect_ratio_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshal_pinvoke_cleanup(VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshal_com(const VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697& unmarshaled, VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_com& marshaled)
+{
+	marshaled.___vr_aspect_ratio = unmarshaled.___vr_aspect_ratio;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshal_com_back(const VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_com& marshaled, VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697& unmarshaled)
+{
+	float unmarshaledvr_aspect_ratio_temp_0 = 0.0f;
+	unmarshaledvr_aspect_ratio_temp_0 = marshaled.___vr_aspect_ratio;
+	unmarshaled.___vr_aspect_ratio = unmarshaledvr_aspect_ratio_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshal_com_cleanup(VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697* VRDeviceAnalyticAspect_CreateVRDeviceAnalyticAspect_m805C2E29A626B39096D71914C9C470AE39E2017B (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697* V_0 = NULL;
+	{
+		VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697* L_0 = (VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697*)il2cpp_codegen_object_new(VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697_il2cpp_TypeInfo_var);
+		VRDeviceAnalyticAspect__ctor_m671165C1F80107A6598880540DC41D23DC7A7C6B(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697* L_1 = V_0;
+		return L_1;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceAnalyticAspect__ctor_m671165C1F80107A6598880540DC41D23DC7A7C6B (VRDeviceAnalyticAspect_tB3710E3DECE161363AD4ECB0386B7F0A81510697* __this, const RuntimeMethod* method) 
+{
+	{
+		VRDeviceAnalyticBase__ctor_m6477E0459113D3D49F9A0296628C354A895EBB46(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshal_pinvoke(const VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE& unmarshaled, VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_pinvoke& marshaled)
+{
+	marshaled.___vr_device_mirror_mode = static_cast<int32_t>(unmarshaled.___vr_device_mirror_mode);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshal_pinvoke_back(const VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_pinvoke& marshaled, VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE& unmarshaled)
+{
+	bool unmarshaledvr_device_mirror_mode_temp_0 = false;
+	unmarshaledvr_device_mirror_mode_temp_0 = static_cast<bool>(marshaled.___vr_device_mirror_mode);
+	unmarshaled.___vr_device_mirror_mode = unmarshaledvr_device_mirror_mode_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshal_pinvoke_cleanup(VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshal_com(const VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE& unmarshaled, VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_com& marshaled)
+{
+	marshaled.___vr_device_mirror_mode = static_cast<int32_t>(unmarshaled.___vr_device_mirror_mode);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshal_com_back(const VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_com& marshaled, VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE& unmarshaled)
+{
+	bool unmarshaledvr_device_mirror_mode_temp_0 = false;
+	unmarshaledvr_device_mirror_mode_temp_0 = static_cast<bool>(marshaled.___vr_device_mirror_mode);
+	unmarshaled.___vr_device_mirror_mode = unmarshaledvr_device_mirror_mode_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshal_com_cleanup(VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE* VRDeviceMirrorAnalytic_CreateVRDeviceMirrorAnalytic_m9E011D51CA97DB1D0B52DCBADB8B1390A2EE0E36 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE* V_0 = NULL;
+	{
+		VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE* L_0 = (VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE*)il2cpp_codegen_object_new(VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE_il2cpp_TypeInfo_var);
+		VRDeviceMirrorAnalytic__ctor_mC5C237A49C47BBCF9E16B70A0E8FF82FFFBF2B16(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE* L_1 = V_0;
+		return L_1;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceMirrorAnalytic__ctor_mC5C237A49C47BBCF9E16B70A0E8FF82FFFBF2B16 (VRDeviceMirrorAnalytic_t41CDC93A658EE982004C9CFCCBF4C37BC603D0DE* __this, const RuntimeMethod* method) 
+{
+	{
+		VRDeviceAnalyticBase__ctor_m6477E0459113D3D49F9A0296628C354A895EBB46(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshal_pinvoke(const VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52& unmarshaled, VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_pinvoke& marshaled)
+{
+	marshaled.___vr_user_presence = unmarshaled.___vr_user_presence;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshal_pinvoke_back(const VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_pinvoke& marshaled, VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52& unmarshaled)
+{
+	int32_t unmarshaledvr_user_presence_temp_0 = 0;
+	unmarshaledvr_user_presence_temp_0 = marshaled.___vr_user_presence;
+	unmarshaled.___vr_user_presence = unmarshaledvr_user_presence_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshal_pinvoke_cleanup(VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshal_com(const VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52& unmarshaled, VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_com& marshaled)
+{
+	marshaled.___vr_user_presence = unmarshaled.___vr_user_presence;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshal_com_back(const VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_com& marshaled, VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52& unmarshaled)
+{
+	int32_t unmarshaledvr_user_presence_temp_0 = 0;
+	unmarshaledvr_user_presence_temp_0 = marshaled.___vr_user_presence;
+	unmarshaled.___vr_user_presence = unmarshaledvr_user_presence_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshal_com_cleanup(VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52* VRDeviceUserAnalytic_CreateVRDeviceUserAnalytic_m731282C5872A2B2C91542CCBAA4DE9A2AE37BD06 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52* V_0 = NULL;
+	{
+		VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52* L_0 = (VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52*)il2cpp_codegen_object_new(VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52_il2cpp_TypeInfo_var);
+		VRDeviceUserAnalytic__ctor_m99FBEFC61AE64B7CEC51C3AC01672C05A9BBF7CA(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52* L_1 = V_0;
+		return L_1;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceUserAnalytic__ctor_m99FBEFC61AE64B7CEC51C3AC01672C05A9BBF7CA (VRDeviceUserAnalytic_t4E9431DB74D2A4520E889C482FED0D8465FD5A52* __this, const RuntimeMethod* method) 
+{
+	{
+		VRDeviceAnalyticBase__ctor_m6477E0459113D3D49F9A0296628C354A895EBB46(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshal_pinvoke(const VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC& unmarshaled, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_pinvoke& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vr_active_controllersException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___vr_active_controllersException, NULL);
+}
+IL2CPP_EXTERN_C void VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshal_pinvoke_back(const VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_pinvoke& marshaled, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vr_active_controllersException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___vr_active_controllersException, NULL);
+}
+IL2CPP_EXTERN_C void VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshal_pinvoke_cleanup(VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_pinvoke& marshaled)
+{
+}
+IL2CPP_EXTERN_C void VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshal_com(const VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC& unmarshaled, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_com& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vr_active_controllersException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___vr_active_controllersException, NULL);
+}
+IL2CPP_EXTERN_C void VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshal_com_back(const VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_com& marshaled, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vr_active_controllersException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC____vr_active_controllers_FieldInfo_var, VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___vr_active_controllersException, NULL);
+}
+IL2CPP_EXTERN_C void VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshal_com_cleanup(VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_marshaled_com& marshaled)
+{
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC* VRDeviceActiveControllersAnalytic_CreateVRDeviceActiveControllersAnalytic_mD99AB60F3CB4B467D8B372C4FC6B5A9143E07FC4 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC* V_0 = NULL;
+	{
+		VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC* L_0 = (VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC*)il2cpp_codegen_object_new(VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC_il2cpp_TypeInfo_var);
+		VRDeviceActiveControllersAnalytic__ctor_m341D57A0E94CAAC620CC027D7367A5ED5017DC71(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC* L_1 = V_0;
+		return L_1;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDeviceActiveControllersAnalytic__ctor_m341D57A0E94CAAC620CC027D7367A5ED5017DC71 (VRDeviceActiveControllersAnalytic_t9A4E3228B274062CFA7B41EF94A335F25C8B11BC* __this, const RuntimeMethod* method) 
+{
+	{
+		VRDeviceAnalyticBase__ctor_m6477E0459113D3D49F9A0296628C354A895EBB46(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshal_pinvoke(const AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477& unmarshaled, AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_pinvoke& marshaled)
+{
+	marshaled.___isV2 = static_cast<int32_t>(unmarshaled.___isV2);
+	marshaled.___Imports_Imported = unmarshaled.___Imports_Imported;
+	marshaled.___Imports_ImportedInProcess = unmarshaled.___Imports_ImportedInProcess;
+	marshaled.___Imports_ImportedOutOfProcess = unmarshaled.___Imports_ImportedOutOfProcess;
+	marshaled.___Imports_Refresh = unmarshaled.___Imports_Refresh;
+	marshaled.___Imports_DomainReload = unmarshaled.___Imports_DomainReload;
+	marshaled.___CacheServer_MetadataRequested = unmarshaled.___CacheServer_MetadataRequested;
+	marshaled.___CacheServer_MetadataDownloaded = unmarshaled.___CacheServer_MetadataDownloaded;
+	marshaled.___CacheServer_MetadataFailedToDownload = unmarshaled.___CacheServer_MetadataFailedToDownload;
+	marshaled.___CacheServer_MetadataUploaded = unmarshaled.___CacheServer_MetadataUploaded;
+	marshaled.___CacheServer_ArtifactsFailedToUpload = unmarshaled.___CacheServer_ArtifactsFailedToUpload;
+	marshaled.___CacheServer_MetadataVersionsDownloaded = unmarshaled.___CacheServer_MetadataVersionsDownloaded;
+	marshaled.___CacheServer_MetadataMatched = unmarshaled.___CacheServer_MetadataMatched;
+	marshaled.___CacheServer_ArtifactsDownloaded = unmarshaled.___CacheServer_ArtifactsDownloaded;
+	marshaled.___CacheServer_ArtifactFilesDownloaded = unmarshaled.___CacheServer_ArtifactFilesDownloaded;
+	marshaled.___CacheServer_ArtifactFilesFailedToDownload = unmarshaled.___CacheServer_ArtifactFilesFailedToDownload;
+	marshaled.___CacheServer_ArtifactsUploaded = unmarshaled.___CacheServer_ArtifactsUploaded;
+	marshaled.___CacheServer_ArtifactFilesUploaded = unmarshaled.___CacheServer_ArtifactFilesUploaded;
+	marshaled.___CacheServer_ArtifactFilesFailedToUpload = unmarshaled.___CacheServer_ArtifactFilesFailedToUpload;
+	marshaled.___CacheServer_Connects = unmarshaled.___CacheServer_Connects;
+	marshaled.___CacheServer_Disconnects = unmarshaled.___CacheServer_Disconnects;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshal_pinvoke_back(const AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_pinvoke& marshaled, AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477& unmarshaled)
+{
+	bool unmarshaledisV2_temp_0 = false;
+	unmarshaledisV2_temp_0 = static_cast<bool>(marshaled.___isV2);
+	unmarshaled.___isV2 = unmarshaledisV2_temp_0;
+	int64_t unmarshaledImports_Imported_temp_1 = 0;
+	unmarshaledImports_Imported_temp_1 = marshaled.___Imports_Imported;
+	unmarshaled.___Imports_Imported = unmarshaledImports_Imported_temp_1;
+	int64_t unmarshaledImports_ImportedInProcess_temp_2 = 0;
+	unmarshaledImports_ImportedInProcess_temp_2 = marshaled.___Imports_ImportedInProcess;
+	unmarshaled.___Imports_ImportedInProcess = unmarshaledImports_ImportedInProcess_temp_2;
+	int64_t unmarshaledImports_ImportedOutOfProcess_temp_3 = 0;
+	unmarshaledImports_ImportedOutOfProcess_temp_3 = marshaled.___Imports_ImportedOutOfProcess;
+	unmarshaled.___Imports_ImportedOutOfProcess = unmarshaledImports_ImportedOutOfProcess_temp_3;
+	int64_t unmarshaledImports_Refresh_temp_4 = 0;
+	unmarshaledImports_Refresh_temp_4 = marshaled.___Imports_Refresh;
+	unmarshaled.___Imports_Refresh = unmarshaledImports_Refresh_temp_4;
+	int64_t unmarshaledImports_DomainReload_temp_5 = 0;
+	unmarshaledImports_DomainReload_temp_5 = marshaled.___Imports_DomainReload;
+	unmarshaled.___Imports_DomainReload = unmarshaledImports_DomainReload_temp_5;
+	int64_t unmarshaledCacheServer_MetadataRequested_temp_6 = 0;
+	unmarshaledCacheServer_MetadataRequested_temp_6 = marshaled.___CacheServer_MetadataRequested;
+	unmarshaled.___CacheServer_MetadataRequested = unmarshaledCacheServer_MetadataRequested_temp_6;
+	int64_t unmarshaledCacheServer_MetadataDownloaded_temp_7 = 0;
+	unmarshaledCacheServer_MetadataDownloaded_temp_7 = marshaled.___CacheServer_MetadataDownloaded;
+	unmarshaled.___CacheServer_MetadataDownloaded = unmarshaledCacheServer_MetadataDownloaded_temp_7;
+	int64_t unmarshaledCacheServer_MetadataFailedToDownload_temp_8 = 0;
+	unmarshaledCacheServer_MetadataFailedToDownload_temp_8 = marshaled.___CacheServer_MetadataFailedToDownload;
+	unmarshaled.___CacheServer_MetadataFailedToDownload = unmarshaledCacheServer_MetadataFailedToDownload_temp_8;
+	int64_t unmarshaledCacheServer_MetadataUploaded_temp_9 = 0;
+	unmarshaledCacheServer_MetadataUploaded_temp_9 = marshaled.___CacheServer_MetadataUploaded;
+	unmarshaled.___CacheServer_MetadataUploaded = unmarshaledCacheServer_MetadataUploaded_temp_9;
+	int64_t unmarshaledCacheServer_ArtifactsFailedToUpload_temp_10 = 0;
+	unmarshaledCacheServer_ArtifactsFailedToUpload_temp_10 = marshaled.___CacheServer_ArtifactsFailedToUpload;
+	unmarshaled.___CacheServer_ArtifactsFailedToUpload = unmarshaledCacheServer_ArtifactsFailedToUpload_temp_10;
+	int64_t unmarshaledCacheServer_MetadataVersionsDownloaded_temp_11 = 0;
+	unmarshaledCacheServer_MetadataVersionsDownloaded_temp_11 = marshaled.___CacheServer_MetadataVersionsDownloaded;
+	unmarshaled.___CacheServer_MetadataVersionsDownloaded = unmarshaledCacheServer_MetadataVersionsDownloaded_temp_11;
+	int64_t unmarshaledCacheServer_MetadataMatched_temp_12 = 0;
+	unmarshaledCacheServer_MetadataMatched_temp_12 = marshaled.___CacheServer_MetadataMatched;
+	unmarshaled.___CacheServer_MetadataMatched = unmarshaledCacheServer_MetadataMatched_temp_12;
+	int64_t unmarshaledCacheServer_ArtifactsDownloaded_temp_13 = 0;
+	unmarshaledCacheServer_ArtifactsDownloaded_temp_13 = marshaled.___CacheServer_ArtifactsDownloaded;
+	unmarshaled.___CacheServer_ArtifactsDownloaded = unmarshaledCacheServer_ArtifactsDownloaded_temp_13;
+	int64_t unmarshaledCacheServer_ArtifactFilesDownloaded_temp_14 = 0;
+	unmarshaledCacheServer_ArtifactFilesDownloaded_temp_14 = marshaled.___CacheServer_ArtifactFilesDownloaded;
+	unmarshaled.___CacheServer_ArtifactFilesDownloaded = unmarshaledCacheServer_ArtifactFilesDownloaded_temp_14;
+	int64_t unmarshaledCacheServer_ArtifactFilesFailedToDownload_temp_15 = 0;
+	unmarshaledCacheServer_ArtifactFilesFailedToDownload_temp_15 = marshaled.___CacheServer_ArtifactFilesFailedToDownload;
+	unmarshaled.___CacheServer_ArtifactFilesFailedToDownload = unmarshaledCacheServer_ArtifactFilesFailedToDownload_temp_15;
+	int64_t unmarshaledCacheServer_ArtifactsUploaded_temp_16 = 0;
+	unmarshaledCacheServer_ArtifactsUploaded_temp_16 = marshaled.___CacheServer_ArtifactsUploaded;
+	unmarshaled.___CacheServer_ArtifactsUploaded = unmarshaledCacheServer_ArtifactsUploaded_temp_16;
+	int64_t unmarshaledCacheServer_ArtifactFilesUploaded_temp_17 = 0;
+	unmarshaledCacheServer_ArtifactFilesUploaded_temp_17 = marshaled.___CacheServer_ArtifactFilesUploaded;
+	unmarshaled.___CacheServer_ArtifactFilesUploaded = unmarshaledCacheServer_ArtifactFilesUploaded_temp_17;
+	int64_t unmarshaledCacheServer_ArtifactFilesFailedToUpload_temp_18 = 0;
+	unmarshaledCacheServer_ArtifactFilesFailedToUpload_temp_18 = marshaled.___CacheServer_ArtifactFilesFailedToUpload;
+	unmarshaled.___CacheServer_ArtifactFilesFailedToUpload = unmarshaledCacheServer_ArtifactFilesFailedToUpload_temp_18;
+	int64_t unmarshaledCacheServer_Connects_temp_19 = 0;
+	unmarshaledCacheServer_Connects_temp_19 = marshaled.___CacheServer_Connects;
+	unmarshaled.___CacheServer_Connects = unmarshaledCacheServer_Connects_temp_19;
+	int64_t unmarshaledCacheServer_Disconnects_temp_20 = 0;
+	unmarshaledCacheServer_Disconnects_temp_20 = marshaled.___CacheServer_Disconnects;
+	unmarshaled.___CacheServer_Disconnects = unmarshaledCacheServer_Disconnects_temp_20;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_22 = 0;
+	unmarshaledeventVersion_temp_22 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_22;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_24 = 0;
+	unmarshaledsendEventOptions_temp_24 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_24;
+}
+IL2CPP_EXTERN_C void AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshal_pinvoke_cleanup(AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshal_com(const AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477& unmarshaled, AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_com& marshaled)
+{
+	marshaled.___isV2 = static_cast<int32_t>(unmarshaled.___isV2);
+	marshaled.___Imports_Imported = unmarshaled.___Imports_Imported;
+	marshaled.___Imports_ImportedInProcess = unmarshaled.___Imports_ImportedInProcess;
+	marshaled.___Imports_ImportedOutOfProcess = unmarshaled.___Imports_ImportedOutOfProcess;
+	marshaled.___Imports_Refresh = unmarshaled.___Imports_Refresh;
+	marshaled.___Imports_DomainReload = unmarshaled.___Imports_DomainReload;
+	marshaled.___CacheServer_MetadataRequested = unmarshaled.___CacheServer_MetadataRequested;
+	marshaled.___CacheServer_MetadataDownloaded = unmarshaled.___CacheServer_MetadataDownloaded;
+	marshaled.___CacheServer_MetadataFailedToDownload = unmarshaled.___CacheServer_MetadataFailedToDownload;
+	marshaled.___CacheServer_MetadataUploaded = unmarshaled.___CacheServer_MetadataUploaded;
+	marshaled.___CacheServer_ArtifactsFailedToUpload = unmarshaled.___CacheServer_ArtifactsFailedToUpload;
+	marshaled.___CacheServer_MetadataVersionsDownloaded = unmarshaled.___CacheServer_MetadataVersionsDownloaded;
+	marshaled.___CacheServer_MetadataMatched = unmarshaled.___CacheServer_MetadataMatched;
+	marshaled.___CacheServer_ArtifactsDownloaded = unmarshaled.___CacheServer_ArtifactsDownloaded;
+	marshaled.___CacheServer_ArtifactFilesDownloaded = unmarshaled.___CacheServer_ArtifactFilesDownloaded;
+	marshaled.___CacheServer_ArtifactFilesFailedToDownload = unmarshaled.___CacheServer_ArtifactFilesFailedToDownload;
+	marshaled.___CacheServer_ArtifactsUploaded = unmarshaled.___CacheServer_ArtifactsUploaded;
+	marshaled.___CacheServer_ArtifactFilesUploaded = unmarshaled.___CacheServer_ArtifactFilesUploaded;
+	marshaled.___CacheServer_ArtifactFilesFailedToUpload = unmarshaled.___CacheServer_ArtifactFilesFailedToUpload;
+	marshaled.___CacheServer_Connects = unmarshaled.___CacheServer_Connects;
+	marshaled.___CacheServer_Disconnects = unmarshaled.___CacheServer_Disconnects;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshal_com_back(const AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_com& marshaled, AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477& unmarshaled)
+{
+	bool unmarshaledisV2_temp_0 = false;
+	unmarshaledisV2_temp_0 = static_cast<bool>(marshaled.___isV2);
+	unmarshaled.___isV2 = unmarshaledisV2_temp_0;
+	int64_t unmarshaledImports_Imported_temp_1 = 0;
+	unmarshaledImports_Imported_temp_1 = marshaled.___Imports_Imported;
+	unmarshaled.___Imports_Imported = unmarshaledImports_Imported_temp_1;
+	int64_t unmarshaledImports_ImportedInProcess_temp_2 = 0;
+	unmarshaledImports_ImportedInProcess_temp_2 = marshaled.___Imports_ImportedInProcess;
+	unmarshaled.___Imports_ImportedInProcess = unmarshaledImports_ImportedInProcess_temp_2;
+	int64_t unmarshaledImports_ImportedOutOfProcess_temp_3 = 0;
+	unmarshaledImports_ImportedOutOfProcess_temp_3 = marshaled.___Imports_ImportedOutOfProcess;
+	unmarshaled.___Imports_ImportedOutOfProcess = unmarshaledImports_ImportedOutOfProcess_temp_3;
+	int64_t unmarshaledImports_Refresh_temp_4 = 0;
+	unmarshaledImports_Refresh_temp_4 = marshaled.___Imports_Refresh;
+	unmarshaled.___Imports_Refresh = unmarshaledImports_Refresh_temp_4;
+	int64_t unmarshaledImports_DomainReload_temp_5 = 0;
+	unmarshaledImports_DomainReload_temp_5 = marshaled.___Imports_DomainReload;
+	unmarshaled.___Imports_DomainReload = unmarshaledImports_DomainReload_temp_5;
+	int64_t unmarshaledCacheServer_MetadataRequested_temp_6 = 0;
+	unmarshaledCacheServer_MetadataRequested_temp_6 = marshaled.___CacheServer_MetadataRequested;
+	unmarshaled.___CacheServer_MetadataRequested = unmarshaledCacheServer_MetadataRequested_temp_6;
+	int64_t unmarshaledCacheServer_MetadataDownloaded_temp_7 = 0;
+	unmarshaledCacheServer_MetadataDownloaded_temp_7 = marshaled.___CacheServer_MetadataDownloaded;
+	unmarshaled.___CacheServer_MetadataDownloaded = unmarshaledCacheServer_MetadataDownloaded_temp_7;
+	int64_t unmarshaledCacheServer_MetadataFailedToDownload_temp_8 = 0;
+	unmarshaledCacheServer_MetadataFailedToDownload_temp_8 = marshaled.___CacheServer_MetadataFailedToDownload;
+	unmarshaled.___CacheServer_MetadataFailedToDownload = unmarshaledCacheServer_MetadataFailedToDownload_temp_8;
+	int64_t unmarshaledCacheServer_MetadataUploaded_temp_9 = 0;
+	unmarshaledCacheServer_MetadataUploaded_temp_9 = marshaled.___CacheServer_MetadataUploaded;
+	unmarshaled.___CacheServer_MetadataUploaded = unmarshaledCacheServer_MetadataUploaded_temp_9;
+	int64_t unmarshaledCacheServer_ArtifactsFailedToUpload_temp_10 = 0;
+	unmarshaledCacheServer_ArtifactsFailedToUpload_temp_10 = marshaled.___CacheServer_ArtifactsFailedToUpload;
+	unmarshaled.___CacheServer_ArtifactsFailedToUpload = unmarshaledCacheServer_ArtifactsFailedToUpload_temp_10;
+	int64_t unmarshaledCacheServer_MetadataVersionsDownloaded_temp_11 = 0;
+	unmarshaledCacheServer_MetadataVersionsDownloaded_temp_11 = marshaled.___CacheServer_MetadataVersionsDownloaded;
+	unmarshaled.___CacheServer_MetadataVersionsDownloaded = unmarshaledCacheServer_MetadataVersionsDownloaded_temp_11;
+	int64_t unmarshaledCacheServer_MetadataMatched_temp_12 = 0;
+	unmarshaledCacheServer_MetadataMatched_temp_12 = marshaled.___CacheServer_MetadataMatched;
+	unmarshaled.___CacheServer_MetadataMatched = unmarshaledCacheServer_MetadataMatched_temp_12;
+	int64_t unmarshaledCacheServer_ArtifactsDownloaded_temp_13 = 0;
+	unmarshaledCacheServer_ArtifactsDownloaded_temp_13 = marshaled.___CacheServer_ArtifactsDownloaded;
+	unmarshaled.___CacheServer_ArtifactsDownloaded = unmarshaledCacheServer_ArtifactsDownloaded_temp_13;
+	int64_t unmarshaledCacheServer_ArtifactFilesDownloaded_temp_14 = 0;
+	unmarshaledCacheServer_ArtifactFilesDownloaded_temp_14 = marshaled.___CacheServer_ArtifactFilesDownloaded;
+	unmarshaled.___CacheServer_ArtifactFilesDownloaded = unmarshaledCacheServer_ArtifactFilesDownloaded_temp_14;
+	int64_t unmarshaledCacheServer_ArtifactFilesFailedToDownload_temp_15 = 0;
+	unmarshaledCacheServer_ArtifactFilesFailedToDownload_temp_15 = marshaled.___CacheServer_ArtifactFilesFailedToDownload;
+	unmarshaled.___CacheServer_ArtifactFilesFailedToDownload = unmarshaledCacheServer_ArtifactFilesFailedToDownload_temp_15;
+	int64_t unmarshaledCacheServer_ArtifactsUploaded_temp_16 = 0;
+	unmarshaledCacheServer_ArtifactsUploaded_temp_16 = marshaled.___CacheServer_ArtifactsUploaded;
+	unmarshaled.___CacheServer_ArtifactsUploaded = unmarshaledCacheServer_ArtifactsUploaded_temp_16;
+	int64_t unmarshaledCacheServer_ArtifactFilesUploaded_temp_17 = 0;
+	unmarshaledCacheServer_ArtifactFilesUploaded_temp_17 = marshaled.___CacheServer_ArtifactFilesUploaded;
+	unmarshaled.___CacheServer_ArtifactFilesUploaded = unmarshaledCacheServer_ArtifactFilesUploaded_temp_17;
+	int64_t unmarshaledCacheServer_ArtifactFilesFailedToUpload_temp_18 = 0;
+	unmarshaledCacheServer_ArtifactFilesFailedToUpload_temp_18 = marshaled.___CacheServer_ArtifactFilesFailedToUpload;
+	unmarshaled.___CacheServer_ArtifactFilesFailedToUpload = unmarshaledCacheServer_ArtifactFilesFailedToUpload_temp_18;
+	int64_t unmarshaledCacheServer_Connects_temp_19 = 0;
+	unmarshaledCacheServer_Connects_temp_19 = marshaled.___CacheServer_Connects;
+	unmarshaled.___CacheServer_Connects = unmarshaledCacheServer_Connects_temp_19;
+	int64_t unmarshaledCacheServer_Disconnects_temp_20 = 0;
+	unmarshaledCacheServer_Disconnects_temp_20 = marshaled.___CacheServer_Disconnects;
+	unmarshaled.___CacheServer_Disconnects = unmarshaledCacheServer_Disconnects_temp_20;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_22 = 0;
+	unmarshaledeventVersion_temp_22 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_22;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_24 = 0;
+	unmarshaledsendEventOptions_temp_24 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_24;
+}
+IL2CPP_EXTERN_C void AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshal_com_cleanup(AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetDatabaseRefreshAnalytic__ctor_m559257B329AB842DDB2A66CB266045CA181636C4 (AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1C963463249E8B8F67737B7C14802404698C939E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral1C963463249E8B8F67737B7C14802404698C939E, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477* AssetDatabaseRefreshAnalytic_CreateAssetDatabaseRefreshAnalytic_m4A02F6C332508D5E96618368B7421DFE37627E10 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477* V_0 = NULL;
+	{
+		AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477* L_0 = (AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477*)il2cpp_codegen_object_new(AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477_il2cpp_TypeInfo_var);
+		AssetDatabaseRefreshAnalytic__ctor_m559257B329AB842DDB2A66CB266045CA181636C4(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		AssetDatabaseRefreshAnalytic_tE76E2BC8AC6BDAE6CC572691E17CCDEB62E5B477* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshal_pinvoke(const BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947& unmarshaled, BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_pinvoke& marshaled)
+{
+	marshaled.___success = static_cast<int32_t>(unmarshaled.___success);
+	marshaled.___error = il2cpp_codegen_marshal_string(unmarshaled.___error);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshal_pinvoke_back(const BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_pinvoke& marshaled, BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947& unmarshaled)
+{
+	bool unmarshaledsuccess_temp_0 = false;
+	unmarshaledsuccess_temp_0 = static_cast<bool>(marshaled.___success);
+	unmarshaled.___success = unmarshaledsuccess_temp_0;
+	unmarshaled.___error = il2cpp_codegen_marshal_string_result(marshaled.___error);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_3 = 0;
+	unmarshaledeventVersion_temp_3 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_3;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_5 = 0;
+	unmarshaledsendEventOptions_temp_5 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_5;
+}
+IL2CPP_EXTERN_C void BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshal_pinvoke_cleanup(BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___error);
+	marshaled.___error = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshal_com(const BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947& unmarshaled, BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_com& marshaled)
+{
+	marshaled.___success = static_cast<int32_t>(unmarshaled.___success);
+	marshaled.___error = il2cpp_codegen_marshal_bstring(unmarshaled.___error);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshal_com_back(const BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_com& marshaled, BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947& unmarshaled)
+{
+	bool unmarshaledsuccess_temp_0 = false;
+	unmarshaledsuccess_temp_0 = static_cast<bool>(marshaled.___success);
+	unmarshaled.___success = unmarshaledsuccess_temp_0;
+	unmarshaled.___error = il2cpp_codegen_marshal_bstring_result(marshaled.___error);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_3 = 0;
+	unmarshaledeventVersion_temp_3 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_3;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_5 = 0;
+	unmarshaledsendEventOptions_temp_5 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_5;
+}
+IL2CPP_EXTERN_C void BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshal_com_cleanup(BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error);
+	marshaled.___error = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BuildAssetBundleAnalytic__ctor_m0D9A558EF518A3B188840D8D64E6AAB30525191D (BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6542015173AFA084173BD150F3C2BAF1358600D7);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral6542015173AFA084173BD150F3C2BAF1358600D7, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947* BuildAssetBundleAnalytic_CreateBuildAssetBundleAnalytic_mAE56D0D00202410C4FF1BA41F82D4BFAE8B7C70E (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947* V_0 = NULL;
+	{
+		BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947* L_0 = (BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947*)il2cpp_codegen_object_new(BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947_il2cpp_TypeInfo_var);
+		BuildAssetBundleAnalytic__ctor_m0D9A558EF518A3B188840D8D64E6AAB30525191D(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		BuildAssetBundleAnalytic_tD89C7AC30D63005A4698BE765CA8011832ACA947* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshal_pinvoke(const CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367& unmarshaled, CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_pinvoke& marshaled)
+{
+	marshaled.___category = il2cpp_codegen_marshal_string(unmarshaled.___category);
+	marshaled.___operation = il2cpp_codegen_marshal_string(unmarshaled.___operation);
+	marshaled.___result = il2cpp_codegen_marshal_string(unmarshaled.___result);
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshal_pinvoke_back(const CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_pinvoke& marshaled, CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367& unmarshaled)
+{
+	unmarshaled.___category = il2cpp_codegen_marshal_string_result(marshaled.___category);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___category), (void*)il2cpp_codegen_marshal_string_result(marshaled.___category));
+	unmarshaled.___operation = il2cpp_codegen_marshal_string_result(marshaled.___operation);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___operation), (void*)il2cpp_codegen_marshal_string_result(marshaled.___operation));
+	unmarshaled.___result = il2cpp_codegen_marshal_string_result(marshaled.___result);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___result), (void*)il2cpp_codegen_marshal_string_result(marshaled.___result));
+	int64_t unmarshaledstart_ts_temp_3 = 0;
+	unmarshaledstart_ts_temp_3 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_3;
+	int64_t unmarshaledduration_temp_4 = 0;
+	unmarshaledduration_temp_4 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_4;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_6 = 0;
+	unmarshaledeventVersion_temp_6 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_6;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_8 = 0;
+	unmarshaledsendEventOptions_temp_8 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_8;
+}
+IL2CPP_EXTERN_C void CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshal_pinvoke_cleanup(CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___category);
+	marshaled.___category = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___operation);
+	marshaled.___operation = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___result);
+	marshaled.___result = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshal_com(const CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367& unmarshaled, CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_com& marshaled)
+{
+	marshaled.___category = il2cpp_codegen_marshal_bstring(unmarshaled.___category);
+	marshaled.___operation = il2cpp_codegen_marshal_bstring(unmarshaled.___operation);
+	marshaled.___result = il2cpp_codegen_marshal_bstring(unmarshaled.___result);
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshal_com_back(const CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_com& marshaled, CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367& unmarshaled)
+{
+	unmarshaled.___category = il2cpp_codegen_marshal_bstring_result(marshaled.___category);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___category), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___category));
+	unmarshaled.___operation = il2cpp_codegen_marshal_bstring_result(marshaled.___operation);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___operation), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___operation));
+	unmarshaled.___result = il2cpp_codegen_marshal_bstring_result(marshaled.___result);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___result), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___result));
+	int64_t unmarshaledstart_ts_temp_3 = 0;
+	unmarshaledstart_ts_temp_3 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_3;
+	int64_t unmarshaledduration_temp_4 = 0;
+	unmarshaledduration_temp_4 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_4;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_6 = 0;
+	unmarshaledeventVersion_temp_6 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_6;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_8 = 0;
+	unmarshaledsendEventOptions_temp_8 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_8;
+}
+IL2CPP_EXTERN_C void CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshal_com_cleanup(CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___category);
+	marshaled.___category = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___operation);
+	marshaled.___operation = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___result);
+	marshaled.___result = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollabOperationAnalytic__ctor_m01AF147512BE1565F7E7475DB5D15A4ABAE4C239 (CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4C14312537906454E6EFD47C621B95D71B3BA564);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral4C14312537906454E6EFD47C621B95D71B3BA564, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367* CollabOperationAnalytic_CreateCollabOperationAnalytic_m6FBFACAF2DEE6BD311454FF336B741AED79622CB (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367* V_0 = NULL;
+	{
+		CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367* L_0 = (CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367*)il2cpp_codegen_object_new(CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367_il2cpp_TypeInfo_var);
+		CollabOperationAnalytic__ctor_m01AF147512BE1565F7E7475DB5D15A4ABAE4C239(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		CollabOperationAnalytic_t4704367CE9DC7632AB7A7D1F1162B750BE9A5367* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshal_pinvoke(const LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9& unmarshaled, LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_pinvoke& marshaled)
+{
+	marshaled.___licensingErrorType = il2cpp_codegen_marshal_string(unmarshaled.___licensingErrorType);
+	marshaled.___additionalData = il2cpp_codegen_marshal_string(unmarshaled.___additionalData);
+	marshaled.___errorMessage = il2cpp_codegen_marshal_string(unmarshaled.___errorMessage);
+	marshaled.___correlationId = il2cpp_codegen_marshal_string(unmarshaled.___correlationId);
+	marshaled.___sessionId = il2cpp_codegen_marshal_string(unmarshaled.___sessionId);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshal_pinvoke_back(const LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_pinvoke& marshaled, LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9& unmarshaled)
+{
+	unmarshaled.___licensingErrorType = il2cpp_codegen_marshal_string_result(marshaled.___licensingErrorType);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___licensingErrorType), (void*)il2cpp_codegen_marshal_string_result(marshaled.___licensingErrorType));
+	unmarshaled.___additionalData = il2cpp_codegen_marshal_string_result(marshaled.___additionalData);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___additionalData), (void*)il2cpp_codegen_marshal_string_result(marshaled.___additionalData));
+	unmarshaled.___errorMessage = il2cpp_codegen_marshal_string_result(marshaled.___errorMessage);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___errorMessage), (void*)il2cpp_codegen_marshal_string_result(marshaled.___errorMessage));
+	unmarshaled.___correlationId = il2cpp_codegen_marshal_string_result(marshaled.___correlationId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___correlationId), (void*)il2cpp_codegen_marshal_string_result(marshaled.___correlationId));
+	unmarshaled.___sessionId = il2cpp_codegen_marshal_string_result(marshaled.___sessionId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___sessionId), (void*)il2cpp_codegen_marshal_string_result(marshaled.___sessionId));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_6 = 0;
+	unmarshaledeventVersion_temp_6 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_6;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_8 = 0;
+	unmarshaledsendEventOptions_temp_8 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_8;
+}
+IL2CPP_EXTERN_C void LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshal_pinvoke_cleanup(LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___licensingErrorType);
+	marshaled.___licensingErrorType = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___additionalData);
+	marshaled.___additionalData = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___errorMessage);
+	marshaled.___errorMessage = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___correlationId);
+	marshaled.___correlationId = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___sessionId);
+	marshaled.___sessionId = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshal_com(const LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9& unmarshaled, LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_com& marshaled)
+{
+	marshaled.___licensingErrorType = il2cpp_codegen_marshal_bstring(unmarshaled.___licensingErrorType);
+	marshaled.___additionalData = il2cpp_codegen_marshal_bstring(unmarshaled.___additionalData);
+	marshaled.___errorMessage = il2cpp_codegen_marshal_bstring(unmarshaled.___errorMessage);
+	marshaled.___correlationId = il2cpp_codegen_marshal_bstring(unmarshaled.___correlationId);
+	marshaled.___sessionId = il2cpp_codegen_marshal_bstring(unmarshaled.___sessionId);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshal_com_back(const LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_com& marshaled, LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9& unmarshaled)
+{
+	unmarshaled.___licensingErrorType = il2cpp_codegen_marshal_bstring_result(marshaled.___licensingErrorType);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___licensingErrorType), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___licensingErrorType));
+	unmarshaled.___additionalData = il2cpp_codegen_marshal_bstring_result(marshaled.___additionalData);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___additionalData), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___additionalData));
+	unmarshaled.___errorMessage = il2cpp_codegen_marshal_bstring_result(marshaled.___errorMessage);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___errorMessage), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___errorMessage));
+	unmarshaled.___correlationId = il2cpp_codegen_marshal_bstring_result(marshaled.___correlationId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___correlationId), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___correlationId));
+	unmarshaled.___sessionId = il2cpp_codegen_marshal_bstring_result(marshaled.___sessionId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___sessionId), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___sessionId));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_6 = 0;
+	unmarshaledeventVersion_temp_6 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_6;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_8 = 0;
+	unmarshaledsendEventOptions_temp_8 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_8;
+}
+IL2CPP_EXTERN_C void LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshal_com_cleanup(LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___licensingErrorType);
+	marshaled.___licensingErrorType = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___additionalData);
+	marshaled.___additionalData = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___errorMessage);
+	marshaled.___errorMessage = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___correlationId);
+	marshaled.___correlationId = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___sessionId);
+	marshaled.___sessionId = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LicensingErrorAnalytic__ctor_m50E0E3CA0DEC01E1E1B74FE3A13A0DE8C2C1663E (LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC4494072A0A8853E302769ED9F7F91560F582F2B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralC4494072A0A8853E302769ED9F7F91560F582F2B, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9* LicensingErrorAnalytic_CreateLicensingErrorAnalytic_mEE6198C9D2D65DD4B9F6E9B317BE4F78B9FC8381 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9* V_0 = NULL;
+	{
+		LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9* L_0 = (LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9*)il2cpp_codegen_object_new(LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9_il2cpp_TypeInfo_var);
+		LicensingErrorAnalytic__ctor_m50E0E3CA0DEC01E1E1B74FE3A13A0DE8C2C1663E(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		LicensingErrorAnalytic_t0B745A7C96A7267E910B6F72B72D14422745DCD9* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshal_pinvoke(const LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC& unmarshaled, LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_pinvoke& marshaled)
+{
+	marshaled.___licensingProtocolVersion = il2cpp_codegen_marshal_string(unmarshaled.___licensingProtocolVersion);
+	marshaled.___licensingClientVersion = il2cpp_codegen_marshal_string(unmarshaled.___licensingClientVersion);
+	marshaled.___channelType = il2cpp_codegen_marshal_string(unmarshaled.___channelType);
+	marshaled.___initTime = unmarshaled.___initTime;
+	marshaled.___isLegacy = static_cast<int32_t>(unmarshaled.___isLegacy);
+	marshaled.___sessionId = il2cpp_codegen_marshal_string(unmarshaled.___sessionId);
+	marshaled.___correlationId = il2cpp_codegen_marshal_string(unmarshaled.___correlationId);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshal_pinvoke_back(const LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_pinvoke& marshaled, LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC& unmarshaled)
+{
+	unmarshaled.___licensingProtocolVersion = il2cpp_codegen_marshal_string_result(marshaled.___licensingProtocolVersion);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___licensingProtocolVersion), (void*)il2cpp_codegen_marshal_string_result(marshaled.___licensingProtocolVersion));
+	unmarshaled.___licensingClientVersion = il2cpp_codegen_marshal_string_result(marshaled.___licensingClientVersion);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___licensingClientVersion), (void*)il2cpp_codegen_marshal_string_result(marshaled.___licensingClientVersion));
+	unmarshaled.___channelType = il2cpp_codegen_marshal_string_result(marshaled.___channelType);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___channelType), (void*)il2cpp_codegen_marshal_string_result(marshaled.___channelType));
+	double unmarshaledinitTime_temp_3 = 0.0;
+	unmarshaledinitTime_temp_3 = marshaled.___initTime;
+	unmarshaled.___initTime = unmarshaledinitTime_temp_3;
+	bool unmarshaledisLegacy_temp_4 = false;
+	unmarshaledisLegacy_temp_4 = static_cast<bool>(marshaled.___isLegacy);
+	unmarshaled.___isLegacy = unmarshaledisLegacy_temp_4;
+	unmarshaled.___sessionId = il2cpp_codegen_marshal_string_result(marshaled.___sessionId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___sessionId), (void*)il2cpp_codegen_marshal_string_result(marshaled.___sessionId));
+	unmarshaled.___correlationId = il2cpp_codegen_marshal_string_result(marshaled.___correlationId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___correlationId), (void*)il2cpp_codegen_marshal_string_result(marshaled.___correlationId));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_8 = 0;
+	unmarshaledeventVersion_temp_8 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_8;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_10 = 0;
+	unmarshaledsendEventOptions_temp_10 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_10;
+}
+IL2CPP_EXTERN_C void LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshal_pinvoke_cleanup(LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___licensingProtocolVersion);
+	marshaled.___licensingProtocolVersion = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___licensingClientVersion);
+	marshaled.___licensingClientVersion = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___channelType);
+	marshaled.___channelType = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___sessionId);
+	marshaled.___sessionId = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___correlationId);
+	marshaled.___correlationId = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshal_com(const LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC& unmarshaled, LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_com& marshaled)
+{
+	marshaled.___licensingProtocolVersion = il2cpp_codegen_marshal_bstring(unmarshaled.___licensingProtocolVersion);
+	marshaled.___licensingClientVersion = il2cpp_codegen_marshal_bstring(unmarshaled.___licensingClientVersion);
+	marshaled.___channelType = il2cpp_codegen_marshal_bstring(unmarshaled.___channelType);
+	marshaled.___initTime = unmarshaled.___initTime;
+	marshaled.___isLegacy = static_cast<int32_t>(unmarshaled.___isLegacy);
+	marshaled.___sessionId = il2cpp_codegen_marshal_bstring(unmarshaled.___sessionId);
+	marshaled.___correlationId = il2cpp_codegen_marshal_bstring(unmarshaled.___correlationId);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshal_com_back(const LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_com& marshaled, LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC& unmarshaled)
+{
+	unmarshaled.___licensingProtocolVersion = il2cpp_codegen_marshal_bstring_result(marshaled.___licensingProtocolVersion);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___licensingProtocolVersion), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___licensingProtocolVersion));
+	unmarshaled.___licensingClientVersion = il2cpp_codegen_marshal_bstring_result(marshaled.___licensingClientVersion);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___licensingClientVersion), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___licensingClientVersion));
+	unmarshaled.___channelType = il2cpp_codegen_marshal_bstring_result(marshaled.___channelType);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___channelType), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___channelType));
+	double unmarshaledinitTime_temp_3 = 0.0;
+	unmarshaledinitTime_temp_3 = marshaled.___initTime;
+	unmarshaled.___initTime = unmarshaledinitTime_temp_3;
+	bool unmarshaledisLegacy_temp_4 = false;
+	unmarshaledisLegacy_temp_4 = static_cast<bool>(marshaled.___isLegacy);
+	unmarshaled.___isLegacy = unmarshaledisLegacy_temp_4;
+	unmarshaled.___sessionId = il2cpp_codegen_marshal_bstring_result(marshaled.___sessionId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___sessionId), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___sessionId));
+	unmarshaled.___correlationId = il2cpp_codegen_marshal_bstring_result(marshaled.___correlationId);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___correlationId), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___correlationId));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_8 = 0;
+	unmarshaledeventVersion_temp_8 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_8;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_10 = 0;
+	unmarshaledsendEventOptions_temp_10 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_10;
+}
+IL2CPP_EXTERN_C void LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshal_com_cleanup(LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___licensingProtocolVersion);
+	marshaled.___licensingProtocolVersion = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___licensingClientVersion);
+	marshaled.___licensingClientVersion = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___channelType);
+	marshaled.___channelType = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___sessionId);
+	marshaled.___sessionId = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___correlationId);
+	marshaled.___correlationId = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LicensingInitAnalytic__ctor_mB3C254A9AFD36AF4AE91D579C61D307034604473 (LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral250BB85D3C4C284D4DFA1B45F0FEA68820010D12);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral250BB85D3C4C284D4DFA1B45F0FEA68820010D12, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC* LicensingInitAnalytic_CreateLicensingInitAnalytic_m29818225A42E7CFB22E25EE8751C7FD188DA7A4D (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC* V_0 = NULL;
+	{
+		LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC* L_0 = (LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC*)il2cpp_codegen_object_new(LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC_il2cpp_TypeInfo_var);
+		LicensingInitAnalytic__ctor_mB3C254A9AFD36AF4AE91D579C61D307034604473(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		LicensingInitAnalytic_t7527E5067C74B48C597F8F10EA8250DE1C7B35BC* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshal_pinvoke(const MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D& unmarshaled, MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_pinvoke& marshaled)
+{
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshal_pinvoke_back(const MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_pinvoke& marshaled, MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D& unmarshaled)
+{
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_1 = 0;
+	unmarshaledeventVersion_temp_1 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_1;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_3 = 0;
+	unmarshaledsendEventOptions_temp_3 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_3;
+}
+IL2CPP_EXTERN_C void MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshal_pinvoke_cleanup(MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshal_com(const MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D& unmarshaled, MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_com& marshaled)
+{
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshal_com_back(const MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_com& marshaled, MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D& unmarshaled)
+{
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_1 = 0;
+	unmarshaledeventVersion_temp_1 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_1;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_3 = 0;
+	unmarshaledsendEventOptions_temp_3 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_3;
+}
+IL2CPP_EXTERN_C void MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshal_com_cleanup(MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetalPatchShaderComputeBufferAnalytic__ctor_mF2C9B825FCFAA669CF856634F1E402EEDB66323D (MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8C0F8AA38DA0A5B2010E02F3D923447AC437622E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral8C0F8AA38DA0A5B2010E02F3D923447AC437622E, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D* MetalPatchShaderComputeBufferAnalytic_CreateMetalPatchShaderComputeBufferAnalytic_m6B50AD1434AA6241B640CEEFE2D55829D8648A12 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D* V_0 = NULL;
+	{
+		MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D* L_0 = (MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D*)il2cpp_codegen_object_new(MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D_il2cpp_TypeInfo_var);
+		MetalPatchShaderComputeBufferAnalytic__ctor_mF2C9B825FCFAA669CF856634F1E402EEDB66323D(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		MetalPatchShaderComputeBufferAnalytic_tE7CF34172F45894CC1761444952102E1EA655A6D* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshal_pinvoke(const NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7& unmarshaled, NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_pinvoke& marshaled)
+{
+	marshaled.___new_nav_api = static_cast<int32_t>(unmarshaled.___new_nav_api);
+	marshaled.___bake_at_runtime = static_cast<int32_t>(unmarshaled.___bake_at_runtime);
+	marshaled.___height_meshes_count = unmarshaled.___height_meshes_count;
+	marshaled.___offmesh_links_count = unmarshaled.___offmesh_links_count;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshal_pinvoke_back(const NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_pinvoke& marshaled, NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7& unmarshaled)
+{
+	bool unmarshalednew_nav_api_temp_0 = false;
+	unmarshalednew_nav_api_temp_0 = static_cast<bool>(marshaled.___new_nav_api);
+	unmarshaled.___new_nav_api = unmarshalednew_nav_api_temp_0;
+	bool unmarshaledbake_at_runtime_temp_1 = false;
+	unmarshaledbake_at_runtime_temp_1 = static_cast<bool>(marshaled.___bake_at_runtime);
+	unmarshaled.___bake_at_runtime = unmarshaledbake_at_runtime_temp_1;
+	int32_t unmarshaledheight_meshes_count_temp_2 = 0;
+	unmarshaledheight_meshes_count_temp_2 = marshaled.___height_meshes_count;
+	unmarshaled.___height_meshes_count = unmarshaledheight_meshes_count_temp_2;
+	int32_t unmarshaledoffmesh_links_count_temp_3 = 0;
+	unmarshaledoffmesh_links_count_temp_3 = marshaled.___offmesh_links_count;
+	unmarshaled.___offmesh_links_count = unmarshaledoffmesh_links_count_temp_3;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_5 = 0;
+	unmarshaledeventVersion_temp_5 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_5;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_7 = 0;
+	unmarshaledsendEventOptions_temp_7 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_7;
+}
+IL2CPP_EXTERN_C void NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshal_pinvoke_cleanup(NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshal_com(const NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7& unmarshaled, NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_com& marshaled)
+{
+	marshaled.___new_nav_api = static_cast<int32_t>(unmarshaled.___new_nav_api);
+	marshaled.___bake_at_runtime = static_cast<int32_t>(unmarshaled.___bake_at_runtime);
+	marshaled.___height_meshes_count = unmarshaled.___height_meshes_count;
+	marshaled.___offmesh_links_count = unmarshaled.___offmesh_links_count;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshal_com_back(const NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_com& marshaled, NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7& unmarshaled)
+{
+	bool unmarshalednew_nav_api_temp_0 = false;
+	unmarshalednew_nav_api_temp_0 = static_cast<bool>(marshaled.___new_nav_api);
+	unmarshaled.___new_nav_api = unmarshalednew_nav_api_temp_0;
+	bool unmarshaledbake_at_runtime_temp_1 = false;
+	unmarshaledbake_at_runtime_temp_1 = static_cast<bool>(marshaled.___bake_at_runtime);
+	unmarshaled.___bake_at_runtime = unmarshaledbake_at_runtime_temp_1;
+	int32_t unmarshaledheight_meshes_count_temp_2 = 0;
+	unmarshaledheight_meshes_count_temp_2 = marshaled.___height_meshes_count;
+	unmarshaled.___height_meshes_count = unmarshaledheight_meshes_count_temp_2;
+	int32_t unmarshaledoffmesh_links_count_temp_3 = 0;
+	unmarshaledoffmesh_links_count_temp_3 = marshaled.___offmesh_links_count;
+	unmarshaled.___offmesh_links_count = unmarshaledoffmesh_links_count_temp_3;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_5 = 0;
+	unmarshaledeventVersion_temp_5 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_5;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_7 = 0;
+	unmarshaledsendEventOptions_temp_7 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_7;
+}
+IL2CPP_EXTERN_C void NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshal_com_cleanup(NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NavmeshBakingAnalytic__ctor_m872F2389C82EF622FCF27149331047433154AA32 (NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAB1D52D56E28C4723D78028D447AB99C1BBDB657);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralAB1D52D56E28C4723D78028D447AB99C1BBDB657, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7* NavmeshBakingAnalytic_CreateNavmeshBakingAnalytic_mEF48522BC8576FA30098A18A611BEACF460E628E (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7* V_0 = NULL;
+	{
+		NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7* L_0 = (NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7*)il2cpp_codegen_object_new(NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7_il2cpp_TypeInfo_var);
+		NavmeshBakingAnalytic__ctor_m872F2389C82EF622FCF27149331047433154AA32(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		NavmeshBakingAnalytic_t1842795FC552B9208F629D27C880E3A52531A8E7* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshal_pinvoke(const ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7& unmarshaled, ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_pinvoke& marshaled)
+{
+	marshaled.___agent_types_count = unmarshaled.___agent_types_count;
+	marshaled.___areas_count = unmarshaled.___areas_count;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshal_pinvoke_back(const ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_pinvoke& marshaled, ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7& unmarshaled)
+{
+	int32_t unmarshaledagent_types_count_temp_0 = 0;
+	unmarshaledagent_types_count_temp_0 = marshaled.___agent_types_count;
+	unmarshaled.___agent_types_count = unmarshaledagent_types_count_temp_0;
+	int32_t unmarshaledareas_count_temp_1 = 0;
+	unmarshaledareas_count_temp_1 = marshaled.___areas_count;
+	unmarshaled.___areas_count = unmarshaledareas_count_temp_1;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_3 = 0;
+	unmarshaledeventVersion_temp_3 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_3;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_5 = 0;
+	unmarshaledsendEventOptions_temp_5 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_5;
+}
+IL2CPP_EXTERN_C void ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshal_pinvoke_cleanup(ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshal_com(const ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7& unmarshaled, ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_com& marshaled)
+{
+	marshaled.___agent_types_count = unmarshaled.___agent_types_count;
+	marshaled.___areas_count = unmarshaled.___areas_count;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshal_com_back(const ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_com& marshaled, ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7& unmarshaled)
+{
+	int32_t unmarshaledagent_types_count_temp_0 = 0;
+	unmarshaledagent_types_count_temp_0 = marshaled.___agent_types_count;
+	unmarshaled.___agent_types_count = unmarshaledagent_types_count_temp_0;
+	int32_t unmarshaledareas_count_temp_1 = 0;
+	unmarshaledareas_count_temp_1 = marshaled.___areas_count;
+	unmarshaled.___areas_count = unmarshaledareas_count_temp_1;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_3 = 0;
+	unmarshaledeventVersion_temp_3 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_3;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_5 = 0;
+	unmarshaledsendEventOptions_temp_5 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_5;
+}
+IL2CPP_EXTERN_C void ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshal_com_cleanup(ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProjectSettingsInformationAnalytic__ctor_mEA9A84C9D71CF4B1F76DB9531502141C5B7B0CEB (ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB7387696E848B2C4CEB5D9B6ED6AFABDA37C3227);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralB7387696E848B2C4CEB5D9B6ED6AFABDA37C3227, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7* ProjectSettingsInformationAnalytic_CreateProjectSettingsInformationAnalytic_mCE60054939F431E43E5B6B965CE3CD8F6EC4F4B1 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7* V_0 = NULL;
+	{
+		ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7* L_0 = (ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7*)il2cpp_codegen_object_new(ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7_il2cpp_TypeInfo_var);
+		ProjectSettingsInformationAnalytic__ctor_mEA9A84C9D71CF4B1F76DB9531502141C5B7B0CEB(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		ProjectSettingsInformationAnalytic_t332EBD4F444E2A898DE9658DE1332A114E9516F7* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshal_pinvoke(const SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330& unmarshaled, SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_pinvoke& marshaled)
+{
+	marshaled.___navmesh_count = unmarshaled.___navmesh_count;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshal_pinvoke_back(const SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_pinvoke& marshaled, SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330& unmarshaled)
+{
+	int32_t unmarshalednavmesh_count_temp_0 = 0;
+	unmarshalednavmesh_count_temp_0 = marshaled.___navmesh_count;
+	unmarshaled.___navmesh_count = unmarshalednavmesh_count_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshal_pinvoke_cleanup(SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshal_com(const SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330& unmarshaled, SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_com& marshaled)
+{
+	marshaled.___navmesh_count = unmarshaled.___navmesh_count;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshal_com_back(const SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_com& marshaled, SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330& unmarshaled)
+{
+	int32_t unmarshalednavmesh_count_temp_0 = 0;
+	unmarshalednavmesh_count_temp_0 = marshaled.___navmesh_count;
+	unmarshaled.___navmesh_count = unmarshalednavmesh_count_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshal_com_cleanup(SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendGameBuildAnalytic__ctor_mDDB217836CD885FB873B778F13F29F7BC22F8ED2 (SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE4C72D26E22C75481070FAE5E8E422AF0C779F58);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralE4C72D26E22C75481070FAE5E8E422AF0C779F58, 1, 1, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330* SendGameBuildAnalytic_CreateSendGameBuildAnalytic_mEA87ADD9783785897361B678C8CA93CA960D10A1 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330* V_0 = NULL;
+	{
+		SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330* L_0 = (SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330*)il2cpp_codegen_object_new(SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330_il2cpp_TypeInfo_var);
+		SendGameBuildAnalytic__ctor_mDDB217836CD885FB873B778F13F29F7BC22F8ED2(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		SendGameBuildAnalytic_t02092F0B3864EB3D979A27ADF4A9A30B52CC5330* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshal_pinvoke(const PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616& unmarshaled, PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshal_pinvoke_back(const PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke& marshaled, PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshal_pinvoke_cleanup(PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshal_com(const PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616& unmarshaled, PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshal_com_back(const PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com& marshaled, PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshal_com_cleanup(PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4 (PackageManagerBaseAnalytic_t481548753CE1E49FE3D4A3463A78DFD1B5F77616* __this, String_t* ___0_eventName, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7A0B209C7DBBCE358CA73B56CE4574722C26B97F);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		String_t* L_0 = ___0_eventName;
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, L_0, 1, 0, _stringLiteral7A0B209C7DBBCE358CA73B56CE4574722C26B97F, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshal_pinvoke(const PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7& unmarshaled, PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshal_pinvoke_back(const PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_pinvoke& marshaled, PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshal_pinvoke_cleanup(PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshal_com(const PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7& unmarshaled, PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshal_com_back(const PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_com& marshaled, PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshal_com_cleanup(PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerAddPackageAnalytic__ctor_mC7B55AD6D65BE8A787B19CF07420D808FCACCA56 (PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0105950C634BC8A51D3259AE962F71FC72835343);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteral0105950C634BC8A51D3259AE962F71FC72835343, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7* PackageManagerAddPackageAnalytic_CreatePackageManagerAddPackageAnalytic_mBF5409B80E7D898224269B20D025D314DB5EEFD2 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7* V_0 = NULL;
+	{
+		PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7* L_0 = (PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7*)il2cpp_codegen_object_new(PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7_il2cpp_TypeInfo_var);
+		PackageManagerAddPackageAnalytic__ctor_mC7B55AD6D65BE8A787B19CF07420D808FCACCA56(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerAddPackageAnalytic_tBA1B6B244CD5F56168820AB908321811EEF411F7* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshal_pinvoke(const PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B& unmarshaled, PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshal_pinvoke_back(const PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_pinvoke& marshaled, PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshal_pinvoke_cleanup(PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshal_com(const PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B& unmarshaled, PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshal_com_back(const PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_com& marshaled, PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshal_com_cleanup(PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerTestAnalytic__ctor_m065BD6F0F104CFD8F8D60FA2A1108FACC34809A8 (PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A0DF648B03BF2821F30FEF153F0AAFC915DBFE);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteral60A0DF648B03BF2821F30FEF153F0AAFC915DBFE, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B* PackageManagerTestAnalytic_CreatePackageManagerTestAnalytic_m8004FBBD9A6841B1B789E5308FA5E0127400BF67 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B* V_0 = NULL;
+	{
+		PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B* L_0 = (PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B*)il2cpp_codegen_object_new(PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B_il2cpp_TypeInfo_var);
+		PackageManagerTestAnalytic__ctor_m065BD6F0F104CFD8F8D60FA2A1108FACC34809A8(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerTestAnalytic_t373947C68BD8CF8BE86BF310BAC037B3DC201D0B* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshal_pinvoke(const PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7& unmarshaled, PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshal_pinvoke_back(const PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_pinvoke& marshaled, PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshal_pinvoke_cleanup(PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshal_com(const PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7& unmarshaled, PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshal_com_back(const PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_com& marshaled, PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshal_com_cleanup(PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerRemovePackageAnalytic__ctor_mE39C68F34D0C1661EC5862020BFF8DD208E811B0 (PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral71F91E13FA140537EB5B2198AFAF2B04D896807E);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteral71F91E13FA140537EB5B2198AFAF2B04D896807E, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7* PackageManagerRemovePackageAnalytic_CreatePackageManagerRemovePackageAnalytic_m55416B2732EB5F1748823E35F462A35AE885FA51 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7* V_0 = NULL;
+	{
+		PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7* L_0 = (PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7*)il2cpp_codegen_object_new(PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7_il2cpp_TypeInfo_var);
+		PackageManagerRemovePackageAnalytic__ctor_mE39C68F34D0C1661EC5862020BFF8DD208E811B0(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerRemovePackageAnalytic_tBB10E4FBFF8101D5CFF30D58706141FE535019D7* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshal_pinvoke(const PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591& unmarshaled, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_pinvoke& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___packagesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___packagesException, NULL);
+}
+IL2CPP_EXTERN_C void PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshal_pinvoke_back(const PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_pinvoke& marshaled, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___packagesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___packagesException, NULL);
+}
+IL2CPP_EXTERN_C void PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshal_pinvoke_cleanup(PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_pinvoke& marshaled)
+{
+}
+IL2CPP_EXTERN_C void PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshal_com(const PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591& unmarshaled, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_com& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___packagesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___packagesException, NULL);
+}
+IL2CPP_EXTERN_C void PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshal_com_back(const PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_com& marshaled, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___packagesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591____packages_FieldInfo_var, PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___packagesException, NULL);
+}
+IL2CPP_EXTERN_C void PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshal_com_cleanup(PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_marshaled_com& marshaled)
+{
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerResolvePackageAnalytic__ctor_mADD6E37DF222E0313F7C44B2DFBBA98377C5865A (PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAA752ADDB95AC553E8D02E779919179290277307);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteralAA752ADDB95AC553E8D02E779919179290277307, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591* PackageManagerResolvePackageAnalytic_CreatePackageManagerResolvePackageAnalytic_m175B998CCE3C2E099260B2F3C09B0E0FD9931394 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591* V_0 = NULL;
+	{
+		PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591* L_0 = (PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591*)il2cpp_codegen_object_new(PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591_il2cpp_TypeInfo_var);
+		PackageManagerResolvePackageAnalytic__ctor_mADD6E37DF222E0313F7C44B2DFBBA98377C5865A(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerResolvePackageAnalytic_t0EF6DAF477F5FC0FE561A4D42A4A43EA16441591* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshal_pinvoke(const PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D& unmarshaled, PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshal_pinvoke_back(const PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_pinvoke& marshaled, PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshal_pinvoke_cleanup(PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshal_com(const PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D& unmarshaled, PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshal_com_back(const PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_com& marshaled, PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshal_com_cleanup(PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerEmbedPackageAnalytic__ctor_mD731FFB58F114E225C407460802778276FFF0100 (PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral893208824F8EC074FF2267902EBE090739D3D8E1);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteral893208824F8EC074FF2267902EBE090739D3D8E1, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D* PackageManagerEmbedPackageAnalytic_CreatePackageManagerEmbedPackageAnalytic_m87F042406568B28D7CDE4775CD7AF3F9871392AD (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D* V_0 = NULL;
+	{
+		PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D* L_0 = (PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D*)il2cpp_codegen_object_new(PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D_il2cpp_TypeInfo_var);
+		PackageManagerEmbedPackageAnalytic__ctor_mD731FFB58F114E225C407460802778276FFF0100(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerEmbedPackageAnalytic_t517F763FE7B02AA44840C8A925AB7AD825C6E57D* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshal_pinvoke(const PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE& unmarshaled, PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshal_pinvoke_back(const PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_pinvoke& marshaled, PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshal_pinvoke_cleanup(PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshal_com(const PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE& unmarshaled, PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshal_com_back(const PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_com& marshaled, PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshal_com_cleanup(PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerResetPackageAnalytic__ctor_m79287E2503C6705DA9453FB6D74B32C65A0BB39A (PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD9F7EA90919B9532B478C1D0C4A113235F0239A3);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteralD9F7EA90919B9532B478C1D0C4A113235F0239A3, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE* PackageManagerResetPackageAnalytic_CreatePackageManagerResetPackageAnalytic_m1D2A3CF6D1E069E64B29682AA15ADCA147ED7463 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE* V_0 = NULL;
+	{
+		PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE* L_0 = (PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE*)il2cpp_codegen_object_new(PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE_il2cpp_TypeInfo_var);
+		PackageManagerResetPackageAnalytic__ctor_m79287E2503C6705DA9453FB6D74B32C65A0BB39A(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerResetPackageAnalytic_t23A286FC4BDCC0A7912E3B74B88FF56BA7D393AE* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshal_pinvoke(const PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE& unmarshaled, PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_pinvoke& marshaled)
+{
+	marshaled.___reason = il2cpp_codegen_marshal_string(unmarshaled.___reason);
+	marshaled.___action = il2cpp_codegen_marshal_string(unmarshaled.___action);
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshal_pinvoke_back(const PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_pinvoke& marshaled, PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE& unmarshaled)
+{
+	unmarshaled.___reason = il2cpp_codegen_marshal_string_result(marshaled.___reason);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___reason), (void*)il2cpp_codegen_marshal_string_result(marshaled.___reason));
+	unmarshaled.___action = il2cpp_codegen_marshal_string_result(marshaled.___action);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___action), (void*)il2cpp_codegen_marshal_string_result(marshaled.___action));
+	int64_t unmarshaledstart_ts_temp_2 = 0;
+	unmarshaledstart_ts_temp_2 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_2;
+	int64_t unmarshaledduration_temp_3 = 0;
+	unmarshaledduration_temp_3 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_3;
+	bool unmarshaledblocking_temp_4 = false;
+	unmarshaledblocking_temp_4 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_4;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_6 = 0;
+	unmarshaledstatus_code_temp_6 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_6;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_9 = 0;
+	unmarshaledeventVersion_temp_9 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_9;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_11 = 0;
+	unmarshaledsendEventOptions_temp_11 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_11;
+}
+IL2CPP_EXTERN_C void PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshal_pinvoke_cleanup(PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___reason);
+	marshaled.___reason = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___action);
+	marshaled.___action = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshal_com(const PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE& unmarshaled, PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_com& marshaled)
+{
+	marshaled.___reason = il2cpp_codegen_marshal_bstring(unmarshaled.___reason);
+	marshaled.___action = il2cpp_codegen_marshal_bstring(unmarshaled.___action);
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshal_com_back(const PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_com& marshaled, PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE& unmarshaled)
+{
+	unmarshaled.___reason = il2cpp_codegen_marshal_bstring_result(marshaled.___reason);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___reason), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___reason));
+	unmarshaled.___action = il2cpp_codegen_marshal_bstring_result(marshaled.___action);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___action), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___action));
+	int64_t unmarshaledstart_ts_temp_2 = 0;
+	unmarshaledstart_ts_temp_2 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_2;
+	int64_t unmarshaledduration_temp_3 = 0;
+	unmarshaledduration_temp_3 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_3;
+	bool unmarshaledblocking_temp_4 = false;
+	unmarshaledblocking_temp_4 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_4;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_6 = 0;
+	unmarshaledstatus_code_temp_6 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_6;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_9 = 0;
+	unmarshaledeventVersion_temp_9 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_9;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_11 = 0;
+	unmarshaledsendEventOptions_temp_11 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_11;
+}
+IL2CPP_EXTERN_C void PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshal_com_cleanup(PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___reason);
+	marshaled.___reason = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___action);
+	marshaled.___action = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerResolveErrorPackageAnalytic__ctor_mE8212E958A8DF7E28D734ECD89ECAA68C0100643 (PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5978B75A8CFCFB0B4C27F319C6C4EA3690F57ABA);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteral5978B75A8CFCFB0B4C27F319C6C4EA3690F57ABA, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE* PackageManagerResolveErrorPackageAnalytic_CreatePackageManagerResolveErrorPackageAnalytic_mF0038A5A5A6D14DD0D4820E73822D6455DBE0E20 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE* V_0 = NULL;
+	{
+		PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE* L_0 = (PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE*)il2cpp_codegen_object_new(PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE_il2cpp_TypeInfo_var);
+		PackageManagerResolveErrorPackageAnalytic__ctor_mE8212E958A8DF7E28D734ECD89ECAA68C0100643(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerResolveErrorPackageAnalytic_t0B2E51A53D7E9841AA1EBE920D7302010EA835FE* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshal_pinvoke(const PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605& unmarshaled, PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_pinvoke& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_string(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_string(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshal_pinvoke_back(const PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_pinvoke& marshaled, PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_string_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_string_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_string_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshal_pinvoke_cleanup(PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshal_com(const PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605& unmarshaled, PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_com& marshaled)
+{
+	marshaled.___start_ts = unmarshaled.___start_ts;
+	marshaled.___duration = unmarshaled.___duration;
+	marshaled.___blocking = static_cast<int32_t>(unmarshaled.___blocking);
+	marshaled.___package_id = il2cpp_codegen_marshal_bstring(unmarshaled.___package_id);
+	marshaled.___status_code = unmarshaled.___status_code;
+	marshaled.___error_message = il2cpp_codegen_marshal_bstring(unmarshaled.___error_message);
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshal_com_back(const PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_com& marshaled, PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605& unmarshaled)
+{
+	int64_t unmarshaledstart_ts_temp_0 = 0;
+	unmarshaledstart_ts_temp_0 = marshaled.___start_ts;
+	unmarshaled.___start_ts = unmarshaledstart_ts_temp_0;
+	int64_t unmarshaledduration_temp_1 = 0;
+	unmarshaledduration_temp_1 = marshaled.___duration;
+	unmarshaled.___duration = unmarshaledduration_temp_1;
+	bool unmarshaledblocking_temp_2 = false;
+	unmarshaledblocking_temp_2 = static_cast<bool>(marshaled.___blocking);
+	unmarshaled.___blocking = unmarshaledblocking_temp_2;
+	unmarshaled.___package_id = il2cpp_codegen_marshal_bstring_result(marshaled.___package_id);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_id), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_id));
+	int32_t unmarshaledstatus_code_temp_4 = 0;
+	unmarshaledstatus_code_temp_4 = marshaled.___status_code;
+	unmarshaled.___status_code = unmarshaledstatus_code_temp_4;
+	unmarshaled.___error_message = il2cpp_codegen_marshal_bstring_result(marshaled.___error_message);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___error_message), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___error_message));
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_7 = 0;
+	unmarshaledeventVersion_temp_7 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_7;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_9 = 0;
+	unmarshaledsendEventOptions_temp_9 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_9;
+}
+IL2CPP_EXTERN_C void PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshal_com_cleanup(PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_id);
+	marshaled.___package_id = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___error_message);
+	marshaled.___error_message = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageManagerStartServerPackageAnalytic__ctor_mE67ABB0A919D9524E4C174FA7BD84873373D2FB7 (PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB42F2AB1650E5101ADAD4B144B31DACC405C71FE);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		PackageManagerBaseAnalytic__ctor_m8842E6D52829AE842954EED1931BA41566FEE4D4(__this, _stringLiteralB42F2AB1650E5101ADAD4B144B31DACC405C71FE, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605* PackageManagerStartServerPackageAnalytic_CreatePackageManagerStartServerPackageAnalytic_mF48D7729D5B9116CEFC04445E33255EDF714C088 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605* V_0 = NULL;
+	{
+		PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605* L_0 = (PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605*)il2cpp_codegen_object_new(PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605_il2cpp_TypeInfo_var);
+		PackageManagerStartServerPackageAnalytic__ctor_mE67ABB0A919D9524E4C174FA7BD84873373D2FB7(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		PackageManagerStartServerPackageAnalytic_tFAED1187624F3F7642BC2469973A6EADFAD4D605* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshal_pinvoke(const AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378& unmarshaled, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_pinvoke& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___selected_asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___selected_asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshal_pinvoke_back(const AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_pinvoke& marshaled, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___selected_asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___selected_asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshal_pinvoke_cleanup(AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_pinvoke& marshaled)
+{
+}
+IL2CPP_EXTERN_C void AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshal_com(const AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378& unmarshaled, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_com& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___selected_asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___selected_asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshal_com_back(const AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_com& marshaled, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___selected_asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378____selected_asset_extensions_FieldInfo_var, AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___selected_asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshal_com_cleanup(AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_marshaled_com& marshaled)
+{
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetImportStatusAnalytic__ctor_m08D8DB74F18BFAF3461FF93FA9ACE057C516F928 (AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral470BEB8526F1BDBEF299F3B96C05B5C68046A166);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral470BEB8526F1BDBEF299F3B96C05B5C68046A166, 1, 2, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378* AssetImportStatusAnalytic_CreateAssetImportStatusAnalytic_m9681846BC2D461E7857CBAA087CF1F193EAA705F (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378* V_0 = NULL;
+	{
+		AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378* L_0 = (AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378*)il2cpp_codegen_object_new(AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378_il2cpp_TypeInfo_var);
+		AssetImportStatusAnalytic__ctor_m08D8DB74F18BFAF3461FF93FA9ACE057C516F928(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		AssetImportStatusAnalytic_t73E7C082D60A70B2EB33853030F1F5A665F56378* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshal_pinvoke(const AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180& unmarshaled, AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_pinvoke& marshaled)
+{
+	marshaled.___package_name = il2cpp_codegen_marshal_string(unmarshaled.___package_name);
+	marshaled.___package_import_choice = unmarshaled.___package_import_choice;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshal_pinvoke_back(const AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_pinvoke& marshaled, AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180& unmarshaled)
+{
+	unmarshaled.___package_name = il2cpp_codegen_marshal_string_result(marshaled.___package_name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_name), (void*)il2cpp_codegen_marshal_string_result(marshaled.___package_name));
+	int32_t unmarshaledpackage_import_choice_temp_1 = 0;
+	unmarshaledpackage_import_choice_temp_1 = marshaled.___package_import_choice;
+	unmarshaled.___package_import_choice = unmarshaledpackage_import_choice_temp_1;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_3 = 0;
+	unmarshaledeventVersion_temp_3 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_3;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_5 = 0;
+	unmarshaledsendEventOptions_temp_5 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_5;
+}
+IL2CPP_EXTERN_C void AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshal_pinvoke_cleanup(AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___package_name);
+	marshaled.___package_name = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshal_com(const AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180& unmarshaled, AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_com& marshaled)
+{
+	marshaled.___package_name = il2cpp_codegen_marshal_bstring(unmarshaled.___package_name);
+	marshaled.___package_import_choice = unmarshaled.___package_import_choice;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshal_com_back(const AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_com& marshaled, AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180& unmarshaled)
+{
+	unmarshaled.___package_name = il2cpp_codegen_marshal_bstring_result(marshaled.___package_name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___package_name), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___package_name));
+	int32_t unmarshaledpackage_import_choice_temp_1 = 0;
+	unmarshaledpackage_import_choice_temp_1 = marshaled.___package_import_choice;
+	unmarshaled.___package_import_choice = unmarshaledpackage_import_choice_temp_1;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_3 = 0;
+	unmarshaledeventVersion_temp_3 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_3;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_5 = 0;
+	unmarshaledsendEventOptions_temp_5 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_5;
+}
+IL2CPP_EXTERN_C void AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshal_com_cleanup(AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___package_name);
+	marshaled.___package_name = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetImportAnalytic__ctor_m5335AA39762B1606364B586E09B66490EB8A3042 (AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral607EC84DFC9BFACDA9D0EA7360DD081128933852);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral607EC84DFC9BFACDA9D0EA7360DD081128933852, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180* AssetImportAnalytic_CreateAssetImportAnalytic_mA2184CAF20B72A5BC5443B6BF39E86C246CD1037 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180* V_0 = NULL;
+	{
+		AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180* L_0 = (AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180*)il2cpp_codegen_object_new(AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180_il2cpp_TypeInfo_var);
+		AssetImportAnalytic__ctor_m5335AA39762B1606364B586E09B66490EB8A3042(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		AssetImportAnalytic_tBCEFC2583311E752D01764ECBA46C496EDBF6180* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshal_pinvoke(const AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A& unmarshaled, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_pinvoke& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshal_pinvoke_back(const AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_pinvoke& marshaled, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshal_pinvoke_cleanup(AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_pinvoke& marshaled)
+{
+}
+IL2CPP_EXTERN_C void AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshal_com(const AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A& unmarshaled, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_com& marshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshal_com_back(const AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_com& marshaled, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___asset_extensionsException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A____asset_extensions_FieldInfo_var, AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_0_0_0_var);
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___asset_extensionsException, NULL);
+}
+IL2CPP_EXTERN_C void AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshal_com_cleanup(AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_marshaled_com& marshaled)
+{
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetExportAnalytic__ctor_m7987504F06FAC24A6C0EF8EF978DD31F453B48F9 (AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral45079021CEFEB624889E25AD5CE548689DF8179D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteral45079021CEFEB624889E25AD5CE548689DF8179D, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A* AssetExportAnalytic_CreateAssetExportAnalytic_m1C5A57996B7C717E018DE5C4261B7B4087608206 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A* V_0 = NULL;
+	{
+		AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A* L_0 = (AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A*)il2cpp_codegen_object_new(AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A_il2cpp_TypeInfo_var);
+		AssetExportAnalytic__ctor_m7987504F06FAC24A6C0EF8EF978DD31F453B48F9(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		AssetExportAnalytic_tC347E7D73D731A0E9B96F2A76998B7A920D75F2A* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshal_pinvoke(const StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827& unmarshaled, StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_pinvoke& marshaled)
+{
+	marshaled.___Duration = unmarshaled.___Duration;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshal_pinvoke_back(const StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_pinvoke& marshaled, StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827& unmarshaled)
+{
+	double unmarshaledDuration_temp_0 = 0.0;
+	unmarshaledDuration_temp_0 = marshaled.___Duration;
+	unmarshaled.___Duration = unmarshaledDuration_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshal_pinvoke_cleanup(StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshal_com(const StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827& unmarshaled, StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_com& marshaled)
+{
+	marshaled.___Duration = unmarshaled.___Duration;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshal_com_back(const StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_com& marshaled, StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827& unmarshaled)
+{
+	double unmarshaledDuration_temp_0 = 0.0;
+	unmarshaledDuration_temp_0 = marshaled.___Duration;
+	unmarshaled.___Duration = unmarshaledDuration_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshal_com_cleanup(StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StallSummaryAnalytic__ctor_m6F569DB918D3775A5024D9A36999BF1E81B47605 (StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC54E9E453CAA8F5DCE5559DA89197E4A9C9B3C54);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralC54E9E453CAA8F5DCE5559DA89197E4A9C9B3C54, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827* StallSummaryAnalytic_CreateStallSummaryAnalytic_mAF825EC0FF5C6EFFE678385E3492403C3F3EB7EA (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827* V_0 = NULL;
+	{
+		StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827* L_0 = (StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827*)il2cpp_codegen_object_new(StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827_il2cpp_TypeInfo_var);
+		StallSummaryAnalytic__ctor_m6F569DB918D3775A5024D9A36999BF1E81B47605(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		StallSummaryAnalytic_tE5B942520E7621FE78CB893AAA72EC272DF43827* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshal_pinvoke(const StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839& unmarshaled, StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_pinvoke& marshaled)
+{
+	marshaled.___Name = il2cpp_codegen_marshal_string(unmarshaled.___Name);
+	marshaled.___HasProgressMarkup = static_cast<int32_t>(unmarshaled.___HasProgressMarkup);
+	marshaled.___Duration = unmarshaled.___Duration;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshal_pinvoke_back(const StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_pinvoke& marshaled, StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839& unmarshaled)
+{
+	unmarshaled.___Name = il2cpp_codegen_marshal_string_result(marshaled.___Name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___Name), (void*)il2cpp_codegen_marshal_string_result(marshaled.___Name));
+	bool unmarshaledHasProgressMarkup_temp_1 = false;
+	unmarshaledHasProgressMarkup_temp_1 = static_cast<bool>(marshaled.___HasProgressMarkup);
+	unmarshaled.___HasProgressMarkup = unmarshaledHasProgressMarkup_temp_1;
+	double unmarshaledDuration_temp_2 = 0.0;
+	unmarshaledDuration_temp_2 = marshaled.___Duration;
+	unmarshaled.___Duration = unmarshaledDuration_temp_2;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_4 = 0;
+	unmarshaledeventVersion_temp_4 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_4;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_6 = 0;
+	unmarshaledsendEventOptions_temp_6 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_6;
+}
+IL2CPP_EXTERN_C void StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshal_pinvoke_cleanup(StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___Name);
+	marshaled.___Name = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshal_com(const StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839& unmarshaled, StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_com& marshaled)
+{
+	marshaled.___Name = il2cpp_codegen_marshal_bstring(unmarshaled.___Name);
+	marshaled.___HasProgressMarkup = static_cast<int32_t>(unmarshaled.___HasProgressMarkup);
+	marshaled.___Duration = unmarshaled.___Duration;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshal_com_back(const StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_com& marshaled, StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839& unmarshaled)
+{
+	unmarshaled.___Name = il2cpp_codegen_marshal_bstring_result(marshaled.___Name);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___Name), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___Name));
+	bool unmarshaledHasProgressMarkup_temp_1 = false;
+	unmarshaledHasProgressMarkup_temp_1 = static_cast<bool>(marshaled.___HasProgressMarkup);
+	unmarshaled.___HasProgressMarkup = unmarshaledHasProgressMarkup_temp_1;
+	double unmarshaledDuration_temp_2 = 0.0;
+	unmarshaledDuration_temp_2 = marshaled.___Duration;
+	unmarshaled.___Duration = unmarshaledDuration_temp_2;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_4 = 0;
+	unmarshaledeventVersion_temp_4 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_4;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_6 = 0;
+	unmarshaledsendEventOptions_temp_6 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_6;
+}
+IL2CPP_EXTERN_C void StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshal_com_cleanup(StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___Name);
+	marshaled.___Name = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StallMarkerAnalytic__ctor_m1248F3FC87B6DB3D32A70EBEE14859942A476CDA (StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBD09A3DAA622349FF74F11ECD6DDD1B297C3FDF2);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralBD09A3DAA622349FF74F11ECD6DDD1B297C3FDF2, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839* StallMarkerAnalytic_CreateStallMarkerAnalytic_m2FD60E6349F04CC44DFC6FFEEC766294EEFF6C1B (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839* V_0 = NULL;
+	{
+		StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839* L_0 = (StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839*)il2cpp_codegen_object_new(StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839_il2cpp_TypeInfo_var);
+		StallMarkerAnalytic__ctor_m1248F3FC87B6DB3D32A70EBEE14859942A476CDA(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		StallMarkerAnalytic_tC1D60AF4C9F24333C1DF5BD3D237E0C74E63B839* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C void TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshal_pinvoke(const TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7& unmarshaled, TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_pinvoke& marshaled)
+{
+	marshaled.___param = unmarshaled.___param;
+	marshaled.___eventName = il2cpp_codegen_marshal_string(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_string(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshal_pinvoke_back(const TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_pinvoke& marshaled, TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7& unmarshaled)
+{
+	int32_t unmarshaledparam_temp_0 = 0;
+	unmarshaledparam_temp_0 = marshaled.___param;
+	unmarshaled.___param = unmarshaledparam_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_string_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_string_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshal_pinvoke_cleanup(TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C void TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshal_com(const TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7& unmarshaled, TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_com& marshaled)
+{
+	marshaled.___param = unmarshaled.___param;
+	marshaled.___eventName = il2cpp_codegen_marshal_bstring(unmarshaled.___eventName);
+	marshaled.___eventVersion = unmarshaled.___eventVersion;
+	marshaled.___eventPrefix = il2cpp_codegen_marshal_bstring(unmarshaled.___eventPrefix);
+	marshaled.___sendEventOptions = unmarshaled.___sendEventOptions;
+}
+IL2CPP_EXTERN_C void TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshal_com_back(const TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_com& marshaled, TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7& unmarshaled)
+{
+	int32_t unmarshaledparam_temp_0 = 0;
+	unmarshaledparam_temp_0 = marshaled.___param;
+	unmarshaled.___param = unmarshaledparam_temp_0;
+	unmarshaled.___eventName = il2cpp_codegen_marshal_bstring_result(marshaled.___eventName);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventName), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventName));
+	int32_t unmarshaledeventVersion_temp_2 = 0;
+	unmarshaledeventVersion_temp_2 = marshaled.___eventVersion;
+	unmarshaled.___eventVersion = unmarshaledeventVersion_temp_2;
+	unmarshaled.___eventPrefix = il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___eventPrefix), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___eventPrefix));
+	int32_t unmarshaledsendEventOptions_temp_4 = 0;
+	unmarshaledsendEventOptions_temp_4 = marshaled.___sendEventOptions;
+	unmarshaled.___sendEventOptions = unmarshaledsendEventOptions_temp_4;
+}
+IL2CPP_EXTERN_C void TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshal_com_cleanup(TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventName);
+	marshaled.___eventName = NULL;
+	il2cpp_codegen_marshal_free_bstring(marshaled.___eventPrefix);
+	marshaled.___eventPrefix = NULL;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestAnalytic__ctor_mB6C1AABD2CA785D03984294A1813326B40CCB373 (TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB42866C7CD59650529AAA37A25CD25722CB96A38);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AnalyticsEventBase__ctor_m21A87ECFBEF557381DCD16B735E82680E8D14471(__this, _stringLiteralB42866C7CD59650529AAA37A25CD25722CB96A38, 1, 0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7* TestAnalytic_CreateTestAnalytic_m30D0AFC187AC0F0CEDF63DA35EB92D08F6A024B9 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7* V_0 = NULL;
+	{
+		TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7* L_0 = (TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7*)il2cpp_codegen_object_new(TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7_il2cpp_TypeInfo_var);
+		TestAnalytic__ctor_mB6C1AABD2CA785D03984294A1813326B40CCB373(L_0, NULL);
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		TestAnalytic_tD5DCA82EB41AEDD8BAF9A8AFF6AB3828D74D0CF7* L_1 = V_0;
+		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif

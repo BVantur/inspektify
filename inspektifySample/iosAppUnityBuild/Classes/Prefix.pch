@@ -1,0 +1,23 @@
+//
+// Prefix header
+//
+
+#include "Preprocessor.h"
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+#include "UnityTrampolineConfigure.h"
+#include "UnityInterface.h"
+
+#ifndef __OBJC__
+    #if defined(__cplusplus)
+        #include "pch-cpp.hpp"
+    #else
+        #include "pch-c.h"
+    #endif
+#endif
+
+#define printf_console printf

@@ -1,0 +1,1 @@
+GenerateNativePluginsForAssemblies did not produce any output

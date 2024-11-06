@@ -1,0 +1,29 @@
+Adding elements from Unity
+	NSPrivacyAccessedAPITypes:
+		0:
+			NSPrivacyAccessedAPIType:
+				NSPrivacyAccessedAPICategorySystemBootTime
+			NSPrivacyAccessedAPITypeReasons:
+				0:
+					35F9.1
+		1:
+			NSPrivacyAccessedAPIType:
+				NSPrivacyAccessedAPICategoryDiskSpace
+			NSPrivacyAccessedAPITypeReasons:
+				0:
+					E174.1
+		2:
+			NSPrivacyAccessedAPIType:
+				NSPrivacyAccessedAPICategoryUserDefaults
+			NSPrivacyAccessedAPITypeReasons:
+				0:
+					CA92.1
+		3:
+			NSPrivacyAccessedAPIType:
+				NSPrivacyAccessedAPICategoryFileTimestamp
+			NSPrivacyAccessedAPITypeReasons:
+				0:
+					0A2A.1
+				1:
+					C617.1
+
