@@ -182,12 +182,14 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier
                     modifier = Modifier.fillMaxWidth().padding(top = 4.dp, end = 16.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Image(
-                        modifier = Modifier.size(12.dp),
-                        painter = painterResource(item.hostImage),
-                        contentDescription = null,
-                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
-                    )
+                    if (item.showSslIcon) {
+                        Image(
+                            modifier = Modifier.size(12.dp),
+                            painter = painterResource(item.hostImage),
+                            contentDescription = null,
+                            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
+                        )
+                    }
                     Text(
                         modifier = Modifier.fillMaxWidth().padding(start = 4.dp),
                         text = item.host,
