@@ -1,6 +1,7 @@
 package sp.bvantur.inspektify.ktor.list.data.mapper
 
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
+import sp.bvantur.inspektify.ktor.client.shared.Platform
 import sp.bvantur.inspektify.ktor.core.data.utils.getDate
 import sp.bvantur.inspektify.ktor.core.data.utils.getDuration
 import sp.bvantur.inspektify.ktor.core.data.utils.getHost
@@ -30,7 +31,8 @@ internal object NetworkTrafficDataLocalMapper {
             size = getSize(),
             isCompleted = isCompleted(),
             isCurrentSession = isFromActiveSession(currentSessionTimestamp),
-            date = getDate()
+            date = getDate(),
+            showSslIcon = !Platform.getTargetType().isApple()
         )
     }
 }
