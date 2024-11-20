@@ -31,6 +31,8 @@ internal class InspektifyKtorClient(
     private val coroutineScope = CoroutineScope(dispatcherProvider.main + SupervisorJob())
 
     private var sessionId: Long? = null
+    private var redactHeaders: List<String> = emptyList()
+    private var redactBodyProperties: List<String> = emptyList()
 
     fun install(plugin: InspektifyKtor, client: HttpClient) {
         sessionId = getTimeMillis()
@@ -41,10 +43,11 @@ internal class InspektifyKtorClient(
     }
 
     private fun configure(config: InspektifyKtorConfig) {
-        configurePresentation(config.autoDetectEnabled, config.shortcutEnabled, config.presentationType)
         trafficLogger.configureLogger(config.logLevel)
+        redactHeaders = config.redactHeaders
+        redactBodyProperties = config.redactBodyProperties
         coroutineScope.launch(dispatcherProvider.main.immediate) {
-            configurePresentation(config.autoDetectEnabled, config.shortcutEnabled, config.presentationType)
+            configurePresentation(config.autoDetectEnabled, config.shortcutEnabled)
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
         }
     }
@@ -56,7 +59,12 @@ internal class InspektifyKtorClient(
 
         client.sendPipeline.intercept(HttpSendPipeline.Monitoring) {
             try {
-                val networkTraffic = requestHandler.handleRequest(request = context, sessionId = sessionId)
+                val networkTraffic = requestHandler.handleRequest(
+                    request = context,
+                    sessionId = sessionId,
+                    redactHeaders = redactHeaders,
+                    redactBodyProperties = redactBodyProperties
+                )
                 repository.saveNetworkTrafficData(networkTraffic)
                 trafficLogger.logRequest(networkTraffic)
             } catch (ignore: Throwable) {
@@ -74,7 +82,12 @@ internal class InspektifyKtorClient(
             val networkTraffic = repository.getNetworkTrafficData(
                 response.request.attributes[requestHandler.getNetworkTrafficIdKey()]
             )
-            val networkTrafficWithResponse = responseHandler.handleResponse(response, networkTraffic)
+            val networkTrafficWithResponse = responseHandler.handleResponse(
+                response = response,
+                networkTraffic = networkTraffic,
+                redactHeaders = redactHeaders,
+                redactBodyProperties = redactBodyProperties
+            )
 
             repository.saveNetworkTrafficData(networkTrafficWithResponse)
             trafficLogger.logResponse(networkTrafficWithResponse)

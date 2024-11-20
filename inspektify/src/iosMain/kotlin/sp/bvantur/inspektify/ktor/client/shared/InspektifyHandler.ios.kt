@@ -16,7 +16,6 @@ import platform.UIKit.shortcutItems
 import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME
 import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME
 import sp.bvantur.inspektify.ktor.InspektifyViewController
-import sp.bvantur.inspektify.ktor.PresentationType
 import sp.bvantur.inspektify.ktor.client.getInspektifyShortcutType
 import sp.bvantur.inspektify.ktor.inspektifyViewControllerInstance
 import sp.bvantur.inspektify.shakedetektor.ShakeDetektorIOS
@@ -30,11 +29,7 @@ internal actual fun startInspektifyWindow() {
 }
 
 @OptIn(ExperimentalForeignApi::class)
-internal actual fun configurePresentation(
-    autoDetectEnabled: Boolean,
-    shortcutEnabled: Boolean,
-    presentationType: PresentationType?
-) {
+internal actual fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean) {
     if (shortcutEnabled) {
         setupQuickAction()
     } else {
@@ -47,7 +42,7 @@ internal actual fun configurePresentation(
         }
     }
 
-    if (autoDetectEnabled || presentationType?.isAutoDetect() == true) {
+    if (autoDetectEnabled) {
         ShakeDetektorIOS().enableShakeDetektorWithCallback {
             if (inspektifyViewControllerInstance != null) return@enableShakeDetektorWithCallback
 
