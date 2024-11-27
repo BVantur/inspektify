@@ -41,10 +41,10 @@ internal class NetworkTrafficLocalDataSource(
         }
     }
 
-    suspend fun getNetworkTrafficData(id: Long): NetworkTrafficDataLocal = withContext(dispatcherProvider.io) {
+    suspend fun getNetworkTrafficData(id: Long): NetworkTrafficDataLocal? = withContext(dispatcherProvider.io) {
         database.inspektifyDBQueries.getNetworkTrafficById(
             id
-        ).executeAsOne()
+        ).executeAsOneOrNull()
     }
 
     suspend fun removeNetworkTrafficOlderThan(cutoffTimestamp: Long) {

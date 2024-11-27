@@ -7,8 +7,11 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
+import sp.bvantur.inspektify.ktor.EndpointMatchingStrategy
+import sp.bvantur.inspektify.ktor.IgnorePathData
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.LogLevel
+import sp.bvantur.inspektify.ktor.MethodType
 
 private const val BASE_URL = "https://reqres.in/api/"
 
@@ -32,6 +35,17 @@ val networkModule = module {
                 autoDetectEnabled = false
                 logLevel = LogLevel.All
                 dataRetentionPolicy = DataRetentionPolicy.SessionCount(4)
+                ignoreEndpoints = listOf(
+                    IgnorePathData(
+                        method = MethodType.GET,
+                        endpoint = "https://reqres.in/api/users/1"
+                    ),
+                    IgnorePathData(
+                        method = MethodType.POST,
+                        endpoint = "users",
+                        endpointMatchingStrategy = EndpointMatchingStrategy.CONTAINS
+                    )
+                )
             }
         }
     }

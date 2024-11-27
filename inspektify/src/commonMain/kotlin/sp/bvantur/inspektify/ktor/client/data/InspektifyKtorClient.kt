@@ -25,9 +25,11 @@ internal class InspektifyKtorClient(
     private val requestHandler: InspektifyRequestHandler = AppComponents.getInspektifyRequestHandler(),
     private val responseHandler: InspektifyResponseHandler = AppComponents.getInspektifyResponseHandler(),
     private val trafficLogger: InspektifyNetworkTrafficLogger = AppComponents.getInspektifyNetworkTrafficLogger(),
-    private val dataRetentionHandler: InspektifyDataRetentionHandler = AppComponents.getInspektifyDataRetentionHandler()
+    private val dataRetentionHandler: InspektifyDataRetentionHandler =
+        AppComponents.getInspektifyDataRetentionHandler(),
+    private val ignoreEndpointHandler: InspektifyKtorIgnoreEndpointHandler =
+        AppComponents.getInspektifyKtorIgnoreEndpointHandler()
 ) {
-
     private val coroutineScope = CoroutineScope(dispatcherProvider.main + SupervisorJob())
 
     private var sessionId: Long? = null
@@ -47,6 +49,7 @@ internal class InspektifyKtorClient(
         redactHeaders = config.redactHeaders
         redactBodyProperties = config.redactBodyProperties
         coroutineScope.launch(dispatcherProvider.main.immediate) {
+            ignoreEndpointHandler.configureEndpointIgnoring(config.ignoreEndpoints)
             configurePresentation(config.autoDetectEnabled, config.shortcutEnabled)
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
         }
@@ -59,6 +62,8 @@ internal class InspektifyKtorClient(
 
         client.sendPipeline.intercept(HttpSendPipeline.Monitoring) {
             try {
+                if (ignoreEndpointHandler.shouldIgnoreEndpoint(context)) return@intercept
+
                 val networkTraffic = requestHandler.handleRequest(
                     request = context,
                     sessionId = sessionId,
@@ -82,15 +87,17 @@ internal class InspektifyKtorClient(
             val networkTraffic = repository.getNetworkTrafficData(
                 response.request.attributes[requestHandler.getNetworkTrafficIdKey()]
             )
-            val networkTrafficWithResponse = responseHandler.handleResponse(
-                response = response,
-                networkTraffic = networkTraffic,
-                redactHeaders = redactHeaders,
-                redactBodyProperties = redactBodyProperties
-            )
+            if (networkTraffic != null) {
+                val networkTrafficWithResponse = responseHandler.handleResponse(
+                    response = response,
+                    networkTraffic = networkTraffic,
+                    redactHeaders = redactHeaders,
+                    redactBodyProperties = redactBodyProperties
+                )
 
-            repository.saveNetworkTrafficData(networkTrafficWithResponse)
-            trafficLogger.logResponse(networkTrafficWithResponse)
+                repository.saveNetworkTrafficData(networkTrafficWithResponse)
+                trafficLogger.logResponse(networkTrafficWithResponse)
+            }
         }
         val responseObserver = ResponseObserver.prepare { onResponse(responseHandler) }
         ResponseObserver.install(responseObserver, client)
