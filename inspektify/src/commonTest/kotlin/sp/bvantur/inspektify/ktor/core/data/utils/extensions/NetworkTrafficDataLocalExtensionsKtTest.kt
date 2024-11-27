@@ -1,3 +1,5 @@
+@file:Suppress("ktlint:standard:max-line-length")
+
 package sp.bvantur.inspektify.ktor.core.data.utils.extensions
 
 import inspektifyroot.inspektify.generated.resources.Res
