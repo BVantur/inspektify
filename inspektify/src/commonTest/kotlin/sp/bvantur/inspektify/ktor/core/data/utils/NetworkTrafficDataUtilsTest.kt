@@ -21,7 +21,6 @@ class NetworkTrafficDataUtilsTest {
     @Test
     fun `GIVEN there are some headers WHEN calculateHeadersSize is called THEN returns size of it`() {
         val headers = HeadersBuilder().also {
-            
             it.append("Header-Name", "header value")
         }.build()
 
