@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 
 @Composable
-fun <T> CollectSingleEventsWithLifecycle(
+internal fun <T> CollectSingleEventsWithLifecycle(
     lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
     singleEventFlow: Flow<T>,
     handleSingleEvent: (T) -> Unit

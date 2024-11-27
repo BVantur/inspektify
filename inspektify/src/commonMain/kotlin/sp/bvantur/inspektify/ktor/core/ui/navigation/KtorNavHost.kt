@@ -8,7 +8,7 @@ import sp.bvantur.inspektify.ktor.details.ui.navigation.networkTrafficDetailsScr
 import sp.bvantur.inspektify.ktor.list.ui.navigation.NETWORK_TRAFFIC_LIST_NAVIGATION_ROUTE
 import sp.bvantur.inspektify.ktor.list.ui.navigation.networkTrafficListScreen
 
-typealias OnNavigateBackAction = () -> Unit
+internal typealias OnNavigateBackAction = () -> Unit
 
 @Composable
 internal fun KtorNavHost() {

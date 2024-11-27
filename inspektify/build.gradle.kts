@@ -57,6 +57,8 @@ mavenPublishing {
 }
 
 kotlin {
+    explicitApi()
+
     task("testClasses")
     androidTarget {
         publishLibraryVariants("release")

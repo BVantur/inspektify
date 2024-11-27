@@ -6,9 +6,9 @@ import sp.bvantur.inspektify.ktor.list.ui.KtorListRoute
 
 internal typealias OnNavigateToDetailsAction = (Long) -> Unit
 
-const val NETWORK_TRAFFIC_LIST_NAVIGATION_ROUTE = "network_traffic_list_route"
+internal const val NETWORK_TRAFFIC_LIST_NAVIGATION_ROUTE = "network_traffic_list_route"
 
-fun NavGraphBuilder.networkTrafficListScreen(onNavigateToDetailsAction: OnNavigateToDetailsAction) {
+internal fun NavGraphBuilder.networkTrafficListScreen(onNavigateToDetailsAction: OnNavigateToDetailsAction) {
     composable(
         route = NETWORK_TRAFFIC_LIST_NAVIGATION_ROUTE
     ) {
