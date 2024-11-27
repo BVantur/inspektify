@@ -85,7 +85,9 @@ class LibKonsistTest {
             "InspektifyKtorConfig:logLevel",
             "InspektifyKtorConfig:dataRetentionPolicy",
             "InspektifyKtorConfig:autoDetectEnabled",
-            "InspektifyKtorConfig:shortcutEnabled"
+            "InspektifyKtorConfig:shortcutEnabled",
+            "InspektifyKtorConfig:redactHeaders",
+            "InspektifyKtorConfig:redactBodyProperties"
         )
 
         val publicComponents = mutableListOf<String>()

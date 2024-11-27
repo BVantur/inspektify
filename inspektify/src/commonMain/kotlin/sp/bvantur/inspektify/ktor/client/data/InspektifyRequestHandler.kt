@@ -10,11 +10,18 @@ import sp.bvantur.inspektify.ktor.KtorUtils
 import sp.bvantur.inspektify.ktor.client.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.client.data.utils.tryReadText
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
+import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
+import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties
 
 internal class InspektifyRequestHandler {
     private val networkTrafficIdKey = AttributeKey<Long>("NetworkTrafficIdKey")
 
-    suspend fun handleRequest(request: HttpRequestBuilder, sessionId: Long?): NetworkTraffic {
+    suspend fun handleRequest(
+        request: HttpRequestBuilder,
+        sessionId: Long?,
+        redactHeaders: List<String>,
+        redactBodyProperties: List<String>
+    ): NetworkTraffic {
         val id = request.attributes[networkTrafficIdKey]
         val content = request.body as OutgoingContent
         val contentType = content.contentType?.contentType
@@ -34,8 +41,8 @@ internal class InspektifyRequestHandler {
             path = url.pathSegments.joinToString("/"),
             protocol = url.protocol.name,
             requestTimestamp = id,
-            requestHeaders = headers.entries(),
-            requestPayload = payload,
+            requestHeaders = headers.entries().redactHeaders(redactHeaders),
+            requestPayload = payload?.redactJsonProperties(redactBodyProperties),
             requestPayloadSize = payloadSize,
             requestHeadersSize = headersSize.toLong()
         )

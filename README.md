@@ -117,6 +117,7 @@ Network transactions from previous sessions have a background in light gray colo
 3. [Data retention policy](docs/DATA_RETENTION_POLICY.md)
 4. [Shortcut for mobile clients](docs/SHORTCUT_FOR_MOBILE_CLIENTS.md)
 5. [Excluding Inspektify from Release Builds](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md)
+5. [Redact data from Inspektify](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md)
 
 ## Sample project
 
