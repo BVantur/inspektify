@@ -8,10 +8,10 @@ import androidx.navigation.navArgument
 import sp.bvantur.inspektify.ktor.core.ui.navigation.OnNavigateBackAction
 import sp.bvantur.inspektify.ktor.details.ui.NetworkTrafficDetailsRoute
 
-const val NETWORK_TRAFFIC_DETAILS_NAVIGATION_ROUTE = "network_traffic_details_route"
-const val NETWORK_TRAFFIC_ID = "networkTrafficId"
+internal const val NETWORK_TRAFFIC_DETAILS_NAVIGATION_ROUTE = "network_traffic_details_route"
+internal const val NETWORK_TRAFFIC_ID = "networkTrafficId"
 
-fun NavController.navigateToDeviceDetails(networkTrafficId: Long) {
+internal fun NavController.navigateToDeviceDetails(networkTrafficId: Long) {
     this.navigate("$NETWORK_TRAFFIC_DETAILS_NAVIGATION_ROUTE/$networkTrafficId")
 }
 

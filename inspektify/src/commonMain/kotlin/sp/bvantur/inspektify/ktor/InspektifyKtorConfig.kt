@@ -1,35 +1,34 @@
 package sp.bvantur.inspektify.ktor
 
-class InspektifyKtorConfig {
-    var autoDetectEnabled: Boolean = true
-    var shortcutEnabled: Boolean = false
-
-    var logLevel: LogLevel = LogLevel.None
-    var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
-    var redactHeaders: List<String> = emptyList()
-    var redactBodyProperties: List<String> = emptyList()
+public class InspektifyKtorConfig {
+    public var autoDetectEnabled: Boolean = true
+    public var shortcutEnabled: Boolean = false
+    public var logLevel: LogLevel = LogLevel.None
+    public var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
+    public var redactHeaders: List<String> = emptyList()
+    public var redactBodyProperties: List<String> = emptyList()
 }
 
-sealed interface LogLevel {
+public sealed interface LogLevel {
 
-    data object None : LogLevel
-    data object Info : LogLevel
-    data object Headers : LogLevel
-    data object Body : LogLevel
-    data object All : LogLevel
+    public data object None : LogLevel
+    public data object Info : LogLevel
+    public data object Headers : LogLevel
+    public data object Body : LogLevel
+    public data object All : LogLevel
 
-    fun isLoggerEnabled(): Boolean = this == None
+    public fun isLoggerEnabled(): Boolean = this == None
 
-    fun canLogInfo(): Boolean = this != None
+    public fun canLogInfo(): Boolean = this != None
 
-    fun canLogHeaders(): Boolean = this == Headers || this == All
+    public fun canLogHeaders(): Boolean = this == Headers || this == All
 
-    fun canLogBody(): Boolean = this == Body || this == All
+    public fun canLogBody(): Boolean = this == Body || this == All
 }
 
-sealed interface DataRetentionPolicy {
-    data class DayDuration(val numOfDays: Int) : DataRetentionPolicy
-    data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
+public sealed interface DataRetentionPolicy {
+    public data class DayDuration(val numOfDays: Int) : DataRetentionPolicy
+    public data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
 }
 
 internal const val INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME = "Inspektify"

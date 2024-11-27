@@ -6,9 +6,9 @@ import io.ktor.util.AttributeKey
 import sp.bvantur.inspektify.ktor.client.data.InspektifyKtorClient
 import sp.bvantur.inspektify.ktor.client.shared.startInspektifyWindow
 
-class InspektifyKtor(val config: InspektifyKtorConfig) {
+public class InspektifyKtor(public val config: InspektifyKtorConfig) {
 
-    companion object : HttpClientPlugin<InspektifyKtorConfig, InspektifyKtor> {
+    public companion object : HttpClientPlugin<InspektifyKtorConfig, InspektifyKtor> {
         private lateinit var inspektifyKtorClient: InspektifyKtorClient
         override val key: AttributeKey<InspektifyKtor>
             get() = AttributeKey("InspektifyKtor")
@@ -23,7 +23,7 @@ class InspektifyKtor(val config: InspektifyKtorConfig) {
             inspektifyKtorClient.install(plugin, scope)
         }
 
-        fun startInspektify() {
+        public fun startInspektify() {
             startInspektifyWindow()
         }
     }
