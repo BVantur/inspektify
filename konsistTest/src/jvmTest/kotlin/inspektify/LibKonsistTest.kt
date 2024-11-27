@@ -32,7 +32,10 @@ class LibKonsistTest {
         val allowedPublicComponents = listOf(
             "InspektifyKtor",
             "InspektifyKtorConfig",
-            "NetworkTrafficHeader"
+            "NetworkTrafficHeader",
+            "IgnorePathData",
+            "MethodType",
+            "EndpointMatchingStrategy"
         )
 
         Konsist.scopeFromModule("inspektify")
@@ -93,7 +96,11 @@ class LibKonsistTest {
             "InspektifyKtorConfig:autoDetectEnabled",
             "InspektifyKtorConfig:shortcutEnabled",
             "InspektifyKtorConfig:redactHeaders",
-            "InspektifyKtorConfig:redactBodyProperties"
+            "InspektifyKtorConfig:redactBodyProperties",
+            "InspektifyKtorConfig:ignoreEndpoints",
+            "IgnorePathData:method",
+            "IgnorePathData:endpoint",
+            "IgnorePathData:endpointMatchingStrategy"
         )
 
         val publicComponents = mutableListOf<String>()
