@@ -19,7 +19,7 @@ internal object NetworkTrafficDataUtils {
         }
     }.sum()
 
-    internal fun String.redactJsonProperties(propertiesToRedact: List<String>): String {
+    fun String.redactJsonProperties(propertiesToRedact: List<String>): String {
         if (this.isEmpty()) return ""
 
         val jsonElement = Json.parseToJsonElement(this)

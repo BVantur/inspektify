@@ -37,6 +37,9 @@ class LibKonsistTest {
 
         Konsist.scopeFromModule("inspektify")
             .classes()
+            .filter {
+                !it.name.endsWith("Test")
+            }
             .filter { clazz ->
                 isPublicComponent(clazz) && !clazz.hasParentInterfaces() && !clazz.hasParentClass()
             }.forEach {
@@ -56,6 +59,9 @@ class LibKonsistTest {
 
         Konsist.scopeFromModule("inspektify")
             .classes()
+            .filter {
+                !it.name.endsWith("Test")
+            }
             .filter { clazz ->
                 isPublicComponent(clazz) && !clazz.hasParentInterfaces() && !clazz.hasParentClass()
             }.forEach { clazz ->

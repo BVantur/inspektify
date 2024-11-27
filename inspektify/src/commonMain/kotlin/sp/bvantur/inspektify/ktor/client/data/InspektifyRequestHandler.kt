@@ -7,8 +7,8 @@ import io.ktor.util.AttributeKey
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
 import sp.bvantur.inspektify.ktor.KtorUtils
-import sp.bvantur.inspektify.ktor.client.data.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.client.data.utils.tryReadText
+import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties

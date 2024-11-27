@@ -12,7 +12,7 @@ internal object ByteSizeUtils {
         if (size < bytesInKilobyte) return "$size B"
 
         val z = (maxBitsLong - size.countLeadingZeroBits()) / bitsPerUnit
-        val unitPrefixes = arrayOf("B", "kB", "MB", "GB", "TB", "PB", "EB")
+        val unitPrefixes = arrayOf("B", "kB", "MB", "GB")
         val unit = unitPrefixes.getOrElse(z) { KtorPresentationConstants.MISSING_DATA }
         var scaledSize = size.toDouble() / (1L shl z * bitsPerUnit)
 

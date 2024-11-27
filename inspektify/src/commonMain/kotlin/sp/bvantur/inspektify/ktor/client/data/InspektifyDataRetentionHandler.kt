@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor.client.data
 import io.ktor.util.date.getTimeMillis
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
-import sp.bvantur.inspektify.ktor.core.data.NetworkTrafficRepository
+import sp.bvantur.inspektify.ktor.core.domain.NetworkTrafficRepository
 
 internal class InspektifyDataRetentionHandler(
     private val networkTrafficRepository: NetworkTrafficRepository,
@@ -19,10 +19,10 @@ internal class InspektifyDataRetentionHandler(
     }
 
     private suspend fun handleRetentionPolicyByDays(numOfDays: Int): DataRetentionPolicy {
-        val days = if (numOfDays <= 0) {
-            1
-        } else if (numOfDays > 14) {
-            14
+        val days = if (numOfDays < MIN_DAY_RETENTION_POLICY) {
+            MIN_DAY_RETENTION_POLICY
+        } else if (numOfDays > MAX_DAY_RETENTION_POLICY) {
+            MAX_DAY_RETENTION_POLICY
         } else {
             numOfDays
         }
@@ -37,8 +37,8 @@ internal class InspektifyDataRetentionHandler(
 
     private suspend fun handleRetentionPolicyBySessions(numOfSessions: Int): DataRetentionPolicy {
         val sessionsCount = when {
-            numOfSessions <= 0 -> 1
-            numOfSessions > 20 -> 20
+            numOfSessions < MIN_SESSION_RETENTION_POLICY -> MIN_SESSION_RETENTION_POLICY
+            numOfSessions > MAX_SESSION_RETENTION_POLICY -> MAX_SESSION_RETENTION_POLICY
             else -> numOfSessions
         }
 
@@ -49,5 +49,12 @@ internal class InspektifyDataRetentionHandler(
         val sessionsToRemove = sessionIds.takeLast(numberOfSessionsToRemove)
         networkTrafficRepository.applyRetentionPolicyBySessions(sessionsToRemove)
         return DataRetentionPolicy.SessionCount(sessionsCount)
+    }
+
+    companion object {
+        private const val MIN_DAY_RETENTION_POLICY = 1
+        private const val MAX_DAY_RETENTION_POLICY = 14
+        private const val MIN_SESSION_RETENTION_POLICY = 1
+        private const val MAX_SESSION_RETENTION_POLICY = 20
     }
 }

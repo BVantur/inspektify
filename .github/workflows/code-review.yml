@@ -36,3 +36,6 @@ jobs:
 
       - name: Run konsist tests
         run: ./gradlew :konsistTest:jvmTest --gradle-user-home .gradle
+
+      - name: Run unit tests
+        run: ./gradlew :inspektify:jvmTest --gradle-user-home .gradle

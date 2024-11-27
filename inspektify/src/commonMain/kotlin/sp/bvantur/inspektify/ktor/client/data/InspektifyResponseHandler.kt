@@ -5,7 +5,7 @@ import io.ktor.client.statement.bodyAsText
 import io.ktor.http.contentType
 import io.ktor.utils.io.charsets.Charsets
 import io.ktor.utils.io.core.toByteArray
-import sp.bvantur.inspektify.ktor.client.data.model.NetworkTraffic
+import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties

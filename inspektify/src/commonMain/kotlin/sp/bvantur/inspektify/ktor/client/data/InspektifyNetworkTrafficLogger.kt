@@ -2,9 +2,9 @@ package sp.bvantur.inspektify.ktor.client.data
 
 import io.ktor.http.Url
 import sp.bvantur.inspektify.ktor.LogLevel
-import sp.bvantur.inspektify.ktor.client.data.model.NetworkTraffic
+import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 
-internal class InspektifyNetworkTrafficLogger {
+internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger = SystemLoggerImpl()) {
     private var logLevel: LogLevel = LogLevel.None
     private val tag = "[InspektifyHttpClient]:"
 
@@ -33,7 +33,7 @@ internal class InspektifyNetworkTrafficLogger {
             requestLogger.appendLineWithTag(networkTraffic.requestPayload)
             requestLogger.appendLineWithTag("BODY END")
         }
-        println("$tag ${requestLogger.toString().trim()}")
+        logger.log(requestLogger.toString().trim())
     }
 
     fun logResponse(networkTraffic: NetworkTraffic) {
@@ -59,14 +59,14 @@ internal class InspektifyNetworkTrafficLogger {
             responseLogger.appendLineWithTag("BODY END")
         }
 
-        println(responseLogger.toString().trim())
+        logger.log(responseLogger.toString().trim())
     }
 
     private fun headersToLog(headers: Set<Map.Entry<String, List<String>>>?): String {
         headers ?: return ""
 
         return headers.joinToString { (headerName, headerValues) ->
-            "$tag $headerName:$headerValues"
+            "$tag $headerName:$headerValues\n"
         }
     }
 

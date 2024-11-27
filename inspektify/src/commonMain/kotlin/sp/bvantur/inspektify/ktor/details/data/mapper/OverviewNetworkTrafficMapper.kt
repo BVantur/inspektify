@@ -1,8 +1,8 @@
 package sp.bvantur.inspektify.ktor.details.data.mapper
 
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
-import sp.bvantur.inspektify.ktor.core.data.utils.extensions.convertNullToEmpty
-import sp.bvantur.inspektify.ktor.core.data.utils.extensions.nullOrEmpty
+import sp.bvantur.inspektify.ktor.core.data.utils.extensions.nullIfEmpty
+import sp.bvantur.inspektify.ktor.core.data.utils.extensions.nullToEmpty
 import sp.bvantur.inspektify.ktor.core.domain.utils.ByteSizeUtils
 import sp.bvantur.inspektify.ktor.core.domain.utils.DateTimeUtils
 import sp.bvantur.inspektify.ktor.details.domain.model.KtorOverviewData
@@ -45,10 +45,10 @@ internal object OverviewNetworkTrafficMapper {
         url = data.url,
         method = data.method,
         protocol = data.protocol,
-        status = data.responseStatusDescription.nullOrEmpty(),
+        status = data.responseStatusDescription.nullIfEmpty(),
         response = "${
-            data.responseStatus?.toString()?.convertNullToEmpty()
-        } ${data.responseStatusDescription?.convertNullToEmpty()}",
+            data.responseStatus?.toString()?.nullToEmpty()
+        } ${data.responseStatusDescription?.nullToEmpty()}",
         ssl = getSslText(data),
         requestTime = DateTimeUtils.formatTimestamp(data.requestTimestamp),
         responseTime = DateTimeUtils.formatTimestamp(data.responseTimestamp),
