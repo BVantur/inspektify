@@ -14,9 +14,9 @@ import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.InspektifyKtorConfig
 import sp.bvantur.inspektify.ktor.client.shared.configurePresentation
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
-import sp.bvantur.inspektify.ktor.core.data.NetworkTrafficRepository
 import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.domain.NetworkTrafficRepository
 
 internal class InspektifyKtorClient(
     private val dispatcherProvider: DispatcherProvider = AppComponents.getDispatcherProvider(),

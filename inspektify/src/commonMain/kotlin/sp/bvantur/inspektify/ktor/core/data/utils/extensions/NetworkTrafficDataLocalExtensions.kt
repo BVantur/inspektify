@@ -1,6 +1,8 @@
 @file:Suppress("TooManyFunctions")
 
-package sp.bvantur.inspektify.ktor.core.data.utils
+package sp.bvantur.inspektify.ktor.core.data.utils.extensions
+
+// TODO move this to ui layer?
 
 import inspektifyroot.inspektify.generated.resources.Res
 import inspektifyroot.inspektify.generated.resources.img_http_icon
@@ -30,17 +32,21 @@ internal fun NetworkTrafficDataLocal.getPresentationStatusCode(): StatusCode {
     )
 }
 
-internal fun NetworkTrafficDataLocal.getMethodWithPath(): String = "$method $path"
+internal fun NetworkTrafficDataLocal.getMethodWithPath(): String {
+    if (method == null) return path ?: ""
+    if (path == null) return "$method"
+
+    return "$method $path"
+}
 
 internal fun NetworkTrafficDataLocal.getHost(): String = host ?: ""
 
 internal fun NetworkTrafficDataLocal.getMethod(): String = method ?: ""
 
-internal fun NetworkTrafficDataLocal.getTime(): String {
-    requestTimestamp ?: return "??"
+internal fun NetworkTrafficDataLocal.getTime(systemTimeZone: TimeZone = TimeZone.currentSystemDefault()): String {
+    requestTimestamp ?: return KtorPresentationConstants.MISSING_DATA
 
     val instant = Instant.fromEpochMilliseconds(requestTimestamp)
-    val systemTimeZone = TimeZone.currentSystemDefault()
     val localDateTime = instant.toLocalDateTime(systemTimeZone)
 
     return DateTimeUtils.toTimeString(localDateTime)
@@ -76,10 +82,10 @@ internal fun NetworkTrafficDataLocal.getHostImage(): DrawableResource = if (prot
     Res.drawable.img_http_icon
 }
 
-internal fun NetworkTrafficDataLocal.getDate(): String {
+internal fun NetworkTrafficDataLocal.getDate(systemTimeZone: TimeZone = TimeZone.currentSystemDefault()): String {
     val instant = Instant.fromEpochMilliseconds(requestTimestamp ?: 0L)
 
-    return DateTimeUtils.formatDate(instant.toLocalDateTime(TimeZone.currentSystemDefault()).date)
+    return DateTimeUtils.formatDate(instant.toLocalDateTime(systemTimeZone).date)
 }
 
 internal fun NetworkTrafficDataLocal.isCompleted(): Boolean = responseStatus != null

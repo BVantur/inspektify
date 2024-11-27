@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.sqlDelight)
     alias(libs.plugins.swiftklib)
     alias(libs.plugins.mavenPublish)
+    alias(libs.plugins.mokkery)
 }
 
 val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
@@ -120,6 +121,11 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.cash.sqldelight.sql.driver)
+        }
+
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.jetbrain.coroutines.test)
         }
     }
 }

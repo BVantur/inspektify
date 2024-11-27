@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor.client.data.datasource
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
-import sp.bvantur.inspektify.ktor.client.data.model.NetworkTraffic
+import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
 internal class NetworkTrafficLocalDataSource(

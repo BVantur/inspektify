@@ -1,9 +1,7 @@
-package sp.bvantur.inspektify.ktor.client.data.model
-
-typealias NetworkTrafficId = Long
+package sp.bvantur.inspektify.ktor.client.domain.model
 
 internal data class NetworkTraffic(
-    val id: NetworkTrafficId,
+    val id: Long,
     val sessionId: Long,
     val method: String? = null,
     val url: String? = null,

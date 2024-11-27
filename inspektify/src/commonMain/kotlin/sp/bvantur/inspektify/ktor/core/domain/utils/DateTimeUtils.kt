@@ -67,10 +67,10 @@ internal object DateTimeUtils {
         return "$day. $month. $year"
     }
 
-    fun formatTimestamp(timestamp: Long?): String? {
+    fun formatTimestamp(timestamp: Long?, timeZone: TimeZone = TimeZone.currentSystemDefault()): String? {
         timestamp ?: return null
+
         val instant = Instant.fromEpochMilliseconds(timestamp)
-        val timeZone = TimeZone.currentSystemDefault()
         val dateTime = instant.toLocalDateTime(timeZone)
 
         val dayOfWeek =
