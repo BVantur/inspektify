@@ -1,21 +1,23 @@
 # Ignore endpoints configuration
 
-You can exclude specific endpoints from interception and logging by configuring the `ignoreEndpoints`
-property in `InspektifyKtorConfig`. This is a list of `IgnorePathData` objects, where each object
-specifies the HTTP method, the endpoint, and the matching strategy.
+You can exclude specific endpoints from interception and logging by configuring
+the `ignoreEndpoints` property in `InspektifyKtorConfig`. This is a list of `IgnorePathData`
+objects, where each object specifies the HTTP method, the endpoint, and the matching strategy.
 
 ```
 install(InspektifyKtor) {
     ignoreEndpoints = listOf(
         IgnorePathData(
             method = MethodType.GET,
-            endpoint = "https://www.example.com/health-check",
-            endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
+            matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/health-check")
         ),
         IgnorePathData(
             method = MethodType.POST,
-            endpoint = "/login",
-            endpointMatchingStrategy = EndpointMatchingStrategy.CONTAINS
+            matchingStrategy = EndpointMatchingStrategy.Contains("/login")
+        ),
+        IgnorePathData(
+            method = MethodType.ALL,
+            matchingStrategy = EndpointMatchingStrategy.Regex("https://reqres\\.in/.*"),
         )
     )
 }
@@ -24,16 +26,19 @@ install(InspektifyKtor) {
 ## IgnorePathData Fields
 
 - `method`: Defines the HTTP method to match, using MethodType (e.g., GET, POST).
-- `endpoint`: The URL or part of the URL to ignore.
-- `endpointMatchingStrategy`: Defines matching behavior:
-  - `EXACT`: Matches the endpoint exactly.
-  - `CONTAINS`: Matches requests containing the endpoint as a substring.
+- `endpointMatchingStrategy`: Defines in which way matching should happen when ignoring different
+  endpoints
 
-### MethodType Enum
+### MethodType property
 
 Supported HTTP methods: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`.
 
-### EndpointMatchingStrategy Enum
+There is a special case added to ignore all of HTTP methods if someone would like to ignore all
+traffic coming in from specific endpoint. If you want to do that you can use `ALL` as methodType and
+all traffic will be ignored that will match defined strategy.
 
-`EXACT`: Exact URL matching.
-`CONTAINS`: Substring matching within the URL.
+### EndpointMatchingStrategy property
+
+`Exact`: Exact URL matching.
+`Contains`: Substring matching within the URL.
+`Regex`: Matching URL against regular expression.

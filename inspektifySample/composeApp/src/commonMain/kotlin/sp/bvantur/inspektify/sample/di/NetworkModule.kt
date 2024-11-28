@@ -35,17 +35,12 @@ val networkModule = module {
                 autoDetectEnabled = false
                 logLevel = LogLevel.All
                 dataRetentionPolicy = DataRetentionPolicy.SessionCount(4)
-                ignoreEndpoints = listOf(
-                    IgnorePathData(
-                        method = MethodType.GET,
-                        endpoint = "https://reqres.in/api/users/1"
-                    ),
-                    IgnorePathData(
-                        method = MethodType.POST,
-                        endpoint = "users",
-                        endpointMatchingStrategy = EndpointMatchingStrategy.CONTAINS
-                    )
-                )
+//                ignoreEndpoints = listOf(
+//                    IgnorePathData(
+//                        method = MethodType.ALL,
+//                        matchingStrategy = EndpointMatchingStrategy.Regex("https://reqres\\.in/.*"),
+//                    )
+//                )
             }
         }
     }

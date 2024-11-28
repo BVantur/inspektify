@@ -13,11 +13,26 @@ internal class InspektifyKtorIgnoreEndpointHandler {
     }
 
     fun shouldIgnoreEndpoint(requestBuilder: HttpRequestBuilder): Boolean = ignoreEndpoints.filter { endpoint ->
-        endpoint.method.value == requestBuilder.method.value
+        if (endpoint.method.isAll()) {
+            true
+        } else {
+            endpoint.method.value == requestBuilder.method.value
+        }
     }.any { endpoint ->
-        when (endpoint.endpointMatchingStrategy) {
-            EndpointMatchingStrategy.EXACT -> endpoint.endpoint == requestBuilder.url.toString()
-            EndpointMatchingStrategy.CONTAINS -> requestBuilder.url.toString().contains(endpoint.endpoint)
+        when (endpoint.matchingStrategy) {
+            is EndpointMatchingStrategy.Contains -> {
+                val containsValue = endpoint.matchingStrategy.value
+                if (containsValue.isEmpty()) {
+                    false
+                } else {
+                    requestBuilder.url.toString()
+                        .contains(endpoint.matchingStrategy.value)
+                }
+            }
+
+            is EndpointMatchingStrategy.Exact -> endpoint.matchingStrategy.value == requestBuilder.url.toString()
+            is EndpointMatchingStrategy.Regex -> requestBuilder.url.toString()
+                .matches(Regex(endpoint.matchingStrategy.value))
         }
     }
 }

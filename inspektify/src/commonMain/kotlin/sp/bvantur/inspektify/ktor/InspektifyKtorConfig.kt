@@ -32,11 +32,7 @@ public sealed interface DataRetentionPolicy {
     public data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
 }
 
-public data class IgnorePathData(
-    val method: MethodType,
-    val endpoint: String,
-    val endpointMatchingStrategy: EndpointMatchingStrategy = EndpointMatchingStrategy.EXACT
-)
+public data class IgnorePathData(val method: MethodType, val matchingStrategy: EndpointMatchingStrategy)
 
 public enum class MethodType(internal val value: String) {
     GET("GET"),
@@ -45,12 +41,16 @@ public enum class MethodType(internal val value: String) {
     DELETE("DELETE"),
     PATCH("PATCH"),
     HEAD("HEAD"),
-    OPTIONS("OPTIONS")
+    OPTIONS("OPTIONS"),
+    ALL("*");
+
+    public fun isAll(): Boolean = this == ALL
 }
 
-public enum class EndpointMatchingStrategy {
-    EXACT,
-    CONTAINS
+public sealed interface EndpointMatchingStrategy {
+    public data class Exact(val value: String) : EndpointMatchingStrategy
+    public data class Contains(val value: String) : EndpointMatchingStrategy
+    public data class Regex(val value: String) : EndpointMatchingStrategy
 }
 
 internal const val INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME = "Inspektify"

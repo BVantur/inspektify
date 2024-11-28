@@ -24,7 +24,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
     }
 
     @Test
-    fun `GIVEN there is an ignore endpoint set and the request is the same as the ignore endpoint with exact match WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
+    fun `GIVEN exact match strategy with correct endpoint defined and get method WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
         val request = HttpRequestBuilder().also { request ->
             request.method = HttpMethod.Get
             request.url {
@@ -37,8 +37,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
             listOf(
                 IgnorePathData(
                     method = MethodType.GET,
-                    endpoint = "https://www.example.com/path/to/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
+                    matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/path/to/resource")
                 )
             )
         )
@@ -49,32 +48,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
     }
 
     @Test
-    fun `GIVEN there is an ignore endpoint set and the request is the same as the ignore endpoint with contains match WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
-        val request = HttpRequestBuilder().also { request ->
-            request.method = HttpMethod.Get
-            request.url {
-                protocol = URLProtocol.HTTPS
-                host = "www.example.com"
-                encodedPath = "/path/to/resource"
-            }
-        }
-        ignoreEndpointHandler.configureEndpointIgnoring(
-            listOf(
-                IgnorePathData(
-                    method = MethodType.GET,
-                    endpoint = "https://www.example.com/path/to/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.CONTAINS
-                )
-            )
-        )
-
-        assertTrue {
-            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
-        }
-    }
-
-    @Test
-    fun `GIVEN there is an ignore endpoint set and the request is similar and not the same as the ignore endpoint with exact match WHEN shouldIgnoreEndpoint is called THEN it returns that is should not be ignored`() {
+    fun `GIVEN exact match strategy with different endpoint defined and get method WHEN shouldIgnoreEndpoint is called THEN it returns that is should not be ignored`() {
         val request = HttpRequestBuilder().also { request ->
             request.method = HttpMethod.Get
             request.url {
@@ -88,8 +62,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
             listOf(
                 IgnorePathData(
                     method = MethodType.GET,
-                    endpoint = "https://www.example.com/path/to/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
+                    matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/path/to/resource")
                 )
             )
         )
@@ -100,33 +73,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
     }
 
     @Test
-    fun `GIVEN there is an ignore endpoint set and the request is similar and not the same as the ignore endpoint with contains match WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
-        val request = HttpRequestBuilder().also { request ->
-            request.method = HttpMethod.Get
-            request.url {
-                protocol = URLProtocol.HTTPS
-                host = "www.example.com"
-                encodedPath = "/path/to/resource"
-                parameters.append("param1", "value1")
-            }
-        }
-        ignoreEndpointHandler.configureEndpointIgnoring(
-            listOf(
-                IgnorePathData(
-                    method = MethodType.GET,
-                    endpoint = "https://www.example.com/path/to/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.CONTAINS
-                )
-            )
-        )
-
-        assertTrue {
-            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
-        }
-    }
-
-    @Test
-    fun `GIVEN there is an ignore endpoint set and the request with params is the same as the ignore endpoint with contains match WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
+    fun `GIVEN exact match strategy with correct endpoint with params defined and post method WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
         val request = HttpRequestBuilder().also { request ->
             request.method = HttpMethod.Post
             request.url {
@@ -140,8 +87,9 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
             listOf(
                 IgnorePathData(
                     method = MethodType.POST,
-                    endpoint = "https://www.example.com/path/to/resource?param1=value1",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
+                    matchingStrategy = EndpointMatchingStrategy.Exact(
+                        "https://www.example.com/path/to/resource?param1=value1"
+                    )
                 )
             )
         )
@@ -152,67 +100,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
     }
 
     @Test
-    fun `GIVEN there are multiple ignore endpoints and the request matches one with exact match WHEN shouldIgnoreEndpoint is called THEN it returns that it should be ignored`() {
-        val request = HttpRequestBuilder().also { request ->
-            request.method = HttpMethod.Get
-            request.url {
-                protocol = URLProtocol.HTTPS
-                host = "www.example.com"
-                encodedPath = "/path/to/resource"
-            }
-        }
-        ignoreEndpointHandler.configureEndpointIgnoring(
-            listOf(
-                IgnorePathData(
-                    method = MethodType.POST,
-                    endpoint = "https://www.example.com/other/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
-                ),
-                IgnorePathData(
-                    method = MethodType.GET,
-                    endpoint = "https://www.example.com/path/to/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
-                )
-            )
-        )
-
-        assertTrue {
-            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
-        }
-    }
-
-    @Test
-    fun `GIVEN there are multiple ignore endpoints and none match the request WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
-        val request = HttpRequestBuilder().also { request ->
-            request.method = HttpMethod.Get
-            request.url {
-                protocol = URLProtocol.HTTPS
-                host = "www.example.com"
-                encodedPath = "/path/to/resource"
-            }
-        }
-        ignoreEndpointHandler.configureEndpointIgnoring(
-            listOf(
-                IgnorePathData(
-                    method = MethodType.POST,
-                    endpoint = "https://www.example.com/other/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
-                ),
-                IgnorePathData(
-                    method = MethodType.GET,
-                    endpoint = "https://www.example.com/different/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.CONTAINS
-                )
-            )
-        )
-
-        assertFalse {
-            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
-        }
-    }
-
-    @Test
-    fun `GIVEN an ignore endpoint with a different http method WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
+    fun `GIVEN exact match strategy and get method WHEN shouldIgnoreEndpoint is called with post method request THEN it returns that it should not be ignored`() {
         val request = HttpRequestBuilder().also { request ->
             request.method = HttpMethod.Post
             request.url {
@@ -225,8 +113,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
             listOf(
                 IgnorePathData(
                     method = MethodType.GET,
-                    endpoint = "https://www.example.com/path/to/resource",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
+                    matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/path/to/resource")
                 )
             )
         )
@@ -237,7 +124,7 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
     }
 
     @Test
-    fun `GIVEN an ignore endpoint with an empty endpoint string WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
+    fun `GIVEN exact match strategy with empty value and get method WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
         val request = HttpRequestBuilder().also { request ->
             request.method = HttpMethod.Get
             request.url {
@@ -250,8 +137,259 @@ class InspektifyKtorIgnoreEndpointHandlerTest {
             listOf(
                 IgnorePathData(
                     method = MethodType.GET,
-                    endpoint = "",
-                    endpointMatchingStrategy = EndpointMatchingStrategy.EXACT
+                    matchingStrategy = EndpointMatchingStrategy.Exact("")
+                )
+            )
+        )
+
+        assertFalse {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN contains match strategy with correct endpoint defined and get method WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("https://www.example.com/path/to/resource")
+                )
+            )
+        )
+
+        assertTrue {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN contains match strategy with different endpoint defined and get method WHEN shouldIgnoreEndpoint is called THEN it returns that is should not be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+                parameters.append("param1", "value1")
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("examples")
+                )
+            )
+        )
+
+        assertFalse {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN contains match strategy with correct endpoint with params defined and post method WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Post
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+                parameters.append("param1", "value1")
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.POST,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("resource?param1=value1")
+                )
+            )
+        )
+
+        assertTrue {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN contains match strategy with correct endpoint defined and get method WHEN shouldIgnoreEndpoint is called on endpoint with params THEN it returns that is should be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+                parameters.append("param1", "value1")
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("https://www.example.com/path/to/resource")
+                )
+            )
+        )
+
+        assertTrue {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN contains match strategy with empty value and get method WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("")
+                )
+            )
+        )
+
+        assertFalse {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN regex match strategy with correct regex defined and get method WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Regex("https://www\\.example\\.com/.*")
+                )
+            )
+        )
+
+        assertTrue {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN regex match strategy with correct endpoint with params defined and post method WHEN shouldIgnoreEndpoint is called THEN it returns that is should be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Post
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+                parameters.append("param1", "value1")
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.POST,
+                    matchingStrategy = EndpointMatchingStrategy.Regex("https://www\\.example\\.com/.*")
+                )
+            )
+        )
+
+        assertTrue {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN regex match strategy with empty value and get method WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("")
+                )
+            )
+        )
+
+        assertFalse {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN multiple exact match endpoints with one of them matching passed request WHEN shouldIgnoreEndpoint is called THEN it returns that it should be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.POST,
+                    matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/other/resource")
+                ),
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/path/to/resource")
+                )
+            )
+        )
+
+        assertTrue {
+            ignoreEndpointHandler.shouldIgnoreEndpoint(request)
+        }
+    }
+
+    @Test
+    fun `GIVEN multiple exact and match endpoints with no matches WHEN shouldIgnoreEndpoint is called THEN it returns that it should not be ignored`() {
+        val request = HttpRequestBuilder().also { request ->
+            request.method = HttpMethod.Get
+            request.url {
+                protocol = URLProtocol.HTTPS
+                host = "www.example.com"
+                encodedPath = "/path/to/resource"
+            }
+        }
+        ignoreEndpointHandler.configureEndpointIgnoring(
+            listOf(
+                IgnorePathData(
+                    method = MethodType.POST,
+                    matchingStrategy = EndpointMatchingStrategy.Exact("https://www.example.com/other/resource")
+                ),
+                IgnorePathData(
+                    method = MethodType.GET,
+                    matchingStrategy = EndpointMatchingStrategy.Contains("https://www.example.com/different/resource")
                 )
             )
         )
