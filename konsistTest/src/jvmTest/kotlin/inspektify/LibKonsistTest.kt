@@ -35,7 +35,10 @@ class LibKonsistTest {
             "NetworkTrafficHeader",
             "IgnorePathData",
             "MethodType",
-            "EndpointMatchingStrategy"
+            "EndpointMatchingStrategy",
+            "ShortcutCombination",
+            "MainModifier",
+            "MainKey"
         )
 
         Konsist.scopeFromModule("inspektify")
@@ -90,16 +93,14 @@ class LibKonsistTest {
             "InspektifyKtor:key",
             "NetworkTrafficHeader:name",
             "NetworkTrafficHeader:value",
-            "InspektifyKtorConfig:presentationType",
+            "InspektifyKtorConfig:autoDetectEnabled",
             "InspektifyKtorConfig:logLevel",
             "InspektifyKtorConfig:dataRetentionPolicy",
-            "InspektifyKtorConfig:autoDetectEnabled",
             "InspektifyKtorConfig:shortcutEnabled",
             "InspektifyKtorConfig:redactHeaders",
             "InspektifyKtorConfig:redactBodyProperties",
             "InspektifyKtorConfig:ignoreEndpoints",
-            "IgnorePathData:method",
-            "IgnorePathData:matchingStrategy"
+            "InspektifyKtorConfig:autoDetectEnabledFor"
         )
 
         val publicComponents = mutableListOf<String>()

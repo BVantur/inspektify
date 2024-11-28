@@ -50,7 +50,7 @@ internal class InspektifyKtorClient(
         redactBodyProperties = config.redactBodyProperties
         coroutineScope.launch(dispatcherProvider.main.immediate) {
             ignoreEndpointHandler.configureEndpointIgnoring(config.ignoreEndpoints)
-            configurePresentation(config.autoDetectEnabled, config.shortcutEnabled)
+            configurePresentation(config.autoDetectEnabledFor, config.shortcutEnabled)
             dataRetentionHandler.configureDataRetentionPolicy(config.dataRetentionPolicy)
         }
     }

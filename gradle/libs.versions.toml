@@ -4,8 +4,8 @@ inspektify-version = "1.0.0-beta06"
 
 # GENERAL dependencies
 agp = "8.4.0"
-kotlin = "2.0.20"
-compose-plugin = "1.7.0-beta02" # TODO change to stable as soon as possible
+kotlin = "2.0.21"
+compose-plugin = "1.7.0"
 
 # ANDROID PORJECT dependencies
 android-compileSdk = "34"

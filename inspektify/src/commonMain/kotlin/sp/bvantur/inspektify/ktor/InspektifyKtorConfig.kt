@@ -1,7 +1,10 @@
 package sp.bvantur.inspektify.ktor
 
 public class InspektifyKtorConfig {
+    @Deprecated("Doesn't work anymore. Please use autoDetectEnabledFor instead.")
     public var autoDetectEnabled: Boolean = true
+    public var autoDetectEnabledFor: Set<AutoDetectTarget> =
+        setOf(AutoDetectTarget.Android, AutoDetectTarget.Apple, AutoDetectTarget.Desktop())
     public var shortcutEnabled: Boolean = false
     public var logLevel: LogLevel = LogLevel.None
     public var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
@@ -32,7 +35,10 @@ public sealed interface DataRetentionPolicy {
     public data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
 }
 
-public data class IgnorePathData(val method: MethodType, val matchingStrategy: EndpointMatchingStrategy)
+public data class IgnorePathData(
+    internal val method: MethodType,
+    internal val matchingStrategy: EndpointMatchingStrategy
+)
 
 public enum class MethodType(internal val value: String) {
     GET("GET"),
@@ -51,6 +57,28 @@ public sealed interface EndpointMatchingStrategy {
     public data class Exact(val value: String) : EndpointMatchingStrategy
     public data class Contains(val value: String) : EndpointMatchingStrategy
     public data class Regex(val value: String) : EndpointMatchingStrategy
+}
+
+public sealed interface AutoDetectTarget {
+    public data object Android : AutoDetectTarget
+    public data object Apple : AutoDetectTarget
+    public data class Desktop(val shortcutCombination: ShortcutCombination = ShortcutCombination()) : AutoDetectTarget
+}
+
+public data class ShortcutCombination(
+    internal val mainModifier: Set<MainModifier> = setOf(MainModifier.CONTROL, MainModifier.SHIFT),
+    internal val mainKey: MainKey = MainKey.D
+)
+
+public enum class MainModifier {
+    CONTROL,
+    SHIFT
+}
+
+public enum class MainKey {
+    D,
+    I,
+    N
 }
 
 internal const val INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME = "Inspektify"

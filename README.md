@@ -112,7 +112,7 @@ library to make it more flexible. The library also tracks which network transact
 current active app sessions and highlights them in the list with a different background color.
 Network transactions from previous sessions have a background in light gray color.
 
-1. [Presentation type](docs/PRESENTATION_TYPE.md)
+1. [Auto detect configuration](docs/AUTO_DETECT_CONFIGURATION.md)
 2. [Log level](docs/LOG_LEVEL.md)
 3. [Data retention policy](docs/DATA_RETENTION_POLICY.md)
 4. [Shortcut for mobile clients](docs/SHORTCUT_FOR_MOBILE_CLIENTS.md)
