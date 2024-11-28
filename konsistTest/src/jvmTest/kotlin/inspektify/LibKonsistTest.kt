@@ -99,8 +99,7 @@ class LibKonsistTest {
             "InspektifyKtorConfig:redactBodyProperties",
             "InspektifyKtorConfig:ignoreEndpoints",
             "IgnorePathData:method",
-            "IgnorePathData:endpoint",
-            "IgnorePathData:endpointMatchingStrategy"
+            "IgnorePathData:matchingStrategy"
         )
 
         val publicComponents = mutableListOf<String>()

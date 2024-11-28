@@ -44,7 +44,7 @@ public enum class MethodType(internal val value: String) {
     OPTIONS("OPTIONS"),
     ALL("*");
 
-    public fun isAll(): Boolean = this == ALL
+    internal fun isAll(): Boolean = this == ALL
 }
 
 public sealed interface EndpointMatchingStrategy {
