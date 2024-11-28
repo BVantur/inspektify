@@ -7,11 +7,8 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
-import sp.bvantur.inspektify.ktor.EndpointMatchingStrategy
-import sp.bvantur.inspektify.ktor.IgnorePathData
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.LogLevel
-import sp.bvantur.inspektify.ktor.MethodType
 
 private const val BASE_URL = "https://reqres.in/api/"
 
