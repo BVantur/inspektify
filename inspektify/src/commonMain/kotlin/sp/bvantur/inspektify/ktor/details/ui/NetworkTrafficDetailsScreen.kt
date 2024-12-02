@@ -2,6 +2,7 @@ package sp.bvantur.inspektify.ktor.details.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,13 +17,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ContentCopy
+import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Terminal
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
@@ -45,6 +49,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -55,6 +60,7 @@ import sp.bvantur.inspektify.ktor.core.ui.navigation.OnNavigateBackAction
 import sp.bvantur.inspektify.ktor.core.ui.theme.Ferra
 import sp.bvantur.inspektify.ktor.core.ui.theme.success
 import sp.bvantur.inspektify.ktor.core.ui.utils.CollectSingleEventsWithLifecycle
+import sp.bvantur.inspektify.ktor.details.domain.model.DownloadFileType
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsEvent
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsUserAction
 import sp.bvantur.inspektify.ktor.details.presentation.NetworkTrafficDetailsViewModel
@@ -283,6 +289,14 @@ private fun NetworkTrafficDetailsScreen(
                 }
                 ActionTextIcon(
                     modifier = Modifier.weight(1f),
+                    text = "Download",
+                    imageVector = Icons.Default.Download,
+                    onClick = {
+                        onUserAction(NetworkTrafficDetailsUserAction.OnDownload)
+                    }
+                )
+                ActionTextIcon(
+                    modifier = Modifier.weight(1f),
                     text = "Copy",
                     imageVector = Icons.Default.ContentCopy,
                     onClick = {
@@ -290,6 +304,18 @@ private fun NetworkTrafficDetailsScreen(
                     }
                 )
             }
+        }
+
+        if (viewState.showDownloadDialog) {
+            RadioDialog(
+                options = DownloadFileType.entries,
+                onDismissRequest = {
+                    onUserAction(NetworkTrafficDetailsUserAction.DismissShareDialog)
+                },
+                onConfirmSelection = {
+                    onUserAction(NetworkTrafficDetailsUserAction.DownloadFile(it))
+                }
+            )
         }
     }
 }
@@ -346,4 +372,58 @@ private fun SearchCountIndicator(modifier: Modifier = Modifier, count: Int) {
             style = MaterialTheme.typography.bodySmall
         )
     }
+}
+
+@Composable
+private fun RadioDialog(
+    options: List<DownloadFileType>,
+    onDismissRequest: () -> Unit,
+    onConfirmSelection: (DownloadFileType) -> Unit
+) {
+    var selectedOption by remember { mutableStateOf<DownloadFileType?>(DownloadFileType.entries.first()) }
+
+    AlertDialog(
+        onDismissRequest = onDismissRequest,
+        title = { Text("Download as") },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                options.forEach { option ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth().clickable {
+                                selectedOption = option
+                            }.padding(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = option == selectedOption,
+                            onClick = null
+                        )
+                        Text(
+                            text = option.text,
+                            modifier = Modifier.padding(start = 16.dp),
+                            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    onConfirmSelection(selectedOption!!)
+                },
+                enabled = selectedOption != null
+            ) {
+                Text("OK")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismissRequest) {
+                Text("Cancel")
+            }
+        }
+    )
 }

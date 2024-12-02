@@ -88,6 +88,22 @@ internal object DateTimeUtils {
         return "$dayOfWeek $month $dayOfMonth $hour:$minute:$second GMT$formattedOffset $year"
     }
 
+    fun formatTimestampForFile(timestamp: Long?, timeZone: TimeZone = TimeZone.currentSystemDefault()): String? {
+        timestamp ?: return null
+
+        val instant = Instant.fromEpochMilliseconds(timestamp)
+        val dateTime = instant.toLocalDateTime(timeZone)
+
+        val month = dateTime.month.name.substring(0, 3).lowercase().capitalize(Locale.current)
+        val dayOfMonth = dateTime.dayOfMonth
+        val hour = dateTime.hour.toString().padStart(2, '0')
+        val minute = dateTime.minute.toString().padStart(2, '0')
+        val second = dateTime.second.toString().padStart(2, '0')
+        val year = dateTime.year
+
+        return "$dayOfMonth-$month-$year-$hour-$minute-$second"
+    }
+
     private fun isToday(date: LocalDate): Boolean {
         val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
         return date == today

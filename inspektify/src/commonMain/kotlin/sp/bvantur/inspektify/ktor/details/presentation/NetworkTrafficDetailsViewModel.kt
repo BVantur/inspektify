@@ -13,12 +13,14 @@ import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.ktor.client.shared.CopyNetworkTrafficHandler
 import sp.bvantur.inspektify.ktor.client.shared.Platform
 import sp.bvantur.inspektify.ktor.client.shared.ShareNetworkTrafficHandler
+import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandler
 import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandlerImpl
 import sp.bvantur.inspektify.ktor.core.presentation.ViewModelUserActionHandler
 import sp.bvantur.inspektify.ktor.core.presentation.ViewStateViewModel
 import sp.bvantur.inspektify.ktor.details.di.KtorDetailsModule
 import sp.bvantur.inspektify.ktor.details.domain.KtorDetailsRepository
+import sp.bvantur.inspektify.ktor.details.domain.model.DownloadFileType
 import sp.bvantur.inspektify.ktor.details.presentation.utils.DetailsNetworkTrafficTextUtils.searchAndAnnotatedText
 import sp.bvantur.inspektify.ktor.details.presentation.utils.DetailsNetworkTrafficTextUtils.toOverviewAnnotatedString
 import sp.bvantur.inspektify.ktor.details.ui.navigation.NETWORK_TRAFFIC_ID
@@ -99,6 +101,12 @@ internal class NetworkTrafficDetailsViewModel(
         }
     }
 
+    private fun onDownloadAction() {
+        emitViewState { viewState ->
+            viewState.copy(showDownloadDialog = true)
+        }
+    }
+
     private fun onCopyAction() {
         viewModelScope.launch {
             CopyNetworkTrafficHandler.copyToClipboard(
@@ -113,6 +121,7 @@ internal class NetworkTrafficDetailsViewModel(
             NetworkTrafficDetailsUserAction.OnCopyToClipboard -> onCopyAction()
             NetworkTrafficDetailsUserAction.OnGetCurl -> onCurlAction()
             NetworkTrafficDetailsUserAction.OnShare -> onShareAction()
+            NetworkTrafficDetailsUserAction.OnDownload -> onDownloadAction()
             NetworkTrafficDetailsUserAction.OnClearSearchQuery -> {
                 onSearchQuery(TextFieldValue(""))
                 viewModelScope.launch {
@@ -123,6 +132,31 @@ internal class NetworkTrafficDetailsViewModel(
             is NetworkTrafficDetailsUserAction.OnSearchQuery -> onSearchQuery(userAction.query)
             NetworkTrafficDetailsUserAction.OnStartSearch -> onStartSearch()
             NetworkTrafficDetailsUserAction.OnNavigateBack -> onBackAction()
+            NetworkTrafficDetailsUserAction.DismissShareDialog -> emitViewState { viewState ->
+                viewState.copy(showDownloadDialog = false)
+            }
+
+            is NetworkTrafficDetailsUserAction.DownloadFile -> onDownloadFile(userAction.downloadFileType)
+        }
+    }
+
+    private fun onDownloadFile(downloadFileType: DownloadFileType) {
+        emitViewState { viewState ->
+            viewState.copy(showDownloadDialog = false)
+        }
+        when (downloadFileType) {
+            DownloadFileType.TEXT -> {
+                viewModelScope.launch {
+                    val (txtContent, fileName) = repository.getTxtContent(viewStateFlow.value.networkTrafficId)
+                    AppComponents.getDownloadFileManager().downloadFile(txtContent, fileName)
+                }
+            }
+            DownloadFileType.HTML -> {
+                viewModelScope.launch {
+                    val (html, fileName) = repository.getHtmlContent(viewStateFlow.value.networkTrafficId)
+                    AppComponents.getDownloadFileManager().downloadFile(html, fileName)
+                }
+            }
         }
     }
 
@@ -197,10 +231,18 @@ internal class NetworkTrafficDetailsViewModel(
             emitViewState { viewState ->
                 viewState.copy(isSearching = false)
             }
-        } else {
-            viewModelScope.launch {
-                emitSingleEvent(NetworkTrafficDetailsEvent.OnNavigateBack)
+            return
+        }
+
+        if (viewStateFlow.value.showDownloadDialog) {
+            emitViewState { viewState ->
+                viewState.copy(showDownloadDialog = false)
             }
+            return
+        }
+
+        viewModelScope.launch {
+            emitSingleEvent(NetworkTrafficDetailsEvent.OnNavigateBack)
         }
     }
 

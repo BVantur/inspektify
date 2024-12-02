@@ -17,7 +17,7 @@ import sp.bvantur.inspektify.ktor.details.domain.model.KtorPayloadData
 
 internal object PayloadNetworkTrafficMapper {
 
-    fun getResponseDataAsString(networkTrafficData: NetworkTrafficDataLocal): String {
+    fun getResponseDataAsString(networkTrafficData: NetworkTrafficDataLocal, json: Json): String {
         var responseData = ""
         responseData += "RESPONSE:\n"
         getTime(networkTrafficData.responseTimestamp)?.let {
@@ -41,14 +41,20 @@ internal object PayloadNetworkTrafficMapper {
             responseData += if (it.isEmpty()) {
                 "Response Body: <EMPTY>"
             } else {
-                """Response Body: $it"""
+                """Response Body: 
+                    ${
+                    prettyPrintJson(
+                        json,
+                        it
+                    )
+                }"""
             }
             responseData += "\n"
         }
         return responseData.trimIndent()
     }
 
-    fun getRequestDataAsString(networkTrafficData: NetworkTrafficDataLocal): String {
+    fun getRequestDataAsString(networkTrafficData: NetworkTrafficDataLocal, json: Json): String {
         var requestData = ""
         requestData += "REQUEST:\n"
         getTime(networkTrafficData.requestTimestamp)?.let {
@@ -66,7 +72,13 @@ internal object PayloadNetworkTrafficMapper {
             requestData += if (it.isEmpty()) {
                 "Request Body: <EMPTY>"
             } else {
-                """Request Body: $it"""
+                """Request Body: 
+                    ${
+                    prettyPrintJson(
+                        json,
+                        it
+                    )
+                }"""
             }
             requestData += "\n"
         }
@@ -121,7 +133,7 @@ internal object PayloadNetworkTrafficMapper {
         }
     }
 
-    private fun prettyPrintJson(json: Json, jsonString: String?): String {
+    fun prettyPrintJson(json: Json, jsonString: String?): String {
         jsonString ?: return ""
 
         try {

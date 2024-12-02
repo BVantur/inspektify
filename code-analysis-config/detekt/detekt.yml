@@ -133,7 +133,7 @@ complexity:
     threshold: 4
   TooManyFunctions:
     active: true
-    excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]
+    excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**', "**/NetworkTrafficDetailsViewModel.kt" ]
     thresholdInFiles: 11
     thresholdInClasses: 11
     thresholdInInterfaces: 11

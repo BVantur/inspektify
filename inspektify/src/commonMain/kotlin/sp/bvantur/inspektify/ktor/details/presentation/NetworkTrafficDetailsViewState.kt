@@ -17,7 +17,8 @@ internal data class NetworkTrafficDetailsViewState(
     val originalOverviewData: AnnotatedString = buildAnnotatedString { },
     val overviewSearchQueryCount: Int = 0,
     val requestData: NetworkTrafficPayloadDetailsViewState = NetworkTrafficPayloadDetailsViewState(),
-    val responseData: NetworkTrafficPayloadDetailsViewState = NetworkTrafficPayloadDetailsViewState()
+    val responseData: NetworkTrafficPayloadDetailsViewState = NetworkTrafficPayloadDetailsViewState(),
+    val showDownloadDialog: Boolean = false
 ) : ViewState
 
 internal data class NetworkTrafficPayloadDetailsViewState(

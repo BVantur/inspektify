@@ -10,4 +10,6 @@ internal interface KtorDetailsRepository {
     suspend fun getTransactionOverviewDetails(id: Long): KtorOverviewData
     suspend fun getTransactionRequestPayloadDetails(id: Long): KtorPayloadData
     suspend fun getTransactionResponsePayloadDetails(id: Long): KtorPayloadData
+    suspend fun getHtmlContent(id: Long): Pair<String, String>
+    suspend fun getTxtContent(id: Long): Pair<String, String>
 }

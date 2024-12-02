@@ -1,5 +1,6 @@
 package sp.bvantur.inspektify.ktor.details.data.mapper
 
+import kotlinx.serialization.json.Json
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 
 internal object DetailsNetworkTrafficMapper {
@@ -29,13 +30,13 @@ internal object DetailsNetworkTrafficMapper {
         return components.joinToString(separator = " \\\n\t")
     }
 
-    fun toNetworkTrafficContent(networkTrafficData: NetworkTrafficDataLocal): String {
+    fun toNetworkTrafficContent(networkTrafficData: NetworkTrafficDataLocal, json: Json): String {
         var clipboardText = ""
         clipboardText += OverviewNetworkTrafficMapper.getOverviewDataAsString(networkTrafficData)
         clipboardText += "\n-------------------------------------------------------\n"
-        clipboardText += PayloadNetworkTrafficMapper.getRequestDataAsString(networkTrafficData)
+        clipboardText += PayloadNetworkTrafficMapper.getRequestDataAsString(networkTrafficData, json)
         clipboardText += "\n-------------------------------------------------------\n"
-        clipboardText += PayloadNetworkTrafficMapper.getResponseDataAsString(networkTrafficData)
+        clipboardText += PayloadNetworkTrafficMapper.getResponseDataAsString(networkTrafficData, json)
         return clipboardText
     }
 }

@@ -16,6 +16,7 @@ import sp.bvantur.inspektify.ktor.client.shared.DatabaseDriverProvider
 import sp.bvantur.inspektify.ktor.core.data.InspektifyDispatcherProvider
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
 import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.presentation.shared.DownloadFileManager
 
 internal object AppComponents {
     private var appModule: AppModule? = null
@@ -31,6 +32,8 @@ internal object AppComponents {
     private var trafficLogger: InspektifyNetworkTrafficLogger? = null
     private var dataRetentionHandler: InspektifyDataRetentionHandler? = null
     private var ignoreEndpointHandler: InspektifyKtorIgnoreEndpointHandler? = null
+
+    private var downloadFileManager: DownloadFileManager? = null
 
     fun getDatabaseInstance(): InspektifyDB {
         if (database == null) {
@@ -109,6 +112,13 @@ internal object AppComponents {
             ignoreEndpointHandler = InspektifyKtorIgnoreEndpointHandler()
         }
         return ignoreEndpointHandler!!
+    }
+
+    fun getDownloadFileManager(): DownloadFileManager {
+        if (downloadFileManager == null) {
+            downloadFileManager = DownloadFileManager()
+        }
+        return downloadFileManager!!
     }
 
     private val listOfNetworkTrafficHeaderAdapter =
