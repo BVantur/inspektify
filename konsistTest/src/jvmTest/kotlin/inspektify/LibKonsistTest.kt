@@ -98,6 +98,8 @@ class LibKonsistTest {
             "InspektifyKtorConfig:dataRetentionPolicy",
             "InspektifyKtorConfig:shortcutEnabled",
             "InspektifyKtorConfig:redactHeaders",
+            "IgnorePathData:method",
+            "IgnorePathData:matchingStrategy",
             "InspektifyKtorConfig:redactBodyProperties",
             "InspektifyKtorConfig:ignoreEndpoints",
             "InspektifyKtorConfig:autoDetectEnabledFor"
