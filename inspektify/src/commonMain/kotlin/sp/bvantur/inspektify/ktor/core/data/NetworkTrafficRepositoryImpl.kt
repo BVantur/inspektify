@@ -12,9 +12,9 @@ internal class NetworkTrafficRepositoryImpl(private val localDataSource: Network
         localDataSource.saveNetworkTrafficData(networkTraffic)
     }
 
-    override suspend fun getNetworkTrafficData(id: Long): NetworkTraffic = localDataSource.getNetworkTrafficData(
+    override suspend fun getNetworkTrafficData(id: Long): NetworkTraffic? = localDataSource.getNetworkTrafficData(
         id
-    ).toNetworkTraffic()
+    )?.toNetworkTraffic()
 
     override suspend fun applyRetentionPolicyByDays(cutoffTimestamp: Long) {
         localDataSource.removeNetworkTrafficOlderThan(cutoffTimestamp)

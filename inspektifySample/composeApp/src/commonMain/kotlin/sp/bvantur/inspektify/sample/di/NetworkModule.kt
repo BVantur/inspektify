@@ -32,6 +32,12 @@ val networkModule = module {
                 autoDetectEnabled = false
                 logLevel = LogLevel.All
                 dataRetentionPolicy = DataRetentionPolicy.SessionCount(4)
+//                ignoreEndpoints = listOf(
+//                    IgnorePathData(
+//                        method = MethodType.ALL,
+//                        matchingStrategy = EndpointMatchingStrategy.Regex("https://reqres\\.in/.*"),
+//                    )
+//                )
             }
         }
     }

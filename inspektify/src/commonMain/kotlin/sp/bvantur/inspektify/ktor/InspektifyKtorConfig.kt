@@ -7,6 +7,7 @@ public class InspektifyKtorConfig {
     public var dataRetentionPolicy: DataRetentionPolicy = DataRetentionPolicy.DayDuration(14)
     public var redactHeaders: List<String> = emptyList()
     public var redactBodyProperties: List<String> = emptyList()
+    public var ignoreEndpoints: List<IgnorePathData> = emptyList()
 }
 
 public sealed interface LogLevel {
@@ -29,6 +30,27 @@ public sealed interface LogLevel {
 public sealed interface DataRetentionPolicy {
     public data class DayDuration(val numOfDays: Int) : DataRetentionPolicy
     public data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
+}
+
+public data class IgnorePathData(val method: MethodType, val matchingStrategy: EndpointMatchingStrategy)
+
+public enum class MethodType(internal val value: String) {
+    GET("GET"),
+    POST("POST"),
+    PUT("PUT"),
+    DELETE("DELETE"),
+    PATCH("PATCH"),
+    HEAD("HEAD"),
+    OPTIONS("OPTIONS"),
+    ALL("*");
+
+    internal fun isAll(): Boolean = this == ALL
+}
+
+public sealed interface EndpointMatchingStrategy {
+    public data class Exact(val value: String) : EndpointMatchingStrategy
+    public data class Contains(val value: String) : EndpointMatchingStrategy
+    public data class Regex(val value: String) : EndpointMatchingStrategy
 }
 
 internal const val INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME = "Inspektify"

@@ -38,7 +38,9 @@ internal class InspektifySceneDelegate @OverrideInit constructor() :
 }
 
 @OptIn(BetaInteropApi::class)
-fun getInspektifyUISceneConfiguration(configurationForConnectingSceneSession: UISceneSession): UISceneConfiguration {
+public fun getInspektifyUISceneConfiguration(
+    configurationForConnectingSceneSession: UISceneSession
+): UISceneConfiguration {
     val configuration = UISceneConfiguration(
         name = configurationForConnectingSceneSession.configuration.name,
         sessionRole = configurationForConnectingSceneSession.role
@@ -48,4 +50,4 @@ fun getInspektifyUISceneConfiguration(configurationForConnectingSceneSession: UI
 }
 
 @Suppress("FunctionOnlyReturningConstant")
-fun getInspektifyShortcutType(): String = "Inspektify"
+public fun getInspektifyShortcutType(): String = "Inspektify"

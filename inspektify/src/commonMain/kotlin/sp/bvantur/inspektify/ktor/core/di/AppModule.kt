@@ -6,6 +6,7 @@ import kotlinx.serialization.json.Json
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.db.InspektifyDB
 import sp.bvantur.inspektify.ktor.client.data.InspektifyDataRetentionHandler
+import sp.bvantur.inspektify.ktor.client.data.InspektifyKtorIgnoreEndpointHandler
 import sp.bvantur.inspektify.ktor.client.data.InspektifyNetworkTrafficLogger
 import sp.bvantur.inspektify.ktor.client.data.InspektifyRequestHandler
 import sp.bvantur.inspektify.ktor.client.data.InspektifyResponseHandler
@@ -29,6 +30,7 @@ internal object AppComponents {
     private var responseHandler: InspektifyResponseHandler? = null
     private var trafficLogger: InspektifyNetworkTrafficLogger? = null
     private var dataRetentionHandler: InspektifyDataRetentionHandler? = null
+    private var ignoreEndpointHandler: InspektifyKtorIgnoreEndpointHandler? = null
 
     fun getDatabaseInstance(): InspektifyDB {
         if (database == null) {
@@ -100,6 +102,13 @@ internal object AppComponents {
             )
         }
         return dataRetentionHandler!!
+    }
+
+    fun getInspektifyKtorIgnoreEndpointHandler(): InspektifyKtorIgnoreEndpointHandler {
+        if (ignoreEndpointHandler == null) {
+            ignoreEndpointHandler = InspektifyKtorIgnoreEndpointHandler()
+        }
+        return ignoreEndpointHandler!!
     }
 
     private val listOfNetworkTrafficHeaderAdapter =

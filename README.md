@@ -117,7 +117,8 @@ Network transactions from previous sessions have a background in light gray colo
 3. [Data retention policy](docs/DATA_RETENTION_POLICY.md)
 4. [Shortcut for mobile clients](docs/SHORTCUT_FOR_MOBILE_CLIENTS.md)
 5. [Excluding Inspektify from Release Builds](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md)
-5. [Redact data from Inspektify](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md)
+6. [Redact data from Inspektify](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md)
+7. [Ignore endpoints configuration](docs/IGNORE_ENDPOINTS_CONFIGURATION.md)
 
 ## Sample project
 
@@ -138,3 +139,6 @@ the sample is configured to use Ktor from the 3.x.x family, but if you want to t
 <a href="https://medium.com/@bvantur">
     <img src="https://miro.medium.com/v2/resize:fit:1400/1*psYl0y9DUzZWtHzFJLIvTw.png" alt="Medium" width="40" height="40">
 </a>
+
+## Sponsor my work
+<a href="https://buymeacoffee.com/bvantur" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
