@@ -106,4 +106,51 @@ class NetworkTrafficDataUtilsTest {
 
         assertEquals(expectedHeaders.entries(), headers.entries().redactHeaders(listOf("Header-Name")))
     }
+
+    @Test
+    fun `GIVEN there is no properties to be redacted WHEN redactProperties is called THEN the same json is returned`() {
+        val json = """{"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+
+        assertEquals(json, json.redactJsonProperties(listOf()))
+    }
+
+    @Test
+    fun `GIVEN there is single property to be redacted WHEN redactProperties is called THEN the json with that redacted property is returned`() {
+        val json = """{"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+        val redactedJson = """{"data":{"id":1,"email":"*** REDACTED ***","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+
+        assertEquals(redactedJson, json.redactJsonProperties(listOf("email")))
+    }
+
+    @Test
+    fun `GIVEN there is more properties to be redacted WHEN redactProperties is called THEN the json with that multiple redacted properties is returned`() {
+        val json = """{"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+        val redactedJson = """{"data":{"id":1,"email":"*** REDACTED ***","first_name":"*** REDACTED ***","last_name":"*** REDACTED ***","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+
+        assertEquals(redactedJson, json.redactJsonProperties(listOf("email", "first_name", "last_name")))
+    }
+
+    @Test
+    fun `GIVEN there is single object redacted WHEN redactProperties is called THEN the json with that redacted object is returned`() {
+        val json = """{"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+        val redactedJson = """{"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":"*** REDACTED ***"}"""
+
+        assertEquals(redactedJson, json.redactJsonProperties(listOf("support")))
+    }
+
+    @Test
+    fun `GIVEN there is multiple object redacted WHEN redactProperties is called THEN the json with that multiple redacted objects is returned`() {
+        val json = """{"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+        val redactedJson = """{"data":"*** REDACTED ***","support":"*** REDACTED ***"}"""
+
+        assertEquals(redactedJson, json.redactJsonProperties(listOf("support", "data")))
+    }
+
+    @Test
+    fun `GIVEN there is array redacted WHEN redactProperties is called THEN the json with that redacted array is returned`() {
+        val json = """{"items":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"}],"support":{"url":"https://contentcaddy.ioutm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+        val redactedJson = """{"items":"*** REDACTED ***","support":{"url":"https://contentcaddy.ioutm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}"""
+
+        assertEquals(redactedJson, json.redactJsonProperties(listOf("items")))
+    }
 }
