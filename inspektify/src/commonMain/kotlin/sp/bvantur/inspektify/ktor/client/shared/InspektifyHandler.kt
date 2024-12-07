@@ -1,6 +1,8 @@
 package sp.bvantur.inspektify.ktor.client.shared
 
-internal expect fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean)
+import sp.bvantur.inspektify.ktor.AutoDetectTarget
+
+internal expect fun configurePresentation(autoDetectEnabledFor: Set<AutoDetectTarget>, shortcutEnabled: Boolean)
 
 internal expect fun startInspektifyWindow()
 

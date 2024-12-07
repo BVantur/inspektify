@@ -6,6 +6,7 @@ import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.lifecycle.ProcessLifecycleOwner
+import sp.bvantur.inspektify.ktor.AutoDetectTarget
 import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_LONG_NAME
 import sp.bvantur.inspektify.ktor.INSPEKTIFY_SHORTCUT_ITEM_SHORT_NAME
 import sp.bvantur.inspektify.ktor.InspektifyActivity
@@ -25,14 +26,14 @@ internal actual fun disposeInspektifyWindow() {
     InspektifyActivity.inspektifyActivityInstance = null
 }
 
-internal actual fun configurePresentation(autoDetectEnabled: Boolean, shortcutEnabled: Boolean) {
+internal actual fun configurePresentation(autoDetectEnabledFor: Set<AutoDetectTarget>, shortcutEnabled: Boolean) {
     if (shortcutEnabled) {
         setupShortcut()
     } else {
         ShortcutManagerCompat.removeDynamicShortcuts(applicationContext, listOf("id1"))
     }
 
-    if (autoDetectEnabled) {
+    if (autoDetectEnabledFor.contains(AutoDetectTarget.Android)) {
         ProcessLifecycleOwner.get().lifecycle.addObserver(
             ShakeGestureListener()
         )

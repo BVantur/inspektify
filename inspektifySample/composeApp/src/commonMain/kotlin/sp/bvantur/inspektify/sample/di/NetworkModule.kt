@@ -6,6 +6,7 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
+import sp.bvantur.inspektify.ktor.AutoDetectTarget
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.LogLevel
@@ -29,7 +30,8 @@ val networkModule = module {
                 url(BASE_URL)
             }
             install(InspektifyKtor) {
-                autoDetectEnabled = false
+                autoDetectEnabledFor =
+                    setOf(AutoDetectTarget.Desktop(), AutoDetectTarget.Apple, AutoDetectTarget.Android)
                 logLevel = LogLevel.All
                 dataRetentionPolicy = DataRetentionPolicy.SessionCount(4)
 //                ignoreEndpoints = listOf(
