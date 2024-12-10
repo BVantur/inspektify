@@ -115,7 +115,7 @@ private fun KtorListScreen(
                 }
                 LazyColumn(modifier = Modifier.weight(1f)) {
                     networkTrafficItems.forEach { (date, items) ->
-                        stickyHeader {
+                        stickyHeader(key = date) {
                             Box(
                                 modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)
                                     .clickable { }
@@ -128,7 +128,10 @@ private fun KtorListScreen(
                                 )
                             }
                         }
-                        items(items.size) { index ->
+                        items(
+                            items.size,
+                            key = { items[it].id }
+                        ) { index ->
                             val networkTrafficItem = items[index]
 
                             NetworkTrafficItem(
