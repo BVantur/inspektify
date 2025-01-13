@@ -1,0 +1,26 @@
+package sp.bvantur.inspektify.ktor.client.data.model
+
+internal data class NetworkTrafficLocalData(
+    val id: Long,
+    val sessionId: Long,
+    val method: String?,
+    val url: String?,
+    val host: String?,
+    val path: String?,
+    val protocol: String?,
+    val requestTimestamp: Long?,
+    val requestHeaders: Set<Map.Entry<String, List<String>>>?,
+    val requestPayload: String?,
+    val requestContentType: String?,
+    val requestPayloadSize: Long?,
+    val requestHeadersSize: Long?,
+    val responseTimestamp: Long?,
+    val responseStatus: Long?,
+    val responseStatusDescription: String?,
+    val responseHeaders: Set<Map.Entry<String, List<String>>>?,
+    val responsePayload: String?,
+    val responseContentType: String?,
+    val responsePayloadSize: Long?,
+    val responseHeadersSize: Long?,
+    val tookDurationInMs: Long?,
+)

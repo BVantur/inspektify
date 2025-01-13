@@ -6,7 +6,7 @@ import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
 
 internal interface KtorListRepository {
 
-    fun getNetworkTrafficItems(): Flow<List<NetworkTrafficListItem>>
+    suspend fun getNetworkTrafficItems(): Flow<List<NetworkTrafficListItem>>
 
     suspend fun removeAllNetworkTrafficData()
 

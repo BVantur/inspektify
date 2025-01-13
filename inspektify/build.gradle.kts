@@ -81,13 +81,28 @@ kotlin {
     jvm()
 
     sourceSets {
-        androidMain.dependencies {
-            implementation(compose.preview)
-            implementation(libs.androidx.activity.compose)
-            implementation(libs.androidx.startup.runtime)
-            implementation(libs.cash.sqldelight.android.driver)
-            implementation(libs.androidx.lifecycle.process)
+        applyDefaultHierarchyTemplate()
+
+        val sqldelightMain by creating {
+            dependsOn(commonMain.get())
+            dependencies {
+                implementation(libs.cash.sqldelight.primitive.adapters)
+                implementation(libs.cash.sqldelight.coroutines.extensions)
+            }
         }
+
+        androidMain {
+            dependsOn(sqldelightMain)
+
+            dependencies {
+                implementation(compose.preview)
+                implementation(libs.androidx.activity.compose)
+                implementation(libs.androidx.startup.runtime)
+                implementation(libs.cash.sqldelight.android.driver)
+                implementation(libs.androidx.lifecycle.process)
+            }
+        }
+
         commonMain {
             if (useKtorV3) {
                 kotlin.srcDir(file("src/ktorv3/kotlin"))
@@ -111,18 +126,23 @@ kotlin {
                 implementation(libs.jetbrains.serialization.json)
                 implementation(libs.jetbrains.lifecycle.runtime.compose)
                 implementation(libs.jetbrains.navigation.compose)
-                implementation(libs.cash.sqldelight.primitive.adapters)
-                implementation(libs.cash.sqldelight.coroutines.extensions)
                 implementation(libs.kotlinx.datetime)
             }
         }
-        iosMain.dependencies {
-            implementation(libs.cash.sqldelight.native.driver)
+
+        iosMain {
+            dependsOn(sqldelightMain)
+            dependencies {
+                implementation(libs.cash.sqldelight.native.driver)
+            }
         }
 
-        jvmMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.cash.sqldelight.sql.driver)
+        jvmMain {
+            dependsOn(sqldelightMain)
+            dependencies {
+                implementation(compose.desktop.currentOs)
+                implementation(libs.cash.sqldelight.sql.driver)
+            }
         }
 
         commonTest.dependencies {

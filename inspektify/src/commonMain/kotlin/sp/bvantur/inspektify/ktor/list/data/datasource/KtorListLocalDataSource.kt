@@ -1,31 +1,28 @@
 package sp.bvantur.inspektify.ktor.list.data.datasource
 
-import app.cash.sqldelight.coroutines.asFlow
-import app.cash.sqldelight.coroutines.mapToList
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.flow.map
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
-import sp.bvantur.inspektify.db.InspektifyDB
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
+import sp.bvantur.inspektify.ktor.client.data.DataStorageHandler
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
-import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.data.mappers.toNetworkTrafficDataLocal
 
 internal class KtorListLocalDataSource(
-    private val database: InspektifyDB,
-    private val dispatcherProvider: DispatcherProvider,
+    private val dataStorageHandler: DataStorageHandler,
     private val ktorPluginCachedConfig: KtorPluginCachedConfig
 ) {
 
-    fun getAllNetworkTrafficData(): Flow<List<NetworkTrafficDataLocal>> = database.inspektifyDBQueries
-        .getAllNetworkTraffic()
-        .asFlow()
-        .mapToList(dispatcherProvider.default).flowOn(dispatcherProvider.io)
+    suspend fun getAllNetworkTrafficData(): Flow<List<NetworkTrafficDataLocal>> {
+        return dataStorageHandler.getAllNetworkTraffic().map { items ->
+            items.map {
+                it.toNetworkTrafficDataLocal()
+            }
+        }
+    }
 
     suspend fun removeAllNetworkTrafficData() {
-        withContext(dispatcherProvider.io) {
-            database.inspektifyDBQueries.removeAllNetworkTrafficData()
-        }
+        dataStorageHandler.removeAllNetworkTrafficData()
     }
 
     fun getCurrentSessionTimestamp(): Long = ktorPluginCachedConfig.currentSessionTimeStamp

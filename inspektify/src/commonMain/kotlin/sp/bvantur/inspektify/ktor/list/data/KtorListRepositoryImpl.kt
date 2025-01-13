@@ -10,7 +10,7 @@ import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
 
 internal class KtorListRepositoryImpl(private val localDataSource: KtorListLocalDataSource) : KtorListRepository {
 
-    override fun getNetworkTrafficItems(): Flow<List<NetworkTrafficListItem>> =
+    override suspend fun getNetworkTrafficItems(): Flow<List<NetworkTrafficListItem>> =
         localDataSource.getAllNetworkTrafficData().map { items ->
             items.map { singleItem ->
                 singleItem.toDomainModel(localDataSource.getCurrentSessionTimestamp())

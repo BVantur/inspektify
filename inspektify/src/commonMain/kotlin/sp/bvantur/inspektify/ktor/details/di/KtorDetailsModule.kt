@@ -1,6 +1,7 @@
 package sp.bvantur.inspektify.ktor.details.di
 
 import kotlinx.serialization.json.Json
+import sp.bvantur.inspektify.ktor.core.data.shared.DataStorageProvider.provideDataStorageHandler
 import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.details.data.KtorDetailsRepositoryImpl
 import sp.bvantur.inspektify.ktor.details.data.datasource.KtorDetailsLocalDataSource
@@ -23,8 +24,7 @@ internal object KtorDetailsModule {
     private fun getLocalDataSource(): KtorDetailsLocalDataSource {
         if (localDataSource == null) {
             localDataSource = KtorDetailsLocalDataSource(
-                database = AppComponents.getDatabaseInstance(),
-                dispatcherProvider = AppComponents.getDispatcherProvider()
+                dataStorageHandler = provideDataStorageHandler()
             )
         }
         return localDataSource!!

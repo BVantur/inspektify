@@ -9,13 +9,13 @@ import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
 internal typealias GroupedNetworkTrafficData = Map<String, List<NetworkTrafficListItem>>
 
 internal interface GetAllNetworkTrafficDataUseCase {
-    operator fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>>
+    suspend operator fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>>
 }
 
 internal class GetAllNetworkTrafficDataUseCaseImpl(private val repository: KtorListRepository) :
     GetAllNetworkTrafficDataUseCase {
 
-    override fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>> =
+    override suspend fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>> =
         repository.getNetworkTrafficItems().map { items ->
 
             val data = items.reversed()
