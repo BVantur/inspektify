@@ -13,8 +13,7 @@ internal class KtorModuleImpl : KtorModule {
     override val networkTrafficRepository: NetworkTrafficRepository by lazy {
         NetworkTrafficRepositoryImpl(
             localDataSource = NetworkTrafficLocalDataSource(
-                dataStorageHandler = AppComponents.getDataStorageHandler(),
-                dispatcherProvider = AppComponents.getDispatcherProvider()
+                dataStorageHandler = AppComponents.getDataStorageHandler()
             )
         )
     }

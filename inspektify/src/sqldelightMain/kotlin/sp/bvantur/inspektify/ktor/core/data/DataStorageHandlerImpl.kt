@@ -18,64 +18,58 @@ import sp.bvantur.inspektify.ktor.core.di.AppComponents
 import sp.bvantur.inspektify.ktor.core.di.AppComponents.getAppModule
 import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 
-
 internal class DataStorageHandlerImpl(
     private val dispatcherProvider: DispatcherProvider = AppComponents.getDispatcherProvider()
 ) : DataStorageHandler {
 
     private var database: InspektifyDB? = null
 
-    override suspend fun getAllNetworkTraffic(): Flow<List<NetworkTrafficLocalData>> {
-        return getDatabaseInstance().inspektifyDBQueries.getAllNetworkTraffic().asFlow().mapToList(dispatcherProvider.default)
+    override suspend fun getAllNetworkTraffic(): Flow<List<NetworkTrafficLocalData>> =
+        getDatabaseInstance().inspektifyDBQueries.getAllNetworkTraffic().asFlow().mapToList(dispatcherProvider.default)
             .flowOn(dispatcherProvider.io).map { items ->
-            items.map {
-                it.toNetworkTrafficLocalData()
+                items.map {
+                    it.toNetworkTrafficLocalData()
+                }
             }
-        }
-    }
 
-    override fun getNetworkTrafficById(id: Long): NetworkTrafficLocalData {
-        return getDatabaseInstance().inspektifyDBQueries.getNetworkTrafficById(
+    override fun getNetworkTrafficById(id: Long): NetworkTrafficLocalData =
+        getDatabaseInstance().inspektifyDBQueries.getNetworkTrafficById(
             id
         ).executeAsOne().toNetworkTrafficLocalData()
-    }
 
     override fun removeAllNetworkTrafficData() {
         getDatabaseInstance().inspektifyDBQueries.removeAllNetworkTrafficData()
     }
 
-    override fun getDistinctSessionIds(): List<Long> {
-        return getDatabaseInstance().inspektifyDBQueries.getDistinctSessionIds().executeAsList()
-    }
+    override fun getDistinctSessionIds(): List<Long> =
+        getDatabaseInstance().inspektifyDBQueries.getDistinctSessionIds().executeAsList()
 
     override suspend fun saveNetworkTrafficData(networkTraffic: NetworkTraffic) {
-        withContext(dispatcherProvider.default) { // TODO remove withContext?
-            getDatabaseInstance().transaction {
-                getDatabaseInstance().inspektifyDBQueries.insertNetworkTraffic(
-                    id = networkTraffic.id,
-                    sessionId = networkTraffic.sessionId,
-                    method = networkTraffic.method,
-                    url = networkTraffic.url,
-                    host = networkTraffic.host,
-                    path = networkTraffic.path,
-                    protocol = networkTraffic.protocol,
-                    requestTimestamp = networkTraffic.requestTimestamp,
-                    requestHeaders = networkTraffic.requestHeaders,
-                    requestPayload = networkTraffic.requestPayload,
-                    requestContentType = networkTraffic.requestContentType,
-                    requestPayloadSize = networkTraffic.requestPayloadSize,
-                    requestHeadersSize = networkTraffic.requestHeadersSize,
-                    responseTimestamp = networkTraffic.responseTimestamp,
-                    responseStatus = networkTraffic.responseStatus?.toLong(),
-                    responseStatusDescription = networkTraffic.responseStatusDescription,
-                    responseHeaders = networkTraffic.responseHeaders,
-                    responsePayload = networkTraffic.responsePayload,
-                    responseContentType = networkTraffic.responseContentType,
-                    responsePayloadSize = networkTraffic.responsePayloadSize,
-                    responseHeadersSize = networkTraffic.responseHeadersSize?.toLong(),
-                    tookDurationInMs = networkTraffic.tookDurationInMs
-                )
-            }
+        getDatabaseInstance().transaction {
+            getDatabaseInstance().inspektifyDBQueries.insertNetworkTraffic(
+                id = networkTraffic.id,
+                sessionId = networkTraffic.sessionId,
+                method = networkTraffic.method,
+                url = networkTraffic.url,
+                host = networkTraffic.host,
+                path = networkTraffic.path,
+                protocol = networkTraffic.protocol,
+                requestTimestamp = networkTraffic.requestTimestamp,
+                requestHeaders = networkTraffic.requestHeaders,
+                requestPayload = networkTraffic.requestPayload,
+                requestContentType = networkTraffic.requestContentType,
+                requestPayloadSize = networkTraffic.requestPayloadSize,
+                requestHeadersSize = networkTraffic.requestHeadersSize,
+                responseTimestamp = networkTraffic.responseTimestamp,
+                responseStatus = networkTraffic.responseStatus?.toLong(),
+                responseStatusDescription = networkTraffic.responseStatusDescription,
+                responseHeaders = networkTraffic.responseHeaders,
+                responsePayload = networkTraffic.responsePayload,
+                responseContentType = networkTraffic.responseContentType,
+                responsePayloadSize = networkTraffic.responsePayloadSize,
+                responseHeadersSize = networkTraffic.responseHeadersSize?.toLong(),
+                tookDurationInMs = networkTraffic.tookDurationInMs
+            )
         }
     }
 

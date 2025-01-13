@@ -13,13 +13,12 @@ internal class KtorListLocalDataSource(
     private val ktorPluginCachedConfig: KtorPluginCachedConfig
 ) {
 
-    suspend fun getAllNetworkTrafficData(): Flow<List<NetworkTrafficDataLocal>> {
-        return dataStorageHandler.getAllNetworkTraffic().map { items ->
+    suspend fun getAllNetworkTrafficData(): Flow<List<NetworkTrafficDataLocal>> =
+        dataStorageHandler.getAllNetworkTraffic().map { items ->
             items.map {
                 it.toNetworkTrafficDataLocal()
             }
         }
-    }
 
     suspend fun removeAllNetworkTrafficData() {
         dataStorageHandler.removeAllNetworkTrafficData()
