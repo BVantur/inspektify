@@ -46,6 +46,12 @@ kotlin {
 
     jvm()
 
+    js(IR) {
+        browser {
+            binaries.executable()
+        }
+    }
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
@@ -93,6 +99,14 @@ kotlin {
                 implementation(libs.ktor3.client.java)
             } else {
                 implementation(libs.ktor2.client.java)
+            }
+        }
+
+        jsMain.dependencies {
+            if (useKtorV3) {
+                implementation(libs.ktor3.client.js)
+            } else {
+                implementation(libs.ktor2.client.js)
             }
         }
     }

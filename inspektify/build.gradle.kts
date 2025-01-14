@@ -1,4 +1,5 @@
 import com.vanniktech.maven.publish.SonatypeHost
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -80,6 +81,12 @@ kotlin {
 
     jvm()
 
+
+    js(IR) {
+        browser()
+        nodejs()
+    }
+
     sourceSets {
         applyDefaultHierarchyTemplate()
 
@@ -143,6 +150,9 @@ kotlin {
                 implementation(compose.desktop.currentOs)
                 implementation(libs.cash.sqldelight.sql.driver)
             }
+        }
+
+        jsMain {
         }
 
         commonTest.dependencies {

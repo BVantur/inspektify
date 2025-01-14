@@ -91,6 +91,7 @@ ktor3-client-contentNegotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor3-client-okHttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor3" }
 ktor3-client-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "ktor3" }
 ktor3-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor3" }
+ktor3-client-js = { group = "io.ktor", name = "ktor-client-js", version.ref = "ktor3" }
 
 ktor2-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor2" }
 ktor2-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor2" }
@@ -98,6 +99,7 @@ ktor2-client-contentNegotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor2-client-okHttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor2" }
 ktor2-client-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "ktor2" }
 ktor2-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor2" }
+ktor2-client-js = { group = "io.ktor", name = "ktor-client-js", version.ref = "ktor2" }
 
 # KOIN dependencies
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
