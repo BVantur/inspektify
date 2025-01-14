@@ -6,8 +6,5 @@ internal actual object Platform {
     actual fun closeInspektifyWindow() {
     }
 
-    actual fun getTargetType(): TargetType {
-        return TargetType.JS
-    }
-
+    actual fun getTargetType(): TargetType = TargetType.JS
 }
