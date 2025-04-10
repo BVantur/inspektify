@@ -4,6 +4,13 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "io.ktor:ktor-client-core"
+      - dependency-name: "io.ktor:ktor-serialization-kotlinx-json"
+      - dependency-name: "io.ktor:ktor-client-content-negotiation"
+      - dependency-name: "io.ktor:ktor-client-okhttp"
+      - dependency-name: "io.ktor:ktor-client-ios"
+      - dependency-name: "io.ktor:ktor-client-java"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
