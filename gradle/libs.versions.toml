@@ -34,7 +34,7 @@ jetbrains-coroutines-swing = "1.9.0"
 jetbrains-coroutine-test = "1.9.0"
 
 # KTOR dependencies
-ktor3 = "3.0.0"
+ktor3 = "3.1.2"
 ktor2 = "2.3.1"
 
 # KOIN dependencies
