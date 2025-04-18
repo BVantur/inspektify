@@ -56,7 +56,7 @@ junit = "4.13.2"
 mokkery = "2.3.0"
 
 # MAVEN-PUBLISH dependencies
-maven-publish = "0.30.0"
+maven-publish = "0.31.0"
 
 [libraries]
 # INSPEKTIFY LIB dependencies
