@@ -23,7 +23,7 @@ jobs:
           java-version: 17
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2.0.10
+        uses: android-actions/setup-android@v3.2.2
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
