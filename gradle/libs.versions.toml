@@ -44,7 +44,7 @@ koin = "4.0.0"
 cash-sqlDelight = "2.0.2"
 
 # SWIFT KLIB dependencies
-swiftklib = "0.6.3"
+swiftklib = "0.6.4"
 
 # CODE ANALYSIS dependencies
 ktlint = "12.1.1"
