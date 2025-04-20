@@ -3,60 +3,60 @@
 inspektify-version = "1.0.0-beta09"
 
 # GENERAL dependencies
-agp = "8.4.2"
-kotlin = "2.0.21"
-compose-plugin = "1.7.0"
+agp = "8.9.1"
+kotlin = "2.1.20"
+compose-plugin = "1.7.3"
 
 # ANDROID PORJECT dependencies
-android-compileSdk = "34"
+android-compileSdk = "36"
 android-minSdk = "21"
-android-targetSdk = "34"
+android-targetSdk = "36"
 
 # ANDROID-X dependencies
-androidx-activity-compose = "1.9.2"
+androidx-activity-compose = "1.10.1"
 androidx-appcompat = "1.7.0"
-androidx-constraintlayout = "2.1.4"
-androidx-core-ktx = "1.13.1"
+androidx-constraintlayout = "2.2.1"
+androidx-core-ktx = "1.16.0"
 androidx-espresso-core = "3.6.1"
 androidx-material = "1.12.0"
-androidx-startup = "1.1.1"
+androidx-startup = "1.2.0"
 androidx-test-junit = "1.2.1"
-androidx-lifecycle-process = "2.8.6"
+androidx-lifecycle-process = "2.8.7"
 
 # KOTLIN-X dependencies
-kotlinx-datetime = "0.6.1"
+kotlinx-datetime = "0.6.2"
 
 # JETBRAINS dependencies
-jetbrains-lifecycle = "2.8.3"
-jetbrains-navigation-compose = "2.7.0-alpha07" # TODO observe and move to stable
-jetbrains-serialization-json = "1.6.1"
-jetbrains-coroutines-swing = "1.9.0"
-jetbrains-coroutine-test = "1.9.0"
+jetbrains-lifecycle = "2.8.4"
+jetbrains-navigation-compose = "2.8.0-alpha11" # TODO observe and move to stable
+jetbrains-serialization-json = "1.8.1"
+jetbrains-coroutines-swing = "1.10.2"
+jetbrains-coroutine-test = "1.10.2"
 
 # KTOR dependencies
 ktor3 = "3.0.0"
 ktor2 = "2.3.1"
 
 # KOIN dependencies
-koin = "4.0.0"
+koin = "4.0.4"
 
 # CASH dependencies
 cash-sqlDelight = "2.0.2"
 
 # SWIFT KLIB dependencies
-swiftklib = "0.6.3"
+swiftklib = "0.6.4"
 
 # CODE ANALYSIS dependencies
-ktlint = "12.1.1"
-detekt = "1.23.6"
-konsist = "0.16.1"
+ktlint = "12.2.0"
+detekt = "1.23.8"
+konsist = "0.17.3"
 
 # TEST dependencies
 junit = "4.13.2"
-mokkery = "2.3.0"
+mokkery = "2.7.2"
 
 # MAVEN-PUBLISH dependencies
-maven-publish = "0.30.0"
+maven-publish = "0.31.0"
 
 [libraries]
 # INSPEKTIFY LIB dependencies
