@@ -22,9 +22,13 @@ internal object NetworkTrafficDataUtils {
     fun String.redactJsonProperties(propertiesToRedact: List<String>): String {
         if (this.isEmpty()) return ""
 
-        val jsonElement = Json.parseToJsonElement(this)
-        val redactedElement = redactProperties(jsonElement, propertiesToRedact)
-        return Json.encodeToString(redactedElement)
+        try {
+            val jsonElement = Json.parseToJsonElement(this)
+            val redactedElement = redactProperties(jsonElement, propertiesToRedact)
+            return Json.encodeToString(redactedElement)
+        } catch (_: Exception) {
+            return this
+        }
     }
 
     private fun redactProperties(element: JsonElement, propertiesToRedact: List<String>): JsonElement = when (element) {
