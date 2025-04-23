@@ -85,8 +85,8 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: METHOD: GET\n" +
                 "[InspektifyHttpClient]: HEADERS\n" +
                 "[InspektifyHttpClient]: Header1:[value1, value2]\n" +
-                ", [InspektifyHttpClient]: Header2:[value3, value4]\n" +
-                ", [InspektifyHttpClient]: Header3:[value5, value6]",
+                "[InspektifyHttpClient]: Header2:[value3, value4]\n" +
+                "[InspektifyHttpClient]: Header3:[value5, value6]",
             systemLogger.loggedMessages.first()
         )
     }
@@ -119,8 +119,8 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: METHOD: GET\n" +
                 "[InspektifyHttpClient]: HEADERS\n" +
                 "[InspektifyHttpClient]: Header1:[value1, value2]\n" +
-                ", [InspektifyHttpClient]: Header2:[value3, value4]\n" +
-                ", [InspektifyHttpClient]: Header3:[value5, value6]\n" +
+                "[InspektifyHttpClient]: Header2:[value3, value4]\n" +
+                "[InspektifyHttpClient]: Header3:[value5, value6]\n" +
                 "\n" +
                 "[InspektifyHttpClient]: BODY Content-Type: application/json\n" +
                 "[InspektifyHttpClient]: BODY START\n" +
@@ -164,8 +164,8 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: FROM: https://example.com\n" +
                 "[InspektifyHttpClient]: HEADERS\n" +
                 "[InspektifyHttpClient]: Header1:[value1, value2]\n" +
-                ", [InspektifyHttpClient]: Header2:[value3, value4]\n" +
-                ", [InspektifyHttpClient]: Header3:[value5, value6]",
+                "[InspektifyHttpClient]: Header2:[value3, value4]\n" +
+                "[InspektifyHttpClient]: Header3:[value5, value6]",
             systemLogger.loggedMessages.first()
         )
     }
@@ -200,8 +200,8 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: FROM: https://example.com\n" +
                 "[InspektifyHttpClient]: HEADERS\n" +
                 "[InspektifyHttpClient]: Header1:[value1, value2]\n" +
-                ", [InspektifyHttpClient]: Header2:[value3, value4]\n" +
-                ", [InspektifyHttpClient]: Header3:[value5, value6]\n" +
+                "[InspektifyHttpClient]: Header2:[value3, value4]\n" +
+                "[InspektifyHttpClient]: Header3:[value5, value6]\n" +
                 "\n" +
                 "[InspektifyHttpClient]: BODY Content-Type: application/json\n" +
                 "[InspektifyHttpClient]: BODY START\n" +

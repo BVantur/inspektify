@@ -65,7 +65,7 @@ internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger =
     private fun headersToLog(headers: Set<Map.Entry<String, List<String>>>?): String {
         headers ?: return ""
 
-        return headers.joinToString { (headerName, headerValues) ->
+        return headers.joinToString(separator = "") { (headerName, headerValues) ->
             "$tag $headerName:$headerValues\n"
         }
     }
