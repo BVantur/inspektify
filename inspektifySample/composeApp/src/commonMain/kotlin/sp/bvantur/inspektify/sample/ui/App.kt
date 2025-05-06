@@ -4,16 +4,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Card
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -34,10 +34,10 @@ fun App() {
         Scaffold(
             floatingActionButton = {
                 FloatingActionButton(
-                    backgroundColor = MaterialTheme.colors.primary,
+                    containerColor = MaterialTheme.colorScheme.primary,
                     onClick = InspektifyKtor::startInspektify
                 ) {
-                    Icon(Icons.AutoMirrored.Filled.List, "", tint = MaterialTheme.colors.onPrimary)
+                    Icon(Icons.AutoMirrored.Filled.List, "", tint = MaterialTheme.colorScheme.onPrimary)
                 }
             }
         ) {
@@ -49,7 +49,7 @@ fun App() {
                     Text("Create a User")
                 }
                 Button(
-                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.error),
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
                     onClick = viewModel::onProduceErrorAction
                 ) {
                     Text("Produce error")
@@ -57,7 +57,7 @@ fun App() {
                 Text(
                     modifier = Modifier.padding(start = 8.dp, top = 8.dp, end = 8.dp),
                     text = "Users",
-                    style = MaterialTheme.typography.h3
+                    style = MaterialTheme.typography.headlineMedium
                 )
                 LazyColumn(modifier = Modifier.fillMaxWidth()) {
                     items(viewState.users.size) { index ->

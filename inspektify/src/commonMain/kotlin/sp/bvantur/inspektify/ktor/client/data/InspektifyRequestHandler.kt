@@ -6,10 +6,11 @@ import io.ktor.client.utils.EmptyContent.contentLength
 import io.ktor.http.charset
 import io.ktor.http.content.OutgoingContent
 import io.ktor.util.AttributeKey
+import io.ktor.util.cio.toByteArray
 import io.ktor.utils.io.ByteChannel
 import io.ktor.utils.io.ByteReadChannel
 import io.ktor.utils.io.charsets.Charsets
-import io.ktor.utils.io.toByteArray
+import io.ktor.utils.io.close
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
@@ -107,7 +108,7 @@ internal class InspektifyRequestHandler {
             coroutineScope {
                 launch {
                     content.writeTo(channel)
-                    channel.close()
+                    channel.close(cause = null)
                 }
             }
             return channel.toByteArray()
@@ -117,7 +118,7 @@ internal class InspektifyRequestHandler {
             println("Error reading MultiPartFormDataContent: ${ignore.message}")
             return null
         } finally {
-            if (!channel.isClosedForWrite) channel.close()
+            if (!channel.isClosedForWrite) channel.close(cause = null)
             if (!channel.isClosedForRead) channel.cancel(CancellationException("Closing temporary channel"))
         }
     }
