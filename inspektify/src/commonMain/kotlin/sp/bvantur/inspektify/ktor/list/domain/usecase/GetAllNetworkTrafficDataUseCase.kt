@@ -3,7 +3,7 @@ package sp.bvantur.inspektify.ktor.list.domain.usecase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import sp.bvantur.inspektify.ktor.core.domain.utils.KtorPresentationConstants
-import sp.bvantur.inspektify.ktor.list.domain.KtorListRepository
+import sp.bvantur.inspektify.ktor.list.di.KtorListModule.ktorListRepository
 import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
 
 internal typealias GroupedNetworkTrafficData = Map<String, List<NetworkTrafficListItem>>
@@ -12,11 +12,10 @@ internal interface GetAllNetworkTrafficDataUseCase {
     operator fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>>
 }
 
-internal class GetAllNetworkTrafficDataUseCaseImpl(private val repository: KtorListRepository) :
-    GetAllNetworkTrafficDataUseCase {
+internal class GetAllNetworkTrafficDataUseCaseImpl : GetAllNetworkTrafficDataUseCase {
 
     override fun invoke(): Flow<Pair<GroupedNetworkTrafficData, Set<String>>> =
-        repository.getNetworkTrafficItems().map { items ->
+        ktorListRepository.getNetworkTrafficItems().map { items ->
 
             val data = items.reversed()
 

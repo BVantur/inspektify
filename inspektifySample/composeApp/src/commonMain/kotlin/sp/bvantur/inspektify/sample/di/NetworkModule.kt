@@ -3,6 +3,7 @@ package sp.bvantur.inspektify.sample.di
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
+import io.ktor.client.request.header
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
@@ -28,6 +29,7 @@ val networkModule = module {
             }
             defaultRequest {
                 url(BASE_URL)
+                header("x-api-key", "reqres-free-v1")
             }
             install(InspektifyKtor) {
                 autoDetectEnabledFor =

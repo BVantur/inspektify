@@ -1,17 +1,16 @@
 package sp.bvantur.inspektify.ktor.list.domain.usecase
 
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
-import sp.bvantur.inspektify.ktor.list.domain.KtorListRepository
+import sp.bvantur.inspektify.ktor.list.di.KtorListModule.ktorListRepository
 
 internal interface GetCurrentSessionRetentionPolicy {
     operator fun invoke(): String
 }
 
-internal class GetCurrentSessionRetentionPolicyImpl(private val repository: KtorListRepository) :
-    GetCurrentSessionRetentionPolicy {
+internal class GetCurrentSessionRetentionPolicyImpl : GetCurrentSessionRetentionPolicy {
 
     override fun invoke(): String {
-        val retentionPolicy = repository.getRetentionPolicy() ?: return ""
+        val retentionPolicy = ktorListRepository.getRetentionPolicy() ?: return ""
 
         return when (retentionPolicy) {
             is DataRetentionPolicy.DayDuration -> {

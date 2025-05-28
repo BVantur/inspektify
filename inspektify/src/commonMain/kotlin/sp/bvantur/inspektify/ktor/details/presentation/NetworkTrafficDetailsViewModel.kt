@@ -17,16 +17,13 @@ import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandler
 import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandlerImpl
 import sp.bvantur.inspektify.ktor.core.presentation.ViewModelUserActionHandler
 import sp.bvantur.inspektify.ktor.core.presentation.ViewStateViewModel
-import sp.bvantur.inspektify.ktor.details.di.KtorDetailsModule
-import sp.bvantur.inspektify.ktor.details.domain.KtorDetailsRepository
+import sp.bvantur.inspektify.ktor.details.di.KtorDetailsModule.ktorDetailsRepository
 import sp.bvantur.inspektify.ktor.details.presentation.utils.DetailsNetworkTrafficTextUtils.searchAndAnnotatedText
 import sp.bvantur.inspektify.ktor.details.presentation.utils.DetailsNetworkTrafficTextUtils.toOverviewAnnotatedString
 import sp.bvantur.inspektify.ktor.details.ui.navigation.NETWORK_TRAFFIC_ID
 
-internal class NetworkTrafficDetailsViewModel(
-    private val savedStateHandle: SavedStateHandle,
-    private val repository: KtorDetailsRepository = KtorDetailsModule.getRepository()
-) : ViewStateViewModel<NetworkTrafficDetailsViewState>(NetworkTrafficDetailsViewState()),
+internal class NetworkTrafficDetailsViewModel(private val savedStateHandle: SavedStateHandle,) :
+    ViewStateViewModel<NetworkTrafficDetailsViewState>(NetworkTrafficDetailsViewState()),
     ViewModelUserActionHandler<NetworkTrafficDetailsUserAction>,
     SingleEventHandler<NetworkTrafficDetailsEvent> by SingleEventHandlerImpl() {
 
@@ -46,12 +43,12 @@ internal class NetworkTrafficDetailsViewModel(
         super.initialLoadData()
         val trafficId = savedStateHandle.get<Long>(NETWORK_TRAFFIC_ID) ?: return
         viewModelScope.launch {
-            val overviewDetails = repository.getTransactionOverviewDetails(trafficId)
+            val overviewDetails = ktorDetailsRepository.getTransactionOverviewDetails(trafficId)
 
             val overviewData = toOverviewAnnotatedString(overviewDetails)
 
-            val payloadRequestData = repository.getTransactionRequestPayloadDetails(trafficId)
-            val payloadResponseData = repository.getTransactionResponsePayloadDetails(trafficId)
+            val payloadRequestData = ktorDetailsRepository.getTransactionRequestPayloadDetails(trafficId)
+            val payloadResponseData = ktorDetailsRepository.getTransactionResponsePayloadDetails(trafficId)
 
             val requestData = NetworkTrafficPayloadDetailsViewState(
                 headers = payloadRequestData.headers,
@@ -66,7 +63,7 @@ internal class NetworkTrafficDetailsViewModel(
                 originalPayload = buildAnnotatedString { append(payloadResponseData.payload) }
             )
 
-            val title = repository.getTitle(id = trafficId)
+            val title = ktorDetailsRepository.getTitle(id = trafficId)
             emitViewState { viewState ->
                 viewState.copy(
                     networkTrafficId = trafficId,
@@ -83,7 +80,7 @@ internal class NetworkTrafficDetailsViewModel(
     private fun onCurlAction() {
         viewModelScope.launch {
             ShareNetworkTrafficHandler.shareNetworkTrafficContent(
-                repository.getCurlContent(viewStateFlow.value.networkTrafficId)
+                ktorDetailsRepository.getCurlContent(viewStateFlow.value.networkTrafficId)
             )
             if (Platform.getTargetType().isDesktop()) {
                 showFeedbackMessage()
@@ -94,7 +91,7 @@ internal class NetworkTrafficDetailsViewModel(
     private fun onShareAction() {
         viewModelScope.launch {
             ShareNetworkTrafficHandler.shareNetworkTrafficContent(
-                repository.getWholeNetworkTrafficContent(viewStateFlow.value.networkTrafficId)
+                ktorDetailsRepository.getWholeNetworkTrafficContent(viewStateFlow.value.networkTrafficId)
             )
         }
     }
@@ -102,7 +99,7 @@ internal class NetworkTrafficDetailsViewModel(
     private fun onCopyAction() {
         viewModelScope.launch {
             CopyNetworkTrafficHandler.copyToClipboard(
-                repository.getWholeNetworkTrafficContent(viewStateFlow.value.networkTrafficId)
+                ktorDetailsRepository.getWholeNetworkTrafficContent(viewStateFlow.value.networkTrafficId)
             )
             showFeedbackMessage()
         }

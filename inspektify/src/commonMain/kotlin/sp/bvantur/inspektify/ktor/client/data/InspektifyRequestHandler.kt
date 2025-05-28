@@ -20,7 +20,7 @@ import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties
-import sp.bvantur.inspektify.ktor.core.di.AppComponents
+import sp.bvantur.inspektify.ktor.core.di.AppComponents.json
 
 internal class InspektifyRequestHandler {
     private val networkTrafficIdKey = AttributeKey<Long>("NetworkTrafficIdKey")
@@ -130,7 +130,6 @@ internal class InspektifyRequestHandler {
             try {
                 val jsonString = match.value
 
-                val json = AppComponents.getAppModule().json
                 val jsonElement = json.parseToJsonElement(jsonString)
                 val formattedJson = json.encodeToString(jsonElement)
 

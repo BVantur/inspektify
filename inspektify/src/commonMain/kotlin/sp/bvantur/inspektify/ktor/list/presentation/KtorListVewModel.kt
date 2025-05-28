@@ -10,25 +10,20 @@ import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandler
 import sp.bvantur.inspektify.ktor.core.presentation.SingleEventHandlerImpl
 import sp.bvantur.inspektify.ktor.core.presentation.ViewModelUserActionHandler
 import sp.bvantur.inspektify.ktor.core.presentation.ViewStateViewModel
-import sp.bvantur.inspektify.ktor.list.di.KtorListModule
-import sp.bvantur.inspektify.ktor.list.domain.KtorListRepository
-import sp.bvantur.inspektify.ktor.list.domain.usecase.GetAllNetworkTrafficDataUseCase
-import sp.bvantur.inspektify.ktor.list.domain.usecase.GetCurrentSessionRetentionPolicy
+import sp.bvantur.inspektify.ktor.list.di.KtorListModule.getAllNetworkTrafficDataUseCase
+import sp.bvantur.inspektify.ktor.list.di.KtorListModule.getCurrentSessionRetentionPolicy
+import sp.bvantur.inspektify.ktor.list.di.KtorListModule.ktorListRepository
 
-internal class KtorListVewModel(
-    private val networkTrafficUseCase: GetAllNetworkTrafficDataUseCase =
-        KtorListModule.getAllNetworkTrafficDataUseCase(),
-    private val repository: KtorListRepository = KtorListModule.getKtorListRepository(),
-    sessionRetentionPolicy: GetCurrentSessionRetentionPolicy = KtorListModule.getCurrentSessionRetentionPolicy()
-) : ViewStateViewModel<KtorListViewState>(
-    initialViewState = KtorListViewState(retentionPolicyText = sessionRetentionPolicy())
-),
+internal class KtorListVewModel :
+    ViewStateViewModel<KtorListViewState>(
+        initialViewState = KtorListViewState(retentionPolicyText = getCurrentSessionRetentionPolicy())
+    ),
     SingleEventHandler<KtorListEvent> by SingleEventHandlerImpl(),
     ViewModelUserActionHandler<KtorListUserAction> {
 
     override fun initialLoadData() {
         viewModelScope.launch {
-            networkTrafficUseCase().collect { (networkTrafficDataList, suggestions) ->
+            getAllNetworkTrafficDataUseCase().collect { (networkTrafficDataList, suggestions) ->
                 emitViewState { viewState ->
                     viewState.copy(
                         items = networkTrafficDataList,
@@ -68,7 +63,7 @@ internal class KtorListVewModel(
 
     private fun onRemoveAllNetworkTraffic() {
         viewModelScope.launch {
-            repository.removeAllNetworkTrafficData()
+            ktorListRepository.removeAllNetworkTrafficData()
         }
     }
 

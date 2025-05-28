@@ -2,14 +2,11 @@ package sp.bvantur.inspektify.ktor.client.data.datasource
 
 import kotlinx.coroutines.withContext
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
-import sp.bvantur.inspektify.db.InspektifyDB
 import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
-import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
+import sp.bvantur.inspektify.ktor.core.di.AppComponents.database
+import sp.bvantur.inspektify.ktor.core.di.AppComponents.dispatcherProvider
 
-internal class NetworkTrafficLocalDataSource(
-    private val database: InspektifyDB,
-    private val dispatcherProvider: DispatcherProvider
-) {
+internal class NetworkTrafficLocalDataSource {
     suspend fun saveNetworkTrafficData(networkTraffic: NetworkTraffic) {
         withContext(dispatcherProvider.default) {
             database.transaction {
