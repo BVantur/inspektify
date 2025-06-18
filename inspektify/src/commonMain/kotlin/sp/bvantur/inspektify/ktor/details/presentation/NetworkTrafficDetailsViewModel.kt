@@ -22,7 +22,7 @@ import sp.bvantur.inspektify.ktor.details.presentation.utils.DetailsNetworkTraff
 import sp.bvantur.inspektify.ktor.details.presentation.utils.DetailsNetworkTrafficTextUtils.toOverviewAnnotatedString
 import sp.bvantur.inspektify.ktor.details.ui.navigation.NETWORK_TRAFFIC_ID
 
-internal class NetworkTrafficDetailsViewModel(private val savedStateHandle: SavedStateHandle,) :
+internal class NetworkTrafficDetailsViewModel(private val savedStateHandle: SavedStateHandle) :
     ViewStateViewModel<NetworkTrafficDetailsViewState>(NetworkTrafficDetailsViewState()),
     ViewModelUserActionHandler<NetworkTrafficDetailsUserAction>,
     SingleEventHandler<NetworkTrafficDetailsEvent> by SingleEventHandlerImpl() {
