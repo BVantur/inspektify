@@ -17,13 +17,9 @@ import sp.bvantur.inspektify.ktor.core.domain.DispatcherProvider
 internal object AppComponents {
     private val listOfNetworkTrafficHeaderAdapter =
         object : ColumnAdapter<Set<Map.Entry<String, List<String>>>, String> {
-            override fun decode(databaseValue: String): Set<Map.Entry<String, List<String>>> {
-                return emptySet()
-            }
+            override fun decode(databaseValue: String): Set<Map.Entry<String, List<String>>> = emptySet()
 
-            override fun encode(value: Set<Map.Entry<String, List<String>>>): String {
-                return ""
-            }
+            override fun encode(value: Set<Map.Entry<String, List<String>>>): String = ""
         }
 
     // Core dependencies - initialized once

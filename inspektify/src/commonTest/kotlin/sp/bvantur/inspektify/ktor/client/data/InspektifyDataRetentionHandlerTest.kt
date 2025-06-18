@@ -10,7 +10,6 @@ import dev.mokkery.verify.VerifyMode
 import dev.mokkery.verifySuspend
 import kotlinx.coroutines.test.runTest
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
-import sp.bvantur.inspektify.ktor.client.di.KtorModule
 import sp.bvantur.inspektify.ktor.client.di.KtorModule.networkTrafficRepository
 import sp.bvantur.inspektify.ktor.core.data.KtorPluginCachedConfig
 import sp.bvantur.inspektify.ktor.core.di.AppComponents.cachedConfig
