@@ -5,11 +5,7 @@ import sp.bvantur.inspektify.ktor.core.data.NetworkTrafficRepositoryImpl
 import sp.bvantur.inspektify.ktor.core.domain.NetworkTrafficRepository
 
 internal object KtorModule {
-    val networkTrafficLocalDataSource: NetworkTrafficLocalDataSource by lazy {
-        NetworkTrafficLocalDataSource()
-    }
+    var networkTrafficLocalDataSource: NetworkTrafficLocalDataSource = NetworkTrafficLocalDataSource()
 
-    val networkTrafficRepository: NetworkTrafficRepository by lazy {
-        NetworkTrafficRepositoryImpl(networkTrafficLocalDataSource)
-    }
+    var networkTrafficRepository: NetworkTrafficRepository = NetworkTrafficRepositoryImpl(networkTrafficLocalDataSource)
 }
