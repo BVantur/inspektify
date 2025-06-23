@@ -47,7 +47,7 @@ cash-sqlDelight = "2.0.2"
 swiftklib = "0.6.4"
 
 # CODE ANALYSIS dependencies
-ktlint = "12.2.0"
+ktlint = "12.3.0"
 detekt = "1.23.8"
 konsist = "0.17.3"
 
