@@ -79,6 +79,10 @@ kotlin {
     }
 
     jvm()
+    
+    js(IR) {
+        browser()
+    }
 
     sourceSets {
         androidMain.dependencies {
@@ -123,6 +127,10 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.cash.sqldelight.sql.driver)
+        }
+
+        jsMain.dependencies {
+            // No additional dependencies needed for web no-op implementation
         }
 
         commonTest.dependencies {
