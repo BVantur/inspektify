@@ -3,8 +3,8 @@
 inspektify-version = "1.0.0-beta09"
 
 # GENERAL dependencies
-agp = "8.9.1"
-kotlin = "2.1.21"
+agp = "8.13.1"
+kotlin = "2.2.21"
 compose-plugin = "1.8.1"
 
 # ANDROID PORJECT dependencies
@@ -24,7 +24,7 @@ androidx-test-junit = "1.2.1"
 androidx-lifecycle-process = "2.8.7"
 
 # KOTLIN-X dependencies
-kotlinx-datetime = "0.6.2"
+kotlinx-datetime = "0.7.1"
 
 # JETBRAINS dependencies
 jetbrains-lifecycle = "2.9.0"
@@ -53,7 +53,7 @@ konsist = "0.17.3"
 
 # TEST dependencies
 junit = "4.13.2"
-mokkery = "2.7.2"
+mokkery = "2.10.2"
 
 # MAVEN-PUBLISH dependencies
 maven-publish = "0.31.0"

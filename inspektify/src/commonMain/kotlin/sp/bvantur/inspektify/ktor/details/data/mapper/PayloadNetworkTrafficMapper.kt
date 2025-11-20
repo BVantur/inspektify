@@ -14,6 +14,7 @@ import sp.bvantur.inspektify.NetworkTrafficDataLocal
 import sp.bvantur.inspektify.ktor.core.domain.utils.ByteSizeUtils
 import sp.bvantur.inspektify.ktor.core.domain.utils.DateTimeUtils
 import sp.bvantur.inspektify.ktor.details.domain.model.KtorPayloadData
+import kotlin.time.ExperimentalTime
 
 internal object PayloadNetworkTrafficMapper {
 
@@ -140,6 +141,7 @@ internal object PayloadNetworkTrafficMapper {
         "$headerName: $headerValue"
     } ?: ""
 
+    @OptIn(ExperimentalTime::class)
     private fun getTime(timestamp: Long?): String? {
         timestamp ?: return null
 

@@ -17,6 +17,7 @@ import sp.bvantur.inspektify.ktor.core.domain.utils.DateTimeUtils
 import sp.bvantur.inspektify.ktor.core.domain.utils.KtorPresentationConstants
 import sp.bvantur.inspektify.ktor.list.domain.model.StatusCode
 import sp.bvantur.inspektify.ktor.list.domain.model.StatusColor
+import kotlin.time.ExperimentalTime
 
 internal fun NetworkTrafficDataLocal.getPresentationStatusCode(): StatusCode {
     responseStatus
@@ -43,6 +44,7 @@ internal fun NetworkTrafficDataLocal.getHost(): String = host ?: ""
 
 internal fun NetworkTrafficDataLocal.getMethod(): String = method ?: ""
 
+@OptIn(ExperimentalTime::class)
 internal fun NetworkTrafficDataLocal.getTime(systemTimeZone: TimeZone = TimeZone.currentSystemDefault()): String {
     requestTimestamp ?: return KtorPresentationConstants.MISSING_DATA
 
@@ -82,6 +84,7 @@ internal fun NetworkTrafficDataLocal.getHostImage(): DrawableResource = if (prot
     Res.drawable.img_http_icon
 }
 
+@OptIn(ExperimentalTime::class)
 internal fun NetworkTrafficDataLocal.getDate(systemTimeZone: TimeZone = TimeZone.currentSystemDefault()): String {
     val instant = Instant.fromEpochMilliseconds(requestTimestamp ?: 0L)
 

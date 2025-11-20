@@ -2,16 +2,18 @@ package sp.bvantur.inspektify.ktor.core.domain.utils
 
 import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.intl.Locale
-import kotlinx.datetime.Clock
 import kotlinx.datetime.DateTimeUnit
-import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.minus
+import kotlinx.datetime.number
 import kotlinx.datetime.offsetAt
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.todayIn
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
+import kotlin.time.Instant
 
 internal object DateTimeUtils {
 
@@ -61,12 +63,13 @@ internal object DateTimeUtils {
         if (isToday(localDate)) return "Today"
         if (isYesterday(localDate)) return "Yesterday"
 
-        val day = localDate.dayOfMonth.toString().padStart(2, '0')
-        val month = localDate.monthNumber.toString().padStart(2, '0')
+        val day = localDate.day.toString().padStart(2, '0')
+        val month = localDate.month.number.toString().padStart(2, '0')
         val year = localDate.year.toString()
         return "$day. $month. $year"
     }
 
+    @OptIn(ExperimentalTime::class)
     fun formatTimestamp(timestamp: Long?, timeZone: TimeZone = TimeZone.currentSystemDefault()): String? {
         timestamp ?: return null
 
@@ -76,7 +79,7 @@ internal object DateTimeUtils {
         val dayOfWeek =
             dateTime.dayOfWeek.name.substring(0, 3).lowercase().capitalize(Locale.current)
         val month = dateTime.month.name.substring(0, 3).lowercase().capitalize(Locale.current)
-        val dayOfMonth = dateTime.dayOfMonth
+        val dayOfMonth = dateTime.day
         val hour = dateTime.hour.toString().padStart(2, '0')
         val minute = dateTime.minute.toString().padStart(2, '0')
         val second = dateTime.second.toString().padStart(2, '0')
@@ -88,11 +91,13 @@ internal object DateTimeUtils {
         return "$dayOfWeek $month $dayOfMonth $hour:$minute:$second GMT$formattedOffset $year"
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun isToday(date: LocalDate): Boolean {
         val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
         return date == today
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun isYesterday(date: LocalDate): Boolean {
         val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
         val yesterday = today.minus(1, DateTimeUnit.DAY)

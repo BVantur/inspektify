@@ -1,4 +1,8 @@
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
+
 import com.vanniktech.maven.publish.SonatypeHost
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -59,9 +63,14 @@ mavenPublishing {
 kotlin {
     explicitApi()
 
-    task("testClasses")
+    tasks.register("testClasses")
     androidTarget {
         publishLibraryVariants("release")
+    }
+
+    compilerOptions {
+        apiVersion.set(KotlinVersion.KOTLIN_2_1)
+        languageVersion.set(KotlinVersion.KOTLIN_2_1)
     }
 
     listOf(

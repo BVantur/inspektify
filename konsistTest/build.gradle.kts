@@ -1,22 +1,29 @@
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
 }
 
 kotlin {
-    task("testClasses")
-    targetHierarchy.default()
+    tasks.register("testClasses")
+    applyDefaultHierarchyTemplate()
+
     jvm {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "17"
-            }
+        // Replace compilations.all with target-level compilerOptions
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
         }
+
         testRuns.named("test") {
             executionTask.configure {
                 useJUnitPlatform()
             }
         }
     }
+
     listOf(
         iosArm64(),
         iosX64(),
