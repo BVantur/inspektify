@@ -13,7 +13,7 @@ plugins {
 kotlin {
     val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
 
-    task("testClasses")
+    tasks.register("testClasses")
 
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
