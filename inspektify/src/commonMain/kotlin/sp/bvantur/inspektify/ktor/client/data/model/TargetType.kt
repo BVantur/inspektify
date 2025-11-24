@@ -3,9 +3,11 @@ package sp.bvantur.inspektify.ktor.client.data.model
 internal enum class TargetType {
     APPLE,
     ANDROID,
-    DESKTOP;
+    DESKTOP,
+    WEB;
 
     fun isAndroid(): Boolean = this == ANDROID
     fun isApple(): Boolean = this == APPLE
     fun isDesktop(): Boolean = this == DESKTOP
+    fun isWeb(): Boolean = this == WEB
 }
