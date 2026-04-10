@@ -11,6 +11,13 @@ updates:
       - dependency-name: "io.ktor:ktor-client-okhttp"
       - dependency-name: "io.ktor:ktor-client-ios"
       - dependency-name: "io.ktor:ktor-client-java"
+      - dependency-name: "io.insert-koin:koin-core"
+      - dependency-name: "io.insert-koin:koin-compose-viewmodel"
+      - dependency-name: "androidx.lifecycle:lifecycle-process"
+      - dependency-name: "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose"
+      - dependency-name: "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose"
+      - dependency-name: "androidx.activity:activity-compose"
+      - dependency-name: "org.jetbrains.compose"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

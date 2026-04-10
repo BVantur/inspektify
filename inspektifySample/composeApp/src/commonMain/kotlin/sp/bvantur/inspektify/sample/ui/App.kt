@@ -1,8 +1,10 @@
 package sp.bvantur.inspektify.sample.ui
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
@@ -32,6 +34,7 @@ fun App() {
 
     MaterialTheme {
         Scaffold(
+            modifier = Modifier.fillMaxSize().statusBarsPadding(),
             floatingActionButton = {
                 FloatingActionButton(
                     containerColor = MaterialTheme.colorScheme.primary,

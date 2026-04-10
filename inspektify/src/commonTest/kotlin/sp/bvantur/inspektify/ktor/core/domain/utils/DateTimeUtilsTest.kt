@@ -1,13 +1,14 @@
 package sp.bvantur.inspektify.ktor.core.domain.utils
 
-import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
+import kotlin.time.Clock
 import kotlin.time.Duration.Companion.days
+import kotlin.time.ExperimentalTime
 
 class DateTimeUtilsTest {
     @Test
@@ -50,6 +51,7 @@ class DateTimeUtilsTest {
         assertEquals("1.0 h", DateTimeUtils.toTextWithTimeUnit(3600000))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some date WHEN toTimeString is called THEN returns correct time with 0 prefix before each unit`() {
         val date = Instant.fromEpochMilliseconds(1732233661119).toLocalDateTime(TimeZone.UTC)
@@ -57,6 +59,7 @@ class DateTimeUtilsTest {
         assertEquals("00:01:01", DateTimeUtils.toTimeString(date))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some date WHEN toTimeString is called THEN returns correct time`() {
         val date = Instant.fromEpochMilliseconds(1732273139999).toLocalDateTime(TimeZone.UTC)
@@ -64,6 +67,7 @@ class DateTimeUtilsTest {
         assertEquals("10:58:59", DateTimeUtils.toTimeString(date))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns today text`() {
         val date = Clock.System.now().toLocalDateTime(TimeZone.UTC)
@@ -71,6 +75,7 @@ class DateTimeUtilsTest {
         assertEquals("Today", DateTimeUtils.formatDate(date.date))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns yesterday`() {
         val date = Clock.System.now().minus(1.days).toLocalDateTime(TimeZone.UTC)
@@ -78,6 +83,7 @@ class DateTimeUtilsTest {
         assertEquals("Yesterday", DateTimeUtils.formatDate(date.date))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns date`() {
         val date = Instant.fromEpochMilliseconds(1669114739000).toLocalDateTime(TimeZone.UTC)
