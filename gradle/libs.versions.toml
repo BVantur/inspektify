@@ -41,7 +41,7 @@ ktor2 = "2.3.1"
 koin = "4.0.4"
 
 # CASH dependencies
-cash-sqlDelight = "2.0.2"
+cash-sqlDelight = "2.1.0"
 
 # SWIFT KLIB dependencies
 swiftklib = "0.6.4"
