@@ -29,7 +29,7 @@ kotlinx-datetime = "0.7.1"
 # JETBRAINS dependencies
 jetbrains-lifecycle = "2.9.4" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 jetbrains-navigation-compose = "2.9.2" # TODO observe and move to stable
-jetbrains-serialization-json = "1.10.0"
+jetbrains-serialization-json = "1.11.0"
 jetbrains-coroutines-swing = "1.10.2"
 jetbrains-coroutine-test = "1.10.2"
 
