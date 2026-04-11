@@ -4,8 +4,8 @@ inspektify-version = "1.0.0-beta10"
 
 # GENERAL dependencies
 agp = "8.13.1"
-kotlin = "2.2.21"
-compose-plugin = "1.8.1"
+kotlin = "2.3.20"
+compose-plugin = "1.9.0" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 
 # ANDROID PORJECT dependencies
 android-compileSdk = "36"
@@ -13,23 +13,23 @@ android-minSdk = "21"
 android-targetSdk = "36"
 
 # ANDROID-X dependencies
-androidx-activity-compose = "1.10.1"
-androidx-appcompat = "1.7.0"
+androidx-activity-compose = "1.11.0" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
+androidx-appcompat = "1.7.1"
 androidx-constraintlayout = "2.2.1"
-androidx-core-ktx = "1.16.0"
-androidx-espresso-core = "3.6.1"
-androidx-material = "1.12.0"
+androidx-core-ktx = "1.18.0"
+androidx-espresso-core = "3.7.0"
+androidx-material = "1.13.0"
 androidx-startup = "1.2.0"
-androidx-test-junit = "1.2.1"
-androidx-lifecycle-process = "2.8.7"
+androidx-test-junit = "1.3.0"
+androidx-lifecycle-process = "2.9.4" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 
 # KOTLIN-X dependencies
 kotlinx-datetime = "0.7.1"
 
 # JETBRAINS dependencies
-jetbrains-lifecycle = "2.9.1"
-jetbrains-navigation-compose = "2.9.0-beta02" # TODO observe and move to stable
-jetbrains-serialization-json = "1.8.1"
+jetbrains-lifecycle = "2.9.4" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
+jetbrains-navigation-compose = "2.9.2" # TODO observe and move to stable
+jetbrains-serialization-json = "1.10.0"
 jetbrains-coroutines-swing = "1.10.2"
 jetbrains-coroutine-test = "1.10.2"
 
@@ -38,7 +38,7 @@ ktor3 = "3.0.0"
 ktor2 = "2.3.1"
 
 # KOIN dependencies
-koin = "4.0.4"
+koin = "4.1.1"  # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 
 # CASH dependencies
 cash-sqlDelight = "2.1.0"
@@ -47,16 +47,16 @@ cash-sqlDelight = "2.1.0"
 swiftklib = "0.6.4"
 
 # CODE ANALYSIS dependencies
-ktlint = "13.1.0"
+ktlint = "14.2.0"
 detekt = "1.23.8"
 konsist = "0.17.3"
 
 # TEST dependencies
 junit = "4.13.2"
-mokkery = "2.10.2"
+mokkery = "3.3.0"
 
 # MAVEN-PUBLISH dependencies
-maven-publish = "0.31.0"
+maven-publish = "0.36.0"
 
 [libraries]
 # INSPEKTIFY LIB dependencies

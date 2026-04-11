@@ -1,14 +1,18 @@
 package sp.bvantur.inspektify.ktor.core.domain.utils
 
-import kotlinx.datetime.Clock
+import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.minus
 import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.todayIn
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlin.time.Duration.Companion.days
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
+@OptIn(ExperimentalTime::class)
 class DateTimeUtilsTest {
     @Test
     fun `GIVEN time is null WHEN toTextWithTimeUnit is called THEN returns text for missing data`() {
@@ -57,6 +61,7 @@ class DateTimeUtilsTest {
         assertEquals("00:01:01", DateTimeUtils.toTimeString(date))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some date WHEN toTimeString is called THEN returns correct time`() {
         val date = Instant.fromEpochMilliseconds(1732273139999).toLocalDateTime(TimeZone.UTC)
@@ -66,18 +71,20 @@ class DateTimeUtilsTest {
 
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns today text`() {
-        val date = Clock.System.now().toLocalDateTime(TimeZone.UTC)
+        val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
 
-        assertEquals("Today", DateTimeUtils.formatDate(date.date))
+        assertEquals("Today", DateTimeUtils.formatDate(today))
     }
 
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns yesterday`() {
-        val date = Clock.System.now().minus(1.days).toLocalDateTime(TimeZone.UTC)
+        val yesterday = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
+            .minus(1, DateTimeUnit.DAY)
 
-        assertEquals("Yesterday", DateTimeUtils.formatDate(date.date))
+        assertEquals("Yesterday", DateTimeUtils.formatDate(yesterday))
     }
 
+    @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns date`() {
         val date = Instant.fromEpochMilliseconds(1669114739000).toLocalDateTime(TimeZone.UTC)

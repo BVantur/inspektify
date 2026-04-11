@@ -42,11 +42,13 @@ internal object AppComponents {
 
     var inspektifyDataRetentionHandler: InspektifyDataRetentionHandler = InspektifyDataRetentionHandler()
 
-    var database: InspektifyDB = InspektifyDB(
-        driver = DatabaseDriverProvider.createDriver(),
-        NetworkTrafficDataLocalAdapter = NetworkTrafficDataLocal.Adapter(
-            responseHeadersAdapter = listOfNetworkTrafficHeaderAdapter,
-            requestHeadersAdapter = listOfNetworkTrafficHeaderAdapter
+    val database: InspektifyDB by lazy {
+        InspektifyDB(
+            driver = DatabaseDriverProvider.createDriver(),
+            NetworkTrafficDataLocalAdapter = NetworkTrafficDataLocal.Adapter(
+                responseHeadersAdapter = listOfNetworkTrafficHeaderAdapter,
+                requestHeadersAdapter = listOfNetworkTrafficHeaderAdapter
+            )
         )
-    )
+    }
 }
