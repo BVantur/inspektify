@@ -70,7 +70,7 @@ class DateTimeUtilsTest {
     @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns today text`() {
-        val date = Clock.System.now().toLocalDateTime(TimeZone.UTC)
+        val date = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
 
         assertEquals("Today", DateTimeUtils.formatDate(date.date))
     }
@@ -78,7 +78,7 @@ class DateTimeUtilsTest {
     @OptIn(ExperimentalTime::class)
     @Test
     fun `GIVEN some timestamp WHEN formatDate is called THEN returns yesterday`() {
-        val date = Clock.System.now().minus(1.days).toLocalDateTime(TimeZone.UTC)
+        val date = Clock.System.now().minus(1.days).toLocalDateTime(TimeZone.currentSystemDefault())
 
         assertEquals("Yesterday", DateTimeUtils.formatDate(date.date))
     }
