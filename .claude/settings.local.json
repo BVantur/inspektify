@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/bvantur/**)",
+      "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosSimulatorArm64 --info)",
+      "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosSimulatorArm64)",
+      "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosArm64 :inspektify:cinteropShakeDetektorIOSIosX64)"
+    ]
+  }
+}
