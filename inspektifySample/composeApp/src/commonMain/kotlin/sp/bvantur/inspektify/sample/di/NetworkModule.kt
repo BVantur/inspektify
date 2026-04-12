@@ -11,6 +11,7 @@ import sp.bvantur.inspektify.ktor.AutoDetectTarget
 import sp.bvantur.inspektify.ktor.DataRetentionPolicy
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.LogLevel
+import sp.bvantur.inspektify.sample.BuildConfig
 
 private const val BASE_URL = "https://reqres.in/api/"
 
@@ -29,7 +30,7 @@ val networkModule = module {
             }
             defaultRequest {
                 url(BASE_URL)
-                header("x-api-key", "reqres-free-v1")
+                header("x-api-key", BuildConfig.API_KEY)
             }
             install(InspektifyKtor) {
                 autoDetectEnabledFor =

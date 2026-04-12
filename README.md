@@ -128,6 +128,22 @@ the sample is configured to use Ktor from the 3.x.x family, but if you want to t
 
 `inspektify.ktorVersion=v2`
 
+### API key setup
+
+The sample app makes requests to [reqres.in](https://reqres.in), which requires an API key.
+
+1. Create a free account and generate a key at https://app.reqres.in/api-keys
+2. Copy `secrets.properties.example` to `secrets.properties` in the root of the project:
+   ```
+   cp secrets.properties.example secrets.properties
+   ```
+3. Open `secrets.properties` and replace the placeholder with your key:
+   ```
+   reqres.api.key=your_reqres_api_key_here
+   ```
+
+`secrets.properties` is gitignored and will never be committed.
+
 ## Contact me
 
 <a href="https://github.com/BVantur">

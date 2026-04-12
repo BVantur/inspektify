@@ -59,6 +59,8 @@ captures
 .cxx
 
 
+secrets.properties
+
 # iOS
 *.xccheckout
 *.xcscmblueprint

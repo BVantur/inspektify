@@ -10,7 +10,6 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.sqlDelight)
-    alias(libs.plugins.swiftklib)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.mokkery)
 }
@@ -73,15 +72,52 @@ kotlin {
     }
 
     listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
+        Triple(iosX64(), "iphonesimulator", "x86_64"),
+        Triple(iosArm64(), "iphoneos", "arm64"),
+        Triple(iosSimulatorArm64(), "iphonesimulator", "arm64")
+    ).forEach { (iosTarget, sdk, arch) ->
+        val shakeBuildDir = layout.buildDirectory.dir("shakeDetektor/${iosTarget.name}").get().asFile
+
+        val compileShakeTask = tasks.register("compileShakeDetektor_${iosTarget.name}", Exec::class) {
+            inputs.files(
+                rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.m"),
+                rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.h")
+            )
+            outputs.file("$shakeBuildDir/libShakeDetektor.a")
+            doFirst { shakeBuildDir.mkdirs() }
+            commandLine(
+                "sh",
+                "-c",
+                "SDK=\$(xcrun --sdk $sdk --show-sdk-path) && " +
+                    "clang -arch $arch -isysroot \$SDK -fobjc-arc -x objective-c " +
+                    "-c ${rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.m")} " +
+                    "-o $shakeBuildDir/ShakeDetektorIOS.o && " +
+                    "ar rcs $shakeBuildDir/libShakeDetektor.a $shakeBuildDir/ShakeDetektorIOS.o"
+            )
+        }
+
         iosTarget.compilations {
             val main by getting {
                 cinterops {
-                    create("ShakeDetektorIOS")
+                    create("ShakeDetektorIOS") {
+                        includeDirs(rootProject.file("ShakeDetektorIOS"))
+                        extraOpts(
+                            "-libraryPath",
+                            shakeBuildDir.absolutePath,
+                            "-staticLibrary",
+                            "libShakeDetektor.a"
+                        )
+                    }
                 }
+            }
+        }
+
+        afterEvaluate {
+            val cinteropTaskName = "cinteropShakeDetektorIOS${
+                iosTarget.name.replaceFirstChar { it.uppercase() }
+            }"
+            tasks.named(cinteropTaskName).configure {
+                dependsOn(compileShakeTask)
             }
         }
     }
@@ -186,12 +222,5 @@ sqldelight {
         create("InspektifyDB") {
             packageName.set("sp.bvantur.inspektify.db")
         }
-    }
-}
-
-swiftklib {
-    create("ShakeDetektorIOS") {
-        path = file("../ShakeDetektorIOS")
-        packageName("sp.bvantur.inspektify.shakedetektor")
     }
 }

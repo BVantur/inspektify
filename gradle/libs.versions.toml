@@ -43,9 +43,6 @@ koin = "4.1.1"  # update to greater version demands increasing the min sdk versi
 # CASH dependencies
 cash-sqlDelight = "2.1.0"
 
-# SWIFT KLIB dependencies
-swiftklib = "0.6.4"
-
 # CODE ANALYSIS dependencies
 ktlint = "14.2.0"
 detekt = "1.23.8"
@@ -57,6 +54,9 @@ mokkery = "3.3.0"
 
 # MAVEN-PUBLISH dependencies
 maven-publish = "0.36.0"
+
+# BUILD-CONFIG dependencies
+buildConfig = "5.4.0"
 
 [libraries]
 # INSPEKTIFY LIB dependencies
@@ -133,11 +133,11 @@ sqlDelight = { id = "app.cash.sqldelight", version.ref = "cash-sqlDelight" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
-# SWIFT KLIB plugins
-swiftklib = { id = "io.github.ttypic.swiftklib", version.ref = "swiftklib" }
-
 # MAVEN-PUBLISH plugins
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
+
+# BUILD-CONFIG plugins
+buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildConfig" }
 
 # TEST plugins
 mokkery = { id = "dev.mokkery", version.ref = "mokkery" }

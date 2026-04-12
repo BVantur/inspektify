@@ -1,6 +1,7 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -8,6 +9,7 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.buildConfig)
 }
 
 kotlin {
@@ -148,4 +150,18 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+}
+
+buildConfig {
+    packageName("sp.bvantur.inspektify.sample")
+
+    val secretsProperties = Properties()
+    rootProject.file("secrets.properties").takeIf { it.exists() }
+        ?.inputStream()?.use { secretsProperties.load(it) }
+
+    buildConfigField(
+        "String",
+        "API_KEY",
+        "\"${secretsProperties.getProperty("reqres.api.key") ?: System.getenv("REQRES_API_KEY") ?: ""}\""
+    )
 }
