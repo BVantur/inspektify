@@ -7,7 +7,6 @@ import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.applyPayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties
-import sp.bvantur.inspektify.ktor.core.data.utils.PAYLOAD_TOO_LARGE_PLACEHOLDER
 import sp.bvantur.inspektify.ktor.core.domain.utils.KtorPresentationConstants.REDACTED_DATA
 import kotlin.test.Test
 import kotlin.test.assertEquals
