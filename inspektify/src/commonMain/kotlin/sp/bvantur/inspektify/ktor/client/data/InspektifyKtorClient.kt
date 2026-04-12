@@ -12,6 +12,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import sp.bvantur.inspektify.ktor.InspektifyKtorConfig
+import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.client.di.KtorModule.networkTrafficRepository
 import sp.bvantur.inspektify.ktor.client.shared.configurePresentation
 import sp.bvantur.inspektify.ktor.core.di.AppComponents.cachedConfig
@@ -28,6 +29,7 @@ internal class InspektifyKtorClient {
     private var sessionId: Long? = null
     private var redactHeaders: List<String> = emptyList()
     private var redactBodyProperties: List<String> = emptyList()
+    private var payloadTooLargePolicy: PayloadTooLargePolicy = PayloadTooLargePolicy.BodySizeLimit()
 
     fun install(plugin: InspektifyKtor, client: HttpClient) {
         sessionId = getTimeMillis()
@@ -41,6 +43,7 @@ internal class InspektifyKtorClient {
         inspektifyNetworkTrafficLogger.configureLogger(config.logLevel)
         redactHeaders = config.redactHeaders
         redactBodyProperties = config.redactBodyProperties
+        payloadTooLargePolicy = config.payloadTooLargePolicy
         coroutineScope.launch(dispatcherProvider.main.immediate) {
             inspektifyKtorIgnoreEndpointHandler.configureEndpointIgnoring(config.ignoreEndpoints)
             configurePresentation(config.autoDetectEnabledFor, config.shortcutEnabled)
@@ -61,7 +64,8 @@ internal class InspektifyKtorClient {
                     request = context,
                     sessionId = sessionId,
                     redactHeaders = redactHeaders,
-                    redactBodyProperties = redactBodyProperties
+                    redactBodyProperties = redactBodyProperties,
+                    payloadTooLargePolicy = payloadTooLargePolicy
                 )
                 networkTrafficRepository.saveNetworkTrafficData(networkTraffic)
                 inspektifyNetworkTrafficLogger.logRequest(networkTraffic)
@@ -85,7 +89,8 @@ internal class InspektifyKtorClient {
                     response = response,
                     networkTraffic = networkTraffic,
                     redactHeaders = redactHeaders,
-                    redactBodyProperties = redactBodyProperties
+                    redactBodyProperties = redactBodyProperties,
+                    payloadTooLargePolicy = payloadTooLargePolicy
                 )
 
                 networkTrafficRepository.saveNetworkTrafficData(networkTrafficWithResponse)
