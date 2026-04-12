@@ -83,15 +83,16 @@ kotlin {
                 rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.m"),
                 rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.h")
             )
-            outputs.file("${shakeBuildDir}/libShakeDetektor.a")
+            outputs.file("$shakeBuildDir/libShakeDetektor.a")
             doFirst { shakeBuildDir.mkdirs() }
             commandLine(
-                "sh", "-c",
+                "sh",
+                "-c",
                 "SDK=\$(xcrun --sdk $sdk --show-sdk-path) && " +
-                "clang -arch $arch -isysroot \$SDK -fobjc-arc -x objective-c " +
-                "-c ${rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.m")} " +
-                "-o ${shakeBuildDir}/ShakeDetektorIOS.o && " +
-                "ar rcs ${shakeBuildDir}/libShakeDetektor.a ${shakeBuildDir}/ShakeDetektorIOS.o"
+                    "clang -arch $arch -isysroot \$SDK -fobjc-arc -x objective-c " +
+                    "-c ${rootProject.file("ShakeDetektorIOS/ShakeDetektorIOS.m")} " +
+                    "-o $shakeBuildDir/ShakeDetektorIOS.o && " +
+                    "ar rcs $shakeBuildDir/libShakeDetektor.a $shakeBuildDir/ShakeDetektorIOS.o"
             )
         }
 
@@ -101,8 +102,10 @@ kotlin {
                     create("ShakeDetektorIOS") {
                         includeDirs(rootProject.file("ShakeDetektorIOS"))
                         extraOpts(
-                            "-libraryPath", shakeBuildDir.absolutePath,
-                            "-staticLibrary", "libShakeDetektor.a"
+                            "-libraryPath",
+                            shakeBuildDir.absolutePath,
+                            "-staticLibrary",
+                            "libShakeDetektor.a"
                         )
                     }
                 }
@@ -221,4 +224,3 @@ sqldelight {
         }
     }
 }
-
