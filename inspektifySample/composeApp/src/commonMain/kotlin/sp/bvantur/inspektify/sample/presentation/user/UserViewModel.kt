@@ -18,11 +18,11 @@ class UserViewModel(
 ) : ViewModel(),
     ViewModelViewStateHandler<UserViewState> by ViewModelViewStateHandlerImpl(UserViewState(), dispatcher) {
 
-        init {
-            viewModelScope.launch {
-                getAllUsersUseCase()
-            }
+    init {
+        viewModelScope.launch {
+            getAllUsersUseCase()
         }
+    }
 
     fun onGetNextUserAction() {
         viewModelScope.launch(dispatcher.main) {
