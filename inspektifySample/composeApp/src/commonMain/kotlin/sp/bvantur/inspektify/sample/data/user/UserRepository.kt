@@ -8,4 +8,6 @@ class UserRepository(private val remoteDataSource: UserRemoteDataSource) {
             job = "Android Developer"
         )
     ): Result<CreateUserRemote> = remoteDataSource.createUser(user)
+
+    suspend fun getAllUsers(): Result<Any> = remoteDataSource.getAllUsers()
 }

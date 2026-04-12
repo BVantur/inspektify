@@ -36,4 +36,16 @@ class UserRemoteDataSource(private val httpClient: HttpClient, private val dispa
             }.body<CreateUserRemote>()
         }
     }
+
+    suspend fun getAllUsers(): Result<Any> = withContext(dispatcherProvider.io) {
+        NetworkUtils.safeApiCall {
+            httpClient.request {
+                url {
+                    method = HttpMethod.Get
+                    path("users")
+                    contentType(ContentType.Application.Json)
+                }
+            }.body<Any>()
+        }
+    }
 }

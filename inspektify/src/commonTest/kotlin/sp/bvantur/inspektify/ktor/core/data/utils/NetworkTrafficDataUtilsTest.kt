@@ -61,6 +61,35 @@ class NetworkTrafficDataUtilsTest {
     }
 
     @Test
+    fun `GIVEN payload size is below max size WHEN applyPayloadTooLargePolicy with OmitBody is called THEN payload is not modified`() {
+        val payload = "short payload"
+
+        assertEquals(payload, payload.applyPayloadTooLargePolicy(PayloadTooLargePolicy.OmitBody(1000)))
+    }
+
+    @Test
+    fun `GIVEN payload size equals max size WHEN applyPayloadTooLargePolicy with OmitBody is called THEN payload is not modified`() {
+        val payload = "a".repeat(10)
+
+        assertEquals(payload, payload.applyPayloadTooLargePolicy(PayloadTooLargePolicy.OmitBody(10)))
+    }
+
+    @Test
+    fun `GIVEN payload size exceeds max size WHEN applyPayloadTooLargePolicy with OmitBody is called THEN body omitted placeholder is returned`() {
+        val payload = "a".repeat(100)
+
+        assertEquals(
+            PAYLOAD_BODY_OMITTED_PLACEHOLDER,
+            payload.applyPayloadTooLargePolicy(PayloadTooLargePolicy.OmitBody(10))
+        )
+    }
+
+    @Test
+    fun `GIVEN payload is empty WHEN applyPayloadTooLargePolicy with OmitBody is called THEN empty string is returned`() {
+        assertEquals("", "".applyPayloadTooLargePolicy(PayloadTooLargePolicy.OmitBody(100)))
+    }
+
+    @Test
     fun `GIVEN there is no headers WHEN calculateHeadersSize is called THEN returns 0 as a size`() {
         val headers = HeadersBuilder().build()
 

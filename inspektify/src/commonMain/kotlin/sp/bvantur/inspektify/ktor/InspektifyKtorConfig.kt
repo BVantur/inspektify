@@ -38,6 +38,7 @@ public sealed interface DataRetentionPolicy {
 
 public sealed interface PayloadTooLargePolicy {
     public data class BodySizeLimit(val maxSize: Int = DEFAULT_MAX_PAYLOAD_SIZE) : PayloadTooLargePolicy
+    public data class OmitBody(val maxSize: Int = DEFAULT_MAX_PAYLOAD_SIZE) : PayloadTooLargePolicy
 
     public companion object {
         public const val DEFAULT_MAX_PAYLOAD_SIZE: Int = 250_000

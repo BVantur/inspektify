@@ -27,3 +27,20 @@ install(InspektifyKtor) {
 
 The named constant `PayloadTooLargePolicy.DEFAULT_MAX_PAYLOAD_SIZE` is available if you want to
 reference the default value explicitly in your own code.
+
+## PayloadTooLargePolicy.OmitBody
+
+Drops the body entirely when its byte size exceeds the threshold. The stored payload is replaced
+with a `[body omitted]` marker so the inspector makes it clear the body was intentionally skipped,
+rather than being empty by nature.
+
+This variant is useful when truncated bodies would still be too large, or when you want to conserve
+database space and only care about headers and metadata for large responses.
+
+```
+install(InspektifyKtor) {
+    payloadTooLargePolicy = PayloadTooLargePolicy.OmitBody()               // default: 250 000 bytes
+    payloadTooLargePolicy = PayloadTooLargePolicy.OmitBody(500_000)        // larger threshold
+    payloadTooLargePolicy = PayloadTooLargePolicy.OmitBody(100_000)        // stricter threshold
+}
+```

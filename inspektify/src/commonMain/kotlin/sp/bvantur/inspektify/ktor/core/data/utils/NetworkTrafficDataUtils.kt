@@ -13,6 +13,7 @@ import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.core.domain.utils.KtorPresentationConstants.REDACTED_DATA
 
 internal const val PAYLOAD_TOO_LARGE_PLACEHOLDER = "\n[... truncated]"
+internal const val PAYLOAD_BODY_OMITTED_PLACEHOLDER = "[body omitted]"
 
 internal object NetworkTrafficDataUtils {
 
@@ -33,6 +34,8 @@ internal object NetworkTrafficDataUtils {
 
     fun String.applyPayloadTooLargePolicy(policy: PayloadTooLargePolicy): String = when (policy) {
         is PayloadTooLargePolicy.BodySizeLimit -> truncatePayload(policy.maxSize)
+        is PayloadTooLargePolicy.OmitBody ->
+            if (encodeToByteArray().size > policy.maxSize) PAYLOAD_BODY_OMITTED_PLACEHOLDER else this
     }
 
     fun String.redactJsonProperties(propertiesToRedact: List<String>): String {
