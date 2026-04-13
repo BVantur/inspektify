@@ -18,6 +18,11 @@ updates:
       - dependency-name: "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose"
       - dependency-name: "androidx.activity:activity-compose"
       - dependency-name: "org.jetbrains.compose"
+      - dependency-name: "app.cash.sqldelight:primitive-adapters"
+      - dependency-name: "app.cash.sqldelight:coroutines-extensions"
+      - dependency-name: "app.cash.sqldelight:android-driver"
+      - dependency-name: "app.cash.sqldelight:native-driver"
+      - dependency-name: "app.cash.sqldelight:sqlite-driver"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
