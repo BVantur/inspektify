@@ -11,6 +11,7 @@ public class InspektifyKtorConfig {
     public var redactHeaders: List<String> = emptyList()
     public var redactBodyProperties: List<String> = emptyList()
     public var ignoreEndpoints: List<IgnorePathData> = emptyList()
+    public var payloadTooLargePolicy: PayloadTooLargePolicy = PayloadTooLargePolicy.BodySizeLimit()
 }
 
 public sealed interface LogLevel {
@@ -33,6 +34,15 @@ public sealed interface LogLevel {
 public sealed interface DataRetentionPolicy {
     public data class DayDuration(val numOfDays: Int) : DataRetentionPolicy
     public data class SessionCount(val numOfSessions: Int) : DataRetentionPolicy
+}
+
+public sealed interface PayloadTooLargePolicy {
+    public data class BodySizeLimit(val maxSize: Int = DEFAULT_MAX_PAYLOAD_SIZE) : PayloadTooLargePolicy
+    public data class OmitBody(val maxSize: Int = DEFAULT_MAX_PAYLOAD_SIZE) : PayloadTooLargePolicy
+
+    public companion object {
+        public const val DEFAULT_MAX_PAYLOAD_SIZE: Int = 250_000
+    }
 }
 
 public data class IgnorePathData(

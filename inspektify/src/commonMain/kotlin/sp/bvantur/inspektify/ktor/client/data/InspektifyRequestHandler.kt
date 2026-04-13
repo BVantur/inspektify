@@ -15,9 +15,11 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.ktor.KtorUtils
+import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.client.data.utils.tryReadText
 import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
+import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.applyPayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties
 import sp.bvantur.inspektify.ktor.core.di.AppComponents.json
@@ -29,7 +31,8 @@ internal class InspektifyRequestHandler {
         request: HttpRequestBuilder,
         sessionId: Long?,
         redactHeaders: List<String>,
-        redactBodyProperties: List<String>
+        redactBodyProperties: List<String>,
+        payloadTooLargePolicy: PayloadTooLargePolicy
     ): NetworkTraffic {
         val id = request.attributes[networkTrafficIdKey]
         val content = request.body as OutgoingContent
@@ -51,7 +54,8 @@ internal class InspektifyRequestHandler {
             protocol = url.protocol.name,
             requestTimestamp = id,
             requestHeaders = headers.entries().redactHeaders(redactHeaders),
-            requestPayload = payload?.redactJsonProperties(redactBodyProperties),
+            requestPayload = payload?.redactJsonProperties(redactBodyProperties)
+                ?.applyPayloadTooLargePolicy(payloadTooLargePolicy),
             requestPayloadSize = payloadSize,
             requestHeadersSize = headersSize.toLong()
         )

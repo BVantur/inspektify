@@ -4,7 +4,9 @@
       "Read(//Users/bvantur/**)",
       "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosSimulatorArm64 --info)",
       "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosSimulatorArm64)",
-      "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosArm64 :inspektify:cinteropShakeDetektorIOSIosX64)"
+      "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosArm64 :inspektify:cinteropShakeDetektorIOSIosX64)",
+      "WebFetch(domain:github.com)",
+      "Bash(./gradlew :inspektify:jvmTest --tests \"sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtilsTest\")"
     ]
   }
 }

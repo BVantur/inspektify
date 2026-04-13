@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import sp.bvantur.inspektify.sample.data.utils.DispatcherProvider
 import sp.bvantur.inspektify.sample.domain.usecase.CreateUserUseCase
+import sp.bvantur.inspektify.sample.domain.usecase.GetAllUsersUseCase
 import sp.bvantur.inspektify.sample.domain.usecase.GetUserUseCase
 import sp.bvantur.inspektify.sample.presentation.base.ViewModelViewStateHandler
 import sp.bvantur.inspektify.sample.presentation.base.ViewModelViewStateHandlerImpl
@@ -12,9 +13,16 @@ import sp.bvantur.inspektify.sample.presentation.base.ViewModelViewStateHandlerI
 class UserViewModel(
     private val dispatcher: DispatcherProvider,
     private val getUserUseCase: GetUserUseCase,
-    private val createUserUseCase: CreateUserUseCase
+    private val createUserUseCase: CreateUserUseCase,
+    private val getAllUsersUseCase: GetAllUsersUseCase
 ) : ViewModel(),
     ViewModelViewStateHandler<UserViewState> by ViewModelViewStateHandlerImpl(UserViewState(), dispatcher) {
+
+    init {
+        viewModelScope.launch {
+            getAllUsersUseCase()
+        }
+    }
 
     fun onGetNextUserAction() {
         viewModelScope.launch(dispatcher.main) {

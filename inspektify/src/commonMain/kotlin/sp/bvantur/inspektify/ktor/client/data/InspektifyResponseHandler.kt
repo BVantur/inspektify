@@ -5,8 +5,10 @@ import io.ktor.client.statement.bodyAsText
 import io.ktor.http.contentType
 import io.ktor.utils.io.charsets.Charsets
 import io.ktor.utils.io.core.toByteArray
+import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
+import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.applyPayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactHeaders
 import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils.redactJsonProperties
 
@@ -16,7 +18,8 @@ internal class InspektifyResponseHandler {
         response: HttpResponse,
         networkTraffic: NetworkTraffic,
         redactHeaders: List<String>,
-        redactBodyProperties: List<String>
+        redactBodyProperties: List<String>,
+        payloadTooLargePolicy: PayloadTooLargePolicy
     ): NetworkTraffic {
         val timestamp = response.responseTime.timestamp
         val status = response.status.value
@@ -31,7 +34,8 @@ internal class InspektifyResponseHandler {
             responseContentType = response.contentType()?.contentType,
             responseStatusDescription = description,
             responseHeaders = headers.entries().redactHeaders(redactHeaders),
-            responsePayload = payload.redactJsonProperties(redactBodyProperties),
+            responsePayload = payload.redactJsonProperties(redactBodyProperties)
+                .applyPayloadTooLargePolicy(payloadTooLargePolicy),
             responsePayloadSize = payload.toByteArray().size.toLong(),
             responseHeadersSize = headersSize,
             tookDurationInMs = timestamp - (networkTraffic.requestTimestamp ?: 0),

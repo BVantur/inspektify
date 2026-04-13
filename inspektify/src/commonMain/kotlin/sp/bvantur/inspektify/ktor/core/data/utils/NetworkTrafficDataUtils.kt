@@ -9,7 +9,11 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.core.domain.utils.KtorPresentationConstants.REDACTED_DATA
+
+internal const val PAYLOAD_TOO_LARGE_PLACEHOLDER = "\n[... truncated]"
+internal const val PAYLOAD_BODY_OMITTED_PLACEHOLDER = "[body omitted]"
 
 internal object NetworkTrafficDataUtils {
 
@@ -18,6 +22,22 @@ internal object NetworkTrafficDataUtils {
             value.toByteArray().size
         }
     }.sum()
+
+    fun String.truncatePayload(maxSize: Int): String {
+        if (maxSize <= 0) return this
+
+        val bytes = encodeToByteArray()
+        if (bytes.size <= maxSize) return this
+
+        return bytes.copyOfRange(0, maxSize).decodeToString() + PAYLOAD_TOO_LARGE_PLACEHOLDER
+    }
+
+    fun String.applyPayloadTooLargePolicy(policy: PayloadTooLargePolicy): String = when (policy) {
+        is PayloadTooLargePolicy.BodySizeLimit -> truncatePayload(policy.maxSize)
+        is PayloadTooLargePolicy.OmitBody -> takeIf {
+            policy.maxSize <= 0 || encodeToByteArray().size <= policy.maxSize
+        } ?: PAYLOAD_BODY_OMITTED_PLACEHOLDER
+    }
 
     fun String.redactJsonProperties(propertiesToRedact: List<String>): String {
         if (this.isEmpty()) return ""
