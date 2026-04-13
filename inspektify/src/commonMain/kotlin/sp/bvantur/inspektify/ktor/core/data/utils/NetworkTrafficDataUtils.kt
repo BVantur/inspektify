@@ -34,8 +34,9 @@ internal object NetworkTrafficDataUtils {
 
     fun String.applyPayloadTooLargePolicy(policy: PayloadTooLargePolicy): String = when (policy) {
         is PayloadTooLargePolicy.BodySizeLimit -> truncatePayload(policy.maxSize)
-        is PayloadTooLargePolicy.OmitBody ->
-            if (encodeToByteArray().size > policy.maxSize) PAYLOAD_BODY_OMITTED_PLACEHOLDER else this
+        is PayloadTooLargePolicy.OmitBody -> takeIf {
+            policy.maxSize <= 0 || encodeToByteArray().size <= policy.maxSize
+        } ?: PAYLOAD_BODY_OMITTED_PLACEHOLDER
     }
 
     fun String.redactJsonProperties(propertiesToRedact: List<String>): String {
