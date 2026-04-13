@@ -6,7 +6,9 @@
       "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosSimulatorArm64)",
       "Bash(./gradlew :inspektify:cinteropShakeDetektorIOSIosArm64 :inspektify:cinteropShakeDetektorIOSIosX64)",
       "WebFetch(domain:github.com)",
-      "Bash(./gradlew :inspektify:jvmTest --tests \"sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtilsTest\")"
+      "Bash(./gradlew :inspektify:jvmTest --tests \"sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtilsTest\")",
+      "Bash(./gradlew :inspektify:jvmTest --tests \"sp.bvantur.inspektify.ktor.client.data.InspektifyNetworkTrafficLoggerTest\")",
+      "Bash(./gradlew :inspektify:jvmTest --tests \"*.InspektifyNetworkTrafficLoggerTest\")"
     ]
   }
 }

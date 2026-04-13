@@ -32,6 +32,32 @@ internal object NetworkTrafficDataUtils {
         return bytes.copyOfRange(0, maxSize).decodeToString() + PAYLOAD_TOO_LARGE_PLACEHOLDER
     }
 
+    fun buildCurlCommand(
+        method: String,
+        url: String,
+        headers: Set<Map.Entry<String, List<String>>>?,
+        payload: String?
+    ): String {
+        val components = mutableListOf("curl -v")
+
+        components.add("-X $method")
+
+        headers?.forEach { (key, values) ->
+            val escapedValue = values.joinToString().replace("\"", "\\\"")
+            components.add("-H \"$key: $escapedValue\"")
+        }
+
+        payload?.let {
+            var escapedBody = it.replace("\\\"", "\\\\\"")
+            escapedBody = escapedBody.replace("\"", "\\\"")
+            components.add("-d \"$escapedBody\"")
+        }
+
+        components.add("\"$url\"")
+
+        return components.joinToString(separator = " \\\n\t")
+    }
+
     fun String.applyPayloadTooLargePolicy(policy: PayloadTooLargePolicy): String = when (policy) {
         is PayloadTooLargePolicy.BodySizeLimit -> truncatePayload(policy.maxSize)
         is PayloadTooLargePolicy.OmitBody -> takeIf {

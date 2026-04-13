@@ -3,6 +3,7 @@ package sp.bvantur.inspektify.ktor.client.data
 import io.ktor.http.Url
 import sp.bvantur.inspektify.ktor.LogLevel
 import sp.bvantur.inspektify.ktor.client.domain.model.NetworkTraffic
+import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 
 internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger = SystemLoggerImpl()) {
     private var logLevel: LogLevel = LogLevel.None
@@ -33,6 +34,14 @@ internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger =
             requestLogger.appendLineWithTag(networkTraffic.requestPayload)
             requestLogger.appendLineWithTag("BODY END")
         }
+        if (logLevel.canLogInfo()) {
+            requestLogger.appendLineWithTag("CURL")
+            requestLogger.appendLine(buildCurlCommand(networkTraffic))
+        }
+        requestLogger.appendLine(
+            "------------------------------------------------------------------------------" +
+                "---------------------------------------------------------------------------------------"
+        )
         logger.log(requestLogger.toString().trim())
     }
 
@@ -59,7 +68,23 @@ internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger =
             responseLogger.appendLineWithTag("BODY END")
         }
 
+        responseLogger.appendLine(
+            "------------------------------------------------------------------------------" +
+                "---------------------------------------------------------------------------------------"
+        )
         logger.log(responseLogger.toString().trim())
+    }
+
+    private fun buildCurlCommand(networkTraffic: NetworkTraffic): String {
+        val method = networkTraffic.method ?: return ""
+        val url = networkTraffic.url ?: return ""
+
+        return NetworkTrafficDataUtils.buildCurlCommand(
+            method = method,
+            url = url,
+            headers = networkTraffic.requestHeaders.takeIf { logLevel.canLogHeaders() },
+            payload = networkTraffic.requestPayload?.takeIf { it.isNotEmpty() && logLevel.canLogBody() }
+        )
     }
 
     private fun headersToLog(headers: Set<Map.Entry<String, List<String>>>?): String {

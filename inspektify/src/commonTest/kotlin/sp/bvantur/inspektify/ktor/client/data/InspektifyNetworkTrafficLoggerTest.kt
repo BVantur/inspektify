@@ -11,6 +11,9 @@ import kotlin.test.assertTrue
 
 class InspektifyNetworkTrafficLoggerTest {
 
+    private val separator = "------------------------------------------------------------------------------" +
+        "---------------------------------------------------------------------------------------"
+
     private val systemLogger = TestSystemLogger()
 
     private lateinit var inspektifyLogger: InspektifyNetworkTrafficLogger
@@ -69,7 +72,10 @@ class InspektifyNetworkTrafficLoggerTest {
         assertEquals(1, systemLogger.loggedMessages.size)
         assertEquals(
             "[InspektifyHttpClient]: REQUEST: https://example.com\n" +
-                "[InspektifyHttpClient]: METHOD: GET",
+                "[InspektifyHttpClient]: METHOD: GET\n" +
+                "[InspektifyHttpClient]: CURL\n" +
+                "curl -v \\\n\t-X GET \\\n\t\"https://example.com\"\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -86,7 +92,12 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: HEADERS\n" +
                 "[InspektifyHttpClient]: Header1:[value1, value2]\n" +
                 "[InspektifyHttpClient]: Header2:[value3, value4]\n" +
-                "[InspektifyHttpClient]: Header3:[value5, value6]",
+                "[InspektifyHttpClient]: Header3:[value5, value6]\n" +
+                "\n" +
+                "[InspektifyHttpClient]: CURL\n" +
+                "curl -v \\\n\t-X GET \\\n\t-H \"Header1: value1, value2\" \\\n\t-H \"Header2: value3, value4\" " +
+                "\\\n\t-H \"Header3: value5, value6\" \\\n\t\"https://example.com\"\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -103,7 +114,10 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: BODY Content-Type: application/json\n" +
                 "[InspektifyHttpClient]: BODY START\n" +
                 "[InspektifyHttpClient]: Request Payload\n" +
-                "[InspektifyHttpClient]: BODY END",
+                "[InspektifyHttpClient]: BODY END\n" +
+                "[InspektifyHttpClient]: CURL\n" +
+                "curl -v \\\n\t-X GET \\\n\t-d \"Request Payload\" \\\n\t\"https://example.com\"\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -125,7 +139,12 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: BODY Content-Type: application/json\n" +
                 "[InspektifyHttpClient]: BODY START\n" +
                 "[InspektifyHttpClient]: Request Payload\n" +
-                "[InspektifyHttpClient]: BODY END",
+                "[InspektifyHttpClient]: BODY END\n" +
+                "[InspektifyHttpClient]: CURL\n" +
+                "curl -v \\\n\t-X GET \\\n\t-H \"Header1: value1, value2\" \\\n\t-H \"Header2: value3, " +
+                "value4\" \\\n\t-H \"Header3: value5, value6\" \\\n\t-d \"Request Payload\" " +
+                "\\\n\t\"https://example.com\"\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -147,7 +166,8 @@ class InspektifyNetworkTrafficLoggerTest {
         assertEquals(
             "[InspektifyHttpClient]: RESPONSE: 200\n" +
                 "[InspektifyHttpClient]: METHOD: GET\n" +
-                "[InspektifyHttpClient]: FROM: https://example.com",
+                "[InspektifyHttpClient]: FROM: https://example.com\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -165,7 +185,9 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: HEADERS\n" +
                 "[InspektifyHttpClient]: Header1:[value1, value2]\n" +
                 "[InspektifyHttpClient]: Header2:[value3, value4]\n" +
-                "[InspektifyHttpClient]: Header3:[value5, value6]",
+                "[InspektifyHttpClient]: Header3:[value5, value6]\n" +
+                "\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -183,7 +205,8 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: BODY Content-Type: application/json\n" +
                 "[InspektifyHttpClient]: BODY START\n" +
                 "[InspektifyHttpClient]: Response Payload\n" +
-                "[InspektifyHttpClient]: BODY END",
+                "[InspektifyHttpClient]: BODY END\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
@@ -206,7 +229,8 @@ class InspektifyNetworkTrafficLoggerTest {
                 "[InspektifyHttpClient]: BODY Content-Type: application/json\n" +
                 "[InspektifyHttpClient]: BODY START\n" +
                 "[InspektifyHttpClient]: Response Payload\n" +
-                "[InspektifyHttpClient]: BODY END",
+                "[InspektifyHttpClient]: BODY END\n" +
+                separator,
             systemLogger.loggedMessages.first()
         )
     }
