@@ -6,8 +6,9 @@ import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 internal object DetailsNetworkTrafficMapper {
 
     fun toCurlCommand(networkTrafficData: NetworkTrafficDataLocal): String {
-        val method = networkTrafficData.method ?: return "Failed to create cURL command"
-        val url = networkTrafficData.url ?: return "Failed to create cURL command"
+        val errorMessage = "Failed to create cURL command"
+        val method = networkTrafficData.method ?: return errorMessage
+        val url = networkTrafficData.url ?: return errorMessage
 
         return NetworkTrafficDataUtils.buildCurlCommand(
             method = method,

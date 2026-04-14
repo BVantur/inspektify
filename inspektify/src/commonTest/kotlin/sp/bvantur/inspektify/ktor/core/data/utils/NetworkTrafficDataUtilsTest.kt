@@ -231,4 +231,124 @@ class NetworkTrafficDataUtilsTest {
 
         assertEquals(redactedJson, json.redactJsonProperties(listOf("items")))
     }
+
+    @Test
+    fun `GIVEN null headers and null payload WHEN buildCurlCommand is called THEN returns basic curl command with method and url only`() {
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "GET",
+            url = "https://example.com",
+            headers = null,
+            payload = null
+        )
+
+        assertEquals("curl -v \\\n\t-X GET \\\n\t\"https://example.com\"", result)
+    }
+
+    @Test
+    fun `GIVEN empty headers set and null payload WHEN buildCurlCommand is called THEN returns curl command without header flags`() {
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "GET",
+            url = "https://example.com",
+            headers = emptySet(),
+            payload = null
+        )
+
+        assertEquals("curl -v \\\n\t-X GET \\\n\t\"https://example.com\"", result)
+    }
+
+    @Test
+    fun `GIVEN headers and no payload WHEN buildCurlCommand is called THEN returns curl command with header flags`() {
+        val headers = mapOf("Content-Type" to listOf("application/json")).entries
+
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "GET",
+            url = "https://example.com",
+            headers = headers,
+            payload = null
+        )
+
+        assertEquals(
+            "curl -v \\\n\t-X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t\"https://example.com\"",
+            result
+        )
+    }
+
+    @Test
+    fun `GIVEN header value with quotes WHEN buildCurlCommand is called THEN quotes are escaped in header value`() {
+        val headers = mapOf("Authorization" to listOf("Bearer tok\"en")).entries
+
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "GET",
+            url = "https://example.com",
+            headers = headers,
+            payload = null
+        )
+
+        assertEquals(
+            "curl -v \\\n\t-X GET \\\n\t-H \"Authorization: Bearer tok\\\"en\" \\\n\t\"https://example.com\"",
+            result
+        )
+    }
+
+    @Test
+    fun `GIVEN payload and no headers WHEN buildCurlCommand is called THEN returns curl command with body flag`() {
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "POST",
+            url = "https://example.com",
+            headers = null,
+            payload = "body content"
+        )
+
+        assertEquals(
+            "curl -v \\\n\t-X POST \\\n\t-d \"body content\" \\\n\t\"https://example.com\"",
+            result
+        )
+    }
+
+    @Test
+    fun `GIVEN payload with quotes WHEN buildCurlCommand is called THEN quotes are escaped in body`() {
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "POST",
+            url = "https://example.com",
+            headers = null,
+            payload = "say \"hello\""
+        )
+
+        assertEquals(
+            "curl -v \\\n\t-X POST \\\n\t-d \"say \\\"hello\\\"\" \\\n\t\"https://example.com\"",
+            result
+        )
+    }
+
+    @Test
+    fun `GIVEN payload with already escaped quotes WHEN buildCurlCommand is called THEN escaped quotes are double escaped`() {
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "POST",
+            url = "https://example.com",
+            headers = null,
+            payload = "text\\\"word"
+        )
+
+        assertEquals(
+            "curl -v \\\n\t-X POST \\\n\t-d \"text\\\\\\\"word\" \\\n\t\"https://example.com\"",
+            result
+        )
+    }
+
+    @Test
+    fun `GIVEN both headers and payload WHEN buildCurlCommand is called THEN returns curl command with both header and body flags`() {
+        val headers = mapOf("Content-Type" to listOf("application/json")).entries
+
+        val result = NetworkTrafficDataUtils.buildCurlCommand(
+            method = "POST",
+            url = "https://example.com",
+            headers = headers,
+            payload = "data"
+        )
+
+        assertEquals(
+            "curl -v \\\n\t-X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-d \"data\" \\\n\t\"https://example.com\"",
+            result
+        )
+    }
 }
