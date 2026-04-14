@@ -1,6 +1,6 @@
 [versions]
 # INSPEKTIFY LIB VERSION
-inspektify-version = "1.0.0-beta10"
+inspektify-version = "1.0.0"
 
 # GENERAL dependencies
 agp = "8.13.1"
@@ -41,7 +41,7 @@ ktor2 = "2.3.1"
 koin = "4.1.1"  # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 
 # CASH dependencies
-cash-sqlDelight = "2.1.0"
+cash-sqlDelight = "2.2.1" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 
 # CODE ANALYSIS dependencies
 ktlint = "14.2.0"
