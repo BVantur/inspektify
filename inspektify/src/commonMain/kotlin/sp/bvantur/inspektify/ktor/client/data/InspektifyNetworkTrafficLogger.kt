@@ -7,7 +7,7 @@ import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 
 internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger = SystemLoggerImpl()) {
     private var logLevel: LogLevel = LogLevel.None
-    private val tag = "[InspektifyHttpClient]:"
+    private val tag = "[Inspektify]:"
 
     fun configureLogger(logLevel: LogLevel) {
         this.logLevel = logLevel
@@ -35,13 +35,12 @@ internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger =
             requestLogger.appendLineWithTag("BODY END")
         }
         if (logLevel.canLogInfo()) {
-            requestLogger.appendLineWithTag("CURL")
-            requestLogger.appendLine(buildCurlCommand(networkTraffic))
+            buildCurlCommand(networkTraffic).takeIf { it.isNotBlank() }?.let { curlCommand ->
+                requestLogger.appendLineWithTag("CURL")
+                requestLogger.appendLine(curlCommand)
+            }
         }
-        requestLogger.appendLine(
-            "------------------------------------------------------------------------------" +
-                "---------------------------------------------------------------------------------------"
-        )
+        requestLogger.appendLine(SEPARATOR)
         logger.log(requestLogger.toString().trim())
     }
 
@@ -68,10 +67,7 @@ internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger =
             responseLogger.appendLineWithTag("BODY END")
         }
 
-        responseLogger.appendLine(
-            "------------------------------------------------------------------------------" +
-                "---------------------------------------------------------------------------------------"
-        )
+        responseLogger.appendLine(SEPARATOR)
         logger.log(responseLogger.toString().trim())
     }
 
@@ -99,3 +95,7 @@ internal class InspektifyNetworkTrafficLogger(private val logger: SystemLogger =
         appendLine("$tag $line")
     }
 }
+
+internal const val SEPARATOR =
+    "------------------------------------------------------------------------------" +
+        "---------------------------------------------------------------------------------------"
