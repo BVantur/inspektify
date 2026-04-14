@@ -1,6 +1,7 @@
 package sp.bvantur.inspektify.ktor.details.data.mapper
 
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
+import sp.bvantur.inspektify.ktor.core.data.utils.NetworkTrafficDataUtils
 
 internal object DetailsNetworkTrafficMapper {
 
@@ -9,24 +10,12 @@ internal object DetailsNetworkTrafficMapper {
         val method = networkTrafficData.method ?: return errorMessage
         val url = networkTrafficData.url ?: return errorMessage
 
-        val components = mutableListOf("curl -v")
-
-        components.add("-X $method")
-
-        networkTrafficData.requestHeaders?.forEach { (key, value) ->
-            val escapedValue = value.joinToString().replace("\"", "\\\"")
-            components.add("-H \"$key: $escapedValue\"")
-        }
-
-        networkTrafficData.requestPayload?.let { payload ->
-            var escapedBody = payload.replace("\\\"", "\\\\\"")
-            escapedBody = escapedBody.replace("\"", "\\\"")
-            components.add("-d \"$escapedBody\"")
-        }
-
-        components.add("\"$url\"")
-
-        return components.joinToString(separator = " \\\n\t")
+        return NetworkTrafficDataUtils.buildCurlCommand(
+            method = method,
+            url = url,
+            headers = networkTrafficData.requestHeaders,
+            payload = networkTrafficData.requestPayload
+        )
     }
 
     fun toNetworkTrafficContent(networkTrafficData: NetworkTrafficDataLocal): String {
