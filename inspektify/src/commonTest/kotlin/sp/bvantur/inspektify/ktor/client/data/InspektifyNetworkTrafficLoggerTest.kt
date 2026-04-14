@@ -10,10 +10,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class InspektifyNetworkTrafficLoggerTest {
-
-    private val separator = "------------------------------------------------------------------------------" +
-        "---------------------------------------------------------------------------------------"
-
     private val systemLogger = TestSystemLogger()
 
     private lateinit var inspektifyLogger: InspektifyNetworkTrafficLogger
