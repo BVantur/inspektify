@@ -23,6 +23,7 @@ updates:
       - dependency-name: "app.cash.sqldelight:android-driver"
       - dependency-name: "app.cash.sqldelight:native-driver"
       - dependency-name: "app.cash.sqldelight:sqlite-driver"
+      - dependency-name: "app.cash.sqldelight"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
