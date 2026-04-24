@@ -4,7 +4,7 @@ inspektify-version = "1.0.0"
 
 # GENERAL dependencies
 agp = "8.13.1"
-kotlin = "2.3.20"
+kotlin = "2.3.21"
 compose-plugin = "1.9.0" # update to greater version demands increasing the min sdk version to 23, remove from dependabot when we change android min sdk version to 23
 
 # ANDROID PORJECT dependencies
