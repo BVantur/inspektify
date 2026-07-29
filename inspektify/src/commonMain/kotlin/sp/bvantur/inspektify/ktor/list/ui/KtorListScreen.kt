@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -19,140 +20,80 @@ import androidx.compose.material.icons.outlined.Timer
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.resources.painterResource
-import sp.bvantur.inspektify.ktor.core.presentation.viewModelFactory
 import sp.bvantur.inspektify.ktor.core.ui.theme.disabled
-import sp.bvantur.inspektify.ktor.core.ui.utils.CollectSingleEventsWithLifecycle
 import sp.bvantur.inspektify.ktor.core.ui.utils.ColorUtils
 import sp.bvantur.inspektify.ktor.list.domain.model.NetworkTrafficListItem
-import sp.bvantur.inspektify.ktor.list.presentation.KtorListEvent
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListUserAction
-import sp.bvantur.inspektify.ktor.list.presentation.KtorListVewModel
 import sp.bvantur.inspektify.ktor.list.presentation.KtorListViewState
-import sp.bvantur.inspektify.ktor.list.ui.components.KtorListTopAppBar
-import sp.bvantur.inspektify.ktor.list.ui.navigation.OnNavigateToDetailsAction
-
-@Composable
-internal fun KtorListRoute(onNavigateToDetailsAction: OnNavigateToDetailsAction) {
-    val viewModel = viewModel<KtorListVewModel>(
-        factory = viewModelFactory {
-            KtorListVewModel()
-        }
-    )
-
-    val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
-
-    val searchFocusRequester = remember { FocusRequester() }
-
-    CollectSingleEventsWithLifecycle(singleEventFlow = viewModel.singleEventFlow) { singleEvent ->
-        when (singleEvent) {
-            is KtorListEvent.ToNetworkDetails -> {
-                onNavigateToDetailsAction(singleEvent.id)
-            }
-
-            KtorListEvent.MoveFocusOnSearch -> {
-                searchFocusRequester.requestFocus()
-            }
-
-            KtorListEvent.RemoveFocusFromSearch -> {
-                searchFocusRequester.requestFocus()
-            }
-        }
-    }
-
-    KtorListScreen(
-        viewState = viewState,
-        searchFocusRequester = searchFocusRequester,
-        onUserAction = viewModel::onUserAction
-    )
-}
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun KtorListScreen(
+internal fun NetworkPageContent(
     viewState: KtorListViewState,
-    searchFocusRequester: FocusRequester,
-    onUserAction: (KtorListUserAction) -> Unit
+    onUserAction: (KtorListUserAction) -> Unit,
+    modifier: Modifier = Modifier
 ) {
-    Scaffold(
-        topBar = {
-            KtorListTopAppBar(
-                isSearching = viewState.isSearching,
-                searchQuery = viewState.searchQuery,
-                focusRequester = searchFocusRequester,
-                onUserAction = onUserAction,
-                showNavigationBackAction = viewState.showNavigationBackAction,
-                suggestions = viewState.suggestions
+    Column(modifier = modifier.fillMaxSize()) {
+        if (viewState.items.isEmpty()) {
+            Text(
+                text = "No items",
+                modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 8.dp)
             )
-        }
-    ) { innerPadding ->
-        Column(modifier = Modifier.fillMaxWidth().padding(innerPadding)) {
-            if (viewState.items.isEmpty()) {
-                Text(
-                    text = "No items",
-                    modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 8.dp)
-                )
+        } else {
+            val networkTrafficItems = if (viewState.isSearching) {
+                viewState.queriedItems
             } else {
-                val networkTrafficItems = if (viewState.isSearching) {
-                    viewState.queriedItems
-                } else {
-                    viewState.items
-                }
-                LazyColumn(modifier = Modifier.weight(1f)) {
-                    networkTrafficItems.forEach { (date, items) ->
-                        stickyHeader(key = date) {
-                            Box(
-                                modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)
-                                    .clickable { }
-                            ) {
-                                Text(
-                                    text = date,
-                                    color = MaterialTheme.colorScheme.onSecondary,
-                                    style = MaterialTheme.typography.titleMedium,
-                                    modifier = Modifier.padding(8.dp).align(Alignment.Center)
-                                )
-                            }
-                        }
-                        items(
-                            items.size,
-                            key = { items[it].id }
-                        ) { index ->
-                            val networkTrafficItem = items[index]
-
-                            NetworkTrafficItem(
-                                item = networkTrafficItem,
-                                modifier = Modifier.clickable {
-                                    if (!networkTrafficItem.isCompleted) return@clickable
-
-                                    onUserAction(KtorListUserAction.OnNetworkTrafficItemSelected(networkTrafficItem.id))
-                                }
+                viewState.items
+            }
+            LazyColumn(modifier = Modifier.weight(1f)) {
+                networkTrafficItems.forEach { (date, items) ->
+                    stickyHeader(key = date) {
+                        Box(
+                            modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)
+                                .clickable { }
+                        ) {
+                            Text(
+                                text = date,
+                                color = MaterialTheme.colorScheme.onSecondary,
+                                style = MaterialTheme.typography.titleMedium,
+                                modifier = Modifier.padding(8.dp).align(Alignment.Center)
                             )
                         }
                     }
-                }
+                    items(
+                        items.size,
+                        key = { items[it].id }
+                    ) { index ->
+                        val networkTrafficItem = items[index]
 
-                Box(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
-                    Text(
-                        text = viewState.retentionPolicyText,
-                        modifier = Modifier.align(Alignment.Center).padding(16.dp),
-                        color = MaterialTheme.colorScheme.onSecondary
-                    )
+                        NetworkTrafficItem(
+                            item = networkTrafficItem,
+                            modifier = Modifier.clickable {
+                                if (!networkTrafficItem.isCompleted) return@clickable
+
+                                onUserAction(KtorListUserAction.OnNetworkTrafficItemSelected(networkTrafficItem.id))
+                            }
+                        )
+                    }
                 }
+            }
+
+            Box(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondary)) {
+                Text(
+                    text = viewState.retentionPolicyText,
+                    modifier = Modifier.align(Alignment.Center).padding(16.dp),
+                    color = MaterialTheme.colorScheme.onSecondary
+                )
             }
         }
     }

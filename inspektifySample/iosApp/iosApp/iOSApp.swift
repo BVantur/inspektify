@@ -7,6 +7,7 @@ struct iOSApp: App {
 
     init() {
         KoinImplKt.doInitKoin()
+        registerSwiftUIInspektifyExtensions()
 	}
 
     var body: some Scene {

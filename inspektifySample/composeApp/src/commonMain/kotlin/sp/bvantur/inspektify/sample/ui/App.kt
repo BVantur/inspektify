@@ -18,16 +18,20 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.compose.viewmodel.koinViewModel
 import sp.bvantur.inspektify.ktor.InspektifyKtor
+import sp.bvantur.inspektify.sample.inspektify.registerSampleInspektifyExtensions
 import sp.bvantur.inspektify.sample.presentation.user.UserViewModel
 
 @Composable
 fun App() {
+    remember { registerSampleInspektifyExtensions() }
+
     val viewModel = koinViewModel<UserViewModel>()
 
     val viewState by viewModel.viewStateFlow.collectAsStateWithLifecycle()
