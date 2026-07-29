@@ -38,7 +38,8 @@ class LibKonsistTest {
             "EndpointMatchingStrategy",
             "ShortcutCombination",
             "MainModifier",
-            "MainKey"
+            "MainKey",
+            "InspektifyExtension"
         )
 
         Konsist.scopeFromModule("inspektify")
@@ -103,13 +104,21 @@ class LibKonsistTest {
             "IgnorePathData:matchingStrategy",
             "InspektifyKtorConfig:redactBodyProperties",
             "InspektifyKtorConfig:ignoreEndpoints",
-            "InspektifyKtorConfig:autoDetectEnabledFor"
+            "InspektifyKtorConfig:autoDetectEnabledFor",
+            "InspektifyExtension:id",
+            "InspektifyExtension:title",
+            "InspektifyExtension:icon",
+            "InspektifyExtension:order",
+            "InspektifyExtension:content"
         )
 
         val publicComponents = mutableListOf<String>()
 
         Konsist.scopeFromModule("inspektify")
             .classes()
+            .filter {
+                !it.name.endsWith("Test")
+            }
             .filter { clazz ->
                 isPublicComponent(clazz) && !clazz.hasParentInterfaces() && !clazz.hasParentClass()
             }.forEach { clazz ->

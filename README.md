@@ -120,6 +120,7 @@ Network transactions from previous sessions have a background in light gray colo
 6. [Redact data from Inspektify](docs/REDACT_DATA_FROM_INSPEKTIFY.md)
 7. [Ignore endpoints configuration](docs/IGNORE_ENDPOINTS_CONFIGURATION.md)
 8. [Payload too large policy](docs/PAYLOAD_TOO_LARGE_POLICY.md)
+9. [Extensions](docs/EXTENSIONS.md)
 
 ## Sample project
 
