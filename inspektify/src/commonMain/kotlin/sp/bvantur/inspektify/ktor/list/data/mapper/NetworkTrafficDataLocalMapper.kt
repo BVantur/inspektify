@@ -10,6 +10,7 @@ import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getMethod
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getMethodWithPath
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getPresentationStatusCode
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getSize
+import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getTags
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getTime
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.isCompleted
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.isFromActiveSession
@@ -24,6 +25,7 @@ internal object NetworkTrafficDataLocalMapper {
             statusColor = statusCode.statusColor,
             method = getMethod(),
             methodWithPath = getMethodWithPath(),
+            tags = getTags(),
             host = getHost(),
             hostImage = getHostImage(),
             time = getTime(),

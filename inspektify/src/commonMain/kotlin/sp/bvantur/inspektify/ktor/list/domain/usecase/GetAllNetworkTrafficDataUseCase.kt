@@ -33,7 +33,13 @@ internal class GetAllNetworkTrafficDataUseCaseImpl : GetAllNetworkTrafficDataUse
                 .filter { it.method.isNotBlank() }
                 .map { it.method }.toSet()
 
-            val suggestions = statusCodes + methods
+            val tags = data
+                .flatMap { it.tags }
+                .distinct()
+                .sorted()
+                .toSet()
+
+            val suggestions = statusCodes + methods + tags
 
             val groupedNetworkTrafficData: Map<String, List<NetworkTrafficListItem>> = data.map { item ->
                 item to item.date

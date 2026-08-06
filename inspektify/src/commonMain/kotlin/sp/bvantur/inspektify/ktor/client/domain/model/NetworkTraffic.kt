@@ -8,6 +8,7 @@ internal data class NetworkTraffic(
     val host: String? = null,
     val path: String? = null,
     val protocol: String? = null,
+    val tags: List<String>? = null,
     val requestContentType: String? = null,
     val requestTimestamp: Long? = null,
     val requestHeaders: Set<Map.Entry<String, List<String>>>? = null,

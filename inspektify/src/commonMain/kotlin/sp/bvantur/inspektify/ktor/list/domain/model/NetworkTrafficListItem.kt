@@ -8,6 +8,7 @@ internal data class NetworkTrafficListItem(
     val statusColor: StatusColor,
     val method: String,
     val methodWithPath: String,
+    val tags: List<String>,
     val host: String,
     val hostImage: DrawableResource,
     val time: String,

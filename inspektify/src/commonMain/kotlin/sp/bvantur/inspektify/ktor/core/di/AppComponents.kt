@@ -57,7 +57,8 @@ internal object AppComponents {
             driver = DatabaseDriverProvider.createDriver(),
             NetworkTrafficDataLocalAdapter = NetworkTrafficDataLocal.Adapter(
                 responseHeadersAdapter = listOfNetworkTrafficHeaderAdapter,
-                requestHeadersAdapter = listOfNetworkTrafficHeaderAdapter
+                requestHeadersAdapter = listOfNetworkTrafficHeaderAdapter,
+                tagsAdapter = tagsAdapter
             )
         )
     }
@@ -72,4 +73,10 @@ internal object AppComponents {
 
             override fun encode(value: Set<Map.Entry<String, List<String>>>): String = json.encodeToString(value)
         }
+
+    private val tagsAdapter = object : ColumnAdapter<List<String>, String> {
+        override fun decode(databaseValue: String): List<String> = json.decodeFromString(databaseValue)
+
+        override fun encode(value: List<String>): String = json.encodeToString(value)
+    }
 }
