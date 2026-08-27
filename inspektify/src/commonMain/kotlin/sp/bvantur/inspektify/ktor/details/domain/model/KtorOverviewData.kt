@@ -1,6 +1,7 @@
 package sp.bvantur.inspektify.ktor.details.domain.model
 
 internal data class KtorOverviewData(
+    val tags: String?,
     val url: String?,
     val method: String?,
     val protocol: String?,

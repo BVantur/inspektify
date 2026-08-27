@@ -11,6 +11,7 @@ CREATE TABLE NetworkTrafficDataLocal (
   host TEXT,
   path TEXT,
   protocol TEXT,
+  tags TEXT AS List<String>,
 
   requestTimestamp INTEGER,
   requestHeaders TEXT AS Set<Map.Entry<String, List<String>>>,
@@ -34,8 +35,8 @@ getAllNetworkTraffic:
 SELECT * FROM NetworkTrafficDataLocal;
 
 insertNetworkTraffic:
-INSERT OR REPLACE INTO NetworkTrafficDataLocal(id, sessionId, method, url, host, path, protocol, requestTimestamp, requestHeaders, requestPayload, requestContentType, requestPayloadSize, requestHeadersSize, responseTimestamp, responseStatus, responseStatusDescription, responseHeaders, responsePayload, responseContentType, responsePayloadSize, responseHeadersSize, tookDurationInMs)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+INSERT OR REPLACE INTO NetworkTrafficDataLocal(id, sessionId, method, url, host, path, protocol, tags, requestTimestamp, requestHeaders, requestPayload, requestContentType, requestPayloadSize, requestHeadersSize, responseTimestamp, responseStatus, responseStatusDescription, responseHeaders, responsePayload, responseContentType, responsePayloadSize, responseHeadersSize, tookDurationInMs)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 getNetworkTrafficById:
 SELECT * FROM NetworkTrafficDataLocal WHERE id = ?;

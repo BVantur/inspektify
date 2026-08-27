@@ -23,6 +23,7 @@ class NetworkTrafficDataLocalExtensionsKtTest {
         host = null,
         path = null,
         protocol = null,
+        tags = null,
         requestTimestamp = null,
         requestHeaders = null,
         requestPayload = null,
@@ -107,6 +108,27 @@ class NetworkTrafficDataLocalExtensionsKtTest {
         val methodWithPath = data.getMethodWithPath()
 
         assertEquals("method path", methodWithPath)
+    }
+
+    @Test
+    fun `GIVEN tags is null WHEN getTags is called THEN returns empty list`() {
+        val data = networkTrafficDataLocal.copy(tags = null)
+
+        assertEquals(emptyList(), data.getTags())
+    }
+
+    @Test
+    fun `GIVEN tags contains blank entries WHEN getTags is called THEN blank entries are dropped`() {
+        val data = networkTrafficDataLocal.copy(tags = listOf("SearchProducts", "   ", "query"))
+
+        assertEquals(listOf("SearchProducts", "query"), data.getTags())
+    }
+
+    @Test
+    fun `GIVEN tags is not null WHEN getTags is called THEN returns actual data`() {
+        val data = networkTrafficDataLocal.copy(tags = listOf("SearchProducts", "query"))
+
+        assertEquals(listOf("SearchProducts", "query"), data.getTags())
     }
 
     @Test

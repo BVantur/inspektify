@@ -47,6 +47,7 @@ internal object DetailsNetworkTrafficTextUtils {
     }
 
     fun toOverviewAnnotatedString(data: KtorOverviewData): AnnotatedString = buildAnnotatedString {
+        onAppendToAnnotatedString("Tags", data.tags)
         onAppendToAnnotatedString("URL", data.url)
         onAppendToAnnotatedString("Method", data.method)
         onAppendToAnnotatedString("Protocol", data.protocol)

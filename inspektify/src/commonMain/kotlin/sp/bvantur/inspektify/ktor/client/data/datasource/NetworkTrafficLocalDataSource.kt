@@ -18,6 +18,7 @@ internal class NetworkTrafficLocalDataSource {
                     host = networkTraffic.host,
                     path = networkTraffic.path,
                     protocol = networkTraffic.protocol,
+                    tags = networkTraffic.tags,
                     requestTimestamp = networkTraffic.requestTimestamp,
                     requestHeaders = networkTraffic.requestHeaders,
                     requestPayload = networkTraffic.requestPayload,

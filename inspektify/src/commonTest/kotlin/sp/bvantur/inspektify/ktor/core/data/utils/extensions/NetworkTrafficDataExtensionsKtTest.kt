@@ -18,6 +18,7 @@ class NetworkTrafficDataExtensionsKtTest {
             host = "example.com",
             path = "/path",
             protocol = "HTTP/1.1",
+            tags = listOf("SearchProducts", "query"),
             requestTimestamp = 1234567890,
             requestHeaders = setOf(
                 "Header1" to listOf("value1", "value2"),
@@ -52,6 +53,7 @@ class NetworkTrafficDataExtensionsKtTest {
         assertEquals(networkTrafficDataLocal.host, networkTraffic.host)
         assertEquals(networkTrafficDataLocal.path, networkTraffic.path)
         assertEquals(networkTrafficDataLocal.protocol, networkTraffic.protocol)
+        assertEquals(networkTrafficDataLocal.tags, networkTraffic.tags)
         assertEquals(networkTrafficDataLocal.requestTimestamp, networkTraffic.requestTimestamp)
         assertEquals(networkTrafficDataLocal.requestHeaders, networkTraffic.requestHeaders)
         assertEquals(networkTrafficDataLocal.requestPayload, networkTraffic.requestPayload)

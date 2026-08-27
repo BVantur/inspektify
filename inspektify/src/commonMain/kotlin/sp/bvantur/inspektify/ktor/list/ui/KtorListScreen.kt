@@ -4,8 +4,11 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.HourglassBottom
 import androidx.compose.material.icons.outlined.Storage
@@ -29,6 +33,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
 import sp.bvantur.inspektify.ktor.core.ui.theme.disabled
 import sp.bvantur.inspektify.ktor.core.ui.utils.ColorUtils
@@ -99,6 +104,7 @@ internal fun NetworkPageContent(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier = Modifier) {
     Box(
@@ -121,6 +127,16 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier
                     color = MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.fillMaxWidth().padding(end = 16.dp)
                 )
+
+                if (item.tags.isNotEmpty()) {
+                    FlowRow(
+                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp, end = 16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp),
+                        verticalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        item.tags.forEach { tag -> NetworkTrafficTag(tag) }
+                    }
+                }
 
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(top = 4.dp, end = 16.dp),
@@ -173,6 +189,21 @@ internal fun NetworkTrafficItem(item: NetworkTrafficListItem, modifier: Modifier
             )
         }
     }
+}
+
+@Composable
+internal fun NetworkTrafficTag(tag: String, modifier: Modifier = Modifier) {
+    Text(
+        text = tag,
+        color = MaterialTheme.colorScheme.primary,
+        fontSize = 12.sp,
+        modifier = modifier
+            .background(
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.12f),
+                shape = RoundedCornerShape(4.dp)
+            )
+            .padding(horizontal = 6.dp, vertical = 2.dp)
+    )
 }
 
 @Composable

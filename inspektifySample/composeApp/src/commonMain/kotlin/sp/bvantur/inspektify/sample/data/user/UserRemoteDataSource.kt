@@ -9,6 +9,7 @@ import io.ktor.http.HttpMethod
 import io.ktor.http.contentType
 import io.ktor.http.path
 import kotlinx.coroutines.withContext
+import sp.bvantur.inspektify.ktor.inspektifyTags
 import sp.bvantur.inspektify.sample.data.utils.DispatcherProvider
 import sp.bvantur.inspektify.sample.data.utils.NetworkUtils
 
@@ -16,6 +17,7 @@ class UserRemoteDataSource(private val httpClient: HttpClient, private val dispa
     suspend fun getUser(userId: UserId): Result<UserRemote?> = withContext(dispatcherProvider.io) {
         NetworkUtils.safeApiCall {
             httpClient.request {
+                inspektifyTags("Get user", "users")
                 url {
                     method = HttpMethod.Get
                     path("users/$userId")
@@ -27,6 +29,7 @@ class UserRemoteDataSource(private val httpClient: HttpClient, private val dispa
     suspend fun createUser(user: CreateUserRemote): Result<CreateUserRemote> = withContext(dispatcherProvider.io) {
         NetworkUtils.safeApiCall {
             httpClient.request {
+                inspektifyTags("Create user", "users")
                 url {
                     method = HttpMethod.Post
                     path("users")
@@ -40,6 +43,7 @@ class UserRemoteDataSource(private val httpClient: HttpClient, private val dispa
     suspend fun getAllUsers(): Result<Any> = withContext(dispatcherProvider.io) {
         NetworkUtils.safeApiCall {
             httpClient.request {
+                inspektifyTags("Get all users", "users")
                 url {
                     method = HttpMethod.Get
                     path("users")

@@ -1,6 +1,7 @@
 package sp.bvantur.inspektify.ktor.details.data.mapper
 
 import sp.bvantur.inspektify.NetworkTrafficDataLocal
+import sp.bvantur.inspektify.ktor.core.data.utils.extensions.getTags
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.nullIfEmpty
 import sp.bvantur.inspektify.ktor.core.data.utils.extensions.nullToEmpty
 import sp.bvantur.inspektify.ktor.core.domain.utils.ByteSizeUtils
@@ -12,6 +13,9 @@ internal object OverviewNetworkTrafficMapper {
     fun getOverviewDataAsString(networkTrafficData: NetworkTrafficDataLocal): String {
         var overviewData = ""
         overviewData += "OVERVIEW:\n"
+        networkTrafficData.getTags().takeIf { it.isNotEmpty() }?.let {
+            overviewData += "Tags: ${it.joinToString()}\n"
+        }
         networkTrafficData.method?.let {
             overviewData += "Method: $it\n"
         }
@@ -42,6 +46,7 @@ internal object OverviewNetworkTrafficMapper {
     }
 
     fun toOverviewDomain(data: NetworkTrafficDataLocal): KtorOverviewData = KtorOverviewData(
+        tags = data.getTags().takeIf { it.isNotEmpty() }?.joinToString(),
         url = data.url,
         method = data.method,
         protocol = data.protocol,

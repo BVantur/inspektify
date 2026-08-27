@@ -14,6 +14,7 @@ import io.ktor.utils.io.close
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import sp.bvantur.inspektify.ktor.InspektifyTagsAttributeKey
 import sp.bvantur.inspektify.ktor.KtorUtils
 import sp.bvantur.inspektify.ktor.PayloadTooLargePolicy
 import sp.bvantur.inspektify.ktor.client.data.utils.tryReadText
@@ -52,6 +53,7 @@ internal class InspektifyRequestHandler {
             host = url.host,
             path = url.pathSegments.joinToString("/"),
             protocol = url.protocol.name,
+            tags = request.attributes.getOrNull(InspektifyTagsAttributeKey),
             requestTimestamp = id,
             requestHeaders = headers.entries().redactHeaders(redactHeaders),
             requestPayload = payload?.redactJsonProperties(redactBodyProperties)

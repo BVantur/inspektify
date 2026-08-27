@@ -40,6 +40,8 @@ internal fun NetworkTrafficDataLocal.getMethodWithPath(): String {
     return "$method $path"
 }
 
+internal fun NetworkTrafficDataLocal.getTags(): List<String> = tags?.filter { it.isNotBlank() }.orEmpty()
+
 internal fun NetworkTrafficDataLocal.getHost(): String = host ?: ""
 
 internal fun NetworkTrafficDataLocal.getMethod(): String = method ?: ""

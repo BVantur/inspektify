@@ -119,6 +119,7 @@ internal class KtorListVewModel :
                     searchTerms.all { term ->
                         item.statusCode.contains(term, ignoreCase = true) ||
                             item.methodWithPath.contains(term, ignoreCase = true) ||
+                            item.tags.any { tag -> tag.contains(term, ignoreCase = true) } ||
                             item.host.contains(term, ignoreCase = true)
                     }
                 }

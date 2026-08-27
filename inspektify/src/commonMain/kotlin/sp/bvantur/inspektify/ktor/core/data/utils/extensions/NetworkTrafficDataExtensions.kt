@@ -11,6 +11,7 @@ internal fun NetworkTrafficDataLocal.toNetworkTraffic(): NetworkTraffic = Networ
     host = host,
     path = path,
     protocol = protocol,
+    tags = tags,
     requestTimestamp = requestTimestamp,
     requestHeaders = requestHeaders,
     requestPayload = requestPayload,
