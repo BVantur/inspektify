@@ -81,3 +81,4 @@ xcuserdata/
 .fleet/
 
 .build
+.claude/settings.local.json

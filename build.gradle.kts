@@ -20,6 +20,10 @@ plugins {
 subprojects {
     ktlintSetup()
     detektSetup()
+
+    tasks.withType<Sign>().configureEach {
+        onlyIf { !project.hasProperty("signing.skip") }
+    }
 }
 
 fun Project.ktlintSetup() {
