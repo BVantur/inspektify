@@ -60,6 +60,28 @@ commonMain.dependencies {
 }
 ```
 
+### No-op variant (Android projects)
+
+Each artifact has a matching no-op variant that exposes the exact same API but does nothing at
+runtime. Android projects can swap the dependency per build type with no code changes required:
+
+```
+// Ktor 3.x.x
+dependencies {
+    debugImplementation("io.github.bvantur:inspektify-ktor3:{mavenVersion}")
+    releaseImplementation("io.github.bvantur:inspektify-ktor3-no-op:{mavenVersion}")
+}
+
+// Ktor 2.3.1 - 3.0.0
+dependencies {
+    debugImplementation("io.github.bvantur:inspektify-ktor2:{mavenVersion}")
+    releaseImplementation("io.github.bvantur:inspektify-ktor2-no-op:{mavenVersion}")
+}
+```
+
+See [Excluding Inspektify from Release Builds](docs/EXCLUDING_INSPEKTIFY_FROM_RELEASE_BUILDS.md) for
+the full guide, including the `if (isDebug())` approach for KMP projects.
+
 ### iOS target
 
 Depending on your project setting there are 2 different ways that need to be done to make it work on

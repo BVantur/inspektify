@@ -1,6 +1,6 @@
 [versions]
 # INSPEKTIFY LIB VERSION
-inspektify-version = "1.0.0"
+inspektify-version = "1.1.0"
 
 # GENERAL dependencies
 agp = "8.13.1"
@@ -62,6 +62,8 @@ buildConfig = "5.4.0"
 # INSPEKTIFY LIB dependencies
 inspektify-ktor3 = { group = "io.github.bvantur", name = "inspektify-ktor3", version.ref = "inspektify-version" }
 inspektify-ktor2 = { group = "io.github.bvantur", name = "inspektify-ktor2", version.ref = "inspektify-version" }
+inspektify-ktor3-no-op = { group = "io.github.bvantur", name = "inspektify-ktor3-no-op", version.ref = "inspektify-version" }
+inspektify-ktor2-no-op = { group = "io.github.bvantur", name = "inspektify-ktor2-no-op", version.ref = "inspektify-version" }
 
 # ANDROID-X dependencies
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }

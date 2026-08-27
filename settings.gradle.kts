@@ -17,6 +17,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         google {
             mavenContent {
                 includeGroupAndSubgroups("androidx")
@@ -29,5 +30,6 @@ dependencyResolutionManagement {
 }
 
 include(":inspektify")
+include(":inspektify-no-op")
 include(":konsistTest")
 include(":inspektifySample:composeApp")

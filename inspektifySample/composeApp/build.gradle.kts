@@ -14,6 +14,8 @@ plugins {
 
 kotlin {
     val useKtorV3 = project.extra["inspektify.ktorVersion"] == "v3"
+    val inspektifyEnabled = project.findProperty("inspektify.enabled") != "false"
+    val inspektifyProject = if (inspektifyEnabled) project(":inspektify") else project(":inspektify-no-op")
 
     tasks.register("testClasses")
 
@@ -37,12 +39,7 @@ kotlin {
             baseName = "ComposeApp"
 //            isStatic = false
             isStatic = true
-            export(project(":inspektify"))
-//            if (useKtorV3) {
-//                export(libs.inspektify.ktor3)
-//            } else {
-//                export(libs.inspektify.ktor2)
-//            }
+            export(inspektifyProject)
         }
     }
 
@@ -60,13 +57,11 @@ kotlin {
         }
 
         commonMain.dependencies {
-            api(project(":inspektify"))
+            api(inspektifyProject)
             if (useKtorV3) {
                 implementation(libs.bundles.ktor3)
-//                api(libs.inspektify.ktor3)
             } else {
                 implementation(libs.bundles.ktor2)
-//                api(libs.inspektify.ktor2)
             }
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -121,9 +116,18 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    signingConfigs {
+        create("debugKeystore") {
+            storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("debugKeystore")
         }
     }
     compileOptions {
